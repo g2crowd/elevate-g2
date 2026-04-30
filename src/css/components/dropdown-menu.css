@@ -1,0 +1,14 @@
+@layer components {
+  .elv-dropdown-menu--align-end {
+    &:where([elv]) [data-elv--dropdown-menu-controller-target='floating'] {
+      right: 0;
+      left: auto !important;
+    }
+  }
+
+  .elv-dropdown-menu--bg-white {
+    &:where([elv]) [data-elv--dropdown-menu-controller-target='floating'] {
+      @apply elv-bg-neutral-0;
+    }
+  }
+}

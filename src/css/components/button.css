@@ -1,0 +1,246 @@
+@layer utilities {
+  .elv-btn-shadow-primary {
+    @apply elv-shadow-[0_2px_8px_2px_rgba(32,31,35,0.15),_0_0_0_1px_#5746B2];
+  }
+
+  .elv-btn-shadow-brand {
+    @apply elv-shadow-[0_0_0_1px_#FF492C,0_2px_8px_2px_#201F2326];
+  }
+
+  .elv-btn-shadow-basic {
+    @apply elv-shadow-[0px_2px_8px_2px_rgba(32,31,35,0.15)];
+  }
+
+  .elv-btn-shadow-inset {
+    @apply elv-shadow-[inset_0_0_4px_1px_#201F2333];
+  }
+
+  .elv-btn-lg {
+    @apply elv-text-base elv-leading-base elv-py-3 elv-px-4;
+  }
+
+  .elv-btn-md {
+    @apply elv-text-base elv-leading-base elv-px-4 elv-py-2;
+  }
+
+  .elv-btn-sm {
+    @apply elv-text-sm elv-leading-sm elv-py-1 elv-px-3 elv-rounded-pill-xs;
+  }
+
+  .elv-btn-primary {
+    @apply elv-bg-primary
+      elv-text-inverted
+      hover:elv-text-inverted
+      hover:elv-bg-primary
+      elv-border-0
+      active:elv-btn-shadow-inset
+      hover:elv-btn-shadow-primary
+      focus:elv-shadow-ui-focus;
+  }
+
+  .elv-btn-base {
+    @apply elv-rounded-pill-md
+      elv-font-figtree
+      elv-border
+      elv-font-semibold
+      elv-flex
+      elv-flex-row
+      elv-items-center
+      elv-justify-center
+      elv-transition-all
+      elv-duration-150
+      elv-ease-in-out
+      elv-w-auto
+      elv-gap-1;
+
+    @apply elv-btn-lg elv-btn-primary;
+
+    @apply disabled:elv-text-disabled
+      disabled:hover:elv-shadow-0
+      disabled:active:elv-shadow-0
+      disabled:focus:elv-shadow-0
+      disabled:elv-bg-neutral-10
+      disabled:elv-border-0;
+  }
+
+  .elv-btn-inverted {
+    @apply hover:elv-shadow-0
+      elv-text-primary
+      hover:elv-text-primary
+      hover:elv-bg-neutral-0
+      elv-bg-neutral-0
+      elv-border
+      elv-border-medium
+      hover:elv-btn-shadow-basic;
+  }
+
+  .elv-btn-secondary {
+    @apply hover:elv-shadow-0
+      elv-text-primary
+      hover:elv-text-primary
+      elv-bg-neutral-5
+      elv-border
+      elv-border-light
+      active:elv-bg-primary-20
+      active:elv-border-neutral
+      hover:elv-border-light
+      focus:elv-border-1
+      focus:elv-text-primary
+      hover:elv-bg-primary-20;
+  }
+
+  .elv-btn-tertiary {
+    @apply hover:elv-shadow-0
+      elv-text-primary
+      hover:elv-text-primary
+      visited:elv-text-primary
+      elv-bg-transparent
+      elv-border-0
+      active:elv-bg-primary-20
+      hover:elv-bg-primary-20
+      focus:elv-bg-transparent
+      focus:elv-text-primary
+      active:elv-text-primary
+      disabled:elv-bg-transparent;
+  }
+
+  .elv-btn-brand {
+    @apply elv-bg-brand
+      hover:elv-bg-brand
+      elv-border-0
+      hover:elv-btn-shadow-brand;
+  }
+
+  .elv-btn-text-base {
+    @apply hover:elv-shadow-0
+      elv-text-primary
+      hover:elv-text-primary
+      elv-bg-transparent
+      elv-rounded-sm
+      elv-border-0
+      hover:elv-bg-transparent
+      hover:elv-text-primary-hover
+      active:elv-text-primary-hover;
+
+    @apply disabled:elv-text-disabled
+      disabled:hover:elv-shadow-0
+      disabled:active:elv-shadow-0
+      disabled:focus:elv-shadow-0
+      disabled:elv-bg-neutral-0
+      disabled:elv-border-0;
+  }
+
+  .elv-btn-text-neutral {
+    @apply hover:elv-text-subtle
+      elv-text-nonessential;
+  }
+}
+
+@layer components {
+  :where([elv]) .btn:where(a),
+  .btn:where(a):where([elv]) {
+    @apply a--reset;
+  }
+
+  .btn {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-btn-base;
+
+      span + svg {
+        @apply -elv-mr-1;
+      }
+
+      svg:has(+ span) {
+        @apply -elv-ml-1;
+      }
+    }
+  }
+
+  .btn--primary {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-primary;
+    }
+  }
+
+  .btn--inverted {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-inverted;
+    }
+  }
+
+  .btn--secondary {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-secondary;
+    }
+  }
+
+  .btn--tertiary {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-tertiary;
+    }
+  }
+
+  .btn--brand {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-brand;
+    }
+  }
+
+  .btn--text {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-text-base;
+    }
+  }
+
+  .btn--text-neutral {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-text-base;
+      @apply elv-btn-text-neutral;
+    }
+  }
+
+  .btn--lg {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-lg;
+    }
+  }
+
+  .btn--md {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-md;
+    }
+  }
+
+  .btn--sm {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-btn-sm;
+    }
+  }
+
+  .btn--md.btn--text,
+  .btn--md.btn--text-neutral {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-py-0 elv-px-0;
+    }
+  }
+
+  .btn--sm.btn--text,
+  .btn--sm.btn--text-neutral {
+    &:where([elv]),
+    :where([elv]) & {
+      @apply elv-py-0 elv-px-0;
+    }
+  }
+}

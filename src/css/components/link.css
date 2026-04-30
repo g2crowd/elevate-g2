@@ -1,0 +1,69 @@
+@layer components {
+  :where([elv]) a,
+  a:where([elv]),
+  .a {
+    &:where(&:not(.a--reset)) {
+      @apply elv-font-figtree
+        elv-tracking-normal
+        elv-font-normal
+        elv-text-inherit
+        elv-text-link;
+
+      @apply focus-visible:elv-outline
+        focus-visible:elv-outline-3
+        focus-visible:elv-outline-offset-0
+        focus-visible:elv-outline-purple-40
+        focus-visible:elv-rounded-sm;
+
+      @apply active:elv-text-link-hover
+        focus:elv-text-link-hover
+        hover:elv-text-link-hover
+        visited:elv-text-link-visited
+        hover:elv-no-underline;
+    }
+  }
+
+  .a--sm {
+    @apply elv-text-sm focus-visible:elv-rounded-sm;
+  }
+
+  .a--md {
+    @apply elv-text-base focus-visible:elv-rounded-sm;
+  }
+
+  .a--xs {
+    @apply elv-text-xs focus-visible:elv-rounded-md;
+  }
+
+  .a--fw-semibold {
+    @apply elv-font-semibold;
+  }
+
+  .a--subtle {
+    @apply elv-text-nonessential
+      active:elv-text-default
+      focus:elv-text-default
+      hover:elv-text-default
+      visited:elv-text-nonessential;
+  }
+
+  .a--underline {
+    @apply elv-underline;
+  }
+
+  .a--subtle.a--underline {
+    text-decoration-color: currentColor;
+  }
+
+  .a--reset {
+    @apply
+      hover:elv-no-underline
+      active:elv-no-underline
+      focus:elv-no-underline
+      focus-visible:elv-no-underline
+      visited:elv-no-underline
+      focus:elv-outline-none
+      focus-visible:elv-outline-none
+      elv-max-w-fit;
+  }
+}

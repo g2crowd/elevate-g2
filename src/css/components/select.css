@@ -1,0 +1,42 @@
+select.elv-select {
+  @apply elv-border-medium elv-rounded-sm
+    elv-border
+    elv-pl-2
+    elv-pr-14
+    elv-py-2
+    elv-text-nonessential elv-appearance-none
+    elv-font-normal
+    elv-h-auto
+    elv-text-base
+    elv-leading-base
+    elv-bg-neutral-5
+    elv-cursor-pointer
+    hover:elv-bg-neutral-10
+    elv-transition-colors
+    elv-duration-150;
+
+  @apply focus-visible:elv-outline
+    focus-visible:elv-border-medium
+    focus-visible:elv-outline-3
+    focus-visible:elv-outline-offset-1
+    focus-visible:elv-outline-purple-40
+    focus-visible:elv-rounded-sm;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z' fill='%23696673' /%3E%3C/svg%3E");
+  background-origin: unset;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+select.elv-select.elv-select--sm {
+  @apply elv-h-8;
+}
+
+select.elv-select.elv-select--md {
+  @apply elv-h-10;
+}
+
+select.elv-select.elv-select--lg {
+  @apply elv-h-12;
+}
