@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<a class="back-link" href="./index.html">&larr; All Components</a>
+<h1>Buttons</h1>
+<p class="subtitle">CSS classes: <code>.btn</code>, <code>.btn--{variant}</code>, <code>.btn--{size}</code></p>
+
+<h2>Variants</h2>
+<div class="component-row" elv>
+  <button class="btn btn--primary" elv type="button">Primary</button>
+  <button class="btn btn--secondary" elv type="button">Secondary</button>
+  <button class="btn btn--tertiary" elv type="button">Tertiary</button>
+  <button class="btn btn--brand" elv type="button">Brand</button>
+  <button class="btn btn--text" elv type="button">Text</button>
+  <button class="btn btn--text-neutral" elv type="button">Text Neutral</button>
+</div>
+
+<h2>Inverted</h2>
+<div class="component-row component-row--dark" elv>
+  <button class="btn btn--inverted" elv type="button">Inverted</button>
+</div>
+
+<h2>Sizes</h2>
+<div class="component-row" elv>
+  <button class="btn btn--primary btn--lg" elv type="button">Large (default)</button>
+  <button class="btn btn--primary btn--md" elv type="button">Medium</button>
+  <button class="btn btn--primary btn--sm" elv type="button">Small</button>
+</div>
+
+<h2>Sizes &times; Variants</h2>
+<div class="component-row" elv>
+  <button class="btn btn--secondary btn--lg" elv type="button">Secondary Lg</button>
+  <button class="btn btn--secondary btn--md" elv type="button">Secondary Md</button>
+  <button class="btn btn--secondary btn--sm" elv type="button">Secondary Sm</button>
+</div>
+<div class="component-row" elv>
+  <button class="btn btn--tertiary btn--lg" elv type="button">Tertiary Lg</button>
+  <button class="btn btn--tertiary btn--md" elv type="button">Tertiary Md</button>
+  <button class="btn btn--tertiary btn--sm" elv type="button">Tertiary Sm</button>
+</div>
+
+<h2>Disabled</h2>
+<div class="component-row" elv>
+  <button class="btn btn--primary" elv type="button" disabled>Primary Disabled</button>
+  <button class="btn btn--secondary" elv type="button" disabled>Secondary Disabled</button>
+  <button class="btn btn--tertiary" elv type="button" disabled>Tertiary Disabled</button>
+</div>
+
+<h2>Button as Anchor</h2>
+<div class="component-row" elv>
+  <a class="btn btn--primary a--reset" elv href="#">Primary Link</a>
+  <a class="btn btn--secondary btn--sm a--reset" elv href="#">Small Secondary Link</a>
+</div>
+
+<h2>With Icons</h2>
+<div class="component-row" elv>
+  <button class="btn btn--primary btn--md" elv type="button">
+    <svg width="16" height="16" viewBox="0 0 20 20"><path d="M10 5v10M5 10h10" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+    <span>Leading Icon</span>
+  </button>
+  <button class="btn btn--secondary btn--md" elv type="button">
+    <span>Trailing Icon</span>
+    <svg width="16" height="16" viewBox="0 0 20 20"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+  </button>
+</div>
+
+<h2>Text Variant Sizes</h2>
+<div class="component-row" elv>
+  <button class="btn btn--text btn--lg" elv type="button">Text Lg</button>
+  <button class="btn btn--text btn--md" elv type="button">Text Md</button>
+  <button class="btn btn--text btn--sm" elv type="button">Text Sm</button>
+</div>
+
+</body>
+</html>

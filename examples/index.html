@@ -4,400 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elevate Component Library</title>
-  <link rel="stylesheet" href="../dist/elevate.css">
-  <style>
-    body {
-      font-family: 'Figtree', system-ui, sans-serif;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-      background: #fafafa;
-      color: #201f23;
-    }
-    h1 { font-size: 2.375rem; margin-bottom: 1rem; }
-    h2 {
-      font-size: 1.75rem;
-      margin-top: 3rem;
-      margin-bottom: 0.5rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #dfdfe2;
-    }
-    h3 { font-size: 1.3125rem; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #4c4b53; }
-    .component-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      align-items: center;
-      padding: 1.5rem;
-      background: #fff;
-      border: 1px solid #dfdfe2;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .component-row--dark {
-      background: #201f23;
-    }
-    .component-col {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      padding: 1.5rem;
-      background: #fff;
-      border: 1px solid #dfdfe2;
-      border-radius: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .label {
-      font-size: 0.75rem;
-      color: #6f6d78;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.25rem;
-    }
-    nav {
-      background: #fff;
-      border: 1px solid #dfdfe2;
-      border-radius: 0.5rem;
-      padding: 1rem 1.5rem;
-      margin-bottom: 2rem;
-    }
-    nav a {
-      color: #5746b2;
-      text-decoration: none;
-      margin-right: 1.5rem;
-      font-size: 0.875rem;
-    }
-    nav a:hover { text-decoration: underline; }
-  </style>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
 
 <h1>Elevate Component Library</h1>
-<p style="color: #6f6d78; margin-bottom: 2rem;">
-  Visual smoke test for all <code>@g2crowd/elevate</code> CSS components.
-</p>
+<p class="subtitle">Visual reference for all <code>@g2crowd/elevate</code> CSS components.</p>
 
-<nav>
-  <a href="#buttons">Buttons</a>
-  <a href="#links">Links</a>
-  <a href="#inputs">Inputs</a>
-  <a href="#selects">Selects</a>
-  <a href="#status-badges">Status Badges</a>
-  <a href="#spin-loaders">Spin Loaders</a>
-  <a href="#progress-bars">Progress Bars</a>
-  <a href="#pagination">Pagination</a>
-  <a href="#slide-out-panel">Slide Out Panel</a>
-</nav>
+<div class="nav-grid">
+  <a class="nav-card" href="./buttons.html">
+    <strong>Buttons</strong>
+    <span>7 variants, 3 sizes, disabled, anchor, icons</span>
+  </a>
+  <a class="nav-card" href="./links.html">
+    <strong>Links</strong>
+    <span>Default, subtle, underline, sizes, semibold</span>
+  </a>
+  <a class="nav-card" href="./inputs.html">
+    <strong>Inputs</strong>
+    <span>Text, textarea, sizes, validation states</span>
+  </a>
+  <a class="nav-card" href="./selects.html">
+    <strong>Selects</strong>
+    <span>Native select with 3 sizes</span>
+  </a>
+  <a class="nav-card" href="./status-badges.html">
+    <strong>Status Badges</strong>
+    <span>6 semantic states, circle icon indicators</span>
+  </a>
+  <a class="nav-card" href="./spin-loaders.html">
+    <strong>Spin Loaders</strong>
+    <span>Primary, neutral, inverted variants</span>
+  </a>
+  <a class="nav-card" href="./progress-bars.html">
+    <strong>Progress Bars</strong>
+    <span>Brand/primary fill, sm/lg track sizes</span>
+  </a>
+  <a class="nav-card" href="./pagination.html">
+    <strong>Pagination</strong>
+    <span>Page numbers, nav links, disabled state</span>
+  </a>
 
-<!-- ============================================================
-     BUTTONS
-     ============================================================ -->
-<h2 id="buttons">Buttons</h2>
-
-<h3>Variants</h3>
-<div class="component-row" elv>
-  <button class="btn btn--primary" elv type="button">Primary</button>
-  <button class="btn btn--secondary" elv type="button">Secondary</button>
-  <button class="btn btn--tertiary" elv type="button">Tertiary</button>
-  <button class="btn btn--brand" elv type="button">Brand</button>
-  <button class="btn btn--text" elv type="button">Text</button>
-  <button class="btn btn--text-neutral" elv type="button">Text Neutral</button>
 </div>
-
-<h3>Inverted (dark background)</h3>
-<div class="component-row component-row--dark" elv>
-  <button class="btn btn--inverted" elv type="button">Inverted</button>
-</div>
-
-<h3>Sizes</h3>
-<div class="component-row" elv>
-  <button class="btn btn--primary btn--lg" elv type="button">Large (default)</button>
-  <button class="btn btn--primary btn--md" elv type="button">Medium</button>
-  <button class="btn btn--primary btn--sm" elv type="button">Small</button>
-</div>
-
-<h3>Sizes &times; Variants</h3>
-<div class="component-row" elv>
-  <button class="btn btn--secondary btn--lg" elv type="button">Secondary Lg</button>
-  <button class="btn btn--secondary btn--md" elv type="button">Secondary Md</button>
-  <button class="btn btn--secondary btn--sm" elv type="button">Secondary Sm</button>
-</div>
-
-<h3>Disabled</h3>
-<div class="component-row" elv>
-  <button class="btn btn--primary" elv type="button" disabled>Primary Disabled</button>
-  <button class="btn btn--secondary" elv type="button" disabled>Secondary Disabled</button>
-  <button class="btn btn--tertiary" elv type="button" disabled>Tertiary Disabled</button>
-</div>
-
-<h3>Button as Anchor</h3>
-<div class="component-row" elv>
-  <a class="btn btn--primary" elv href="#">Primary Link</a>
-  <a class="btn btn--secondary btn--sm" elv href="#">Small Secondary Link</a>
-</div>
-
-<h3>With Icon (SVG placeholder)</h3>
-<div class="component-row" elv>
-  <button class="btn btn--primary btn--md" elv type="button">
-    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M10 5v10M5 10h10" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    <span>With Icon</span>
-  </button>
-  <button class="btn btn--secondary btn--md" elv type="button">
-    <span>Trailing Icon</span>
-    <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-  </button>
-</div>
-
-<!-- ============================================================
-     LINKS
-     ============================================================ -->
-<h2 id="links">Links</h2>
-
-<h3>Default</h3>
-<div class="component-col" elv>
-  <a href="#" elv>Default link</a>
-  <a href="#" class="a--underline" elv>Underlined link</a>
-  <a href="#" class="a--subtle" elv>Subtle link</a>
-  <a href="#" class="a--subtle a--underline" elv>Subtle underlined link</a>
-</div>
-
-<h3>Sizes</h3>
-<div class="component-row" elv>
-  <a href="#" class="a a--xs" elv>Extra Small</a>
-  <a href="#" class="a a--sm" elv>Small</a>
-  <a href="#" class="a a--md" elv>Medium</a>
-</div>
-
-<h3>Font Weight</h3>
-<div class="component-row" elv>
-  <a href="#" class="a a--fw-semibold" elv>Semibold link</a>
-</div>
-
-<!-- ============================================================
-     INPUTS
-     ============================================================ -->
-<h2 id="inputs">Inputs</h2>
-
-<h3>Sizes</h3>
-<div class="component-col" elv>
-  <input type="text" class="elv-input elv-input--sm" placeholder="Small input" elv>
-  <input type="text" class="elv-input elv-input--md" placeholder="Medium input" elv>
-  <input type="text" class="elv-input elv-input--lg" placeholder="Large input" elv>
-</div>
-
-<h3>States</h3>
-<div class="component-col" elv>
-  <input type="text" class="elv-input elv-input--md" placeholder="Default" elv>
-  <input type="text" class="elv-input elv-input--md" placeholder="Disabled" elv disabled>
-  <input type="text" class="elv-input elv-input--md" placeholder="Read-only" elv readonly value="Read-only value">
-  <input type="text" class="elv-input elv-input--md" data-status="success" placeholder="Success" elv>
-  <input type="text" class="elv-input elv-input--md" data-status="warning" placeholder="Warning" elv>
-  <input type="text" class="elv-input elv-input--md" data-status="error" placeholder="Error" elv>
-</div>
-
-<h3>Textarea</h3>
-<div class="component-col" elv>
-  <textarea class="elv-input elv-input--textarea-sm" placeholder="Small textarea" elv></textarea>
-  <textarea class="elv-input elv-input--textarea-md" placeholder="Medium textarea" elv></textarea>
-  <textarea class="elv-input elv-input--textarea-lg" placeholder="Large textarea" elv></textarea>
-</div>
-
-<!-- ============================================================
-     SELECTS
-     ============================================================ -->
-<h2 id="selects">Selects</h2>
-
-<div class="component-col" elv>
-  <select class="elv-select elv-select--sm" elv>
-    <option>Small select</option>
-    <option>Option 2</option>
-  </select>
-  <select class="elv-select elv-select--md" elv>
-    <option>Medium select</option>
-    <option>Option 2</option>
-  </select>
-  <select class="elv-select elv-select--lg" elv>
-    <option>Large select</option>
-    <option>Option 2</option>
-  </select>
-</div>
-
-<!-- ============================================================
-     STATUS BADGES
-     ============================================================ -->
-<h2 id="status-badges">Status Badges</h2>
-
-<h3>Semantic States</h3>
-<div class="component-row" elv>
-  <span class="status-badge" elv>
-    <span class="status-badge__label">Neutral</span>
-  </span>
-  <span class="status-badge status-badge--info" elv>
-    <span class="status-badge__label">Info</span>
-  </span>
-  <span class="status-badge status-badge--success" elv>
-    <span class="status-badge__label">Success</span>
-  </span>
-  <span class="status-badge status-badge--critical" elv>
-    <span class="status-badge__label">Critical</span>
-  </span>
-  <span class="status-badge status-badge--warning" elv>
-    <span class="status-badge__label">Warning</span>
-  </span>
-  <span class="status-badge status-badge--new" elv>
-    <span class="status-badge__label">New</span>
-  </span>
-</div>
-
-<h3>With Circle Icons (status indicators)</h3>
-<div class="component-row" elv>
-  <span class="status-badge" elv>
-    <svg class="status-badge__icon--active" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
-    <span class="status-badge__label">Active</span>
-  </span>
-  <span class="status-badge" elv>
-    <svg class="status-badge__icon--inactive" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
-    <span class="status-badge__label">Inactive</span>
-  </span>
-  <span class="status-badge" elv>
-    <svg class="status-badge__icon--pending" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
-    <span class="status-badge__label">Pending</span>
-  </span>
-  <span class="status-badge" elv>
-    <svg class="status-badge__icon--unassigned" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
-    <span class="status-badge__label">Unassigned</span>
-  </span>
-</div>
-
-<!-- ============================================================
-     SPIN LOADERS
-     ============================================================ -->
-<h2 id="spin-loaders">Spin Loaders</h2>
-
-<div class="component-row" elv>
-  <span class="spin-loader" elv>
-    <svg class="spin-loader__icon spin-loader__icon--primary" width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25"/>
-      <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </span>
-  <span class="spin-loader" elv>
-    <svg class="spin-loader__icon spin-loader__icon--neutral" width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25"/>
-      <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-    </svg>
-  </span>
-  <span class="component-row--dark" style="display:inline-flex; padding: 1rem; border-radius: 0.5rem;">
-    <span class="spin-loader" elv>
-      <svg class="spin-loader__icon spin-loader__icon--inverted" width="24" height="24" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25"/>
-        <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </span>
-  </span>
-</div>
-
-<!-- ============================================================
-     PROGRESS BARS
-     ============================================================ -->
-<h2 id="progress-bars">Progress Bars</h2>
-
-<h3>Brand (small)</h3>
-<div class="component-col" elv>
-  <div class="progress-bar" elv>
-    <div class="progress-bar__track progress-bar__track--sm" elv>
-      <div class="progress-bar__fill progress-bar__fill--brand" style="width: 25%" elv></div>
-    </div>
-  </div>
-  <div class="progress-bar" elv>
-    <div class="progress-bar__track progress-bar__track--sm" elv>
-      <div class="progress-bar__fill progress-bar__fill--brand" style="width: 50%" elv></div>
-    </div>
-  </div>
-  <div class="progress-bar" elv>
-    <div class="progress-bar__track progress-bar__track--sm" elv>
-      <div class="progress-bar__fill progress-bar__fill--brand" style="width: 75%" elv></div>
-    </div>
-  </div>
-  <div class="progress-bar" elv>
-    <div class="progress-bar__track progress-bar__track--sm" elv>
-      <div class="progress-bar__fill progress-bar__fill--brand" style="width: 100%" elv></div>
-    </div>
-  </div>
-</div>
-
-<h3>Primary (large)</h3>
-<div class="component-col" elv>
-  <div class="progress-bar" elv>
-    <div class="progress-bar__track progress-bar__track--lg" elv>
-      <div class="progress-bar__fill progress-bar__fill--primary" style="width: 60%" elv></div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================================================
-     PAGINATION
-     ============================================================ -->
-<h2 id="pagination">Pagination</h2>
-
-<div class="component-row" elv>
-  <nav class="pagination" elv>
-    <a class="pagination__named-link" elv href="#">
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </a>
-    <a class="pagination__page-number-link" elv href="#">1</a>
-    <span class="pagination__page-number--current" elv>2</span>
-    <a class="pagination__page-number-link" elv href="#">3</a>
-    <span class="pagination__component-gap" elv>&hellip;</span>
-    <a class="pagination__page-number-link" elv href="#">12</a>
-    <a class="pagination__named-link" elv href="#">
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </a>
-  </nav>
-</div>
-
-<h3>Disabled State</h3>
-<div class="component-row" elv>
-  <nav class="pagination" elv>
-    <span class="pagination__component pagination__component--disabled" elv>
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M13 4l-6 6 6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </span>
-    <span class="pagination__page-number--current" elv>1</span>
-    <a class="pagination__page-number-link" elv href="#">2</a>
-    <a class="pagination__page-number-link" elv href="#">3</a>
-    <a class="pagination__named-link" elv href="#">
-      <svg width="16" height="16" viewBox="0 0 20 20" fill="currentColor"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    </a>
-  </nav>
-</div>
-
-<!-- ============================================================
-     SLIDE OUT PANEL
-     ============================================================ -->
-<h2 id="slide-out-panel">Slide Out Panel</h2>
-
-<div class="component-row" elv>
-  <button class="btn btn--secondary btn--md" elv type="button" onclick="document.getElementById('demo-panel').showModal()">
-    Open Slide Out Panel
-  </button>
-
-  <dialog id="demo-panel" class="slide-out-panel slide-out-panel--third" elv>
-    <div class="slide-out-panel__inner" elv>
-      <div style="padding: 1.25rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #dfdfe2;">
-        <strong>Panel Title</strong>
-        <button class="btn btn--tertiary btn--sm" elv type="button" onclick="document.getElementById('demo-panel').close()">Close</button>
-      </div>
-      <div class="slide-out-panel__body" elv style="padding: 1.25rem;">
-        <p>Panel body content goes here.</p>
-      </div>
-      <div class="slide-out-panel__footer" elv>
-        <button class="btn btn--primary btn--md" elv type="button" onclick="document.getElementById('demo-panel').close()">Save</button>
-      </div>
-    </div>
-  </dialog>
-</div>
-
-<div style="height: 4rem"></div>
 
 </body>
 </html>

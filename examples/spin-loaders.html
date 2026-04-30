@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spin Loaders — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<a class="back-link" href="./index.html">&larr; All Components</a>
+<h1>Spin Loaders</h1>
+<p class="subtitle">CSS classes: <code>.spin-loader</code>, <code>.spin-loader__icon--{variant}</code></p>
+
+<h2>Variants</h2>
+<div class="component-row" elv>
+  <div>
+    <div class="subtitle" style="margin-bottom: 0.5rem">Primary</div>
+    <span class="spin-loader" elv>
+      <svg class="spin-loader__icon spin-loader__icon--primary" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25"/>
+        <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </div>
+  <div>
+    <div class="subtitle" style="margin-bottom: 0.5rem">Neutral</div>
+    <span class="spin-loader" elv>
+      <svg class="spin-loader__icon spin-loader__icon--neutral" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25"/>
+        <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </span>
+  </div>
+  <div>
+    <div class="subtitle" style="margin-bottom: 0.5rem">Inverted</div>
+    <span class="component-row--dark" style="display:inline-flex; padding: 1rem; border-radius: 0.5rem;">
+      <span class="spin-loader" elv>
+        <svg class="spin-loader__icon spin-loader__icon--inverted" width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" opacity="0.25"/>
+          <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+    </span>
+  </div>
+</div>
+
+</body>
+</html>

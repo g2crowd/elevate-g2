@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Status Badges — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<a class="back-link" href="./index.html">&larr; All Components</a>
+<h1>Status Badges</h1>
+<p class="subtitle">CSS classes: <code>.status-badge</code>, <code>.status-badge--{state}</code></p>
+
+<h2>Semantic States</h2>
+<div class="component-row" elv>
+  <span class="status-badge" elv>
+    <span class="status-badge__label">Neutral</span>
+  </span>
+  <span class="status-badge status-badge--info" elv>
+    <span class="status-badge__label">Info</span>
+  </span>
+  <span class="status-badge status-badge--success" elv>
+    <span class="status-badge__label">Success</span>
+  </span>
+  <span class="status-badge status-badge--critical" elv>
+    <span class="status-badge__label">Critical</span>
+  </span>
+  <span class="status-badge status-badge--warning" elv>
+    <span class="status-badge__label">Warning</span>
+  </span>
+  <span class="status-badge status-badge--new" elv>
+    <span class="status-badge__label">New</span>
+  </span>
+</div>
+
+<h2>With Circle Icons</h2>
+<div class="component-row" elv>
+  <span class="status-badge" elv>
+    <svg class="status-badge__icon--active" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+    <span class="status-badge__label">Active</span>
+  </span>
+  <span class="status-badge" elv>
+    <svg class="status-badge__icon--inactive" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+    <span class="status-badge__label">Inactive</span>
+  </span>
+  <span class="status-badge" elv>
+    <svg class="status-badge__icon--pending" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+    <span class="status-badge__label">Pending</span>
+  </span>
+  <span class="status-badge" elv>
+    <svg class="status-badge__icon--unassigned" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4"/></svg>
+    <span class="status-badge__label">Unassigned</span>
+  </span>
+</div>
+
+</body>
+</html>

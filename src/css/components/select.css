@@ -30,7 +30,7 @@ select.elv-select {
 }
 
 select.elv-select.elv-select--sm {
-  @apply elv-h-8;
+  @apply elv-h-8 elv-text-sm elv-leading-sm elv-py-1;
 }
 
 select.elv-select.elv-select--md {

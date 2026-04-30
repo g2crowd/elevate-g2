@@ -1,12 +1,17 @@
 @layer components {
   :where([elv]) .pagination,
   :where([elv]).pagination {
-    @apply elv-flex elv-gap-2 elv-font-figtree;
+    @apply elv-flex elv-gap-2 elv-font-figtree elv-list-none elv-m-0 elv-p-0;
   }
 
   :where([elv]) .pagination__only-nessy,
   :where([elv]).pagination__only-nessy {
     @apply elv-hidden;
+  }
+
+  :where([elv]) .pagination__only-elv,
+  :where([elv]).pagination__only-elv {
+    @apply elv-flex elv-items-center elv-justify-center;
   }
 
   :where([elv]) .pagination__component,
