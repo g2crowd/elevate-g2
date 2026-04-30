@@ -1,53 +1,34 @@
-import type { Config } from 'tailwindcss';
-import {
+const {
   scopedPreflightStyles,
-  isolateInsideOfContainer,
-} from 'tailwindcss-scoped-preflight';
-import { colors } from './theme/color-palette';
-import { dataColors } from './theme/data-colors';
-import { backgroundColors } from './theme/background-colors';
-import { foregroundColors } from './theme/foreground-colors';
-import { borderColors } from './theme/border-colors';
-import { responsiveSafelist } from './theme/responsive-safelist';
+  isolateInsideOfContainer
+} = require('tailwindcss-scoped-preflight');
 
-/**
- * Elevate Tailwind configuration.
- *
- * Consumers should extend their own tailwind.config with this config's `theme`,
- * or use it directly. The `content` paths are intentionally empty — the consuming
- * app must provide its own content paths.
- *
- * Usage in a consuming project:
- *
- *   import elevateConfig from '@g2crowd/elevate/tailwind';
- *
- *   export default {
- *     presets: [elevateConfig],
- *     content: ['./src/** /*.{html,js,ts,tsx}'],
- *   };
- */
-const config: Config = {
-  content: [
-    // Consumers must provide their own content paths.
-    // When used as a preset, content from here is ignored.
-  ],
-  safelist: [...responsiveSafelist],
+const palette = require('./theme/color-palette');
+const data_colors = require('./theme/data-colors');
+const background_colors = require('./theme/background-colors');
+const foreground_colors = require('./theme/foreground-colors');
+const border_colors = require('./theme/border-colors');
+const responsive_safelist = require('./theme/responsive-safelist');
+
+module.exports = {
+  content: [],
+  safelist: responsive_safelist,
   prefix: 'elv-',
   theme: {
     backgroundColor: {
-      ...backgroundColors,
-      ...dataColors,
+      ...background_colors,
+      ...data_colors
     },
-    textColor: foregroundColors,
-    borderColor: borderColors,
+    textColor: foreground_colors,
+    borderColor: border_colors,
     fill: {
-      ...colors,
+      ...palette
     },
     stroke: {
-      ...colors,
+      ...palette
     },
     outlineColor: {
-      ...colors,
+      ...palette
     },
     borderRadius: {
       0: '0',
@@ -87,7 +68,7 @@ const config: Config = {
       'l-xl': '1.25rem 0 0 1.25rem',
       'r-xl': '0 1.25rem 1.25rem 0',
       't-xl': '1.25rem 1.25rem 0 0',
-      'b-xl': '0 0 1.25rem 1.25rem',
+      'b-xl': '0 0 1.25rem 1.25rem'
     },
     borderWidth: {
       DEFAULT: '0.5px',
@@ -95,47 +76,37 @@ const config: Config = {
       1: '1px',
       2: '2px',
       4: '4px',
-      8: '8px',
+      8: '8px'
     },
     boxShadow: {
       0: 'none',
       1: '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 0px 4px 4px 0px rgba(32, 31, 35, 0.04)',
       2: '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 0px 8px 14px -2px rgba(32, 31, 35, 0.15)',
       3: '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 0px 18px 28px -4px rgba(32, 31, 35, 0.15)',
-      'left-1':
-        '0px 0px 1px 0px rgba(32, 31, 35, 0.32), -4px 0px 4px 0px rgba(32, 31, 35, 0.04)',
-      'left-2':
-        '0px 0px 1px 0px rgba(32, 31, 35, 0.32), -8px 0px 14px -2px rgba(32, 31, 35, 0.15)',
-      'left-3':
-        '0px 0px 1px 0px rgba(32, 31, 35, 0.32), -18px 0px 28px -4px rgba(32, 31, 35, 0.15)',
-      'right-1':
-        '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 4px 0px 4px 0px rgba(32, 31, 35, 0.04)',
-      'right-2':
-        '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 8px 0px 14px -2px rgba(32, 31, 35, 0.15)',
-      'right-3':
-        '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 18px 0px 28px -4px rgba(32, 31, 35, 0.15)',
-      'ui-focus':
-        '0px 0px 0px 0.5px rgb(255, 255, 255), 0px 0px 0px 3px rgb(195, 189, 229)',
-      'button-secondary-press': '0px 0px 4px 1px rgba(32, 31, 35, 0.20)',
+      'left-1': '0px 0px 1px 0px rgba(32, 31, 35, 0.32), -4px 0px 4px 0px rgba(32, 31, 35, 0.04)',
+      'left-2': '0px 0px 1px 0px rgba(32, 31, 35, 0.32), -8px 0px 14px -2px rgba(32, 31, 35, 0.15)',
+      'left-3': '0px 0px 1px 0px rgba(32, 31, 35, 0.32), -18px 0px 28px -4px rgba(32, 31, 35, 0.15)',
+      'right-1': '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 4px 0px 4px 0px rgba(32, 31, 35, 0.04)',
+      'right-2': '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 8px 0px 14px -2px rgba(32, 31, 35, 0.15)',
+      'right-3': '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 18px 0px 28px -4px rgba(32, 31, 35, 0.15)',
+      'ui-focus': '0px 0px 0px 0.5px rgb(255, 255, 255), 0px 0px 0px 3px rgb(195, 189, 229)',
+      'button-secondary-press': '0px 0px 4px 1px rgba(32, 31, 35, 0.20)'
     },
     outlineWidth: {
-      3: '3px',
+      3: '3px'
     },
-    spacing: Object.fromEntries([
-      ['0', '0'],
-      ['px', '1px'],
-      ['0.5', '0.125rem'],
-      ...Array.from({ length: 100 }, (_, i) => [
-        String(i + 1),
-        `${(i + 1) * 0.25}rem`,
-      ]),
-    ]),
+    spacing: {
+      0: '0', px: '1px', 0.5: '0.125rem',
+      ...Object.fromEntries(
+        Array.from({ length: 100 }, (_, i) => [i + 1, `${(i + 1) * 0.25}rem`])
+      )
+    },
     fontFamily: {
       sans: ['Figtree', 'sans-serif'],
       body: ['Figtree', 'sans-serif'],
       heading: ['Figtree', 'sans-serif'],
       label: ['Figtree', 'sans-serif'],
-      figtree: ['Figtree', 'sans-serif'],
+      figtree: ['Figtree', 'sans-serif']
     },
     fontSize: {
       xs: '0.75rem',
@@ -146,20 +117,20 @@ const config: Config = {
       '2xl': '2.375rem',
       '3xl': '3.1875rem',
       '4xl': '4.1875rem',
-      inherit: 'inherit',
+      inherit: 'inherit'
     },
     fontWeight: {
-      light: '300',
-      normal: '400',
-      medium: '500',
-      semibold: '600',
-      bold: '700',
-      extrabold: '800',
-      black: '900',
+      light: 300,
+      normal: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+      extrabold: 800,
+      black: 900
     },
     fontStyle: {
       'not-italic': 'normal',
-      italic: 'italic',
+      italic: 'italic'
     },
     lineHeight: {
       xs: '1rem',
@@ -169,32 +140,32 @@ const config: Config = {
       xl: '2.25rem',
       '2xl': '3rem',
       '3xl': '4rem',
-      '4xl': '5rem',
+      '4xl': '5rem'
     },
     screens: {
       sm: '600px',
       md: '750px',
       lg: '1000px',
       xl: '1270px',
-      '2xl': '1400px',
+      '2xl': '1400px'
     },
     content: {
-      '200B': '"\u200B"',
+      '200B': '"\u200B"'
     },
     extend: {
       scale: {
         40: '0.4',
-        60: '0.6',
+        60: '0.6'
       },
       keyframes: {
         translateXToZero: {
           '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(0)' }
         },
         aiGradient: {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
+          '100%': { backgroundPosition: '0% 50%' }
         },
         dialogShake: {
           '0%': { transform: 'translateX(0)' },
@@ -204,24 +175,22 @@ const config: Config = {
           '60%': { transform: 'translateX(6px)' },
           '75%': { transform: 'translateX(-3px)' },
           '90%': { transform: 'translateX(3px)' },
-          '100%': { transform: 'translateX(0)' },
-        },
+          '100%': { transform: 'translateX(0)' }
+        }
       },
       animation: {
         'slide-transition-in': 'translateXToZero 0.5s ease-in-out forwards',
         'ai-gradient': 'aiGradient 3s ease infinite',
-        'dialog-shake': 'dialogShake 0.4s ease',
+        'dialog-shake': 'dialogShake 0.4s ease'
       },
       aspectRatio: {
-        '18/9': '18 / 9',
-      },
-    },
+        '18/9': '18 / 9'
+      }
+    }
   },
   plugins: [
     scopedPreflightStyles({
-      isolationStrategy: isolateInsideOfContainer('[elv]'),
-    }),
-  ],
+      isolationStrategy: isolateInsideOfContainer('[elv]')
+    })
+  ]
 };
-
-export default config;

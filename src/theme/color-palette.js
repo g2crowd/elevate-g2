@@ -1,4 +1,4 @@
-export const colors = {
+const colors = {
   transparent: 'transparent',
   current: 'currentColor',
   rorange: {
@@ -77,6 +77,6 @@ export const colors = {
     140: '#997800',
     160: '#665000',
   },
-} as const;
+};
 
-export type ColorPalette = typeof colors;
+module.exports = colors;

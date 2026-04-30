@@ -1,0 +1,97 @@
+@layer components {
+  .status-badge {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-max-h-6
+        elv-rounded-sm
+        elv-flex
+        elv-border
+        elv-py-0.5
+        elv-px-1
+        elv-w-fit
+        elv-text-sm
+        elv-leading-sm
+        elv-items-center
+        elv-bg-neutral-10
+        elv-border-light
+        elv-text-neutral;
+    }
+  }
+
+  .status-badge--info {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-bg-info-20 elv-border-info elv-text-info;
+    }
+  }
+
+  .status-badge--success {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-bg-success-20 elv-border-success elv-text-success;
+    }
+  }
+
+  .status-badge--critical {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-bg-critical-20 elv-border-critical elv-text-critical;
+    }
+  }
+
+  .status-badge--warning {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-bg-warning-20 elv-border-warning elv-text-warning;
+    }
+  }
+
+  .status-badge--new {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-bg-primary-20 elv-border-primary elv-text-primary;
+    }
+  }
+
+  .status-badge__label {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-px-1 elv-text-inherit;
+    }
+  }
+
+  .status-badge__icon--active {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-green-120;
+    }
+  }
+
+  .status-badge__icon--inactive {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-rorange-120;
+    }
+  }
+
+  .status-badge__icon--pending {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-blue;
+    }
+  }
+
+  .status-badge__icon--unassigned {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-yellow;
+    }
+  }
+
+  .status-badge__icon--recommended {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-fill-rorange;
+    }
+  }
+}

@@ -6,7 +6,7 @@ G2 Elevate design system — Tailwind CSS theme, component styles, and design to
 
 - **Design tokens** — color palette, semantic background/foreground/border colors, data visualization colors
 - **Tailwind preset** — full theme config with `elv-` prefix, spacing scale, typography, shadows, animations
-- **CSS component classes** — button, link, input, select, slide-out panel, pagination, dropdown menu
+- **CSS component classes** — button, link, input, select, slide-out panel, pagination, dropdown menu, status badge, spin loader, progress bar
 - **Figtree font** — variable-weight TTF included
 - **Responsive safelist** — classes required for ViewComponent's `ResponsiveSizing` mixin
 
@@ -22,52 +22,54 @@ yarn add @g2crowd/elevate
 
 Use the Elevate config as a Tailwind preset in your project:
 
-```ts
-// tailwind.config.ts
-import elevateConfig from '@g2crowd/elevate/tailwind';
+```js
+// tailwind.config.js
+const elevateConfig = require('@g2crowd/elevate/tailwind');
 
-export default {
+module.exports = {
   presets: [elevateConfig],
-  content: ['./src/**/*.{html,js,ts,tsx}'],
+  content: ['./src/**/*.{html,js,jsx}'],
 };
 ```
 
 ### Import the compiled CSS
 
-To get all Elevate styles (Tailwind base + component classes + typography):
-
-```ts
+```js
 import '@g2crowd/elevate/css';
 ```
 
 ### Use design tokens directly
 
-```ts
-import { colors, backgroundColors, foregroundColors } from '@g2crowd/elevate';
+```js
+const { colors, backgroundColors, foregroundColors } = require('@g2crowd/elevate');
 
-// Access raw palette
-colors.purple[100]; // '#5746b2'
-
-// Access semantic tokens
-backgroundColors.primary.DEFAULT; // '#5746b2'
-foregroundColors.link.DEFAULT;    // '#0073f5'
+colors.purple[100];                // '#5746b2'
+backgroundColors.primary.DEFAULT;  // '#5746b2'
+foregroundColors.link.DEFAULT;     // '#0073f5'
 ```
+
+## Component examples
+
+```bash
+yarn examples
+```
+
+Opens a static HTML page showcasing every CSS component with all variants, sizes, and states.
 
 ## Development
 
 ```bash
 yarn install
-yarn build        # Build JS + CSS
-yarn dev          # Watch mode (JS only)
-yarn typecheck    # TypeScript check
-yarn test         # Run tests
+yarn build       # Build CSS
+yarn test        # Run tests
+yarn examples    # Build + open component library in browser
 ```
 
 ## Migration strategy
 
 This package is being incrementally extracted from `engines/elevate/` in the UE monorepo. The migration order:
 
-1. **Theme + Tailwind config** (this scaffold) — design tokens, colors, spacing, typography
-2. **CSS component classes** — button, link, input, select, pagination, etc.
-3. **Stimulus controllers** — interactive behavior (modal, dropdown, tooltip, etc.)
+1. **Theme + Tailwind config** — design tokens, colors, spacing, typography
+2. **CSS component classes** — button, link, input, select, pagination, status badge, etc.
+3. **JS behaviors** — loading widget, interactive components (to be ported from UE's widget system)
 4. **ViewComponent Ruby classes** — server-side component definitions (separate gem)

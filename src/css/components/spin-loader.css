@@ -1,0 +1,36 @@
+@layer components {
+  .spin-loader {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-inline-block;
+    }
+  }
+
+  .spin-loader__icon {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-animate-spin;
+    }
+  }
+
+  .spin-loader__icon--primary {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-fill-purple;
+    }
+  }
+
+  .spin-loader__icon--neutral {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-fill-neutral-70;
+    }
+  }
+
+  .spin-loader__icon--inverted {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-fill-neutral-0;
+    }
+  }
+}

@@ -4,46 +4,26 @@
   "description": "G2 Elevate design system — Tailwind CSS theme, component styles, and design tokens",
   "license": "UNLICENSED",
   "private": true,
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./src/index.js",
   "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
+    ".": "./src/index.js",
     "./css": "./dist/elevate.css",
-    "./theme": {
-      "types": "./dist/theme/index.d.ts",
-      "import": "./dist/theme/index.js",
-      "require": "./dist/theme/index.cjs"
-    },
-    "./tailwind": {
-      "import": "./src/tailwind.config.ts",
-      "require": "./src/tailwind.config.ts"
-    },
-    "./tailwind.config": {
-      "import": "./src/tailwind.config.ts",
-      "require": "./src/tailwind.config.ts"
-    }
+    "./theme": "./src/theme/index.js",
+    "./theme/*": "./src/theme/*.js",
+    "./tailwind": "./src/tailwind.config.js",
+    "./tailwind.config": "./src/tailwind.config.js"
   },
   "files": [
-    "dist",
-    "src/tailwind.config.ts",
-    "src/theme",
-    "src/css"
+    "src",
+    "dist"
   ],
   "scripts": {
-    "build": "tsup && yarn build:css",
+    "build": "yarn build:css",
     "build:css": "postcss src/css/application.css -o dist/elevate.css",
-    "dev": "tsup --watch",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint src/",
-    "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "examples": "yarn build && open examples/index.html"
   },
   "dependencies": {
     "tailwindcss-scoped-preflight": "^3.0.0"
@@ -52,14 +32,12 @@
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
     "autoprefixer": "^10.4.20",
+    "happy-dom": "^20.0.2",
     "postcss": "^8.4.41",
     "postcss-cli": "^11.0.0",
     "postcss-import": "^16.1.0",
     "tailwindcss": "^3.4.10",
-    "tsup": "^8.3.0",
-    "typescript": "^5.6.0",
     "vitest": "^2.1.0"
   },
   "packageManager": "yarn@4.13.0"

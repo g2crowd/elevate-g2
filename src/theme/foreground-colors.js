@@ -1,6 +1,6 @@
-import { colors } from './color-palette';
+const colors = require('./color-palette');
 
-export const foregroundColors = {
+module.exports = {
   transparent: colors.transparent,
   current: colors.current,
   default: {
@@ -43,4 +43,4 @@ export const foregroundColors = {
   critical: {
     DEFAULT: colors.rorange[140],
   },
-} as const;
+};
