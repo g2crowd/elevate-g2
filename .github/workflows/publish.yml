@@ -10,7 +10,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       id-token: write
     steps:
       - name: Checkout
@@ -22,15 +22,18 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
 
-      - name: Bump version and push tag
-        id: tag
-        uses: anothrNick/github-tag-action@1.64.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: false
+      - name: Check if version already published
+        id: check
+        run: |
+          LOCAL=$(node -p "require('./package.json').version")
+          REMOTE=$(npm view @g2crowd/elevate version 2>/dev/null || echo "none")
+          echo "local=$LOCAL remote=$REMOTE"
+          if [ "$LOCAL" = "$REMOTE" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Publish to NPM
-        uses: JS-DevTools/npm-publish@v3
-        with:
-          provenance: true
-          access: public
+        if: steps.check.outputs.skip != 'true'
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
