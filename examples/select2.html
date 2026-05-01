@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select2 — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/3.5.2/select2.min.js"></script>
+</head>
+<body>
+
+<a class="back-link" href="./index.html">&larr; All Components</a>
+<h1>Select2</h1>
+<p class="subtitle">Vendor theme: <code>@g2crowd/elevate/vendor/select2</code>. Requires select2 3.5.x + jQuery.</p>
+
+<h2>Single Select</h2>
+<div class="component-col" elv>
+  <select class="elv-select elv-select--md" elv style="width: 300px;">
+    <option></option>
+    <option>Engineering</option>
+    <option>Design</option>
+    <option>Product</option>
+    <option>Marketing</option>
+    <option>Sales</option>
+  </select>
+</div>
+
+<h2>Single Select (small)</h2>
+<div class="component-col" elv>
+  <select class="elv-select elv-select--sm" elv style="width: 250px;">
+    <option></option>
+    <option>Q1 2025</option>
+    <option>Q2 2025</option>
+    <option>Q3 2025</option>
+    <option>Q4 2025</option>
+  </select>
+</div>
+
+<h2>Single Select (large)</h2>
+<div class="component-col" elv>
+  <select class="elv-select elv-select--lg" elv style="width: 350px;">
+    <option></option>
+    <option>United States</option>
+    <option>Canada</option>
+    <option>United Kingdom</option>
+    <option>Germany</option>
+    <option>Australia</option>
+  </select>
+</div>
+
+<h2>Multi Select</h2>
+<div class="component-col" elv>
+  <select class="elv-select elv-select--md" elv multiple style="width: 400px;">
+    <option>React</option>
+    <option>Vue</option>
+    <option>Angular</option>
+    <option>Svelte</option>
+    <option>Ember</option>
+    <option>Next.js</option>
+  </select>
+</div>
+
+<h2>Multi Select (small)</h2>
+<div class="component-col" elv>
+  <select class="elv-select elv-select--sm" elv multiple style="width: 350px;">
+    <option>Tag A</option>
+    <option>Tag B</option>
+    <option>Tag C</option>
+    <option>Tag D</option>
+  </select>
+</div>
+
+<h2>No Search</h2>
+<div class="component-col" elv>
+  <select class="elv-select elv-select--md" elv data-no-search style="width: 300px;">
+    <option></option>
+    <option>Active</option>
+    <option>Inactive</option>
+    <option>Pending</option>
+  </select>
+</div>
+
+<script>
+  $(document).ready(function() {
+    function elvClasses(el) {
+      var mods = $.map(el.attr('class').split(' '), function(c) {
+        return c.indexOf('elv-select--') === 0 ? c : null;
+      });
+      return 'elv-select ' + mods.join(' ');
+    }
+
+    $('select.elv-select').each(function() {
+      var $el = $(this);
+      var opts = {
+        width: 'resolve',
+        placeholder: 'Select...',
+        allowClear: !$el.prop('multiple'),
+        containerCssClass: elvClasses($el),
+        dropdownCssClass: 'elv-select-drop'
+      };
+
+      if ($el.data('no-search') !== undefined) {
+        opts.minimumResultsForSearch = -1;
+      }
+
+      $el.select2(opts);
+    });
+  });
+</script>
+
+</body>
+</html>

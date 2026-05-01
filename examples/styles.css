@@ -1,4 +1,6 @@
 @import '../src/css/application.css';
+@import '../src/css/vendor/select2.css';
+@import '../src/css/vendor/choices.css';
 
 body {
   font-family: 'Figtree', system-ui, sans-serif;

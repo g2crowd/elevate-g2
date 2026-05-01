@@ -16,7 +16,9 @@
     "./theme": "./src/theme/index.js",
     "./theme/*": "./src/theme/*.js",
     "./components": "./src/css/components.css",
-    "./components/*": "./src/css/components/*.css"
+    "./components/*": "./src/css/components/*.css",
+    "./vendor/select2": "./src/css/vendor/select2.css",
+    "./vendor/choices": "./src/css/vendor/choices.css"
   },
   "files": [
     "src",
