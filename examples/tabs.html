@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+<a class="back-link" href="./index.html">&larr; All Components</a>
+<h1>Tabs</h1>
+<p class="subtitle">CSS classes: <code>.elv-tab-group</code>, <code>.elv-tab-list</code>, <code>.elv-tab-list--full-width</code>, <code>.elv-tab</code>, <code>.elv-tab-icon</code>, <code>.elv-tab-panels</code></p>
+
+<h2>Default Tabs</h2>
+<div class="component-row" elv>
+  <div class="elv-tab-group" elv>
+    <div class="elv-tab-list" elv role="tablist" aria-label="Default tabs">
+      <button class="elv-tab" elv type="button" role="tab" aria-selected="false"><span class="elv-tab-icon" aria-hidden="true">1</span><span>Overview</span></button>
+      <button class="elv-tab" elv type="button" role="tab" aria-selected="true"><span class="elv-tab-icon" aria-hidden="true">2</span><span>Details</span></button>
+      <button class="elv-tab" elv type="button" role="tab" aria-selected="false"><span class="elv-tab-icon" aria-hidden="true">3</span><span>Activity</span></button>
+    </div>
+    <div class="elv-tab-panels" elv>
+      <div>Overview content with summary metrics, trends, and quick actions.</div>
+      <div>Details content with account information, settings, and configuration.</div>
+      <div>Activity content with recent changes, events, and audit history.</div>
+    </div>
+  </div>
+</div>
+
+<h2>Full Width Tabs</h2>
+<div class="component-row" elv>
+  <div class="elv-tab-group" elv>
+    <div class="elv-tab-list elv-tab-list--full-width" elv role="tablist" aria-label="Full width tabs">
+      <button class="elv-tab" elv type="button" role="tab" aria-selected="true"><span class="elv-tab-icon" aria-hidden="true">A</span><span>Accounts</span></button>
+      <button class="elv-tab" elv type="button" role="tab" aria-selected="false"><span class="elv-tab-icon" aria-hidden="true">B</span><span>Billing</span></button>
+      <button class="elv-tab" elv type="button" role="tab" aria-selected="false"><span class="elv-tab-icon" aria-hidden="true">C</span><span>Compliance</span></button>
+    </div>
+    <div class="elv-tab-panels" elv>
+      <div>Accounts content for managing teams, permissions, and access.</div>
+      <div>Billing content for invoices, payment methods, and plan updates.</div>
+      <div>Compliance content for retention, policies, and export controls.</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
