@@ -5,46 +5,186 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Elevate Component Library</title>
   <link rel="stylesheet" href="./styles.css">
+  <style>
+    body { display: flex; max-width: none; padding: 0; }
+
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 260px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 1.5rem 1rem;
+      background: #fff;
+      border-right: 1px solid #dfdfe2;
+      font-size: 0.875rem;
+    }
+    .sidebar h1 { font-size: 1.3125rem; margin-bottom: 1.5rem; }
+    .sidebar h3 {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #6f6d78;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+      padding-left: 0.75rem;
+    }
+    .sidebar a {
+      display: block;
+      padding: 0.375rem 0.75rem;
+      color: #201f23;
+      text-decoration: none;
+      border-radius: 0.25rem;
+    }
+    .sidebar a:hover { background: #f2f0f9; color: #5746b2; }
+    .sidebar a.ported { color: #5746b2; font-weight: 500; }
+    .sidebar a.planned { color: #6f6d78; }
+    .sidebar .legend {
+      font-size: 0.75rem;
+      color: #6f6d78;
+      padding: 0.75rem;
+      border-top: 1px solid #dfdfe2;
+      margin-top: 1rem;
+    }
+    .sidebar .legend span { display: block; margin-bottom: 0.25rem; }
+
+    .main {
+      margin-left: 260px;
+      padding: 2rem 3rem;
+      flex: 1;
+      max-width: 960px;
+    }
+  </style>
 </head>
 <body>
 
-<h1>Elevate Component Library</h1>
-<p class="subtitle">Visual reference for all <code>@g2crowd/elevate</code> CSS components.</p>
+<nav class="sidebar">
+  <h1>Elevate</h1>
 
-<div class="nav-grid">
-  <a class="nav-card" href="./buttons.html">
-    <strong>Buttons</strong>
-    <span>7 variants, 3 sizes, disabled, anchor, icons</span>
-  </a>
-  <a class="nav-card" href="./links.html">
-    <strong>Links</strong>
-    <span>Default, subtle, underline, sizes, semibold</span>
-  </a>
-  <a class="nav-card" href="./inputs.html">
-    <strong>Inputs</strong>
-    <span>Text, textarea, sizes, validation states</span>
-  </a>
-  <a class="nav-card" href="./selects.html">
-    <strong>Selects</strong>
-    <span>Native select with 3 sizes</span>
-  </a>
-  <a class="nav-card" href="./status-badges.html">
-    <strong>Status Badges</strong>
-    <span>6 semantic states, circle icon indicators</span>
-  </a>
-  <a class="nav-card" href="./spin-loaders.html">
-    <strong>Spin Loaders</strong>
-    <span>Primary, neutral, inverted variants</span>
-  </a>
-  <a class="nav-card" href="./progress-bars.html">
-    <strong>Progress Bars</strong>
-    <span>Brand/primary fill, sm/lg track sizes</span>
-  </a>
-  <a class="nav-card" href="./pagination.html">
-    <strong>Pagination</strong>
-    <span>Page numbers, nav links, disabled state</span>
-  </a>
+  <h3>Actions</h3>
+  <a class="ported" href="./buttons.html">Button</a>
+  <a class="planned">Button Group</a>
+  <a class="planned">Control Button</a>
+  <a class="planned">Icon Button</a>
+  <a class="ported" href="./links.html">Link</a>
 
+  <h3>Chips &amp; Tags</h3>
+  <a class="planned">Chip</a>
+
+  <h3>Containers</h3>
+  <a class="planned">Content Card</a>
+  <a class="planned">Inset Card</a>
+  <a class="planned">Table</a>
+
+  <h3>Data Display</h3>
+  <a class="planned">Number Change</a>
+  <a class="ported" href="./progress-bars.html">Progress Bar</a>
+  <a class="planned">Star Rating</a>
+  <a class="ported" href="./status-badges.html">Status Badge</a>
+
+  <h3>Forms</h3>
+  <a class="planned">Checkbox</a>
+  <a class="planned">File Input</a>
+  <a class="planned">Helper Text</a>
+  <a class="planned">Label</a>
+  <a class="planned">Number Input</a>
+  <a class="planned">Radio Button</a>
+  <a class="planned">Search Input</a>
+  <a class="ported" href="./selects.html">Select</a>
+  <a class="ported" href="./inputs.html">Text Input</a>
+  <a class="planned">Text Area</a>
+  <a class="planned">Toggle</a>
+
+  <h3>Layout</h3>
+  <a class="planned">Accordion</a>
+  <a class="planned">Notification Badge</a>
+  <a class="ported" href="./spin-loaders.html">Spin Loader</a>
+  <a class="planned">Typography</a>
+
+  <h3>Media</h3>
+  <a class="planned">Avatar</a>
+  <a class="planned">Icon</a>
+
+  <h3>Navigation</h3>
+  <a class="planned">Breadcrumbs</a>
+  <a class="planned">Index Nav</a>
+  <a class="ported" href="./pagination.html">Pagination</a>
+  <a class="planned">Tab</a>
+
+  <h3>Overlays</h3>
+  <a class="planned">Dropdown Menu</a>
+  <a class="planned">Filter Dropdown</a>
+  <a class="planned">Modal</a>
+  <a class="planned">Notification</a>
+  <a class="planned">Popover</a>
+  <a class="planned">Toast</a>
+  <a class="planned">Tooltip</a>
+
+  <div class="legend">
+    <span><strong style="color: #5746b2;">Purple</strong> = ported</span>
+    <span><strong style="color: #6f6d78;">Gray</strong> = planned</span>
+  </div>
+</nav>
+
+<div class="main">
+  <h1>Elevate Component Library</h1>
+  <p class="subtitle">
+    Visual reference for <code>@g2crowd/elevate</code>. 
+    Ported components have live examples. Gray items are planned.
+  </p>
+
+  <h2>Getting Started</h2>
+  <div class="component-col">
+    <p><strong>Install:</strong> <code>yarn add @g2crowd/elevate</code></p>
+    <p><strong>Tailwind preset:</strong></p>
+    <pre style="background: #f2f2f3; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem;">const elevateConfig = require('@g2crowd/elevate/tailwind');
+
+module.exports = {
+  presets: [elevateConfig],
+  content: [...]
+};</pre>
+    <p><strong>Import components:</strong></p>
+    <pre style="background: #f2f2f3; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem;">@import '@g2crowd/elevate/components';
+@import '@g2crowd/elevate/vendor/select2';  /* if using select2 */
+@import '@g2crowd/elevate/vendor/choices';  /* if using choices.js */</pre>
+  </div>
+
+  <h2>Ported Components</h2>
+  <div class="nav-grid">
+    <a class="nav-card" href="./buttons.html">
+      <strong>Buttons</strong>
+      <span>7 variants, 3 sizes, disabled, anchor, icons</span>
+    </a>
+    <a class="nav-card" href="./links.html">
+      <strong>Links</strong>
+      <span>Default, subtle, underline, sizes, semibold</span>
+    </a>
+    <a class="nav-card" href="./inputs.html">
+      <strong>Inputs</strong>
+      <span>Text, textarea, sizes, validation states</span>
+    </a>
+    <a class="nav-card" href="./selects.html">
+      <strong>Selects</strong>
+      <span>Native, Select2, Choices.js vendor themes</span>
+    </a>
+    <a class="nav-card" href="./status-badges.html">
+      <strong>Status Badges</strong>
+      <span>6 semantic states, icon indicators</span>
+    </a>
+    <a class="nav-card" href="./progress-bars.html">
+      <strong>Progress Bars</strong>
+      <span>Brand/primary fill, sm/lg sizes</span>
+    </a>
+    <a class="nav-card" href="./pagination.html">
+      <strong>Pagination</strong>
+      <span>Page numbers, nav links, disabled</span>
+    </a>
+    <a class="nav-card" href="./spin-loaders.html">
+      <strong>Spin Loaders</strong>
+      <span>Primary, neutral, inverted</span>
+    </a>
+  </div>
 </div>
 
 </body>
