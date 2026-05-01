@@ -1,0 +1,51 @@
+@layer components {
+  .elv-breadcrumbs {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-inline-flex elv-items-center elv-gap-0.5;
+    }
+  }
+
+  .elv-breadcrumb-item {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-flex elv-items-center elv-gap-0.5;
+    }
+  }
+
+  .elv-breadcrumb-link {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-text-nonessential elv-no-underline elv-text-xs elv-leading-xs
+        elv-transition-all elv-duration-150;
+    }
+  }
+
+  .elv-breadcrumb-link:hover {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-text-default;
+    }
+  }
+
+  .elv-breadcrumb-link:focus-visible {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-outline elv-outline-3 elv-outline-purple-40 elv-outline-offset-1 elv-rounded-2xs;
+    }
+  }
+
+  .elv-breadcrumb-link--current {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-text-default elv-pointer-events-none;
+    }
+  }
+
+  .elv-breadcrumb-separator {
+    :where([elv]) &,
+    &:where([elv]) {
+      @apply elv-w-5 elv-h-5 elv-shrink-0 elv-fill-neutral-70;
+    }
+  }
+}
