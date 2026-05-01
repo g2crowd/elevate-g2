@@ -1,19 +1,5 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
-@import 'elevate-content';
-
-@import 'components/button';
-@import 'components/link';
-@import 'components/media-carousel';
-@import 'components/input';
-@import 'components/select';
-@import 'components/pagination';
-@import 'components/dropdown-menu';
-@import 'components/status-badge';
-@import 'components/spin-loader';
-@import 'components/progress-bar';
-
-@import 'search';
-@import 'sortable';
+@import 'components';
 @import 'typography';

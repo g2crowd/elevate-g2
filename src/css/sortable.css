@@ -1,7 +1,0 @@
-.sortable-ghost {
-  @apply elv-bg-primary-10 elv-rounded-md;
-}
-
-.sortable-ghost * {
-  @apply elv-invisible;
-}
