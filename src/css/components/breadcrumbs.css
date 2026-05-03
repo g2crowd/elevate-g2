@@ -45,7 +45,7 @@
   .elv-breadcrumb-separator {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-5 elv-h-5 elv-shrink-0 elv-fill-neutral-70;
+      @apply elv-w-4 elv-h-4 elv-shrink-0 elv-fill-neutral-70;
     }
   }
 }
