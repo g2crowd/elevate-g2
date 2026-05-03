@@ -10,35 +10,35 @@
   .elv-avatar--xl {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-26 elv-h-26 elv-rounded-xl;
+      @apply elv-size-21 elv-rounded-xl;
     }
   }
 
   .elv-avatar--lg {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-16 elv-h-16 elv-rounded-full;
+      @apply elv-size-15 elv-rounded-full;
     }
   }
 
   .elv-avatar--md {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-12 elv-h-12 elv-rounded-full;
+      @apply elv-size-11 elv-rounded-full;
     }
   }
 
   .elv-avatar--sm {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-8 elv-h-8 elv-rounded-full;
+      @apply elv-size-9 elv-rounded-full;
     }
   }
 
   .elv-avatar--xs {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-5 elv-h-5 elv-rounded-full;
+      @apply elv-size-7 elv-rounded-full;
     }
   }
 
