@@ -1,8 +1,8 @@
 @layer components {
-  .elv-breadcrumbs {
+  .elv-breadcrumbs__list {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-inline-flex elv-items-center elv-gap-0.5;
+      @apply elv-inline-flex elv-items-center elv-gap-0.5 elv-list-none elv-m-0 elv-p-0;
     }
   }
 
