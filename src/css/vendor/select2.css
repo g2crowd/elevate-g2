@@ -280,6 +280,26 @@ html[dir='rtl']
   position: absolute;
   font-size: 1px;
   outline: none;
+  cursor: pointer;
+}
+
+.elv-select .select2-search-choice-close::before,
+.elv-select .select2-search-choice-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 0;
+  border-top: 1px solid currentColor;
+}
+
+.elv-select .select2-search-choice-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.elv-select .select2-search-choice-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
 .elv-select.select2-container-multi .select2-search-choice-close {
