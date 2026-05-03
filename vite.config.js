@@ -22,6 +22,7 @@ export default defineConfig({
     postcss: {
       plugins: [
         require('postcss-import')(),
+        require('tailwindcss/nesting')(),
         require('tailwindcss')(resolve(__dirname, 'tailwind.build.config.js')),
         require('autoprefixer')(),
       ],
