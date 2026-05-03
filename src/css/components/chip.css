@@ -1,5 +1,5 @@
 @layer components {
-  .elv-chip {
+  .chip {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-inline-flex elv-w-fit elv-items-center elv-justify-center
@@ -8,42 +8,42 @@
     }
   }
 
-  .elv-chip:hover {
+  .chip:hover {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-bg-primary-30 elv-text-primary;
     }
   }
 
-  .elv-chip[data-selected="true"] {
+  .chip[data-selected="true"] {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-bg-primary-20 elv-text-primary;
     }
   }
 
-  .elv-chip--xs {
+  .chip--xs {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-h-4 elv-py-0.5 elv-rounded-xs elv-text-xs elv-font-semibold;
     }
   }
 
-  .elv-chip--sm {
+  .chip--sm {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-h-6 elv-py-0.5 elv-rounded-xs elv-text-sm elv-font-semibold;
     }
   }
 
-  .elv-chip--md {
+  .chip--md {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-h-8 elv-py-0.5 elv-px-1 elv-rounded-sm elv-text-sm elv-font-semibold;
     }
   }
 
-  .elv-chip__label {
+  .chip__label {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-px-0.5 elv-whitespace-nowrap;
@@ -53,7 +53,7 @@
     }
   }
 
-  .elv-chip__icon {
+  .chip__icon {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-primary elv-shrink-0;
@@ -61,40 +61,40 @@
     }
   }
 
-  .elv-chip__icon--hidden {
+  .chip__icon--hidden {
     width: 0 !important;
     overflow: hidden;
   }
 
-  .elv-chip__icon--xs {
+  .chip__icon--xs {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-w-3 elv-h-3;
     }
   }
 
-  .elv-chip__icon--sm {
+  .chip__icon--sm {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-w-4 elv-h-4;
     }
   }
 
-  .elv-chip__icon--trailing {
+  .chip__icon--trailing {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-rounded-2xs;
     }
   }
 
-  .elv-chip__icon--trailing:hover {
+  .chip__icon--trailing:hover {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-bg-primary-40 elv-text-default;
     }
   }
 
-  .elv-chip--dismissing {
+  .chip--dismissing {
     opacity: 0;
     transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
