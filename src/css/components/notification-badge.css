@@ -3,8 +3,7 @@
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-justify-center elv-items-center elv-p-1
-        elv-rounded-lg elv-border elv-border-inverted
-        elv-text-xs elv-font-semibold elv-leading-xs;
+        elv-rounded-lg elv-border elv-border-inverted;
     }
   }
 
@@ -39,7 +38,7 @@
   .elv-notification-badge--dot {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-1 elv-h-1 elv-p-0;
+      @apply elv-w-1 elv-h-1;
     }
   }
 
