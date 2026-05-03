@@ -10,31 +10,51 @@
 
 <a class="back-link" href="./index.html">&larr; All Components</a>
 <h1>Breadcrumbs</h1>
-<p class="subtitle">CSS classes: <code>.elv-breadcrumbs</code>, <code>.elv-breadcrumb-item</code>, <code>.elv-breadcrumb-link</code>, <code>.elv-breadcrumb-link--current</code>, <code>.elv-breadcrumb-separator</code></p>
+<p class="subtitle">CSS classes: <code>.elv-breadcrumbs</code>, <code>.elv-breadcrumbs__list</code>, <code>.elv-breadcrumb-item</code>, <code>.elv-breadcrumb-link</code>, <code>.elv-breadcrumb-link--current</code>, <code>.elv-breadcrumb-separator</code></p>
 
 <h2>Basic Breadcrumbs</h2>
 <div class="component-row" elv>
   <nav class="elv-breadcrumbs" elv aria-label="Breadcrumb">
-    <div class="elv-breadcrumb-item" elv><a class="elv-breadcrumb-link" elv href="#">Home</a></div>
-    <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    <div class="elv-breadcrumb-item" elv><a class="elv-breadcrumb-link" elv href="#">Library</a></div>
-    <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    <div class="elv-breadcrumb-item" elv><span class="elv-breadcrumb-link elv-breadcrumb-link--current" elv aria-current="page">Chips</span></div>
+    <ol class="elv-breadcrumbs__list" elv>
+      <li class="elv-breadcrumb-item" elv>
+        <a class="elv-breadcrumb-link" elv href="#">Home</a>
+        <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </li>
+      <li class="elv-breadcrumb-item" elv>
+        <a class="elv-breadcrumb-link" elv href="#">Library</a>
+        <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </li>
+      <li class="elv-breadcrumb-item" elv>
+        <span class="elv-breadcrumb-link elv-breadcrumb-link--current" elv aria-current="page">Chips</span>
+      </li>
+    </ol>
   </nav>
 </div>
 
 <h2>Deep Breadcrumbs</h2>
 <div class="component-row" elv>
   <nav class="elv-breadcrumbs" elv aria-label="Breadcrumb">
-    <div class="elv-breadcrumb-item" elv><a class="elv-breadcrumb-link" elv href="#">Home</a></div>
-    <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    <div class="elv-breadcrumb-item" elv><a class="elv-breadcrumb-link" elv href="#">Solutions</a></div>
-    <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    <div class="elv-breadcrumb-item" elv><a class="elv-breadcrumb-link" elv href="#">Product Analytics</a></div>
-    <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    <div class="elv-breadcrumb-item" elv><a class="elv-breadcrumb-link" elv href="#">Dashboards</a></div>
-    <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-    <div class="elv-breadcrumb-item" elv><span class="elv-breadcrumb-link elv-breadcrumb-link--current" elv aria-current="page">Quarterly Revenue</span></div>
+    <ol class="elv-breadcrumbs__list" elv>
+      <li class="elv-breadcrumb-item" elv>
+        <a class="elv-breadcrumb-link" elv href="#">Home</a>
+        <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </li>
+      <li class="elv-breadcrumb-item" elv>
+        <a class="elv-breadcrumb-link" elv href="#">Solutions</a>
+        <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </li>
+      <li class="elv-breadcrumb-item" elv>
+        <a class="elv-breadcrumb-link" elv href="#">Product Analytics</a>
+        <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </li>
+      <li class="elv-breadcrumb-item" elv>
+        <a class="elv-breadcrumb-link" elv href="#">Dashboards</a>
+        <svg class="elv-breadcrumb-separator" viewBox="0 0 20 20" aria-hidden="true"><path d="M7 4l6 6-6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+      </li>
+      <li class="elv-breadcrumb-item" elv>
+        <span class="elv-breadcrumb-link elv-breadcrumb-link--current" elv aria-current="page">Quarterly Revenue</span>
+      </li>
+    </ol>
   </nav>
 </div>
 
