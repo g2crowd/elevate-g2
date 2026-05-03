@@ -3,7 +3,7 @@
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-relative elv-flex elv-items-center elv-justify-center
-        elv-border-2 elv-border-inverted elv-overflow-hidden;
+        elv-border-2 elv-border-inverted;
     }
   }
 
@@ -45,7 +45,7 @@
   .elv-avatar__image {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-w-full elv-h-full;
+      @apply elv-w-full elv-h-full elv-overflow-hidden;
       object-fit: cover;
       object-position: center;
       border-radius: inherit;
@@ -56,7 +56,8 @@
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-relative elv-flex elv-items-center elv-justify-center
-        elv-w-full elv-h-full elv-bg-primary elv-text-inverted elv-font-semibold;
+        elv-w-full elv-h-full elv-bg-primary elv-text-inverted elv-font-semibold
+        elv-overflow-hidden;
       border-radius: inherit;
     }
   }
