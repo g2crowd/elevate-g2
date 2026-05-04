@@ -13,8 +13,8 @@ const NAV_HTML = `
   <a href="./chips.html">Chip</a>
 
   <h3>Containers</h3>
-  <a class="planned">Content Card</a>
-  <a class="planned">Inset Card</a>
+  <a href="./content-cards.html">Content Card</a>
+  <a href="./inset-cards.html">Inset Card</a>
   <a class="planned">Table</a>
 
   <h3>Data Display</h3>
@@ -44,7 +44,7 @@ const NAV_HTML = `
 
   <h3>Media</h3>
   <a href="./avatars.html">Avatar</a>
-  <a class="planned">Icon</a>
+  <a href="./icons.html">Icon</a>
 
   <h3>Navigation</h3>
   <a href="./breadcrumbs.html">Breadcrumbs</a>

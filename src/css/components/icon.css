@@ -1,0 +1,45 @@
+@layer components {
+  .icon {
+    @apply elv-shrink-0;
+  }
+
+  .icon--xs {
+    @apply elv-w-4 elv-h-4;
+  }
+
+  .icon--sm {
+    @apply elv-w-5 elv-h-5;
+  }
+
+  .icon--md {
+    @apply elv-w-6 elv-h-6;
+  }
+
+  .icon--lg {
+    @apply elv-w-7 elv-h-7;
+  }
+
+  .icon--pictogram-xs {
+    @apply elv-w-6 elv-h-6;
+  }
+
+  .icon--pictogram-sm {
+    @apply elv-w-8 elv-h-8;
+  }
+
+  .icon--pictogram-md {
+    @apply elv-w-11 elv-h-11;
+  }
+
+  .icon--pictogram-lg {
+    @apply elv-w-13 elv-h-13;
+  }
+
+  .icon--pictogram-xl {
+    @apply elv-w-15 elv-h-15;
+  }
+
+  .icon--fill-current {
+    @apply elv-fill-current;
+  }
+}

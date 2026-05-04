@@ -1,0 +1,17 @@
+@layer components {
+  .inset-card {
+    @apply elv-flex elv-border elv-rounded-sm elv-border-light elv-bg-neutral-5;
+  }
+
+  .inset-card--sm {
+    @apply elv-p-2;
+  }
+
+  .inset-card--md {
+    @apply elv-p-4;
+  }
+
+  .inset-card--lg {
+    @apply elv-p-6;
+  }
+}

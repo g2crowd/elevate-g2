@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icons — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Icons</h1>
+<p class="subtitle">CSS classes: <code>.icon</code>, <code>.icon--{xs|sm|md|lg}</code>, <code>.icon--pictogram-{xs|sm|md|lg|xl}</code>, <code>.icon--fill-current</code></p>
+
+<h2>Regular Icon Sizes</h2>
+<div class="component-row" elv>
+  <div style="text-align: center;">
+    <svg class="icon icon--xs" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">xs</div>
+  </div>
+  <div style="text-align: center;">
+    <svg class="icon icon--sm" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">sm</div>
+  </div>
+  <div style="text-align: center;">
+    <svg class="icon icon--md" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">md (default)</div>
+  </div>
+  <div style="text-align: center;">
+    <svg class="icon icon--lg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">lg</div>
+  </div>
+</div>
+
+<h2>Pictogram Sizes</h2>
+<div class="component-row" elv>
+  <div style="text-align: center;">
+    <svg class="icon icon--pictogram-xs" viewBox="0 0 24 24"><path fill="#5746b2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">pictogram-xs</div>
+  </div>
+  <div style="text-align: center;">
+    <svg class="icon icon--pictogram-sm" viewBox="0 0 24 24"><path fill="#5746b2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">pictogram-sm</div>
+  </div>
+  <div style="text-align: center;">
+    <svg class="icon icon--pictogram-md" viewBox="0 0 24 24"><path fill="#5746b2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">pictogram-md</div>
+  </div>
+  <div style="text-align: center;">
+    <svg class="icon icon--pictogram-lg" viewBox="0 0 24 24"><path fill="#5746b2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">pictogram-lg</div>
+  </div>
+  <div style="text-align: center;">
+    <svg class="icon icon--pictogram-xl" viewBox="0 0 24 24"><path fill="#5746b2" d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+    <div style="font-size: 0.75rem; color: #6f6d78; margin-top: 0.5rem;">pictogram-xl</div>
+  </div>
+</div>
+
+<h2>Fill Current</h2>
+<p>UI icons use <code>.icon--fill-current</code> so they inherit the parent's <code>color</code>.</p>
+<div class="component-row" elv>
+  <div style="color: #5746b2;">
+    <svg class="icon icon--md icon--fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <span style="margin-left: 0.5rem;">Inherits purple</span>
+  </div>
+  <div style="color: #d32f2f;">
+    <svg class="icon icon--md icon--fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <span style="margin-left: 0.5rem;">Inherits red</span>
+  </div>
+  <div style="color: #201f23;">
+    <svg class="icon icon--md icon--fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+    <span style="margin-left: 0.5rem;">Inherits default</span>
+  </div>
+</div>
+
+</body>
+</html>
