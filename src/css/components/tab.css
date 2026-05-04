@@ -32,10 +32,10 @@
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-items-center elv-justify-center elv-gap-1
-        elv-h-10 elv-px-6 elv-border-0 elv-bg-transparent elv-cursor-pointer
+        elv-h-10 elv-px-6 elv-bg-transparent elv-cursor-pointer
         elv-font-figtree elv-text-sm elv-leading-sm elv-font-semibold
         elv-text-subtle elv-transition-all elv-duration-150 elv-relative elv-whitespace-nowrap;
-      padding-bottom: 1px;
+      border-bottom: 2px solid transparent;
     }
   }
 
@@ -43,8 +43,7 @@
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-primary;
-      padding-bottom: 0;
-      border-bottom: 2px solid currentColor;
+      border-bottom-color: currentColor;
     }
   }
 
@@ -52,8 +51,7 @@
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-primary;
-      padding-bottom: 0;
-      border-bottom: 2px solid currentColor;
+      border-bottom-color: currentColor;
     }
   }
 
