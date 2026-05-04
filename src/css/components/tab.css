@@ -1,26 +1,26 @@
 @layer components {
-  .elv-tab-group {
+  .tab-group {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-flex-col;
     }
   }
 
-  .elv-tab-list {
+  .tab-list {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-items-center;
     }
   }
 
-  .elv-tab-list--full-width {
+  .tab-list--full-width {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-border-b elv-border-medium;
     }
   }
 
-  .elv-tab-list--full-width .elv-tab {
+  .tab-list--full-width .tab {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex-1;
@@ -28,7 +28,7 @@
     }
   }
 
-  .elv-tab {
+  .tab {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-items-center elv-justify-center elv-gap-1
@@ -39,7 +39,7 @@
     }
   }
 
-  .elv-tab:hover {
+  .tab:hover {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-primary;
@@ -48,7 +48,7 @@
     }
   }
 
-  .elv-tab[aria-selected="true"] {
+  .tab[aria-selected="true"] {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-primary;
@@ -57,7 +57,7 @@
     }
   }
 
-  .elv-tab:focus-visible {
+  .tab:focus-visible {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-outline elv-outline-3 elv-outline-purple-40;
@@ -66,14 +66,14 @@
     }
   }
 
-  .elv-tab-icon {
+  .tab-icon {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-w-4 elv-h-4 elv-shrink-0;
     }
   }
 
-  .elv-tab-panels {
+  .tab-panels {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-mt-4;
