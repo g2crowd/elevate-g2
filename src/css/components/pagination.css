@@ -33,10 +33,11 @@
   :where([elv]) .pagination__component-gap,
   :where([elv]).pagination__component-gap {
     @apply
-      elv-leading-[2rem]
+      elv-flex
+      elv-items-center
+      elv-justify-center
       elv-pointer-events-none
       elv-rounded-sm
-      elv-text-center
       elv-text-sm
       elv-text-subtle;
   }
@@ -47,8 +48,9 @@
       elv-bg-primary-20
       elv-border
       elv-border-focus
-      elv-leading-[2rem]
-      elv-text-center
+      elv-flex
+      elv-items-center
+      elv-justify-center
       elv-text-sm
       elv-text-subtle
       elv-rounded-sm;
@@ -59,11 +61,11 @@
   :where([elv]) .pagination__page-number-link,
   :where([elv]).pagination__page-number-link {
     @apply a--reset
-      elv-block
+      elv-flex
+      elv-items-center
+      elv-justify-center
       elv-max-w-full
       elv-size-8
-      elv-leading-[2rem]
-      elv-text-center
       elv-font-normal
       elv-text-sm
       elv-text-subtle

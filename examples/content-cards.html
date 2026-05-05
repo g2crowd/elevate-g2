@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Content Cards — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Content Cards</h1>
+<p class="subtitle">CSS classes: <code>.content-card</code>, <code>.content-card__header</code>, <code>.content-card__content</code>, <code>.content-card__footer</code></p>
+
+<h2>Basic Card (md)</h2>
+<div elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__header">
+      <h5 style="margin: 0; font-size: 1rem; font-weight: 600;">Card Title</h5>
+      <p style="margin: 0; font-size: 0.875rem; color: #6f6d78;">A short description of this card's content.</p>
+    </div>
+    <div class="content-card__content content-card__content--md-no-footer">
+      <p style="margin: 0;">Card body content goes here. This is a medium-sized card without a footer.</p>
+    </div>
+  </div>
+</div>
+
+<h2>Card with Footer (md)</h2>
+<div elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__header">
+      <h5 style="margin: 0; font-size: 1rem; font-weight: 600;">Card with Footer</h5>
+    </div>
+    <div class="content-card__content content-card__content--md">
+      <p style="margin: 0;">Content area with a footer below.</p>
+    </div>
+    <div class="content-card__footer content-card__footer--right">
+      <button class="btn btn--secondary btn--sm" elv>Cancel</button>
+      <button class="btn btn--primary btn--sm" elv>Save</button>
+    </div>
+  </div>
+</div>
+
+<h2>Large Card (lg)</h2>
+<div elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__header content-card__header--lg">
+      <h5 style="margin: 0; font-size: 1rem; font-weight: 600;">Large Card</h5>
+      <p style="margin: 0; font-size: 0.875rem; color: #6f6d78;">The large variant adds a border between header and content.</p>
+    </div>
+    <div class="content-card__content content-card__content--lg">
+      <p style="margin: 0;">Content with larger spacing.</p>
+    </div>
+    <div class="content-card__footer content-card__footer--lg content-card__footer--right">
+      <button class="btn btn--primary btn--md" elv>Submit</button>
+    </div>
+  </div>
+</div>
+
+<h2>Background Variants</h2>
+<div class="component-col" elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md-no-footer">
+      <p style="margin: 0;">Default background (white)</p>
+    </div>
+  </div>
+  <div class="content-card content-card--bg-purple" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md-no-footer">
+      <p style="margin: 0;">Purple background</p>
+    </div>
+  </div>
+</div>
+
+<h2>Border Variants</h2>
+<div class="component-col" elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md-no-footer">
+      <p style="margin: 0;">Default border (light)</p>
+    </div>
+  </div>
+  <div class="content-card content-card--border-whisper" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md-no-footer">
+      <p style="margin: 0;">Whisper border</p>
+    </div>
+  </div>
+  <div class="content-card content-card--border-purple" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md-no-footer">
+      <p style="margin: 0;">Purple border</p>
+    </div>
+  </div>
+</div>
+
+<h2>Compact Content Padding</h2>
+<div elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__header">
+      <h5 style="margin: 0; font-size: 1rem; font-weight: 600;">Compact Card</h5>
+    </div>
+    <div class="content-card__content content-card__content--compact">
+      <div style="background: #f5f5f5; padding: 1rem; text-align: center;">Content fills edge-to-edge (no padding)</div>
+    </div>
+  </div>
+</div>
+
+<h2>Footer Alignment</h2>
+<div class="component-col" elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md">
+      <p style="margin: 0;">Right-aligned footer (default)</p>
+    </div>
+    <div class="content-card__footer content-card__footer--right">
+      <button class="btn btn--primary btn--sm" elv>Action</button>
+    </div>
+  </div>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md">
+      <p style="margin: 0;">Center-aligned footer</p>
+    </div>
+    <div class="content-card__footer content-card__footer--center">
+      <button class="btn btn--primary btn--sm" elv>Action</button>
+    </div>
+  </div>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__content content-card__content--md">
+      <p style="margin: 0;">Left-aligned footer</p>
+    </div>
+    <div class="content-card__footer">
+      <button class="btn btn--primary btn--sm" elv>Action</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
