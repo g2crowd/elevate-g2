@@ -11,7 +11,7 @@
 
   :where([elv]) .pagination__only-elv,
   :where([elv]).pagination__only-elv {
-    @apply elv-flex elv-items-center elv-justify-center;
+    @apply elv-flex elv-items-center elv-justify-center elv-gap-1;
   }
 
   :where([elv]) .pagination__component,
