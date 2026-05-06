@@ -6,7 +6,7 @@ const NAV_HTML = `
   <a href="./buttons.html">Button</a>
   <a href="./button-groups.html">Button Group</a>
   <a class="planned">Control Button</a>
-  <a class="planned">Icon Button</a>
+  <a href="./icon-buttons.html">Icon Button</a>
   <a href="./links.html">Link</a>
 
   <h3>Chips &amp; Tags</h3>

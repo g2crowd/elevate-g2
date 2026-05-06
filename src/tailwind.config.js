@@ -92,13 +92,14 @@ module.exports = {
       'right-3': '0px 0px 1px 0px rgba(32, 31, 35, 0.32), 18px 0px 28px -4px rgba(32, 31, 35, 0.15)',
       'ui-focus': '0px 0px 0px 0.5px rgb(255, 255, 255), 0px 0px 0px 3px rgb(195, 189, 229)',
       'button-secondary-press': '0px 0px 4px 1px rgba(32, 31, 35, 0.20)',
-      'inset': 'inset 0 0 4px 1px rgba(32, 31, 35, 0.20)'
+      'inset': 'inset 0 0 4px 1px rgba(32, 31, 35, 0.20)',
+      DEFAULT: '0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)'
     },
     outlineWidth: {
       3: '3px'
     },
     spacing: {
-      0: '0', px: '1px', 0.5: '0.125rem',
+      0: '0', px: '1px', 0.5: '0.125rem', 1.5: '0.375rem', 2.5: '0.625rem', 3.5: '0.875rem',
       ...Object.fromEntries(
         Array.from({ length: 100 }, (_, i) => [i + 1, `${(i + 1) * 0.25}rem`])
       )
