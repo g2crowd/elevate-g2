@@ -58,5 +58,69 @@
   </nav>
 </div>
 
+<h2>Two Crumbs</h2>
+<div class="component-row" elv>
+  <nav class="breadcrumbs" elv aria-label="Breadcrumb">
+    <ol class="breadcrumbs__list" elv>
+      <li class="breadcrumbs__item" elv>
+        <a class="breadcrumbs__link" elv href="#">Home</a>
+        <svg class="breadcrumbs__separator" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.875 10L6.9375 6.0625L8 5L13 10L8 15L6.9375 13.9375L10.875 10Z"/></svg>
+      </li>
+      <li class="breadcrumbs__item" elv>
+        <span class="breadcrumbs__link breadcrumbs__link--current" elv aria-current="page">Current Page</span>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<h2>Five Crumbs</h2>
+<div class="component-row" elv>
+  <nav class="breadcrumbs" elv aria-label="Breadcrumb">
+    <ol class="breadcrumbs__list" elv>
+      <li class="breadcrumbs__item" elv>
+        <a class="breadcrumbs__link" elv href="#">Home</a>
+        <svg class="breadcrumbs__separator" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.875 10L6.9375 6.0625L8 5L13 10L8 15L6.9375 13.9375L10.875 10Z"/></svg>
+      </li>
+      <li class="breadcrumbs__item" elv>
+        <a class="breadcrumbs__link" elv href="#">Category</a>
+        <svg class="breadcrumbs__separator" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.875 10L6.9375 6.0625L8 5L13 10L8 15L6.9375 13.9375L10.875 10Z"/></svg>
+      </li>
+      <li class="breadcrumbs__item" elv>
+        <a class="breadcrumbs__link" elv href="#">Subcategory</a>
+        <svg class="breadcrumbs__separator" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.875 10L6.9375 6.0625L8 5L13 10L8 15L6.9375 13.9375L10.875 10Z"/></svg>
+      </li>
+      <li class="breadcrumbs__item" elv>
+        <a class="breadcrumbs__link" elv href="#">Section</a>
+        <svg class="breadcrumbs__separator" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.875 10L6.9375 6.0625L8 5L13 10L8 15L6.9375 13.9375L10.875 10Z"/></svg>
+      </li>
+      <li class="breadcrumbs__item" elv>
+        <span class="breadcrumbs__link breadcrumbs__link--current" elv aria-current="page">Current Page</span>
+      </li>
+    </ol>
+  </nav>
+</div>
+
+<h2>With SEO Markup</h2>
+<div class="component-row" elv>
+  <nav class="breadcrumbs" elv aria-label="Breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <ol class="breadcrumbs__list" elv>
+      <li class="breadcrumbs__item" elv itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a class="breadcrumbs__link" elv href="#" itemprop="item"><span itemprop="name">Home</span></a>
+        <meta itemprop="position" content="1">
+        <svg class="breadcrumbs__separator" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.875 10L6.9375 6.0625L8 5L13 10L8 15L6.9375 13.9375L10.875 10Z"/></svg>
+      </li>
+      <li class="breadcrumbs__item" elv itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a class="breadcrumbs__link" elv href="#" itemprop="item"><span itemprop="name">Library</span></a>
+        <meta itemprop="position" content="2">
+        <svg class="breadcrumbs__separator" width="16" height="16" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10.875 10L6.9375 6.0625L8 5L13 10L8 15L6.9375 13.9375L10.875 10Z"/></svg>
+      </li>
+      <li class="breadcrumbs__item" elv itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <span class="breadcrumbs__link breadcrumbs__link--current" elv aria-current="page" itemprop="name">Current Page</span>
+        <meta itemprop="position" content="3">
+      </li>
+    </ol>
+  </nav>
+</div>
+
 </body>
 </html>
