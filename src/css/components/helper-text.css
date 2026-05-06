@@ -1,0 +1,32 @@
+@layer components {
+  .helper-text {
+    @apply elv-font-figtree
+      elv-text-sm
+      elv-leading-sm
+      elv-text-subtle
+      elv-inline-flex
+      elv-items-center
+      elv-gap-0.5
+      elv-mt-1;
+  }
+
+  .helper-text--sm {
+    @apply elv-text-xs elv-leading-xs;
+  }
+
+  .helper-text--error {
+    @apply elv-text-critical;
+  }
+
+  .helper-text--success {
+    @apply elv-text-success;
+  }
+
+  .helper-text--warning {
+    @apply elv-text-warning;
+  }
+
+  .helper-text--disabled {
+    @apply elv-text-disabled;
+  }
+}
