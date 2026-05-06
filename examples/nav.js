@@ -5,7 +5,7 @@ const NAV_HTML = `
   <h3>Actions</h3>
   <a href="./buttons.html">Button</a>
   <a href="./button-groups.html">Button Group</a>
-  <a class="planned">Control Button</a>
+  <a href="./control-buttons.html">Control Button</a>
   <a href="./icon-buttons.html">Icon Button</a>
   <a href="./links.html">Link</a>
 
