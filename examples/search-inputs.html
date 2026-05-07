@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search Input — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Search Input</h1>
+<p class="subtitle">CSS component: <code>.search-input</code>. Pill-shaped input with inlined search icon.</p>
+
+<h2>Sizes</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div>
+      <label class="elv-label elv-label--sm">Small</label>
+      <div class="search-input search-input--sm">
+        <input type="search" class="elv-input" placeholder="Search...">
+      </div>
+    </div>
+    <div>
+      <label class="elv-label">Medium</label>
+      <div class="search-input search-input--md">
+        <input type="search" class="elv-input" placeholder="Search products...">
+      </div>
+    </div>
+    <div>
+      <label class="elv-label">Large</label>
+      <div class="search-input search-input--lg">
+        <input type="search" class="elv-input" placeholder="Search categories...">
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>With values</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div>
+      <label class="elv-label">Medium</label>
+      <div class="search-input search-input--md">
+        <input type="search" class="elv-input" value="Salesforce CRM">
+      </div>
+    </div>
+    <div>
+      <label class="elv-label">Large</label>
+      <div class="search-input search-input--lg">
+        <input type="search" class="elv-input" value="Project Management Software">
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>States</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div>
+      <label class="elv-label">Disabled</label>
+      <div class="search-input search-input--md">
+        <input type="search" class="elv-input" placeholder="Search..." disabled>
+      </div>
+    </div>
+    <div>
+      <label class="elv-label">Read-only</label>
+      <div class="search-input search-input--md">
+        <input type="search" class="elv-input" value="Salesforce" readonly>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
