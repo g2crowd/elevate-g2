@@ -20,4 +20,5 @@
 @import 'components/spin-loader';
 @import 'components/status-badge';
 @import 'components/tab';
+@import 'components/toggle';
 @import 'components/typography';

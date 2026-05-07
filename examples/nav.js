@@ -34,7 +34,7 @@ const NAV_HTML = `
   <a href="./selects.html">Select</a>
   <a href="./inputs.html">Text Input</a>
   <a href="./textareas.html">Text Area</a>
-  <a class="planned">Toggle</a>
+  <a href="./toggles.html">Toggle</a>
 
   <h3>Layout</h3>
   <a class="planned">Accordion</a>

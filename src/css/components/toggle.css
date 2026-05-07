@@ -1,0 +1,95 @@
+@layer components {
+  .toggle {
+    @apply elv-appearance-none
+      elv-relative
+      elv-cursor-pointer
+      elv-inline-block
+      elv-outline-none
+      elv-h-6
+      elv-w-12;
+
+    &::before {
+      content: '\200B';
+      @apply elv-absolute
+        elv-rounded-pill-lg
+        elv-bg-neutral-20
+        elv-outline-transparent
+        elv-top-1/2
+        -elv-translate-y-1/2
+        elv-h-6
+        elv-w-12;
+    }
+
+    &::after {
+      content: '\200B';
+      @apply elv-absolute
+        elv-rounded-pill-lg
+        elv-bg-neutral-0
+        elv-top-1/2
+        elv-left-0
+        elv-transform
+        -elv-translate-y-1/2
+        elv-translate-x-1
+        elv-duration-150
+        elv-ease-in-out
+        elv-shadow-right-1
+        elv-size-4;
+    }
+
+    &:checked::before {
+      @apply elv-bg-primary;
+    }
+
+    &:checked::after {
+      @apply elv-translate-x-7 elv-shadow-left-1;
+    }
+
+    &:focus::before {
+      @apply elv-outline elv-outline-3 elv-outline-offset-1 elv-outline-purple-40;
+    }
+
+    &:disabled {
+      @apply elv-cursor-default elv-bg-transparent;
+
+      &::before {
+        @apply elv-bg-neutral-10;
+      }
+
+      &:hover::before {
+        @apply elv-outline-transparent;
+      }
+    }
+  }
+
+  .toggle--sm {
+    @apply elv-h-5 elv-w-9;
+
+    &::before {
+      @apply elv-h-5 elv-w-9;
+    }
+
+    &::after {
+      @apply elv-size-3;
+    }
+
+    &:checked::after {
+      @apply elv-translate-x-5;
+    }
+  }
+
+  .toggle--lg {
+    @apply elv-h-7 elv-w-15;
+
+    &::before {
+      @apply elv-h-7 elv-w-15;
+    }
+
+    &::after {
+      @apply elv-size-5;
+    }
+
+    &:checked::after {
+      @apply elv-translate-x-9;
+    }
+  }
+}
