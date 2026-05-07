@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Helper Text — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Helper Text</h1>
+<p class="subtitle">CSS classes: <code>.helper-text</code>, <code>.helper-text--{status}</code>, <code>.helper-text--sm</code></p>
+
+<h2>Default</h2>
+<div class="component-col" elv>
+  <span class="helper-text">This is helper text below a form field.</span>
+  <span class="helper-text helper-text--sm">Small helper text below a form field.</span>
+</div>
+
+<h2>Error</h2>
+<div class="component-col" elv>
+  <span class="helper-text helper-text--error">This field is required.</span>
+  <span class="helper-text helper-text--sm helper-text--error">This field is required.</span>
+</div>
+
+<h2>Success</h2>
+<div class="component-col" elv>
+  <span class="helper-text helper-text--success">Looks good!</span>
+  <span class="helper-text helper-text--sm helper-text--success">Looks good!</span>
+</div>
+
+<h2>Warning</h2>
+<div class="component-col" elv>
+  <span class="helper-text helper-text--warning">This value may cause issues.</span>
+  <span class="helper-text helper-text--sm helper-text--warning">This value may cause issues.</span>
+</div>
+
+<h2>Disabled</h2>
+<div class="component-col" elv>
+  <span class="helper-text helper-text--disabled">Helper text when field is disabled.</span>
+  <span class="helper-text helper-text--sm helper-text--disabled">Small disabled helper text.</span>
+</div>
+
+<h2>With form field context</h2>
+<div class="component-col" elv style="max-width: 320px;">
+  <label class="elv-label elv-label--sm" elv>Email address</label>
+  <input class="input input--md" elv type="email" placeholder="you@example.com">
+  <span class="helper-text">We'll never share your email.</span>
+</div>
+
+<div class="component-col" elv style="max-width: 320px; margin-top: 1.5rem;">
+  <label class="elv-label elv-label--sm" elv>Username</label>
+  <input class="input input--md input--error" elv type="text" value="ab">
+  <span class="helper-text helper-text--error">Username must be at least 3 characters.</span>
+</div>
+
+</body>
+</html>
