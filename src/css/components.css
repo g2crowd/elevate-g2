@@ -25,5 +25,6 @@
 @import 'components/star-rating';
 @import 'components/status-badge';
 @import 'components/tab';
+@import 'components/table';
 @import 'components/toggle';
 @import 'components/typography';

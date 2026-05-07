@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Table</h1>
+<p class="subtitle">CSS component: <code>.elv-table</code></p>
+
+<h2>Default</h2>
+<div class="component-col" elv>
+  <table class="elv-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th>Rating</th>
+        <th>Reviews</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Salesforce CRM</td>
+        <td>CRM Software</td>
+        <td>4.3</td>
+        <td>18,496</td>
+      </tr>
+      <tr>
+        <td>HubSpot Marketing Hub</td>
+        <td>Marketing Automation</td>
+        <td>4.4</td>
+        <td>11,234</td>
+      </tr>
+      <tr>
+        <td>Slack</td>
+        <td>Team Collaboration</td>
+        <td>4.5</td>
+        <td>33,012</td>
+      </tr>
+      <tr>
+        <td>Jira Software</td>
+        <td>Project Management</td>
+        <td>4.2</td>
+        <td>6,188</td>
+      </tr>
+      <tr>
+        <td>Zoom Workplace</td>
+        <td>Video Conferencing</td>
+        <td>4.5</td>
+        <td>54,891</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>With alignment</h2>
+<div class="component-col" elv>
+  <table class="elv-table">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Category</th>
+        <th class="elv-table--align-right">Rating</th>
+        <th class="elv-table--align-right">Reviews</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Salesforce CRM</td>
+        <td>CRM Software</td>
+        <td class="elv-table--align-right">4.3</td>
+        <td class="elv-table--align-right">18,496</td>
+      </tr>
+      <tr>
+        <td>HubSpot Marketing Hub</td>
+        <td>Marketing Automation</td>
+        <td class="elv-table--align-right">4.4</td>
+        <td class="elv-table--align-right">11,234</td>
+      </tr>
+      <tr>
+        <td>Slack</td>
+        <td>Team Collaboration</td>
+        <td class="elv-table--align-right">4.5</td>
+        <td class="elv-table--align-right">33,012</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>With truncation</h2>
+<div class="component-col" elv>
+  <table class="elv-table">
+    <thead>
+      <tr>
+        <th style="width: 200px;">Product</th>
+        <th style="width: 150px;">Description</th>
+        <th>Rating</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Salesforce CRM</td>
+        <td class="elv-table--truncate">Customer relationship management platform for sales, service, marketing, and more</td>
+        <td>4.3</td>
+      </tr>
+      <tr>
+        <td>HubSpot Marketing Hub</td>
+        <td class="elv-table--truncate">All-in-one inbound marketing software for teams of all sizes</td>
+        <td>4.4</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>
