@@ -1,0 +1,71 @@
+@layer components {
+  .notification {
+    @apply elv-bg-neutral-0
+      elv-border-1 elv-border-l-4 elv-border-neutral
+      elv-ease-in-out
+      elv-flex elv-flex-col
+      elv-p-3
+      elv-rounded-xs;
+    width: 440px;
+  }
+
+  .notification--primary {
+    @apply elv-bg-neutral-10 elv-border-l-primary;
+  }
+
+  .notification--info {
+    @apply elv-bg-info-20 elv-border-l-info;
+  }
+
+  .notification--success {
+    @apply elv-bg-success-20 elv-border-l-success;
+  }
+
+  .notification--warning {
+    @apply elv-bg-warning-20 elv-border-l-warning;
+  }
+
+  .notification--critical {
+    @apply elv-bg-critical-20 elv-border-l-critical;
+  }
+
+  .notification__header {
+    @apply elv-flex elv-flex-row elv-justify-between elv-pb-1;
+  }
+
+  .notification__title {
+    @apply elv-flex elv-gap-1;
+  }
+
+  .notification__close {
+    @apply elv-flex elv-justify-end;
+  }
+
+  .notification__close .icon {
+    @apply elv-text-nonessential elv-cursor-pointer;
+  }
+
+  .notification__body {
+    @apply elv-mr-4;
+  }
+
+  .notification--primary .notification__body {
+    @apply elv-ml-0;
+  }
+
+  .notification--info .notification__body,
+  .notification--success .notification__body,
+  .notification--warning .notification__body,
+  .notification--critical .notification__body {
+    @apply elv-ml-5;
+  }
+
+  .notification__action {
+    @apply elv-mt-1;
+  }
+
+  .notification--info .notification__title { @apply elv-text-info; }
+  .notification--success .notification__title { @apply elv-text-success; }
+  .notification--warning .notification__title { @apply elv-text-warning; }
+  .notification--critical .notification__title { @apply elv-text-critical; }
+}
