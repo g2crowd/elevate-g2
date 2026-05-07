@@ -14,7 +14,7 @@
 
     &:checked {
       @apply elv-bg-primary elv-border-0;
-      background-image: url("data:image/svg+xml,%3Csvg width='12' height='11.5' viewBox='-1 -1.5 12 11.5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.8L3.8 7.2L9 0' stroke='white' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='-1 -1.5 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.8L3.8 7.2L9 0' stroke='white' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 65%;
