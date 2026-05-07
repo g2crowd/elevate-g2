@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Change — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Number Change</h1>
+<p class="subtitle">CSS component: <code>.number-change</code></p>
+
+<h2>Positive</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div class="number-change number-change--positive">
+      <svg class="number-change__icon icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 4.0625L15 9.0625L13.9375 10.125L10.75 6.9375V16H9.25V6.9375L6.0625 10.125L5 9.0625L10 4.0625Z"/>
+      </svg>
+      <span class="number-change__value">100</span>
+    </div>
+    <code>+100</code>
+  </div>
+
+  <div class="component-row">
+    <div class="number-change number-change--positive">
+      <svg class="number-change__icon icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 4.0625L15 9.0625L13.9375 10.125L10.75 6.9375V16H9.25V6.9375L6.0625 10.125L5 9.0625L10 4.0625Z"/>
+      </svg>
+      <span class="number-change__value">1,200.46</span>
+    </div>
+    <code>+1,200.46 (precision: 2)</code>
+  </div>
+</div>
+
+<h2>Negative</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div class="number-change number-change--negative">
+      <svg class="number-change__icon icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 15.9375L5 10.9375L6.0625 9.875L9.25 13.0625V4H10.75V13.0625L13.9375 9.875L15 10.9375L10 15.9375Z"/>
+      </svg>
+      <span class="number-change__value">50</span>
+    </div>
+    <code>-50</code>
+  </div>
+
+  <div class="component-row">
+    <div class="number-change number-change--negative">
+      <svg class="number-change__icon icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 15.9375L5 10.9375L6.0625 9.875L9.25 13.0625V4H10.75V13.0625L13.9375 9.875L15 10.9375L10 15.9375Z"/>
+      </svg>
+      <span class="number-change__value">75%</span>
+    </div>
+    <code>-75% (percent)</code>
+  </div>
+</div>
+
+<h2>Neutral (zero)</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div class="number-change number-change--neutral">
+      <span class="number-change__value">0</span>
+    </div>
+    <code>0 (no icon)</code>
+  </div>
+
+  <div class="component-row">
+    <div class="number-change number-change--neutral">
+      <span class="number-change__value">0%</span>
+    </div>
+    <code>0% (percent, no icon)</code>
+  </div>
+</div>
+
+</body>
+</html>
