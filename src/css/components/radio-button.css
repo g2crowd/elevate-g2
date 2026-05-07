@@ -18,7 +18,7 @@
     }
 
     &:checked {
-      @apply elv-border-2 elv-border-primary;
+      @apply elv-border-2 elv-border-primary elv-text-primary;
     }
 
     &:checked::after {
