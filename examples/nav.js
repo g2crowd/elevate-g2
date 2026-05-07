@@ -15,7 +15,7 @@ const NAV_HTML = `
   <h3>Containers</h3>
   <a href="./content-cards.html">Content Card</a>
   <a href="./inset-cards.html">Inset Card</a>
-  <a class="planned">Table</a>
+  <a href="./tables.html">Table</a>
 
   <h3>Data Display</h3>
   <a href="./number-changes.html">Number Change</a>
