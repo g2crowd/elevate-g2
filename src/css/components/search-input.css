@@ -9,6 +9,10 @@
     background-repeat: no-repeat;
     background-position: 0.75rem center;
     background-size: 20px;
+
+    &::-webkit-search-cancel-button {
+      @apply elv-hidden;
+    }
   }
 
   .search-input--sm .elv-input {
