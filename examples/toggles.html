@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggles — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Toggles</h1>
+<p class="subtitle">CSS classes: <code>.toggle</code>, <code>.toggle--sm</code>, <code>.toggle--lg</code></p>
+
+<h2>Sizes — unchecked</h2>
+<div class="component-row" elv>
+  <input class="toggle toggle--sm" type="checkbox">
+  <input class="toggle" type="checkbox">
+  <input class="toggle toggle--lg" type="checkbox">
+</div>
+
+<h2>Sizes — checked</h2>
+<div class="component-row" elv>
+  <input class="toggle toggle--sm" type="checkbox" checked>
+  <input class="toggle" type="checkbox" checked>
+  <input class="toggle toggle--lg" type="checkbox" checked>
+</div>
+
+<h2>Disabled — unchecked</h2>
+<div class="component-row" elv>
+  <input class="toggle toggle--sm" type="checkbox" disabled>
+  <input class="toggle" type="checkbox" disabled>
+  <input class="toggle toggle--lg" type="checkbox" disabled>
+</div>
+
+<h2>Disabled — checked</h2>
+<div class="component-row" elv>
+  <input class="toggle toggle--sm" type="checkbox" disabled checked>
+  <input class="toggle" type="checkbox" disabled checked>
+  <input class="toggle toggle--lg" type="checkbox" disabled checked>
+</div>
+
+<h2>With label</h2>
+<div class="component-col" elv style="gap: 1rem;">
+  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+    <input class="toggle" type="checkbox">
+    <span>Enable notifications</span>
+  </label>
+  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+    <input class="toggle toggle--sm" type="checkbox" checked>
+    <span>Dark mode</span>
+  </label>
+  <label style="display: flex; align-items: center; gap: 0.5rem;">
+    <input class="toggle" type="checkbox" disabled>
+    <span style="color: #dfdfe2;">Feature locked</span>
+  </label>
+</div>
+
+</body>
+</html>
