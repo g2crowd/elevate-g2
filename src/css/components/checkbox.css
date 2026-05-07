@@ -14,10 +14,10 @@
 
     &:checked {
       @apply elv-bg-primary elv-border-0;
-      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.08 9.2L6.88 11.6L12.08 4.4' stroke='white' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.8L3.8 7.2L9 0' stroke='white' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 100%;
+      background-size: 65%;
     }
 
     &:hover:not(:checked):not(:disabled):not(:indeterminate) {
@@ -41,10 +41,10 @@
 
     &:indeterminate {
       @apply elv-bg-primary elv-border-0;
-      background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 8H8.5H13' stroke='white' stroke-width='2.5' stroke-linecap='square'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='3' viewBox='0 0 10 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5H10' stroke='white' stroke-width='2.5' stroke-linecap='square'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 100%;
+      background-size: 60%;
     }
   }
 
