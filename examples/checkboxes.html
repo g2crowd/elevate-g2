@@ -42,18 +42,18 @@
 
 <h2>With label</h2>
 <div class="component-col" elv style="gap: 0.75rem;">
-  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-    <input class="checkbox" type="checkbox">
-    <span>Accept terms and conditions</span>
-  </label>
-  <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
-    <input class="checkbox checkbox--sm" type="checkbox" checked>
-    <span>Subscribe to newsletter</span>
-  </label>
-  <label style="display: flex; align-items: center; gap: 0.5rem;">
-    <input class="checkbox" type="checkbox" disabled>
-    <span style="color: #dfdfe2;">Feature locked</span>
-  </label>
+  <div class="elv-label__wrapper">
+    <input class="checkbox" type="checkbox" id="cb-terms">
+    <label class="elv-label elv-label--sm elv-label--normal" for="cb-terms">Accept terms and conditions</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="checkbox checkbox--sm" type="checkbox" checked id="cb-newsletter">
+    <label class="elv-label elv-label--sm elv-label--normal" for="cb-newsletter">Subscribe to newsletter</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="checkbox" type="checkbox" disabled id="cb-locked">
+    <label class="elv-label elv-label--sm elv-label--normal elv-label--disabled" for="cb-locked">Feature locked</label>
+  </div>
 </div>
 
 </body>
