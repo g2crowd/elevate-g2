@@ -11,6 +11,7 @@
       elv-relative
       elv-w-5
       elv-h-5;
+    font-size: 20px;
 
     &:checked {
       @apply elv-bg-primary elv-border-0;
@@ -67,9 +68,11 @@
 
   .checkbox--sm {
     @apply elv-w-4 elv-h-4;
+    font-size: 16px;
   }
 
   .checkbox--lg {
     @apply elv-w-6 elv-h-6;
+    font-size: 24px;
   }
 }
