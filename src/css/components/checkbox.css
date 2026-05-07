@@ -5,12 +5,12 @@
       elv-border
       elv-border-medium
       elv-rounded-xs
-      elv-transition-all
       elv-ease-in
       elv-cursor-pointer
       elv-relative
       elv-w-5
       elv-h-5;
+    transition: background-color 150ms ease-in, border-color 150ms ease-in;
 
     &:checked {
       @apply elv-bg-primary elv-border-0;
