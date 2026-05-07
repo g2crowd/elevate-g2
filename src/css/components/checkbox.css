@@ -14,7 +14,7 @@
 
     &:checked {
       @apply elv-bg-primary elv-border-0;
-      background-image: url("data:image/svg+xml,%3Csvg width='10' height='9' viewBox='0 0 10 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.8L3.8 7.2L9 0' stroke='white' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='13' viewBox='-2 -2 14 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.8L3.8 7.2L9 0' stroke='white' stroke-width='2' stroke-linecap='square'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 65%;
@@ -41,7 +41,7 @@
 
     &:indeterminate {
       @apply elv-bg-primary elv-border-0;
-      background-image: url("data:image/svg+xml,%3Csvg width='10' height='3' viewBox='0 0 10 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5H10' stroke='white' stroke-width='2.5' stroke-linecap='square'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='14' height='7' viewBox='-2 -2 14 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 1.5H10' stroke='white' stroke-width='2.5' stroke-linecap='square'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 60%;
