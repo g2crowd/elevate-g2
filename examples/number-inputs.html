@@ -10,69 +10,115 @@
 <body>
 
 <h1>Number Input</h1>
-<p class="subtitle">Uses <code>.elv-input</code> on <code>&lt;input type="number"&gt;</code>. No additional CSS needed.</p>
+<p class="subtitle">CSS component: <code>.number-input</code>. Custom stepper buttons with inlined chevron SVGs.</p>
 
 <h2>Sizes</h2>
 <div class="component-col" elv>
   <div class="component-row">
     <div>
       <label class="elv-label elv-label--sm">Small</label>
-      <input type="number" class="elv-input elv-input--sm" value="42" step="1">
+      <div class="number-input number-input--sm">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--sm" value="42">
+        <div class="number-input__steppers">
+          <button type="button" class="number-input__btn number-input__btn--incr" tabindex="-1" aria-label="Increment"></button>
+          <button type="button" class="number-input__btn number-input__btn--decr" tabindex="-1" aria-label="Decrement"></button>
+        </div>
+      </div>
     </div>
+
     <div>
       <label class="elv-label">Medium</label>
-      <input type="number" class="elv-input elv-input--md" value="100" step="1">
+      <div class="number-input number-input--md">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--md" value="100">
+        <div class="number-input__steppers">
+          <button type="button" class="number-input__btn number-input__btn--incr" tabindex="-1" aria-label="Increment"></button>
+          <button type="button" class="number-input__btn number-input__btn--decr" tabindex="-1" aria-label="Decrement"></button>
+        </div>
+      </div>
     </div>
+
     <div>
       <label class="elv-label">Large</label>
-      <input type="number" class="elv-input elv-input--lg" value="1000" step="1">
+      <div class="number-input number-input--lg">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--lg" value="1000">
+        <div class="number-input__steppers">
+          <button type="button" class="number-input__btn number-input__btn--incr" tabindex="-1" aria-label="Increment"></button>
+          <button type="button" class="number-input__btn number-input__btn--decr" tabindex="-1" aria-label="Decrement"></button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<h2>With min / max / step</h2>
-<div class="component-col" elv>
-  <div class="component-row">
-    <div>
-      <label class="elv-label">Quantity (1–10)</label>
-      <input type="number" class="elv-input elv-input--md" min="1" max="10" step="1" value="5">
-    </div>
-    <div>
-      <label class="elv-label">Price (step 0.01)</label>
-      <input type="number" class="elv-input elv-input--md" min="0" step="0.01" value="29.99">
-    </div>
-    <div>
-      <label class="elv-label">Percentage (step 5)</label>
-      <input type="number" class="elv-input elv-input--md" min="0" max="100" step="5" value="50">
-    </div>
-  </div>
-</div>
-
-<h2>States</h2>
+<h2>Disabled</h2>
 <div class="component-col" elv>
   <div class="component-row">
     <div>
       <label class="elv-label">Disabled</label>
-      <input type="number" class="elv-input elv-input--md" value="0" disabled>
-    </div>
-    <div>
-      <label class="elv-label">Read-only</label>
-      <input type="number" class="elv-input elv-input--md" value="42" readonly>
-    </div>
-    <div>
-      <label class="elv-label">Error</label>
-      <input type="number" class="elv-input elv-input--md" value="-1" data-status="error">
-      <span class="helper-text helper-text--error">Must be a positive number</span>
+      <div class="number-input number-input--md">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--md" value="0" disabled>
+        <div class="number-input__steppers">
+          <button type="button" class="number-input__btn number-input__btn--incr" tabindex="-1" aria-label="Increment" disabled></button>
+          <button type="button" class="number-input__btn number-input__btn--decr" tabindex="-1" aria-label="Decrement" disabled></button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
-<h2>With helper text</h2>
+<h2>Read-only (no steppers)</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div>
+      <label class="elv-label">Read-only</label>
+      <div class="number-input number-input--md">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--md" value="42" readonly>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Status</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <div>
+      <label class="elv-label">Error</label>
+      <div class="number-input number-input--md number-input--error">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--md" value="-1" data-status="error">
+        <div class="number-input__steppers">
+          <button type="button" class="number-input__btn number-input__btn--incr" tabindex="-1" aria-label="Increment"></button>
+          <button type="button" class="number-input__btn number-input__btn--decr" tabindex="-1" aria-label="Decrement"></button>
+        </div>
+      </div>
+      <span class="helper-text helper-text--error">Must be a positive number</span>
+    </div>
+
+    <div>
+      <label class="elv-label">Success</label>
+      <div class="number-input number-input--md number-input--success">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--md" value="100" data-status="success">
+        <div class="number-input__steppers">
+          <button type="button" class="number-input__btn number-input__btn--incr" tabindex="-1" aria-label="Increment"></button>
+          <button type="button" class="number-input__btn number-input__btn--decr" tabindex="-1" aria-label="Decrement"></button>
+        </div>
+      </div>
+      <span class="helper-text helper-text--success">Looks good</span>
+    </div>
+  </div>
+</div>
+
+<h2>With label and helper text</h2>
 <div class="component-col" elv>
   <div class="component-row">
     <div>
       <label class="elv-label elv-label--required">Review count</label>
-      <input type="number" class="elv-input elv-input--md" min="0" value="0" placeholder="0">
+      <div class="number-input number-input--md">
+        <input type="text" inputmode="decimal" class="elv-input elv-input--md" value="0" placeholder="0">
+        <div class="number-input__steppers">
+          <button type="button" class="number-input__btn number-input__btn--incr" tabindex="-1" aria-label="Increment"></button>
+          <button type="button" class="number-input__btn number-input__btn--decr" tabindex="-1" aria-label="Decrement"></button>
+        </div>
+      </div>
       <span class="helper-text">Enter total number of reviews</span>
     </div>
   </div>
