@@ -20,7 +20,7 @@ const NAV_HTML = `
   <h3>Data Display</h3>
   <a class="planned">Number Change</a>
   <a href="./progress-bars.html">Progress Bar</a>
-  <a class="planned">Star Rating</a>
+  <a href="./star-ratings.html">Star Rating</a>
   <a href="./status-badges.html">Status Badge</a>
 
   <h3>Forms</h3>
