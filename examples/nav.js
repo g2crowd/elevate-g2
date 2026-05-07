@@ -33,7 +33,7 @@ const NAV_HTML = `
   <a class="planned">Search Input</a>
   <a href="./selects.html">Select</a>
   <a href="./inputs.html">Text Input</a>
-  <a class="planned">Text Area</a>
+  <a href="./textareas.html">Text Area</a>
   <a class="planned">Toggle</a>
 
   <h3>Layout</h3>

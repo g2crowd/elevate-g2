@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Areas — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Text Areas</h1>
+<p class="subtitle">CSS classes: <code>.elv-input</code> + <code>.elv-input--textarea-{size}</code></p>
+
+<h2>Sizes</h2>
+<div class="component-col" elv style="gap: 1rem;">
+  <textarea class="elv-input elv-input--textarea-sm" elv placeholder="Small textarea"></textarea>
+  <textarea class="elv-input elv-input--textarea-md" elv placeholder="Medium textarea"></textarea>
+  <textarea class="elv-input elv-input--textarea-lg" elv placeholder="Large textarea"></textarea>
+</div>
+
+<h2>Disabled</h2>
+<div class="component-col" elv style="gap: 1rem;">
+  <textarea class="elv-input elv-input--textarea-md" elv placeholder="Disabled" disabled></textarea>
+</div>
+
+<h2>Read-only</h2>
+<div class="component-col" elv style="gap: 1rem;">
+  <textarea class="elv-input elv-input--textarea-md" elv readonly>This content is read-only and cannot be edited.</textarea>
+</div>
+
+<h2>Validation states</h2>
+<div class="component-col" elv style="gap: 1rem;">
+  <textarea class="elv-input elv-input--textarea-md" elv data-status="success" placeholder="Success state"></textarea>
+  <textarea class="elv-input elv-input--textarea-md" elv data-status="warning" placeholder="Warning state"></textarea>
+  <textarea class="elv-input elv-input--textarea-md" elv data-status="error" placeholder="Error state"></textarea>
+</div>
+
+<h2>With label and helper text</h2>
+<div class="component-col" elv style="max-width: 400px;">
+  <label class="form-label form-label--sm" elv>Description</label>
+  <textarea class="elv-input elv-input--textarea-md" elv placeholder="Tell us about your product..."></textarea>
+  <span class="helper-text">Maximum 500 characters.</span>
+</div>
+
+</body>
+</html>
