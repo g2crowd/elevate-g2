@@ -10,6 +10,7 @@
       elv-ease-in
       elv-cursor-pointer
       elv-relative
+      elv-text-primary
       elv-w-5
       elv-h-5;
 
@@ -18,7 +19,7 @@
     }
 
     &:checked {
-      @apply elv-border-2 elv-border-primary elv-text-primary;
+      @apply elv-border-2 elv-border-primary;
     }
 
     &:checked::after {
