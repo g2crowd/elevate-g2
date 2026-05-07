@@ -13,6 +13,7 @@
 @import 'components/notification-badge';
 @import 'components/pagination';
 @import 'components/progress-bar';
+@import 'components/radio-button';
 @import 'components/select';
 @import 'components/spin-loader';
 @import 'components/status-badge';
