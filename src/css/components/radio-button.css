@@ -53,11 +53,5 @@
     @apply elv-w-6 elv-h-6 elv-rounded-pill-lg;
   }
 
-  .radio-btn__wrapper {
-    @apply elv-flex elv-flex-row elv-items-center elv-gap-2;
-  }
 
-  .radio-btn__wrapper--sm {
-    @apply elv-gap-1;
-  }
 }

@@ -24,7 +24,7 @@ const NAV_HTML = `
   <a href="./status-badges.html">Status Badge</a>
 
   <h3>Forms</h3>
-  <a class="planned">Checkbox</a>
+  <a href="./checkboxes.html">Checkbox</a>
   <a class="planned">File Input</a>
   <a href="./helper-text.html">Helper Text</a>
   <a href="./typography.html">Label</a>

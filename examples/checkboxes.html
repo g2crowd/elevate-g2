@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkboxes — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Checkboxes</h1>
+<p class="subtitle">CSS classes: <code>.checkbox</code>, <code>.checkbox--sm</code>, <code>.checkbox--lg</code></p>
+
+<h2>Sizes — unchecked</h2>
+<div class="component-row" elv>
+  <input class="checkbox checkbox--sm" type="checkbox">
+  <input class="checkbox" type="checkbox">
+  <input class="checkbox checkbox--lg" type="checkbox">
+</div>
+
+<h2>Sizes — checked</h2>
+<div class="component-row" elv>
+  <input class="checkbox checkbox--sm" type="checkbox" checked>
+  <input class="checkbox" type="checkbox" checked>
+  <input class="checkbox checkbox--lg" type="checkbox" checked>
+</div>
+
+<h2>Indeterminate</h2>
+<div class="component-row" elv>
+  <input class="checkbox checkbox--sm" type="checkbox" id="ind-sm">
+  <input class="checkbox" type="checkbox" id="ind-md">
+  <input class="checkbox checkbox--lg" type="checkbox" id="ind-lg">
+</div>
+<script>
+  document.getElementById('ind-sm').indeterminate = true;
+  document.getElementById('ind-md').indeterminate = true;
+  document.getElementById('ind-lg').indeterminate = true;
+</script>
+
+<h2>Disabled — unchecked</h2>
+<div class="component-row" elv>
+  <input class="checkbox checkbox--sm" type="checkbox" disabled>
+  <input class="checkbox" type="checkbox" disabled>
+  <input class="checkbox checkbox--lg" type="checkbox" disabled>
+</div>
+
+<h2>Disabled — checked</h2>
+<div class="component-row" elv>
+  <input class="checkbox checkbox--sm" type="checkbox" disabled checked>
+  <input class="checkbox" type="checkbox" disabled checked>
+  <input class="checkbox checkbox--lg" type="checkbox" disabled checked>
+</div>
+
+<h2>With label — large</h2>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <div class="elv-label__wrapper">
+    <input class="checkbox checkbox--lg" type="checkbox" checked id="cb-lg-1">
+    <label class="elv-label" for="cb-lg-1">Large checkbox with default label</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="checkbox checkbox--lg" type="checkbox" id="cb-lg-2">
+    <label class="elv-label" for="cb-lg-2">Another large option</label>
+  </div>
+</div>
+
+<h2>With label — medium</h2>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <div class="elv-label__wrapper">
+    <input class="checkbox" type="checkbox" checked id="cb-md-1">
+    <label class="elv-label elv-label--sm" for="cb-md-1">Medium checkbox with small label</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="checkbox" type="checkbox" id="cb-md-2">
+    <label class="elv-label elv-label--sm" for="cb-md-2">Accept terms and conditions</label>
+  </div>
+</div>
+
+<h2>With label — small</h2>
+<div class="component-col" elv style="gap: 0.5rem;">
+  <div class="elv-label__wrapper elv-label__wrapper--sm">
+    <input class="checkbox checkbox--sm" type="checkbox" checked id="cb-sm-1">
+    <label class="elv-label elv-label--xs" for="cb-sm-1">Small checkbox with xs label</label>
+  </div>
+  <div class="elv-label__wrapper elv-label__wrapper--sm">
+    <input class="checkbox checkbox--sm" type="checkbox" id="cb-sm-2">
+    <label class="elv-label elv-label--xs" for="cb-sm-2">Subscribe to newsletter</label>
+  </div>
+</div>
+
+<h2>Disabled with label</h2>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <div class="elv-label__wrapper">
+    <input class="checkbox checkbox--lg" type="checkbox" disabled checked id="cb-dis-1">
+    <label class="elv-label elv-label--disabled" for="cb-dis-1">Disabled checked</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="checkbox" type="checkbox" disabled id="cb-dis-2">
+    <label class="elv-label elv-label--sm elv-label--disabled" for="cb-dis-2">Feature locked</label>
+  </div>
+</div>
+
+</body>
+</html>
