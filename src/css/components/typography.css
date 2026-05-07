@@ -41,6 +41,21 @@
   .elv-label--sm { @apply elv-text-sm elv-leading-sm; }
   .elv-label--xs { @apply elv-text-xs elv-leading-xs; }
 
+  .elv-label--disabled { @apply elv-text-disabled; }
+
+  .elv-label--required::after {
+    content: '*';
+    @apply elv-text-critical elv-ml-0.5;
+  }
+
+  .elv-label__optional {
+    @apply elv-text-nonessential elv-font-normal;
+  }
+
+  .elv-label__wrapper {
+    @apply elv-flex elv-items-center elv-gap-1;
+  }
+
   /* ── Weight modifiers ──────────────────────────────────── */
 
   .elv-heading--light,
