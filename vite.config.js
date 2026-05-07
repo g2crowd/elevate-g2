@@ -22,8 +22,10 @@ export default defineConfig({
     postcss: {
       plugins: [
         require('postcss-import')(),
+        require('postcss-inline-svg')({ paths: [resolve(__dirname, 'src/assets/svg')] }),
         require('tailwindcss/nesting')(),
         require('tailwindcss')(resolve(__dirname, 'tailwind.build.config.js')),
+        require('postcss-svgo')(),
         require('autoprefixer')(),
       ],
     },
