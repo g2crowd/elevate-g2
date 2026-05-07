@@ -1,0 +1,75 @@
+@layer components {
+  /* ── Base ───────────────────────────────────────────────── */
+
+  .elv-heading,
+  .elv-body,
+  .elv-label {
+    @apply elv-tracking-normal elv-text-default elv-font-figtree;
+  }
+
+  /* ── Heading ───────────────────────────────────────────── */
+
+  .elv-heading {
+    @apply elv-font-bold elv-text-xl elv-leading-xl;
+  }
+
+  .elv-heading--xxl { @apply elv-text-4xl elv-leading-4xl; }
+  .elv-heading--xl  { @apply elv-text-3xl elv-leading-3xl; }
+  .elv-heading--lg  { @apply elv-text-2xl elv-leading-2xl; }
+  .elv-heading--md  { @apply elv-text-xl elv-leading-xl; }
+  .elv-heading--sm  { @apply elv-text-lg elv-leading-lg; }
+  .elv-heading--xs  { @apply elv-text-base elv-leading-base; }
+
+  /* ── Body ──────────────────────────────────────────────── */
+
+  .elv-body {
+    @apply elv-font-normal elv-text-base elv-leading-base;
+  }
+
+  .elv-body--lg { @apply elv-text-lg elv-leading-lg; }
+  .elv-body--md { @apply elv-text-base elv-leading-base; }
+  .elv-body--sm { @apply elv-text-sm elv-leading-sm; }
+  .elv-body--xs { @apply elv-text-xs elv-leading-xs; }
+
+  /* ── Label ─────────────────────────────────────────────── */
+
+  .elv-label {
+    @apply elv-font-semibold elv-text-base elv-leading-base;
+  }
+
+  .elv-label--md { @apply elv-text-base elv-leading-base; }
+  .elv-label--sm { @apply elv-text-sm elv-leading-sm; }
+  .elv-label--xs { @apply elv-text-xs elv-leading-xs; }
+
+  /* ── Weight modifiers ──────────────────────────────────── */
+
+  .elv-heading--light,
+  .elv-body--light,
+  .elv-label--light       { @apply elv-font-light; }
+
+  .elv-heading--normal,
+  .elv-body--normal,
+  .elv-label--normal      { @apply elv-font-normal; }
+
+  .elv-heading--medium,
+  .elv-body--medium,
+  .elv-label--medium      { @apply elv-font-medium; }
+
+  .elv-heading--semibold,
+  .elv-body--semibold,
+  .elv-label--semibold    { @apply elv-font-semibold; }
+
+  .elv-heading--bold,
+  .elv-body--bold,
+  .elv-label--bold        { @apply elv-font-bold; }
+
+  .elv-heading--extrabold,
+  .elv-body--extrabold,
+  .elv-label--extrabold   { @apply elv-font-extrabold; }
+
+  /* ── Italic modifier ───────────────────────────────────── */
+
+  .elv-heading--italic,
+  .elv-body--italic,
+  .elv-label--italic      { @apply elv-italic; }
+}

@@ -40,7 +40,7 @@ const NAV_HTML = `
   <a class="planned">Accordion</a>
   <a href="./notification-badges.html">Notification Badge</a>
   <a href="./spin-loaders.html">Spin Loader</a>
-  <a class="planned">Typography</a>
+  <a href="./typography.html">Typography</a>
 
   <h3>Media</h3>
   <a href="./avatars.html">Avatar</a>
