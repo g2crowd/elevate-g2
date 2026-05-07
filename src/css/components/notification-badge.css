@@ -3,7 +3,7 @@
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-justify-center elv-items-center elv-p-1
-        elv-rounded-lg elv-border elv-border-inverted;
+        elv-rounded-lg elv-border elv-border-inverted elv-text-xs;
     }
   }
 
