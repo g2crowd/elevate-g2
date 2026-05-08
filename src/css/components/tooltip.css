@@ -1,0 +1,60 @@
+@layer components {
+  .elv-tooltip {
+    background-color: rgba(32, 31, 35, 0.9);
+    border-radius: 4px;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    color: white;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 200px;
+    padding: 4px 8px;
+    position: absolute;
+    word-break: break-word;
+    z-index: 9999;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+    }
+
+    &.top::before {
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top-color: rgba(32, 31, 35, 0.9);
+      border-bottom: 0;
+    }
+
+    &.bottom::before {
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-bottom-color: rgba(32, 31, 35, 0.9);
+      border-top: 0;
+    }
+  }
+
+  .elv-tooltip-trigger {
+    @apply elv-rounded-pill-lg elv-cursor-pointer;
+    background: transparent;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px;
+    position: relative;
+
+    &:focus {
+      outline: 3px solid #c3bde5;
+      outline-offset: 0;
+    }
+  }
+
+  .elv-tooltip-trigger .icon {
+    @apply elv-fill-subtle;
+  }
+}

@@ -58,9 +58,9 @@ const NAV_HTML = `
   <a href="./modals.html">Modal</a>
   <a href="./slide-out-panels.html">Slide-Out Panel</a>
   <a href="./notifications.html">Notification</a>
-  <a class="planned">Popover</a>
+  <a href="./popovers.html">Popover</a>
   <a href="./toasts.html">Toast</a>
-  <a class="planned">Tooltip</a>
+  <a href="./tooltips.html">Tooltip</a>
 
   <div class="legend">
     <span><strong style="color: #5746b2;">Purple</strong> = ported</span>

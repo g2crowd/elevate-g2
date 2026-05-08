@@ -21,6 +21,7 @@
 @import 'components/number-change';
 @import 'components/number-input';
 @import 'components/pagination';
+@import 'components/popover';
 @import 'components/progress-bar';
 @import 'components/radio-button';
 @import 'components/search-input';
@@ -31,5 +32,6 @@
 @import 'components/tab';
 @import 'components/table';
 @import 'components/toast';
+@import 'components/tooltip';
 @import 'components/toggle';
 @import 'components/typography';
