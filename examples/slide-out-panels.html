@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slide-Out Panel — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Slide-Out Panel</h1>
+<p class="subtitle">CSS component: <code>.elv-slide-out</code>. Uses native <code>&lt;dialog&gt;</code>, slides in from right.</p>
+
+<h2>Sizes</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('slide-third').showModal()">Third screen</button>
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('slide-half').showModal()">Half screen</button>
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('slide-full').showModal()">Full screen</button>
+  </div>
+</div>
+
+<dialog id="slide-third" class="elv-slide-out elv-slide-out--third" elv>
+  <div class="elv-slide-out__inner">
+    <div class="elv-slide-out__header">
+      <div class="elv-slide-out__header-row">
+        <div>
+          <span class="elv-heading elv-heading--sm">Third Screen Panel</span>
+          <p class="elv-body elv-body--sm" style="margin-top: 0.5rem;">Optional subheader text</p>
+        </div>
+        <div class="elv-slide-out__close" onclick="document.getElementById('slide-third').close()">
+          <svg class="icon icon--md" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="elv-slide-out__body" style="padding: 1.5rem;">
+      <p class="elv-body">Panel body content. Scrollable when content overflows.</p>
+    </div>
+    <div class="elv-slide-out__footer">
+      <div style="display: flex; gap: 0.25rem; justify-content: flex-end;">
+        <button class="btn btn--tertiary btn--sm" onclick="document.getElementById('slide-third').close()">Cancel</button>
+        <button class="btn btn--primary btn--sm">Save</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="slide-half" class="elv-slide-out elv-slide-out--half" elv>
+  <div class="elv-slide-out__inner">
+    <div class="elv-slide-out__header">
+      <div class="elv-slide-out__header-row">
+        <span class="elv-heading elv-heading--sm">Half Screen Panel</span>
+        <div class="elv-slide-out__close" onclick="document.getElementById('slide-half').close()">
+          <svg class="icon icon--md" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="elv-slide-out__body" style="padding: 1.5rem;">
+      <p class="elv-body">Half-width panel with scrollable body.</p>
+      <p class="elv-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="slide-full" class="elv-slide-out elv-slide-out--full" elv>
+  <div class="elv-slide-out__inner">
+    <div class="elv-slide-out__header">
+      <div class="elv-slide-out__header-row">
+        <span class="elv-heading elv-heading--sm">Full Screen Panel</span>
+        <div class="elv-slide-out__close" onclick="document.getElementById('slide-full').close()">
+          <svg class="icon icon--md" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="elv-slide-out__body" style="padding: 1.5rem;">
+      <p class="elv-body">Full-width panel takes up the entire viewport.</p>
+    </div>
+  </div>
+</dialog>
+
+<h2>Glass (chromeless)</h2>
+<p class="subtitle">Transparent shell — content provides its own background and layout. Close button floats over content.</p>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('slide-glass').showModal()">Open glass slide-out</button>
+  </div>
+</div>
+
+<dialog id="slide-glass" class="elv-slide-out elv-slide-out--half elv-slide-out--glass" elv>
+  <div class="elv-slide-out__inner">
+    <div class="elv-slide-out__header">
+      <div class="elv-slide-out__header-row">
+        <div class="elv-slide-out__close" onclick="document.getElementById('slide-glass').close()">
+          <svg class="icon icon--md" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="elv-slide-out__body">
+      <div style="background: #fff; height: 100%; padding: 1.5rem;">
+        <h3 class="elv-heading elv-heading--sm" style="margin-bottom: 0.75rem;">Self-contained content</h3>
+        <p class="elv-body">This content provides its own background, padding, and layout. The slide-out is just a transparent container with a floating close button.</p>
+        <p class="elv-body" style="margin-top: 0.75rem;">This pattern lets you lazy-load arbitrary content without the rendering context needing to know about panel headers or chrome.</p>
+        <div style="margin-top: 1.5rem; display: flex; gap: 0.25rem; justify-content: flex-end;">
+          <button class="btn btn--tertiary btn--sm" onclick="document.getElementById('slide-glass').close()">Cancel</button>
+          <button class="btn btn--primary btn--sm">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<h2>With footer</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('slide-footer').showModal()">Open with footer</button>
+  </div>
+</div>
+
+<dialog id="slide-footer" class="elv-slide-out elv-slide-out--half" elv>
+  <div class="elv-slide-out__inner">
+    <div class="elv-slide-out__header">
+      <div class="elv-slide-out__header-row">
+        <span class="elv-heading elv-heading--sm">Panel with Footer</span>
+        <div class="elv-slide-out__close" onclick="document.getElementById('slide-footer').close()">
+          <svg class="icon icon--md" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="elv-slide-out__body" style="padding: 1.5rem;">
+      <p class="elv-body">The body grows to fill available space between header and footer. Content scrolls when it overflows.</p>
+      <p class="elv-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+    </div>
+    <div class="elv-slide-out__footer">
+      <div style="display: flex; gap: 0.25rem; justify-content: flex-end; width: 100%;">
+        <button class="btn btn--tertiary btn--sm" onclick="document.getElementById('slide-footer').close()">Cancel</button>
+        <button class="btn btn--primary btn--sm">Save changes</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+@layer components {
+  .elv-modal {
+    @apply elv-bg-neutral-0 elv-shadow-3 elv-rounded-md elv-p-0;
+    border: none;
+    max-height: 85vh;
+    margin: auto;
+
+    &[open] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &::backdrop {
+      background: rgba(32, 31, 35, 0.4);
+    }
+  }
+
+  .elv-modal--sm { width: 450px; }
+  .elv-modal--md { width: 564px; }
+  .elv-modal--lg { width: 680px; }
+  .elv-modal--xl { width: clamp(410px, 80%, 1000px); }
+
+  .elv-modal__header {
+    @apply elv-py-3 elv-px-5 elv-rounded-t-md elv-border-b elv-border-medium elv-bg-neutral-5;
+  }
+
+  .elv-modal__header-row {
+    @apply elv-flex elv-items-center elv-justify-between;
+  }
+
+  .elv-modal__header-title {
+    @apply elv-flex elv-gap-x-2 elv-items-center;
+  }
+
+  .elv-modal__close {
+    @apply elv-cursor-pointer elv-bg-transparent elv-border-0 elv-p-0;
+  }
+
+  .elv-modal__close .icon {
+    @apply elv-fill-neutral-80;
+  }
+
+  .elv-modal__body {
+    @apply elv-p-6;
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .elv-modal__footer {
+    @apply elv-pt-3 elv-pb-4 elv-px-4 elv-rounded-b-md
+      elv-border-t elv-border-medium
+      elv-flex elv-gap-x-1 elv-items-center;
+  }
+
+  .elv-modal__footer--left { @apply elv-justify-start; }
+  .elv-modal__footer--center { @apply elv-justify-center; }
+  .elv-modal__footer--right { @apply elv-justify-end; }
+
+  .elv-slide-out {
+    @apply elv-bg-neutral-0 elv-p-0
+      elv-h-screen elv-min-h-screen elv-shadow-left-3
+      elv-w-full elv-max-w-full;
+    border: none;
+    margin: 0 0 0 auto;
+
+    &[open] {
+      @apply elv-animate-slide-transition-in;
+    }
+
+    &::backdrop {
+      background: rgba(32, 31, 35, 0.4);
+    }
+  }
+
+  .elv-slide-out--third { @apply md:elv-w-1/2 lg:elv-w-1/3; }
+  .elv-slide-out--half { @apply md:elv-w-1/2; }
+  .elv-slide-out--full { @apply md:elv-w-full md:elv-max-w-full; }
+
+  .elv-slide-out__inner {
+    @apply elv-flex elv-flex-col elv-h-full;
+  }
+
+  .elv-slide-out__header {
+    @apply elv-p-6 elv-border-b elv-border-medium elv-bg-neutral-5;
+  }
+
+  .elv-slide-out__header-row {
+    @apply elv-flex elv-justify-between;
+  }
+
+  .elv-slide-out__close {
+    @apply elv-cursor-pointer elv-flex elv-justify-start;
+  }
+
+  .elv-slide-out__close .icon {
+    @apply elv-fill-purple;
+  }
+
+  .elv-slide-out__body {
+    @apply elv-flex-1 elv-overflow-y-auto;
+  }
+
+  .elv-slide-out__footer {
+    @apply elv-border-t elv-border-t-medium elv-p-5;
+  }
+
+  /* ── Glass variants ────────────────────────────────────
+   * Transparent chrome — content provides its own background,
+   * padding, and layout. Close button floats over content.
+   * ──────────────────────────────────────────────────── */
+
+  .elv-modal--glass {
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+
+    .elv-modal__header {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    .elv-modal__header-title {
+      display: none;
+    }
+
+    .elv-modal__close {
+      @apply elv-rounded-full;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      height: 2rem;
+      justify-content: center;
+      margin: 0.75rem;
+      width: 2rem;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+    .elv-modal__body {
+      padding: 0;
+    }
+  }
+
+  .elv-slide-out--glass {
+    background: transparent;
+    box-shadow: none;
+
+    .elv-slide-out__header {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 2;
+    }
+
+    .elv-slide-out__header-row {
+      justify-content: flex-end;
+    }
+
+    .elv-slide-out__close {
+      @apply elv-rounded-full;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      height: 2rem;
+      justify-content: center;
+      margin: 0.75rem;
+      width: 2rem;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+    .elv-slide-out__body {
+      padding: 0;
+    }
+  }
+}

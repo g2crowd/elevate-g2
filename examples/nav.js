@@ -55,7 +55,8 @@ const NAV_HTML = `
   <h3>Overlays</h3>
   <a class="planned">Dropdown Menu</a>
   <a class="planned">Filter Dropdown</a>
-  <a class="planned">Modal</a>
+  <a href="./modals.html">Modal</a>
+  <a href="./slide-out-panels.html">Slide-Out Panel</a>
   <a href="./notifications.html">Notification</a>
   <a class="planned">Popover</a>
   <a href="./toasts.html">Toast</a>
