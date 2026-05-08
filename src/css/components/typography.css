@@ -34,12 +34,13 @@
   /* ── Label ─────────────────────────────────────────────── */
 
   .elv-label {
-    @apply elv-font-semibold elv-text-base elv-leading-base;
+    @apply elv-font-semibold elv-text-base elv-leading-base
+      elv-flex elv-items-center elv-gap-2 elv-cursor-pointer;
   }
 
   .elv-label--md { @apply elv-text-base elv-leading-base; }
-  .elv-label--sm { @apply elv-text-sm elv-leading-sm; }
-  .elv-label--xs { @apply elv-text-xs elv-leading-xs; }
+  .elv-label--sm { @apply elv-text-sm elv-leading-sm elv-gap-1; }
+  .elv-label--xs { @apply elv-text-xs elv-leading-xs elv-gap-1; }
 
   .elv-label--disabled { @apply elv-text-disabled; }
 
@@ -48,16 +49,16 @@
     @apply elv-text-critical elv-ml-0.5;
   }
 
-  .elv-label__optional {
-    @apply elv-text-nonessential elv-font-normal;
-  }
-
   .elv-label__wrapper {
-    @apply elv-flex elv-items-center elv-gap-2;
+    @apply elv-flex elv-items-center elv-gap-2 elv-cursor-pointer;
   }
 
   .elv-label__wrapper--sm {
     @apply elv-gap-1;
+  }
+
+  .elv-label__optional {
+    @apply elv-text-nonessential elv-font-normal;
   }
 
   /* ── Weight modifiers ──────────────────────────────────── */
