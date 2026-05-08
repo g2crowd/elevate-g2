@@ -76,24 +76,21 @@
     const text = el.getAttribute('data-tooltip');
     const allowHtml = el.getAttribute('data-tooltip-allow-html') === 'true';
     let tip = null;
-    let showTimeout = null;
 
-    function create() {
+    function show() {
       if (tip) return;
       tip = document.createElement('div');
-      tip.className = 'elv-tooltip top';
+      tip.className = el.getAttribute('data-tooltip-class') || 'elv-tooltip top';
       tip.setAttribute('role', 'tooltip');
       if (allowHtml) { tip.innerHTML = text; } else { tip.textContent = text; }
       document.body.appendChild(tip);
       position();
-      tip.classList.add('is-visible');
     }
 
-    function destroy() {
-      clearTimeout(showTimeout);
+    function hide() {
       if (!tip) return;
-      tip.classList.remove('is-visible');
-      setTimeout(() => { if (tip) { tip.remove(); tip = null; } }, 150);
+      tip.remove();
+      tip = null;
     }
 
     function position() {
@@ -107,7 +104,7 @@
       let left = rect.left + scrollX + rect.width / 2 - tipRect.width / 2;
 
       if (top < scrollY) {
-        tip.className = 'elv-tooltip bottom is-visible';
+        tip.className = 'elv-tooltip bottom';
         top = rect.bottom + scrollY + 8;
       }
 
@@ -121,11 +118,10 @@
       tip.style.left = left + 'px';
     }
 
-    el.addEventListener('mouseenter', () => { showTimeout = setTimeout(create, 300); });
-    el.addEventListener('mouseleave', destroy);
-    el.addEventListener('focus', create);
-    el.addEventListener('blur', destroy);
-    el.addEventListener('keydown', (e) => { if (e.key === 'Escape') destroy(); });
+    el.addEventListener('mouseenter', show);
+    el.addEventListener('mouseleave', hide);
+    el.addEventListener('focus', show);
+    el.addEventListener('blur', hide);
   });
 </script>
 

@@ -9,42 +9,15 @@
     line-height: 20px;
     max-width: 240px;
     padding: 8px 12px;
-    position: absolute;
-    text-align: center;
-    white-space: normal;
     word-break: break-word;
     z-index: 9999;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
 
-    &.is-visible {
-      opacity: 1;
-      pointer-events: auto;
+    &.top::before {
+      border-color: #201f23 transparent transparent;
     }
 
-    &::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 0;
-      border: 6px solid transparent;
-    }
-
-    &.top::after {
-      bottom: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-top-color: #201f23;
-      border-bottom: 0;
-    }
-
-    &.bottom::after {
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-bottom-color: #201f23;
-      border-top: 0;
+    &.bottom::before {
+      border-color: transparent transparent #201f23;
     }
   }
 
