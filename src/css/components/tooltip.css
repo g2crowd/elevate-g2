@@ -1,23 +1,39 @@
 @layer components {
   .elv-tooltip {
-    background: #201f23;
+    position: absolute;
+    z-index: 9999;
+    max-width: 240px;
+    padding: 8px 12px;
     border-radius: 6px;
+    background: #201f23;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     color: white;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
-    max-width: 240px;
-    padding: 8px 12px;
     word-break: break-word;
-    z-index: 9999;
 
-    &.top::before {
-      border-color: #201f23 transparent transparent;
+    &::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 0.75rem;
+      position: absolute;
+      bottom: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border-color: transparent transparent #201f23;
+      border-bottom-style: solid;
+      border-top-width: 0;
     }
 
-    &.bottom::before {
-      border-color: transparent transparent #201f23;
+    &.top::before {
+      top: 100%;
+      bottom: auto;
+      border-color: #201f23 transparent transparent;
+      border-top-style: solid;
+      border-bottom-width: 0;
     }
   }
 
