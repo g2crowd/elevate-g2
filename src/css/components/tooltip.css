@@ -1,5 +1,5 @@
 @layer components {
-  .elv-tooltip {
+  .tooltip {
     position: absolute;
     z-index: 9999;
     max-width: 240px;
@@ -39,7 +39,7 @@
     }
   }
 
-  .elv-tooltip-trigger {
+  .tooltip-trigger {
     @apply elv-rounded-pill-lg elv-cursor-pointer;
     background: transparent;
     border: none;
@@ -55,7 +55,7 @@
     }
   }
 
-  .elv-tooltip-trigger .icon {
+  .tooltip-trigger .icon {
     @apply elv-fill-subtle;
   }
 }
