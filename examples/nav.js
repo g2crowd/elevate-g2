@@ -37,7 +37,7 @@ const NAV_HTML = `
   <a href="./toggles.html">Toggle</a>
 
   <h3>Layout</h3>
-  <a class="planned">Accordion</a>
+  <a href="./accordions.html">Accordion</a>
   <a href="./notification-badges.html">Notification Badge</a>
   <a href="./spin-loaders.html">Spin Loader</a>
   <a href="./typography.html">Typography</a>
