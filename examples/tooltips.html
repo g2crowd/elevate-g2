@@ -72,63 +72,61 @@
 </div>
 
 <script>
-  function initTooltips() {
-    document.querySelectorAll('[data-tooltip]').forEach((el) => {
-      const text = el.getAttribute('data-tooltip');
-      const allowHtml = el.getAttribute('data-tooltip-allow-html') === 'true';
-      let tip = null;
+  document.querySelectorAll('[data-tooltip]').forEach((el) => {
+    const text = el.getAttribute('data-tooltip');
+    const allowHtml = el.getAttribute('data-tooltip-allow-html') === 'true';
+    let tip = null;
+    let showTimeout = null;
 
-      function show() {
-        if (tip) return;
-        tip = document.createElement('div');
-        const cls = el.getAttribute('data-tooltip-class') || 'elv-tooltip top';
-        tip.className = cls;
-        tip.setAttribute('role', 'tooltip');
-        if (allowHtml) { tip.innerHTML = text; } else { tip.textContent = text; }
-        document.body.appendChild(tip);
-        position();
+    function create() {
+      if (tip) return;
+      tip = document.createElement('div');
+      tip.className = 'elv-tooltip top';
+      tip.setAttribute('role', 'tooltip');
+      if (allowHtml) { tip.innerHTML = text; } else { tip.textContent = text; }
+      document.body.appendChild(tip);
+      position();
+      tip.classList.add('is-visible');
+    }
+
+    function destroy() {
+      clearTimeout(showTimeout);
+      if (!tip) return;
+      tip.classList.remove('is-visible');
+      setTimeout(() => { if (tip) { tip.remove(); tip = null; } }, 150);
+    }
+
+    function position() {
+      if (!tip) return;
+      const rect = el.getBoundingClientRect();
+      const tipRect = tip.getBoundingClientRect();
+      const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
+
+      let top = rect.top + scrollY - tipRect.height - 8;
+      let left = rect.left + scrollX + rect.width / 2 - tipRect.width / 2;
+
+      if (top < scrollY) {
+        tip.className = 'elv-tooltip bottom is-visible';
+        top = rect.bottom + scrollY + 8;
       }
 
-      function hide() {
-        if (!tip) return;
-        tip.remove();
-        tip = null;
+      if (left < 0) left = 4;
+      if (left + tipRect.width > document.documentElement.clientWidth) {
+        left = document.documentElement.clientWidth - tipRect.width - 4;
       }
 
-      function position() {
-        if (!tip) return;
-        const rect = el.getBoundingClientRect();
-        const tipRect = tip.getBoundingClientRect();
-        const scrollY = window.scrollY;
-        const scrollX = window.scrollX;
+      tip.style.position = 'absolute';
+      tip.style.top = top + 'px';
+      tip.style.left = left + 'px';
+    }
 
-        let top = rect.top + scrollY - tipRect.height - 8;
-        let left = rect.left + scrollX + rect.width / 2 - tipRect.width / 2;
-
-        if (top < scrollY) {
-          tip.className = 'elv-tooltip bottom';
-          top = rect.bottom + scrollY + 8;
-        }
-
-        if (left < 0) left = 4;
-        if (left + tipRect.width > document.documentElement.clientWidth) {
-          left = document.documentElement.clientWidth - tipRect.width - 4;
-        }
-
-        tip.style.position = 'absolute';
-        tip.style.top = top + 'px';
-        tip.style.left = left + 'px';
-      }
-
-      el.addEventListener('mouseenter', show);
-      el.addEventListener('mouseleave', hide);
-      el.addEventListener('focus', show);
-      el.addEventListener('blur', hide);
-      el.addEventListener('keydown', (e) => { if (e.key === 'Escape') hide(); });
-    });
-  }
-
-  initTooltips();
+    el.addEventListener('mouseenter', () => { showTimeout = setTimeout(create, 300); });
+    el.addEventListener('mouseleave', destroy);
+    el.addEventListener('focus', create);
+    el.addEventListener('blur', destroy);
+    el.addEventListener('keydown', (e) => { if (e.key === 'Escape') destroy(); });
+  });
 </script>
 
 </body>
