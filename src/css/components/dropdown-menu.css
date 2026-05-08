@@ -1,7 +1,6 @@
 @layer components {
   .elv-dropdown {
-    @apply elv-relative;
-    display: inline-block;
+    @apply elv-relative elv-inline-flex;
   }
 
   .elv-dropdown__trigger {
@@ -11,7 +10,7 @@
   .elv-dropdown__menu {
     @apply elv-absolute elv-rounded-sm elv-shadow-2 elv-border elv-border-light
       elv-bg-neutral-0 elv-flex elv-flex-col elv-justify-start elv-items-start
-      elv-overflow-hidden elv-gap-1 elv-z-10 elv-p-1;
+      elv-overflow-hidden elv-z-10;
     transition: opacity 150ms ease;
   }
 
@@ -22,6 +21,13 @@
   .elv-dropdown__menu--sm { width: 11.25rem; }
   .elv-dropdown__menu--md { width: 15rem; }
   .elv-dropdown__menu--lg { width: 17.5rem; }
+  .elv-dropdown__menu--xl { width: 20rem; }
+
+  /* ── Menu items (flat list usage) ─────────────────── */
+
+  .elv-dropdown__menu--items {
+    @apply elv-gap-1 elv-p-1;
+  }
 
   .elv-dropdown__item {
     @apply elv-cursor-pointer elv-py-1 elv-px-2 elv-w-full
@@ -48,11 +54,107 @@
     @apply elv-h-px elv-w-full elv-border-medium elv-my-1;
   }
 
-  .elv-dropdown__label {
+  .elv-dropdown__section-label {
     @apply elv-px-1 elv-pt-1 elv-w-full;
     font-size: 12px;
     font-weight: 600;
     color: #6f6d78;
     text-transform: capitalize;
+  }
+
+  /* ── Panel chrome (header/body/footer usage) ──────── */
+
+  .elv-dropdown__header {
+    @apply elv-flex elv-items-center elv-justify-between
+      elv-p-3 elv-border-b elv-border-light;
+  }
+
+  .elv-dropdown__title {
+    @apply elv-text-sm elv-font-semibold elv-text-default;
+  }
+
+  .elv-dropdown__body {
+    @apply elv-flex elv-flex-col elv-gap-3 elv-p-3;
+    max-height: 24rem;
+    overflow-y: auto;
+  }
+
+  .elv-dropdown__footer {
+    @apply elv-flex elv-items-center elv-justify-end elv-p-3;
+  }
+
+  /* ── Filter pill trigger ──────────────────────────── */
+
+  .elv-dropdown__pill {
+    @apply elv-inline-flex elv-items-center elv-gap-0
+      elv-rounded-sm elv-border elv-border-light elv-border-solid
+      elv-bg-neutral-5 elv-h-8
+      elv-cursor-pointer elv-text-sm elv-font-medium elv-text-default;
+    transition: all 150ms ease-in;
+    fill: currentColor;
+
+    &:hover {
+      @apply elv-bg-primary-20 elv-text-primary;
+    }
+
+    &:active {
+      @apply elv-bg-primary-20 elv-text-primary;
+    }
+
+    &:focus {
+      @apply elv-border-primary;
+      outline: 1px solid #b0afb6;
+    }
+
+    &[aria-expanded="true"] {
+      @apply elv-bg-primary-20 elv-text-primary;
+
+      &:hover {
+        @apply elv-bg-primary-30;
+      }
+    }
+
+    &[data-filled] {
+      @apply elv-bg-primary-20 elv-text-primary;
+
+      &:hover {
+        @apply elv-bg-primary-30;
+      }
+    }
+  }
+
+  .elv-dropdown__pill-content {
+    @apply elv-flex elv-items-center elv-gap-1 elv-px-2;
+  }
+
+  .elv-dropdown__pill-label {
+    @apply elv-whitespace-nowrap;
+  }
+
+  .elv-dropdown__pill-summary {
+    @apply elv-text-default elv-whitespace-nowrap;
+  }
+
+  .elv-dropdown__pill-count {
+    @apply elv-text-primary elv-font-semibold;
+  }
+
+  .elv-dropdown__pill-caret {
+    @apply elv-border-l elv-border-light elv-flex elv-items-center elv-h-8 elv-px-2;
+    background: transparent;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 0;
+    cursor: pointer;
+  }
+
+  .elv-dropdown__pill-caret .icon {
+    @apply elv-fill-subtle;
+  }
+
+  .elv-dropdown__pill:hover .elv-dropdown__pill-caret .icon,
+  .elv-dropdown__pill[aria-expanded="true"] .elv-dropdown__pill-caret .icon,
+  .elv-dropdown__pill[data-filled] .elv-dropdown__pill-caret .icon {
+    @apply elv-fill-primary;
   }
 }
