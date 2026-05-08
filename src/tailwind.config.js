@@ -19,7 +19,10 @@ module.exports = {
       ...background_colors,
       ...data_colors
     },
-    textColor: foreground_colors,
+    textColor: {
+      ...palette,
+      ...foreground_colors
+    },
     borderColor: border_colors,
     fill: {
       ...foreground_colors,

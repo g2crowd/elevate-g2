@@ -63,35 +63,35 @@
   .status-badge__icon--active {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-green-120;
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-text-green-120;
     }
   }
 
   .status-badge__icon--inactive {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-rorange-120;
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-text-rorange-120;
     }
   }
 
   .status-badge__icon--pending {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-blue;
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-text-blue;
     }
   }
 
   .status-badge__icon--unassigned {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-yellow;
+      @apply elv-mx-1 elv-w-2 elv-h-2 elv-text-yellow;
     }
   }
 
   .status-badge__icon--recommended {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-fill-rorange;
+      @apply elv-text-rorange;
     }
   }
 }
