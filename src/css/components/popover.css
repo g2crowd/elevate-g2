@@ -5,6 +5,31 @@
     transition: opacity 150ms ease;
     opacity: 0;
     pointer-events: none;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      border: inset 0.75rem;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &.top::before {
+      top: 100%;
+      border-color: #ffffff transparent transparent;
+      border-top-style: solid;
+      border-bottom-width: 0;
+    }
+
+    &.bottom::before {
+      bottom: 100%;
+      border-color: transparent transparent #ffffff;
+      border-bottom-style: solid;
+      border-top-width: 0;
+    }
   }
 
   .elv-popover.is-visible {
@@ -66,9 +91,4 @@
     @apply elv-justify-end;
   }
 
-  .elv-popover__tail {
-    @apply elv-absolute;
-    fill: none;
-    width: 30px;
-  }
 }
