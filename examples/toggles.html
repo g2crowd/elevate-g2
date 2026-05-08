@@ -40,7 +40,15 @@
   <input class="toggle toggle--lg" type="checkbox" disabled checked>
 </div>
 
-<h2>With label</h2>
+<h2>With wrapping label</h2>
+<div class="component-col" elv style="gap: 1rem;">
+  <label class="elv-label elv-label--sm"><input class="toggle" type="checkbox"> Enable notifications</label>
+  <label class="elv-label elv-label--xs"><input class="toggle toggle--sm" type="checkbox" checked> Dark mode</label>
+  <label class="elv-label elv-label--sm elv-label--disabled"><input class="toggle" type="checkbox" disabled> Feature locked</label>
+</div>
+
+<h2>Wrapper pattern (for Rails form helpers)</h2>
+<p class="subtitle">Use <code>.elv-label__wrapper</code> when input and label are separate elements.</p>
 <div class="component-col" elv style="gap: 1rem;">
   <div class="elv-label__wrapper">
     <input class="toggle" type="checkbox" id="tog-notif">

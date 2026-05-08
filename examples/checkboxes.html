@@ -76,5 +76,22 @@
   <label class="elv-label elv-label--sm elv-label--disabled"><input class="checkbox" type="checkbox" disabled> Feature locked</label>
 </div>
 
+<h2>Wrapper pattern (for Rails form helpers)</h2>
+<p class="subtitle">Use <code>.elv-label__wrapper</code> when input and label are separate elements (e.g. <code>f.check_box</code> + <code>f.label</code>).</p>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <div class="elv-label__wrapper">
+    <input class="checkbox checkbox--lg" type="checkbox" checked id="wrap-lg">
+    <label class="elv-label" for="wrap-lg">Large with wrapper</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="checkbox" type="checkbox" id="wrap-md">
+    <label class="elv-label elv-label--sm" for="wrap-md">Medium with wrapper</label>
+  </div>
+  <div class="elv-label__wrapper elv-label__wrapper--sm">
+    <input class="checkbox checkbox--sm" type="checkbox" checked id="wrap-sm">
+    <label class="elv-label elv-label--xs" for="wrap-sm">Small with wrapper</label>
+  </div>
+</div>
+
 </body>
 </html>
