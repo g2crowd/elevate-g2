@@ -1,7 +1,6 @@
 @layer components {
   .elv-dropdown {
-    @apply elv-relative;
-    display: inline-block;
+    @apply elv-relative elv-inline-block;
   }
 
   .elv-dropdown__trigger {
