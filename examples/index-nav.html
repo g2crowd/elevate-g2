@@ -10,9 +10,24 @@
 <body>
 
 <h1>Index Nav</h1>
-<p class="subtitle">CSS component: <code>.elv-index-nav</code>. Horizontal scroll on mobile, sticky sidebar on desktop. Consumer provides scroll-tracking JS.</p>
+<p class="subtitle">CSS component: <code>.elv-index-nav</code>. Fixed dropdown on mobile, sticky sidebar on desktop. Consumer provides scroll-tracking JS.</p>
 
 <div class="elv-index-nav" elv>
+
+  <div class="elv-index-nav__mobile">
+    <button class="elv-index-nav__mobile-trigger" type="button" aria-expanded="false" aria-controls="mobile-nav-menu" data-mobile-trigger>
+      <span class="elv-index-nav__mobile-label" data-mobile-label>Overview</span>
+      <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M10 13.5L3.5 7l1.06-1.06L10 11.38l5.44-5.44L16.5 7z"/></svg>
+    </button>
+    <div class="elv-index-nav__mobile-menu" id="mobile-nav-menu" hidden data-mobile-menu>
+      <a class="elv-index-nav__mobile-item" href="#section1" data-section="section1">Overview</a>
+      <a class="elv-index-nav__mobile-item" href="#section2" data-section="section2">Features</a>
+      <a class="elv-index-nav__mobile-item" href="#section3" data-section="section3">Pricing</a>
+      <a class="elv-index-nav__mobile-item" href="#section4" data-section="section4">Reviews</a>
+      <a class="elv-index-nav__mobile-item" href="#section5" data-section="section5">Alternatives</a>
+    </div>
+  </div>
+
   <nav class="elv-index-nav__menu">
     <a class="elv-index-nav__item elv-index-nav__item--active" href="#section1" data-section="section1">Overview</a>
     <a class="elv-index-nav__item" href="#section2" data-section="section2">Features</a>
@@ -58,11 +73,40 @@
 </div>
 
 <script>
-  const items = document.querySelectorAll('.elv-index-nav__item');
-  items.forEach((item) => {
-    item.addEventListener('click', (e) => {
-      items.forEach((i) => i.classList.remove('elv-index-nav__item--active'));
+  const trigger = document.querySelector('[data-mobile-trigger]');
+  const menu = document.querySelector('[data-mobile-menu]');
+  const label = document.querySelector('[data-mobile-label]');
+  const desktopItems = document.querySelectorAll('.elv-index-nav__item');
+
+  trigger.addEventListener('click', () => {
+    const isHidden = menu.hasAttribute('hidden');
+    if (isHidden) {
+      menu.removeAttribute('hidden');
+      trigger.setAttribute('aria-expanded', 'true');
+    } else {
+      menu.setAttribute('hidden', '');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  menu.addEventListener('click', (e) => {
+    const item = e.target.closest('.elv-index-nav__mobile-item');
+    if (!item) return;
+    label.textContent = item.textContent;
+    menu.setAttribute('hidden', '');
+    trigger.setAttribute('aria-expanded', 'false');
+
+    desktopItems.forEach((i) => i.classList.remove('elv-index-nav__item--active'));
+    const sectionId = item.getAttribute('data-section');
+    const match = document.querySelector(`.elv-index-nav__item[data-section="${sectionId}"]`);
+    if (match) match.classList.add('elv-index-nav__item--active');
+  });
+
+  desktopItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      desktopItems.forEach((i) => i.classList.remove('elv-index-nav__item--active'));
       item.classList.add('elv-index-nav__item--active');
+      label.textContent = item.textContent;
     });
   });
 </script>
