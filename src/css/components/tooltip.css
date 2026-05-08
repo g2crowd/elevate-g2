@@ -20,20 +20,22 @@
       height: 0;
       border: inset 0.75rem;
       position: absolute;
-      bottom: 100%;
       left: 50%;
       transform: translateX(-50%);
-      border-color: transparent transparent #201f23;
-      border-bottom-style: solid;
-      border-top-width: 0;
     }
 
     &.top::before {
       top: 100%;
-      bottom: auto;
       border-color: #201f23 transparent transparent;
       border-top-style: solid;
       border-bottom-width: 0;
+    }
+
+    &.bottom::before {
+      bottom: 100%;
+      border-color: transparent transparent #201f23;
+      border-bottom-style: solid;
+      border-top-width: 0;
     }
   }
 
