@@ -9,7 +9,7 @@
 
   .elv-dropdown__menu {
     @apply elv-absolute elv-rounded-sm elv-shadow-2 elv-border elv-border-light
-      elv-bg-neutral-0 elv-flex elv-flex-col elv-justify-start elv-items-start
+      elv-bg-neutral-0 elv-flex elv-flex-col
       elv-overflow-hidden elv-z-10;
     transition: opacity 150ms ease;
   }
@@ -26,7 +26,7 @@
   /* ── Menu items (flat list usage) ─────────────────── */
 
   .elv-dropdown__menu--items {
-    @apply elv-gap-1 elv-p-1;
+    @apply elv-gap-1 elv-p-1 elv-justify-start elv-items-start;
   }
 
   .elv-dropdown__item {
