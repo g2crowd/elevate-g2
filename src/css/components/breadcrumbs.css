@@ -1,19 +1,19 @@
 @layer components {
-  .breadcrumbs__list {
+  .elv-breadcrumbs__list {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-inline-flex elv-items-center elv-gap-0.5 elv-list-none elv-m-0 elv-p-0;
     }
   }
 
-  .breadcrumbs__item {
+  .elv-breadcrumbs__item {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-items-center elv-gap-0.5;
     }
   }
 
-  .breadcrumbs__link {
+  .elv-breadcrumbs__link {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-subtle elv-no-underline elv-text-xs elv-leading-xs
@@ -21,28 +21,28 @@
     }
   }
 
-  .breadcrumbs__link:hover {
+  .elv-breadcrumbs__link:hover {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-default;
     }
   }
 
-  .breadcrumbs__link:focus-visible {
+  .elv-breadcrumbs__link:focus-visible {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-outline elv-outline-3 elv-outline-purple-40 elv-outline-offset-1 elv-rounded-2xs;
     }
   }
 
-  .breadcrumbs__link--current {
+  .elv-breadcrumbs__link--current {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-default elv-pointer-events-none;
     }
   }
 
-  .breadcrumbs__separator {
+  .elv-breadcrumbs__separator {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-w-4 elv-h-4 elv-shrink-0 elv-fill-neutral-70;

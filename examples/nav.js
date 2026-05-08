@@ -62,10 +62,6 @@ const NAV_HTML = `
   <a href="./toasts.html">Toast</a>
   <a href="./tooltips.html">Tooltip</a>
 
-  <div class="legend">
-    <span><strong style="color: #5746b2;">Purple</strong> = ported</span>
-    <span><strong style="color: #6f6d78;">Gray</strong> = planned</span>
-  </div>
 </nav>
 `;
 

@@ -1,5 +1,5 @@
 @layer components {
-  .notification {
+  .elv-notification {
     @apply elv-bg-neutral-0
       elv-border-1 elv-border-l-4 elv-border-neutral
       elv-ease-in-out
@@ -9,63 +9,63 @@
     width: 440px;
   }
 
-  .notification--primary {
+  .elv-notification--primary {
     @apply elv-bg-neutral-10 elv-border-l-primary;
   }
 
-  .notification--info {
+  .elv-notification--info {
     @apply elv-bg-info-20 elv-border-l-info;
   }
 
-  .notification--success {
+  .elv-notification--success {
     @apply elv-bg-success-20 elv-border-l-success;
   }
 
-  .notification--warning {
+  .elv-notification--warning {
     @apply elv-bg-warning-20 elv-border-l-warning;
   }
 
-  .notification--critical {
+  .elv-notification--critical {
     @apply elv-bg-critical-20 elv-border-l-critical;
   }
 
-  .notification__header {
+  .elv-notification__header {
     @apply elv-flex elv-flex-row elv-justify-between elv-pb-1;
   }
 
-  .notification__title {
+  .elv-notification__title {
     @apply elv-flex elv-gap-1;
   }
 
-  .notification__close {
+  .elv-notification__close {
     @apply elv-flex elv-justify-end;
   }
 
-  .notification__close .icon {
+  .elv-notification__close .icon {
     @apply elv-text-nonessential elv-cursor-pointer;
   }
 
-  .notification__body {
+  .elv-notification__body {
     @apply elv-mr-4;
   }
 
-  .notification--primary .notification__body {
+  .elv-notification--primary .elv-notification__body {
     @apply elv-ml-0;
   }
 
-  .notification--info .notification__body,
-  .notification--success .notification__body,
-  .notification--warning .notification__body,
-  .notification--critical .notification__body {
+  .elv-notification--info .elv-notification__body,
+  .elv-notification--success .elv-notification__body,
+  .elv-notification--warning .elv-notification__body,
+  .elv-notification--critical .elv-notification__body {
     @apply elv-ml-5;
   }
 
-  .notification__action {
+  .elv-notification__action {
     @apply elv-mt-1;
   }
 
-  .notification--info .notification__title { @apply elv-text-info; }
-  .notification--success .notification__title { @apply elv-text-success; }
-  .notification--warning .notification__title { @apply elv-text-warning; }
-  .notification--critical .notification__title { @apply elv-text-critical; }
+  .elv-notification--info .elv-notification__title { @apply elv-text-info; }
+  .elv-notification--success .elv-notification__title { @apply elv-text-success; }
+  .elv-notification--warning .elv-notification__title { @apply elv-text-warning; }
+  .elv-notification--critical .elv-notification__title { @apply elv-text-critical; }
 }

@@ -1,5 +1,5 @@
 @layer components {
-  .avatar {
+  .elv-avatar {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-relative elv-flex elv-items-center elv-justify-center
@@ -7,42 +7,42 @@
     }
   }
 
-  .avatar--xl {
+  .elv-avatar--xl {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-size-21 elv-rounded-xl;
     }
   }
 
-  .avatar--lg {
+  .elv-avatar--lg {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-size-15 elv-rounded-full;
     }
   }
 
-  .avatar--md {
+  .elv-avatar--md {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-size-11 elv-rounded-full;
     }
   }
 
-  .avatar--sm {
+  .elv-avatar--sm {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-size-9 elv-rounded-full;
     }
   }
 
-  .avatar--xs {
+  .elv-avatar--xs {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-size-7 elv-rounded-full;
     }
   }
 
-  .avatar__image {
+  .elv-avatar__image {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-w-full elv-h-full elv-overflow-hidden;
@@ -52,7 +52,7 @@
     }
   }
 
-  .avatar__initials {
+  .elv-avatar__initials {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-relative elv-flex elv-items-center elv-justify-center

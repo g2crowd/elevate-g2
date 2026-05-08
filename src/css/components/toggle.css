@@ -1,5 +1,5 @@
 @layer components {
-  .toggle {
+  .elv-toggle {
     @apply elv-appearance-none
       elv-relative
       elv-cursor-pointer
@@ -61,7 +61,7 @@
     }
   }
 
-  .toggle--sm {
+  .elv-toggle--sm {
     @apply elv-h-5 elv-w-9;
 
     &::before {
@@ -77,7 +77,7 @@
     }
   }
 
-  .toggle--lg {
+  .elv-toggle--lg {
     @apply elv-h-7 elv-w-15;
 
     &::before {

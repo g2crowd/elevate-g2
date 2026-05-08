@@ -1,5 +1,5 @@
 @layer components {
-  .notification-badge {
+  .elv-notification-badge {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-flex elv-justify-center elv-items-center elv-p-1
@@ -7,49 +7,49 @@
     }
   }
 
-  .notification-badge--top {
+  .elv-notification-badge--top {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-bg-brand elv-text-inverted;
     }
   }
 
-  .notification-badge--mid {
+  .elv-notification-badge--mid {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-bg-primary elv-text-inverted;
     }
   }
 
-  .notification-badge--low {
+  .elv-notification-badge--low {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-text-subtle;
     }
   }
 
-  .notification-badge--with-count {
+  .elv-notification-badge--with-count {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-min-w-4 elv-h-4 elv-w-fit elv-p-1;
     }
   }
 
-  .notification-badge--dot {
+  .elv-notification-badge--dot {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-w-1 elv-h-1;
     }
   }
 
-  .notification-badge--low.notification-badge--with-count {
+  .elv-notification-badge--low.elv-notification-badge--with-count {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-bg-primary-20 elv-border elv-border-primary;
     }
   }
 
-  .notification-badge--low.notification-badge--dot {
+  .elv-notification-badge--low.elv-notification-badge--dot {
     :where([elv]) &,
     &:where([elv]) {
       @apply elv-bg-primary-60;

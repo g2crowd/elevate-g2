@@ -1,13 +1,13 @@
 @layer components {
-  .accordion {
+  .elv-accordion {
     @apply elv-w-full;
   }
 
-  .accordion__item {
+  .elv-accordion__item {
     @apply elv-w-full elv-border-b elv-border-light;
   }
 
-  .accordion__trigger {
+  .elv-accordion__trigger {
     @apply elv-w-full elv-flex elv-justify-between elv-items-center
       elv-py-3 elv-cursor-pointer elv-list-none;
 
@@ -16,7 +16,7 @@
     }
   }
 
-  .accordion__trigger::after {
+  .elv-accordion__trigger::after {
     @apply elv-shrink-0 elv-text-default;
     content: '';
     display: block;
@@ -29,28 +29,28 @@
     transition: transform 150ms ease-in;
   }
 
-  .accordion__item[open] .accordion__trigger::after {
+  .elv-accordion__item[open] .elv-accordion__trigger::after {
     transform: rotate(180deg);
   }
 
-  .accordion__body {
+  .elv-accordion__body {
     @apply elv-pb-3;
   }
 
-  .accordion--lg .accordion__trigger {
+  .elv-accordion--lg .elv-accordion__trigger {
     @apply elv-py-5;
   }
 
-  .accordion--lg .accordion__body {
+  .elv-accordion--lg .elv-accordion__body {
     @apply elv-pb-5;
   }
 
-  .accordion--padded .accordion__trigger,
-  .accordion--padded .accordion__body {
+  .elv-accordion--padded .elv-accordion__trigger,
+  .elv-accordion--padded .elv-accordion__body {
     @apply elv-px-6;
   }
 
-  .accordion--padded .accordion__item {
+  .elv-accordion--padded .elv-accordion__item {
     @apply elv-mx-6;
   }
 }
