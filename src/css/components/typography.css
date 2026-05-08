@@ -34,12 +34,13 @@
   /* ── Label ─────────────────────────────────────────────── */
 
   .elv-label {
-    @apply elv-font-semibold elv-text-base elv-leading-base;
+    @apply elv-font-semibold elv-text-base elv-leading-base
+      elv-flex elv-items-center elv-gap-2 elv-cursor-pointer;
   }
 
   .elv-label--md { @apply elv-text-base elv-leading-base; }
-  .elv-label--sm { @apply elv-text-sm elv-leading-sm; }
-  .elv-label--xs { @apply elv-text-xs elv-leading-xs; }
+  .elv-label--sm { @apply elv-text-sm elv-leading-sm elv-gap-1; }
+  .elv-label--xs { @apply elv-text-xs elv-leading-xs elv-gap-1; }
 
   .elv-label--disabled { @apply elv-text-disabled; }
 
