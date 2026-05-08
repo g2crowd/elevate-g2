@@ -1,80 +1,50 @@
 @layer components {
   .elv-tab-group {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex elv-flex-col;
-    }
+    @apply elv-flex elv-flex-col;
   }
 
   .elv-tab-list {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex elv-items-center;
-    }
+    @apply elv-flex elv-items-center;
   }
 
   .elv-tab-list--full-width {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-border-b elv-border-medium;
-    }
+    @apply elv-border-b elv-border-medium;
   }
 
   .elv-tab-list--full-width .elv-tab {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex-1;
-      border-bottom: 1px solid transparent;
-    }
+    @apply elv-flex-1;
+    border-bottom: 1px solid transparent;
   }
 
   .elv-tab {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex elv-items-center elv-justify-center elv-gap-1
-        elv-h-10 elv-px-6 elv-bg-transparent elv-cursor-pointer
-        elv-font-figtree elv-text-sm elv-leading-sm elv-font-semibold
-        elv-text-subtle elv-transition-all elv-duration-150 elv-relative elv-whitespace-nowrap;
-      border-bottom: 2px solid transparent;
-    }
+    @apply elv-flex elv-items-center elv-justify-center elv-gap-1
+      elv-h-10 elv-px-6 elv-bg-transparent elv-cursor-pointer
+      elv-font-figtree elv-text-sm elv-leading-sm elv-font-semibold
+      elv-text-subtle elv-transition-all elv-duration-150 elv-relative elv-whitespace-nowrap;
+    border-bottom: 2px solid transparent;
   }
 
   .elv-tab:hover {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-text-primary;
-      border-bottom-color: currentColor;
-    }
+    @apply elv-text-primary;
+    border-bottom-color: currentColor;
   }
 
   .elv-tab[aria-selected="true"] {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-text-primary;
-      border-bottom-color: currentColor;
-    }
+    @apply elv-text-primary;
+    border-bottom-color: currentColor;
   }
 
   .elv-tab:focus-visible {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-outline elv-outline-3 elv-outline-purple-40;
-      outline-offset: -2px;
-      z-index: 1;
-    }
+    @apply elv-outline elv-outline-3 elv-outline-purple-40;
+    outline-offset: -2px;
+    z-index: 1;
   }
 
   .elv-tab-icon {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-w-4 elv-h-4 elv-shrink-0;
-    }
+    @apply elv-w-4 elv-h-4 elv-shrink-0;
   }
 
   .elv-tab-panels {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-mt-4;
-    }
+    @apply elv-mt-4;
   }
 }

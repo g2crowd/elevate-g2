@@ -1,37 +1,26 @@
 @layer components {
-  :where([elv]) .elv-pagination,
-  :where([elv]).elv-pagination {
+  .elv-pagination {
     @apply elv-flex elv-gap-2 elv-font-figtree elv-list-none elv-m-0 elv-p-0;
   }
-
-  :where([elv]) .elv-pagination__only-nessy,
-  :where([elv]).elv-pagination__only-nessy {
+  .elv-pagination__only-nessy {
     @apply elv-hidden;
   }
-
-  :where([elv]) .elv-pagination__only-elv,
-  :where([elv]).elv-pagination__only-elv {
+  .elv-pagination__only-elv {
     @apply elv-flex elv-items-center elv-justify-center elv-gap-1;
   }
-
-  :where([elv]) .elv-pagination__component,
-  :where([elv]).elv-pagination__component {
+  .elv-pagination__component {
     @apply elv-size-8
       elv-flex
       elv-items-center
       elv-justify-center;
   }
-
-  :where([elv]) .elv-pagination__component--disabled,
-  :where([elv]).elv-pagination__component--disabled {
+  .elv-pagination__component--disabled {
     @apply elv-border-none
       elv-rounded-sm
       elv-text-disabled
       elv-bg-neutral-10;
   }
-
-  :where([elv]) .elv-pagination__component-gap,
-  :where([elv]).elv-pagination__component-gap {
+  .elv-pagination__component-gap {
     @apply
       elv-flex
       elv-items-center
@@ -41,9 +30,7 @@
       elv-text-sm
       elv-text-subtle;
   }
-
-  :where([elv]) .elv-pagination__page-number--current,
-  :where([elv]).elv-pagination__page-number--current {
+  .elv-pagination__page-number--current {
     @apply
       elv-bg-primary-20
       elv-border
@@ -55,11 +42,8 @@
       elv-text-subtle
       elv-rounded-sm;
   }
-
-  :where([elv]) .elv-pagination__named-link,
-  :where([elv]).elv-pagination__named-link,
-  :where([elv]) .elv-pagination__page-number-link,
-  :where([elv]).elv-pagination__page-number-link {
+  .elv-pagination__named-link,
+  .elv-pagination__page-number-link {
     @apply a--reset
       elv-flex
       elv-items-center
@@ -81,9 +65,7 @@
       elv-ease-in-out
       elv-duration-150;
   }
-
-  :where([elv]) .elv-pagination__named-link,
-  :where([elv]).elv-pagination__named-link {
+  .elv-pagination__named-link {
     @apply elv-border
       elv-flex
       elv-items-center

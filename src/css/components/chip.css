@@ -1,64 +1,40 @@
 @layer components {
   .chip {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-inline-flex elv-w-fit elv-items-center elv-justify-center
         elv-cursor-pointer elv-transition-all elv-duration-150 elv-ease-in-out
         elv-bg-neutral-10 elv-text-neutral elv-border-0 elv-font-figtree;
-    }
   }
 
   .chip:hover {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-bg-primary-30 elv-text-primary;
-    }
   }
 
   .chip[data-selected="true"] {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-bg-primary-20 elv-text-primary;
-    }
   }
 
   .chip--xs {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-h-4 elv-py-0.5 elv-rounded-xs elv-text-xs elv-font-semibold;
-    }
   }
 
   .chip--sm {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-h-6 elv-py-0.5 elv-rounded-xs elv-text-sm elv-font-semibold;
-    }
   }
 
   .chip--md {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-h-8 elv-py-0.5 elv-px-1 elv-rounded-sm elv-text-sm elv-font-semibold;
-    }
   }
 
   .chip__label {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-px-0.5 elv-whitespace-nowrap;
       color: inherit;
       font-weight: inherit;
       font-size: inherit;
-    }
   }
 
   .chip__icon {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-text-primary elv-shrink-0;
       transition: width 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    }
   }
 
   .chip__icon--hidden {
@@ -67,31 +43,19 @@
   }
 
   .chip__icon--xs {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-w-3 elv-h-3;
-    }
   }
 
   .chip__icon--sm {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-w-4 elv-h-4;
-    }
   }
 
   .chip__icon--trailing {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-rounded-2xs;
-    }
   }
 
   .chip__icon--trailing:hover {
-    :where([elv]) &,
-    &:where([elv]) {
       @apply elv-bg-primary-40 elv-text-default;
-    }
   }
 
   .chip--dismissing {
