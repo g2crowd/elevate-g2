@@ -25,7 +25,7 @@ const NAV_HTML = `
 
   <h3>Forms</h3>
   <a href="./checkboxes.html">Checkbox</a>
-  <a class="planned">File Input</a>
+  <a href="./file-uploads.html">File Upload</a>
   <a href="./helper-text.html">Helper Text</a>
   <a href="./typography.html">Label</a>
   <a href="./number-inputs.html">Number Input</a>
