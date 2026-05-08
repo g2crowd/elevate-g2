@@ -28,250 +28,168 @@
   /* ── Block ─────────────────────────────────────────────── */
 
   .ctrl-btn {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-inline-flex
-        elv-items-center
-        elv-justify-center
-        elv-border
-        elv-border-solid
-        elv-border-light
-        elv-transition-all
-        elv-duration-150
-        elv-ease-in
-        elv-bg-neutral-5
-        elv-text-default
-        elv-min-w-6
-        elv-gap-1
-        elv-rounded-sm;
+    @apply elv-inline-flex
+      elv-items-center
+      elv-justify-center
+      elv-border
+      elv-border-solid
+      elv-border-light
+      elv-transition-all
+      elv-duration-150
+      elv-ease-in
+      elv-bg-neutral-5
+      elv-text-default
+      elv-min-w-6
+      elv-gap-1
+      elv-rounded-sm;
 
-      @apply hover:elv-bg-primary-20
-        hover:elv-text-primary;
+    @apply hover:elv-bg-primary-20
+      hover:elv-text-primary;
 
-      @apply active:elv-bg-primary-20
-        active:elv-text-primary
-        active:elv-shadow-[inset_0_0_4px_1px_#201f2366];
+    @apply active:elv-bg-primary-20
+      active:elv-text-primary
+      active:elv-shadow-[inset_0_0_4px_1px_#201f2366];
 
-      @apply focus:elv-outline-neutral-40
-        focus:elv-outline
-        focus:elv-shadow-ui-focus
-        focus:elv-border-primary
-        focus:elv-text-primary;
+    @apply focus:elv-outline-neutral-40
+      focus:elv-outline
+      focus:elv-shadow-ui-focus
+      focus:elv-border-primary
+      focus:elv-text-primary;
 
-      @apply disabled:elv-cursor-not-allowed
-        disabled:elv-bg-neutral-10
-        disabled:elv-text-disabled;
-    }
+    @apply disabled:elv-cursor-not-allowed
+      disabled:elv-bg-neutral-10
+      disabled:elv-text-disabled;
   }
 
-  .ctrl-btn:where(a),
-  :where([elv]) .ctrl-btn:where(a) {
+  .ctrl-btn:where(a) {
     @apply a--reset;
   }
 
   /* ── Active state ──────────────────────────────────────── */
 
   .ctrl-btn--active {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-bg-primary-20
-        elv-text-primary;
-    }
+    @apply elv-bg-primary-20
+      elv-text-primary;
   }
 
   /* ── Sizes ─────────────────────────────────────────────── */
 
   .ctrl-btn--xs {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-h-6 elv-rounded-xs;
-    }
+    @apply elv-h-6 elv-rounded-xs;
   }
 
   .ctrl-btn--sm {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-h-8;
-    }
+    @apply elv-h-8;
   }
 
   .ctrl-btn--md {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-h-10;
-    }
+    @apply elv-h-10;
   }
 
   .ctrl-btn--lg {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-h-12;
-    }
+    @apply elv-h-12;
   }
 
   /* ── Icon-only sizing (square) ─────────────────────────── */
 
   .ctrl-btn--icon-only.ctrl-btn--xs {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-w-6;
-    }
+    @apply elv-w-6;
   }
 
   .ctrl-btn--icon-only.ctrl-btn--sm {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-w-8;
-    }
+    @apply elv-w-8;
   }
 
   .ctrl-btn--icon-only.ctrl-btn--md {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-w-10;
-    }
+    @apply elv-w-10;
   }
 
   .ctrl-btn--icon-only.ctrl-btn--lg {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-w-12;
-    }
+    @apply elv-w-12;
   }
 
   /* ── Segments ──────────────────────────────────────────── */
 
   .ctrl-btn--left-cap {
-    &:where([elv]),
-    :where([elv]) & {
-      border-radius: 0.5rem 0 0 0.5rem;
-    }
+    border-radius: 0.5rem 0 0 0.5rem;
   }
 
   .ctrl-btn--left-cap.ctrl-btn--xs {
-    &:where([elv]),
-    :where([elv]) & {
-      border-radius: 0.25rem 0 0 0.25rem;
-    }
+    border-radius: 0.25rem 0 0 0.25rem;
   }
 
   .ctrl-btn--middle {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv-rounded-0;
-    }
+    @apply elv-rounded-0;
   }
 
   .ctrl-btn--right-cap {
-    &:where([elv]),
-    :where([elv]) & {
-      border-radius: 0 0.5rem 0.5rem 0;
-    }
+    border-radius: 0 0.5rem 0.5rem 0;
   }
 
   .ctrl-btn--right-cap.ctrl-btn--xs {
-    &:where([elv]),
-    :where([elv]) & {
-      border-radius: 0 0.25rem 0.25rem 0;
-    }
+    border-radius: 0 0.25rem 0.25rem 0;
   }
 
   /* ── Inner wrapper ─────────────────────────────────────── */
 
   .ctrl-btn__inner {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn & {
-      @apply elv-flex
-        elv-items-center
-        elv-justify-center
-        elv-gap-0;
-    }
+    @apply elv-flex
+      elv-items-center
+      elv-justify-center
+      elv-gap-0;
   }
 
   .ctrl-btn--xs .ctrl-btn__inner {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn--xs & {
-      @apply elv-px-1;
-    }
+    @apply elv-px-1;
   }
 
   .ctrl-btn--sm .ctrl-btn__inner,
   .ctrl-btn--md .ctrl-btn__inner {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn & {
-      @apply elv-px-2;
-    }
+    @apply elv-px-2;
   }
 
   .ctrl-btn--lg .ctrl-btn__inner {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn--lg & {
-      @apply elv-px-3;
-    }
+    @apply elv-px-3;
   }
 
   /* ── Label ─────────────────────────────────────────────── */
 
   .ctrl-btn__label {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn & {
-      @apply elv-px-1 elv-font-figtree elv-font-semibold;
-    }
+    @apply elv-px-1 elv-font-figtree elv-font-semibold;
   }
 
   .ctrl-btn--xs .ctrl-btn__label,
   .ctrl-btn--sm .ctrl-btn__label {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn & {
-      @apply elv-text-sm;
-    }
+    @apply elv-text-sm;
   }
 
   .ctrl-btn--md .ctrl-btn__label,
   .ctrl-btn--lg .ctrl-btn__label {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn & {
-      @apply elv-text-base;
-    }
+    @apply elv-text-base;
   }
 
   /* ── Dropdown menu divider ─────────────────────────────── */
 
   .ctrl-btn__dropdown {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn & {
-      @apply elv-border-l
-        elv-border-light
-        elv-flex
-        elv-items-center;
-    }
+    @apply elv-border-l
+      elv-border-light
+      elv-flex
+      elv-items-center;
   }
 
   .ctrl-btn--xs .ctrl-btn__dropdown {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn--xs & {
-      @apply elv-h-6 elv-px-1;
-    }
+    @apply elv-h-6 elv-px-1;
   }
 
   .ctrl-btn--sm .ctrl-btn__dropdown {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn--sm & {
-      @apply elv-h-8 elv-px-2;
-    }
+    @apply elv-h-8 elv-px-2;
   }
 
   .ctrl-btn--md .ctrl-btn__dropdown {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn--md & {
-      @apply elv-h-10 elv-px-2;
-    }
+    @apply elv-h-10 elv-px-2;
   }
 
   .ctrl-btn--lg .ctrl-btn__dropdown {
-    :where([elv]) &,
-    :where([elv]) .ctrl-btn--lg & {
-      @apply elv-h-12 elv-px-2;
-    }
+    @apply elv-h-12 elv-px-2;
   }
 }
