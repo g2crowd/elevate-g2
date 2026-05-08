@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Nav — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Index Nav</h1>
+<p class="subtitle">CSS component: <code>.elv-index-nav</code>. Fixed dropdown on mobile, sticky sidebar on desktop. One set of nav items. Consumer provides scroll-tracking JS.</p>
+
+<div class="elv-index-nav" elv>
+
+  <div class="elv-index-nav__sidebar">
+    <button class="elv-index-nav__trigger" type="button" aria-expanded="false" aria-controls="index-nav-menu" data-trigger>
+      <span class="elv-index-nav__trigger-label" data-label>Overview</span>
+      <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M10 13.5L3.5 7l1.06-1.06L10 11.38l5.44-5.44L16.5 7z"/></svg>
+    </button>
+    <nav class="elv-index-nav__menu" id="index-nav-menu" hidden data-menu>
+      <a class="elv-index-nav__item elv-index-nav__item--active" href="#section1" data-section="section1">Overview</a>
+      <a class="elv-index-nav__item" href="#section2" data-section="section2">Features</a>
+      <a class="elv-index-nav__item" href="#section3" data-section="section3">Pricing</a>
+      <a class="elv-index-nav__item" href="#section4" data-section="section4">Reviews</a>
+      <a class="elv-index-nav__item" href="#section5" data-section="section5">Alternatives</a>
+    </nav>
+  </div>
+
+  <main class="elv-index-nav__main">
+    <section id="section1">
+      <h2 class="elv-heading elv-heading--sm">Overview</h2>
+      <p class="elv-body" style="margin-top: 1rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum nunc libero, ac volutpat lorem condimentum at. Aliquam pharetra tristique elit, non gravida neque vestibulum volutpat. Vivamus ullamcorper eros neque, eu rhoncus augue luctus sit amet.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Vestibulum maximus varius felis, eget condimentum odio luctus et. Proin faucibus mi sit amet orci lobortis dapibus. Vivamus tempor neque vitae nulla molestie laoreet. Sed gravida quam ut convallis pulvinar.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Maecenas viverra tortor non mi laoreet, eu scelerisque mi commodo. Nullam elementum lacinia magna sed tempus. Donec pretium rhoncus eleifend.</p>
+    </section>
+
+    <section id="section2">
+      <h2 class="elv-heading elv-heading--sm">Features</h2>
+      <p class="elv-body" style="margin-top: 1rem;">Pellentesque arcu massa, tristique a velit eget, maximus sollicitudin ante. Maecenas orci erat, pellentesque nec ligula eget, placerat fringilla mauris. Sed gravida quam ut convallis pulvinar.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum nunc libero, ac volutpat lorem condimentum at. Aliquam pharetra tristique elit, non gravida neque vestibulum volutpat.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Vivamus ullamcorper eros neque, eu rhoncus augue luctus sit amet. Vestibulum maximus varius felis, eget condimentum odio luctus et.</p>
+    </section>
+
+    <section id="section3">
+      <h2 class="elv-heading elv-heading--sm">Pricing</h2>
+      <p class="elv-body" style="margin-top: 1rem;">Proin faucibus mi sit amet orci lobortis dapibus. Vivamus tempor neque vitae nulla molestie laoreet. Sed gravida quam ut convallis pulvinar. Maecenas viverra tortor non mi laoreet.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Nullam elementum lacinia magna sed tempus. Donec pretium rhoncus eleifend. Donec iaculis, neque et rhoncus efficitur, est urna convallis nunc.</p>
+    </section>
+
+    <section id="section4">
+      <h2 class="elv-heading elv-heading--sm">Reviews</h2>
+      <p class="elv-body" style="margin-top: 1rem;">Non dignissim elit eros in enim. Pellentesque arcu massa, tristique a velit eget, maximus sollicitudin ante. Maecenas orci erat, pellentesque nec ligula eget, placerat fringilla mauris.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer fermentum nunc libero, ac volutpat lorem condimentum at. Aliquam pharetra tristique elit, non gravida neque vestibulum volutpat.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Vivamus ullamcorper eros neque, eu rhoncus augue luctus sit amet. Vestibulum maximus varius felis, eget condimentum odio luctus et. Proin faucibus mi sit amet orci lobortis dapibus.</p>
+    </section>
+
+    <section id="section5">
+      <h2 class="elv-heading elv-heading--sm">Alternatives</h2>
+      <p class="elv-body" style="margin-top: 1rem;">Vivamus tempor neque vitae nulla molestie laoreet. Sed gravida quam ut convallis pulvinar. Maecenas viverra tortor non mi laoreet, eu scelerisque mi commodo.</p>
+      <p class="elv-body" style="margin-top: 1rem;">Nullam elementum lacinia magna sed tempus. Donec pretium rhoncus eleifend. Donec iaculis, neque et rhoncus efficitur.</p>
+    </section>
+  </main>
+</div>
+
+<script>
+  const trigger = document.querySelector('[data-trigger]');
+  const menu = document.querySelector('[data-menu]');
+  const label = document.querySelector('[data-label]');
+  const items = document.querySelectorAll('.elv-index-nav__item');
+
+  trigger.addEventListener('click', () => {
+    const isHidden = menu.hasAttribute('hidden');
+    if (isHidden) {
+      menu.removeAttribute('hidden');
+      trigger.setAttribute('aria-expanded', 'true');
+    } else {
+      menu.setAttribute('hidden', '');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  items.forEach((item) => {
+    item.addEventListener('click', () => {
+      items.forEach((i) => i.classList.remove('elv-index-nav__item--active'));
+      item.classList.add('elv-index-nav__item--active');
+      label.textContent = item.textContent;
+      menu.setAttribute('hidden', '');
+      trigger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -48,7 +48,7 @@ const NAV_HTML = `
 
   <h3>Navigation</h3>
   <a href="./breadcrumbs.html">Breadcrumbs</a>
-  <a class="planned">Index Nav</a>
+  <a href="./index-nav.html">Index Nav</a>
   <a href="./pagination.html">Pagination</a>
   <a href="./tabs.html">Tab</a>
 
