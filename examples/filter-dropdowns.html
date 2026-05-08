@@ -10,25 +10,25 @@
 <body>
 
 <h1>Filter Dropdown</h1>
-<p class="subtitle">CSS component: <code>.elv-filter-dropdown</code>. Pill trigger with dropdown filter panel.</p>
+<p class="subtitle">Uses shared <code>.elv-dropdown</code> with <code>.elv-dropdown__pill</code> trigger and panel header/body/footer.</p>
 
 <h2>Empty (default)</h2>
 <div class="component-col" elv>
-  <div class="elv-filter-dropdown" data-filter-dropdown>
-    <div class="elv-filter-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filter-trigger>
-      <div class="elv-filter-dropdown__content">
-        <span class="elv-filter-dropdown__label">Location</span>
+  <div class="elv-dropdown" data-filter-dropdown>
+    <div class="elv-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filter-trigger>
+      <div class="elv-dropdown__pill-content">
+        <span class="elv-dropdown__pill-label">Location</span>
       </div>
-      <div class="elv-filter-dropdown__caret">
+      <div class="elv-dropdown__pill-caret">
         <svg class="icon icon--xs" viewBox="0 0 20 20" fill="currentColor"><path d="M10 13.5L3.5 7l1.06-1.06L10 11.38l5.44-5.44L16.5 7z"/></svg>
       </div>
     </div>
-    <div class="elv-filter-dropdown__panel" hidden data-filter-panel>
-      <div class="elv-filter-dropdown__panel-header">
-        <span class="elv-filter-dropdown__panel-title">Location</span>
+    <div class="elv-dropdown__menu elv-dropdown__menu--xl" hidden data-filter-panel>
+      <div class="elv-dropdown__header">
+        <span class="elv-dropdown__title">Location</span>
         <button class="btn btn--text btn--sm" type="button" elv>Clear</button>
       </div>
-      <div class="elv-filter-dropdown__panel-body">
+      <div class="elv-dropdown__body">
         <label style="display: flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer;">
           <input type="checkbox" class="elv-checkbox"> All AMER
         </label>
@@ -39,7 +39,7 @@
           <input type="checkbox" class="elv-checkbox"> All EMEA
         </label>
       </div>
-      <div class="elv-filter-dropdown__panel-footer">
+      <div class="elv-dropdown__footer">
         <div style="display: flex; gap: 0.25rem;">
           <button class="btn btn--tertiary btn--sm" type="button" elv data-filter-cancel>Cancel</button>
           <button class="btn btn--primary btn--sm" type="button" elv data-filter-apply>Apply</button>
@@ -52,21 +52,21 @@
 <h2>Filled state</h2>
 <p class="subtitle">Pill shows selected values summary and a close (×) button to dismiss the filter.</p>
 <div class="component-col" elv>
-  <div class="elv-filter-dropdown" data-filter-dropdown>
-    <div class="elv-filter-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filled data-filter-trigger>
-      <div class="elv-filter-dropdown__content">
-        <span class="elv-filter-dropdown__summary">All AMER, Italy, Spain <span class="elv-filter-dropdown__summary-count">+1</span></span>
+  <div class="elv-dropdown" data-filter-dropdown>
+    <div class="elv-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filled data-filter-trigger>
+      <div class="elv-dropdown__pill-content">
+        <span class="elv-dropdown__pill-summary">All AMER, Italy, Spain <span class="elv-dropdown__pill-count">+1</span></span>
       </div>
-      <button class="elv-filter-dropdown__caret" type="button" aria-label="Clear Location filter" data-filter-dismiss>
+      <button class="elv-dropdown__pill-caret" type="button" aria-label="Clear Location filter" data-filter-dismiss>
         <svg class="icon icon--xs" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
       </button>
     </div>
-    <div class="elv-filter-dropdown__panel" hidden data-filter-panel>
-      <div class="elv-filter-dropdown__panel-header">
-        <span class="elv-filter-dropdown__panel-title">Location</span>
+    <div class="elv-dropdown__menu elv-dropdown__menu--xl" hidden data-filter-panel>
+      <div class="elv-dropdown__header">
+        <span class="elv-dropdown__title">Location</span>
         <button class="btn btn--text btn--sm" type="button" elv>Clear</button>
       </div>
-      <div class="elv-filter-dropdown__panel-body">
+      <div class="elv-dropdown__body">
         <label style="display: flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer;">
           <input type="checkbox" class="elv-checkbox" checked> All AMER
         </label>
@@ -80,7 +80,7 @@
           <input type="checkbox" class="elv-checkbox" checked> France
         </label>
       </div>
-      <div class="elv-filter-dropdown__panel-footer">
+      <div class="elv-dropdown__footer">
         <div style="display: flex; gap: 0.25rem;">
           <button class="btn btn--tertiary btn--sm" type="button" elv data-filter-cancel>Cancel</button>
           <button class="btn btn--primary btn--sm" type="button" elv data-filter-apply>Apply</button>
@@ -95,24 +95,24 @@
 <div class="component-col" elv>
   <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
 
-    <div class="elv-filter-dropdown" data-filter-dropdown>
-      <div class="elv-filter-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filter-trigger>
-        <div class="elv-filter-dropdown__content">
-          <span class="elv-filter-dropdown__label">Location</span>
+    <div class="elv-dropdown" data-filter-dropdown>
+      <div class="elv-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filter-trigger>
+        <div class="elv-dropdown__pill-content">
+          <span class="elv-dropdown__pill-label">Location</span>
         </div>
-        <div class="elv-filter-dropdown__caret">
+        <div class="elv-dropdown__pill-caret">
           <svg class="icon icon--xs" viewBox="0 0 20 20" fill="currentColor"><path d="M10 13.5L3.5 7l1.06-1.06L10 11.38l5.44-5.44L16.5 7z"/></svg>
         </div>
       </div>
-      <div class="elv-filter-dropdown__panel" hidden data-filter-panel>
-        <div class="elv-filter-dropdown__panel-header">
-          <span class="elv-filter-dropdown__panel-title">Location</span>
+      <div class="elv-dropdown__menu elv-dropdown__menu--xl" hidden data-filter-panel>
+        <div class="elv-dropdown__header">
+          <span class="elv-dropdown__title">Location</span>
           <button class="btn btn--text btn--sm" type="button" elv>Clear</button>
         </div>
-        <div class="elv-filter-dropdown__panel-body">
+        <div class="elv-dropdown__body">
           <p class="elv-body elv-body--sm">Filter content here</p>
         </div>
-        <div class="elv-filter-dropdown__panel-footer">
+        <div class="elv-dropdown__footer">
           <div style="display: flex; gap: 0.25rem;">
             <button class="btn btn--tertiary btn--sm" type="button" elv data-filter-cancel>Cancel</button>
             <button class="btn btn--primary btn--sm" type="button" elv data-filter-apply>Apply</button>
@@ -121,24 +121,24 @@
       </div>
     </div>
 
-    <div class="elv-filter-dropdown" data-filter-dropdown>
-      <div class="elv-filter-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filled data-filter-trigger>
-        <div class="elv-filter-dropdown__content">
-          <span class="elv-filter-dropdown__summary">High, Medium</span>
+    <div class="elv-dropdown" data-filter-dropdown>
+      <div class="elv-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filled data-filter-trigger>
+        <div class="elv-dropdown__pill-content">
+          <span class="elv-dropdown__pill-summary">High, Medium</span>
         </div>
-        <button class="elv-filter-dropdown__caret" type="button" aria-label="Clear Score filter" data-filter-dismiss>
+        <button class="elv-dropdown__pill-caret" type="button" aria-label="Clear Score filter" data-filter-dismiss>
           <svg class="icon icon--xs" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
         </button>
       </div>
-      <div class="elv-filter-dropdown__panel" hidden data-filter-panel>
-        <div class="elv-filter-dropdown__panel-header">
-          <span class="elv-filter-dropdown__panel-title">Score</span>
+      <div class="elv-dropdown__menu elv-dropdown__menu--xl" hidden data-filter-panel>
+        <div class="elv-dropdown__header">
+          <span class="elv-dropdown__title">Score</span>
           <button class="btn btn--text btn--sm" type="button" elv>Clear</button>
         </div>
-        <div class="elv-filter-dropdown__panel-body">
+        <div class="elv-dropdown__body">
           <p class="elv-body elv-body--sm">Score filter content</p>
         </div>
-        <div class="elv-filter-dropdown__panel-footer">
+        <div class="elv-dropdown__footer">
           <div style="display: flex; gap: 0.25rem;">
             <button class="btn btn--tertiary btn--sm" type="button" elv data-filter-cancel>Cancel</button>
             <button class="btn btn--primary btn--sm" type="button" elv data-filter-apply>Apply</button>
@@ -147,24 +147,24 @@
       </div>
     </div>
 
-    <div class="elv-filter-dropdown" data-filter-dropdown>
-      <div class="elv-filter-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filter-trigger>
-        <div class="elv-filter-dropdown__content">
-          <span class="elv-filter-dropdown__label">Companies</span>
+    <div class="elv-dropdown" data-filter-dropdown>
+      <div class="elv-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filter-trigger>
+        <div class="elv-dropdown__pill-content">
+          <span class="elv-dropdown__pill-label">Companies</span>
         </div>
-        <div class="elv-filter-dropdown__caret">
+        <div class="elv-dropdown__pill-caret">
           <svg class="icon icon--xs" viewBox="0 0 20 20" fill="currentColor"><path d="M10 13.5L3.5 7l1.06-1.06L10 11.38l5.44-5.44L16.5 7z"/></svg>
         </div>
       </div>
-      <div class="elv-filter-dropdown__panel" hidden data-filter-panel>
-        <div class="elv-filter-dropdown__panel-header">
-          <span class="elv-filter-dropdown__panel-title">Companies</span>
+      <div class="elv-dropdown__menu elv-dropdown__menu--xl" hidden data-filter-panel>
+        <div class="elv-dropdown__header">
+          <span class="elv-dropdown__title">Companies</span>
           <button class="btn btn--text btn--sm" type="button" elv>Clear</button>
         </div>
-        <div class="elv-filter-dropdown__panel-body">
+        <div class="elv-dropdown__body">
           <p class="elv-body elv-body--sm">Company filter content</p>
         </div>
-        <div class="elv-filter-dropdown__panel-footer">
+        <div class="elv-dropdown__footer">
           <div style="display: flex; gap: 0.25rem;">
             <button class="btn btn--tertiary btn--sm" type="button" elv data-filter-cancel>Cancel</button>
             <button class="btn btn--primary btn--sm" type="button" elv data-filter-apply>Apply</button>
@@ -178,20 +178,20 @@
 
 <h2>Without clear button</h2>
 <div class="component-col" elv>
-  <div class="elv-filter-dropdown" data-filter-dropdown>
-    <div class="elv-filter-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filled data-filter-trigger>
-      <div class="elv-filter-dropdown__content">
-        <span class="elv-filter-dropdown__summary">High</span>
+  <div class="elv-dropdown" data-filter-dropdown>
+    <div class="elv-dropdown__pill" role="button" tabindex="0" aria-haspopup="dialog" aria-expanded="false" data-filled data-filter-trigger>
+      <div class="elv-dropdown__pill-content">
+        <span class="elv-dropdown__pill-summary">High</span>
       </div>
-      <button class="elv-filter-dropdown__caret" type="button" aria-label="Clear Score filter" data-filter-dismiss>
+      <button class="elv-dropdown__pill-caret" type="button" aria-label="Clear Score filter" data-filter-dismiss>
         <svg class="icon icon--xs" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
       </button>
     </div>
-    <div class="elv-filter-dropdown__panel" hidden data-filter-panel>
-      <div class="elv-filter-dropdown__panel-header">
-        <span class="elv-filter-dropdown__panel-title">Score</span>
+    <div class="elv-dropdown__menu elv-dropdown__menu--xl" hidden data-filter-panel>
+      <div class="elv-dropdown__header">
+        <span class="elv-dropdown__title">Score</span>
       </div>
-      <div class="elv-filter-dropdown__panel-body">
+      <div class="elv-dropdown__body">
         <label style="display: flex; align-items: center; gap: 6px; font-size: 14px; cursor: pointer;">
           <input type="radio" name="score" checked> High
         </label>
@@ -202,7 +202,7 @@
           <input type="radio" name="score"> Low
         </label>
       </div>
-      <div class="elv-filter-dropdown__panel-footer">
+      <div class="elv-dropdown__footer">
         <div style="display: flex; gap: 0.25rem;">
           <button class="btn btn--tertiary btn--sm" type="button" elv data-filter-cancel>Cancel</button>
           <button class="btn btn--primary btn--sm" type="button" elv data-filter-apply>Apply</button>
