@@ -58,7 +58,7 @@ const NAV_HTML = `
   <a class="planned">Modal</a>
   <a href="./notifications.html">Notification</a>
   <a class="planned">Popover</a>
-  <a class="planned">Toast</a>
+  <a href="./toasts.html">Toast</a>
   <a class="planned">Tooltip</a>
 
   <div class="legend">

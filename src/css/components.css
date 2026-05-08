@@ -26,5 +26,6 @@
 @import 'components/status-badge';
 @import 'components/tab';
 @import 'components/table';
+@import 'components/toast';
 @import 'components/toggle';
 @import 'components/typography';
