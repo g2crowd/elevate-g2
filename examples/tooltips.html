@@ -82,23 +82,16 @@
 
     function position() {
       if (!tip) return;
+      const isBottom = tip.classList.contains('bottom');
       const rect = el.getBoundingClientRect();
       const tipRect = tip.getBoundingClientRect();
       const scrollY = window.scrollY;
       const scrollX = window.scrollX;
 
-      let top = rect.top + scrollY - tipRect.height - 8;
-      let left = rect.left + scrollX + rect.width / 2 - tipRect.width / 2;
-
-      if (top < scrollY) {
-        tip.className = 'elv-tooltip bottom';
-        top = rect.bottom + scrollY + 8;
-      }
-
-      if (left < 0) left = 4;
-      if (left + tipRect.width > document.documentElement.clientWidth) {
-        left = document.documentElement.clientWidth - tipRect.width - 4;
-      }
+      const top = isBottom
+        ? rect.bottom + scrollY + 8
+        : rect.top + scrollY - tipRect.height - 8;
+      const left = rect.left + scrollX + rect.width / 2 - tipRect.width / 2;
 
       tip.style.position = 'absolute';
       tip.style.top = top + 'px';
