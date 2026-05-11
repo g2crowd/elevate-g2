@@ -22,6 +22,12 @@ jobs:
           node-version: 24
           registry-url: https://registry.npmjs.org
 
+      - name: Install dependencies
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
       - name: Check if version already published
         id: check
         run: |

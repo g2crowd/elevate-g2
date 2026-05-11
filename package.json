@@ -1,6 +1,6 @@
 {
   "name": "@g2crowd/elevate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "G2 Elevate design system — Tailwind CSS theme, component styles, and design tokens",
   "license": "UNLICENSED",
   "repository": {
@@ -31,7 +31,8 @@
     "build:site": "vite build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "clean": "rm -rf dist dist-site"
+    "clean": "rm -rf dist dist-site",
+    "prepack": "yarn build"
   },
   "dependencies": {
     "tailwindcss-scoped-preflight": "^3.0.0"
