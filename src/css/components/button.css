@@ -1,4 +1,4 @@
-@layer utilities {
+@layer components {
   .elv-btn-shadow-primary {
     @apply elv-shadow-[0_2px_8px_2px_rgba(32,31,35,0.15),_0_0_0_1px_#5746B2];
   }
