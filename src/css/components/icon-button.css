@@ -10,7 +10,7 @@
  * States:   [disabled], .icon-btn--loading
  */
 
-@layer utilities {
+@layer components {
   .elv-icon-btn-shadow-focus {
     @apply elv-shadow-[0_0_0_4px_#C3BDE5,0_0_0_0.5px_#FFFFFF];
   }
