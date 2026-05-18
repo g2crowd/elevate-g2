@@ -57,7 +57,7 @@ h3 { font-size: 1.3125rem; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #4
   width: 260px;
   height: 100vh;
   overflow-y: auto;
-  padding: 1.5rem 1rem;
+  padding: 1.5rem 1rem 4rem;
   background: #fff;
   border-right: 1px solid #dfdfe2;
   font-size: 0.875rem;
