@@ -99,7 +99,7 @@ function updateChangesCount() {
   if (countSpan) {
     const overrides = getOverrides();
     const count = Object.keys(overrides).length;
-    countSpan.textContent = \`Changes: \${count}/\${TOKENS.length}\`;
+    countSpan.textContent = `Changes: ${count}/${TOKENS.length}`;
   }
 }
 
@@ -114,10 +114,10 @@ function applyToken(varName, value) {
   setOverrides(overrides);
   updateChangesCount();
 
-  const hexInput = document.getElementById(\`te-hex-\${varName}\`);
-  const colorInput = document.getElementById(\`te-color-\${varName}\`);
-  const swatch = document.getElementById(\`te-swatch-\${varName}\`);
-  const resetBtn = document.getElementById(\`te-reset-\${varName}\`);
+  const hexInput = document.getElementById(`te-hex-${varName}`);
+  const colorInput = document.getElementById(`te-color-${varName}`);
+  const swatch = document.getElementById(`te-swatch-${varName}`);
+  const resetBtn = document.getElementById(`te-reset-${varName}`);
 
   if (hexInput) hexInput.value = value;
   if (colorInput) colorInput.value = value;
@@ -141,10 +141,10 @@ function resetToken(varName) {
   
   updateChangesCount();
 
-  const hexInput = document.getElementById(\`te-hex-\${varName}\`);
-  const colorInput = document.getElementById(\`te-color-\${varName}\`);
-  const swatch = document.getElementById(\`te-swatch-\${varName}\`);
-  const resetBtn = document.getElementById(\`te-reset-\${varName}\`);
+  const hexInput = document.getElementById(`te-hex-${varName}`);
+  const colorInput = document.getElementById(`te-color-${varName}`);
+  const swatch = document.getElementById(`te-swatch-${varName}`);
+  const resetBtn = document.getElementById(`te-reset-${varName}`);
 
   if (hexInput) hexInput.value = token.dark;
   if (colorInput) colorInput.value = token.dark;
@@ -171,37 +171,37 @@ function renderEditor() {
   
   Object.keys(groups).forEach(groupName => {
     const groupTokens = groups[groupName];
-    contentHTML += \`
-      <div class="te-group" id="te-group-\${groupName.replace(/\\s+/g, '-')}">
+    contentHTML += `
+      <div class="te-group" id="te-group-${groupName.replace(/\\s+/g, '-')}">
         <div class="te-group-header" onclick="this.parentElement.classList.toggle('te-collapsed')">
-          \${groupName} (\${groupTokens.length})
+          ${groupName} (${groupTokens.length})
         </div>
         <div class="te-group-content">
-    \`;
+    `;
 
     groupTokens.forEach(token => {
       const val = overrides[token.name] || token.dark;
       const shortName = token.name.replace('--elv-', '');
       const hasOverride = !!overrides[token.name];
       
-      contentHTML += \`
+      contentHTML += `
         <div class="te-row">
-          <div class="te-swatch" id="te-swatch-\${token.name}" style="background-color: \${val}"></div>
-          <div class="te-name" title="\${token.name}">\${shortName}</div>
-          <input type="text" class="te-input-hex" id="te-hex-\${token.name}" value="\${val}" maxlength="7" spellcheck="false" />
-          <input type="color" class="te-input-color" id="te-color-\${token.name}" value="\${val}" />
-          <button class="te-reset-btn \${hasOverride ? 'te-active' : ''}" id="te-reset-\${token.name}" title="Reset to default">⟳</button>
+          <div class="te-swatch" id="te-swatch-${token.name}" style="background-color: ${val}"></div>
+          <div class="te-name" title="${token.name}">${shortName}</div>
+          <input type="text" class="te-input-hex" id="te-hex-${token.name}" value="${val}" maxlength="7" spellcheck="false" />
+          <input type="color" class="te-input-color" id="te-color-${token.name}" value="${val}" />
+          <button class="te-reset-btn ${hasOverride ? 'te-active' : ''}" id="te-reset-${token.name}" title="Reset to default">⟳</button>
         </div>
-      \`;
+      `;
     });
 
-    contentHTML += \`
+    contentHTML += `
         </div>
       </div>
-    \`;
+    `;
   });
 
-  panel.innerHTML = \`
+  panel.innerHTML = `
     <div class="te-header">
       <h2>Token Editor</h2>
       <div class="te-header-actions">
@@ -210,13 +210,13 @@ function renderEditor() {
       </div>
     </div>
     <div class="te-content">
-      \${contentHTML}
+      ${contentHTML}
     </div>
     <div class="te-footer">
       <button class="te-btn" id="te-reset-all-btn">Reset All</button>
-      <span class="te-footer-text" id="te-changes-count">Changes: 0/\${TOKENS.length}</span>
+      <span class="te-footer-text" id="te-changes-count">Changes: 0/${TOKENS.length}</span>
     </div>
-  \`;
+  `;
 
   document.body.appendChild(panel);
 
@@ -235,9 +235,9 @@ function renderEditor() {
   });
 
   TOKENS.forEach(token => {
-    const hexInput = document.getElementById(\`te-hex-\${token.name}\`);
-    const colorInput = document.getElementById(\`te-color-\${token.name}\`);
-    const resetBtn = document.getElementById(\`te-reset-\${token.name}\`);
+    const hexInput = document.getElementById(`te-hex-${token.name}`);
+    const colorInput = document.getElementById(`te-color-${token.name}`);
+    const resetBtn = document.getElementById(`te-reset-${token.name}`);
 
     hexInput.addEventListener('change', (e) => {
       let val = e.target.value.trim();
@@ -264,7 +264,7 @@ function renderEditor() {
     let cssString = '.dark {\\n';
     TOKENS.forEach(token => {
       const val = currentOverrides[token.name] || token.dark;
-      cssString += \`  \${token.name}: \${val};\\n\`;
+      cssString += `  ${token.name}: ${val};\\n`;
     });
     cssString += '}\\n';
 
