@@ -1,6 +1,12 @@
 const NAV_HTML = `
 <nav class="sidebar">
-  <h1><a href="./index.html" style="color: inherit; text-decoration: none;">Elevate</a></h1>
+  <div class="sidebar-header">
+    <h1><a href="./index.html" style="color: inherit; text-decoration: none;">Elevate</a></h1>
+    <button id="dark-mode-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+      <span class="theme-toggle-icon theme-toggle-icon--sun">☀️</span>
+      <span class="theme-toggle-icon theme-toggle-icon--moon">🌙</span>
+    </button>
+  </div>
 
   <h3>Actions</h3>
   <a href="./buttons.html">Button</a>
@@ -60,14 +66,6 @@ const NAV_HTML = `
   <a class="planned">Popover</a>
   <a class="planned">Toast</a>
   <a class="planned">Tooltip</a>
-
-  <div class="dark-toggle-wrap">
-    <button id="dark-mode-toggle" class="dark-toggle-btn" aria-label="Toggle dark mode">
-      <span class="dark-toggle-icon dark-toggle-icon--light">☀️</span>
-      <span class="dark-toggle-icon dark-toggle-icon--dark">🌙</span>
-      <span class="dark-toggle-label">Dark mode</span>
-    </button>
-  </div>
 
   <div class="legend">
     <span><strong style="color: #5746b2;">Purple</strong> = ported</span>
