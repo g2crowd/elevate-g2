@@ -1,0 +1,133 @@
+:root {
+  /* Backgrounds */
+  --elv-bg-primary-5: #f5f4fb;
+  --elv-bg-primary-10: #f2f0f9;
+  --elv-bg-primary-20: #ebe9f6;
+  --elv-bg-primary-30: #dedaf1;
+  --elv-bg-primary-40: #c3bde5;
+  --elv-bg-primary-60: #988ed2;
+  --elv-bg-primary-80: #7769c4;
+  --elv-bg-primary: #5746b2;
+  --elv-bg-primary-120: #45388f;
+  --elv-bg-neutral-0: #ffffff;
+  --elv-bg-neutral-1: #fcfcfd;
+  --elv-bg-neutral-5: #fafafa;
+  --elv-bg-neutral-10: #f2f2f3;
+  --elv-bg-neutral-20: #dfdfe2;
+  --elv-bg-neutral: #dfdfe2;
+  --elv-bg-neutral-40: #b0afb6;
+  --elv-bg-neutral-100: #201f23;
+  --elv-bg-info-20: #dbecff;
+  --elv-bg-info: #0073f5;
+  --elv-bg-critical-20: #fff6f5;
+  --elv-bg-critical-40: #FFD7D1;
+  --elv-bg-critical: #eb2000;
+  --elv-bg-critical-140: #b21800;
+  --elv-bg-warning-20: #fff9e5;
+  --elv-bg-warning: #ffc800;
+  --elv-bg-success-20: #d0f6f1;
+  --elv-bg-success-40: #a9efe5;
+  --elv-bg-success: #1fa896;
+  --elv-bg-brand: #ff492c;
+  --elv-bg-inverted: #ffffff;
+
+  /* Foregrounds */
+  --elv-text-default: #201f23;
+  --elv-text-subtle: #4c4b53;
+  --elv-text-nonessential: #6f6d78;
+  --elv-text-disabled: #dfdfe2;
+  --elv-text-inverted: #ffffff;
+  --elv-text-link: #0073f5;
+  --elv-text-link-hover: #005bc2;
+  --elv-text-link-visited: #2e90ff;
+  --elv-text-primary: #5746b2;
+  --elv-text-primary-hover: #45388f;
+  --elv-text-neutral: #4c4b53;
+  --elv-text-info: #002b5c;
+  --elv-text-success: #0f5249;
+  --elv-text-success-data: #1fa896;
+  --elv-text-warning: #665000;
+  --elv-text-critical: #b21800;
+
+  /* Borders */
+  --elv-border-whisper: #f2f2f3;
+  --elv-border-light: #dfdfe2;
+  --elv-border-medium: #b0afb6;
+  --elv-border-dark: #4c4b53;
+  --elv-border-inverted: #ffffff;
+  --elv-border-neutral: #dfdfe2;
+  --elv-border-info: #0073f5;
+  --elv-border-success: #1fa896;
+  --elv-border-critical: #eb2000;
+  --elv-border-warning: #ffc800;
+  --elv-border-primary: #5746b2;
+  --elv-border-focus: #c3bde5;
+  --elv-border-data-secondary-1: #ffa394;
+}
+
+.dark {
+  /* Backgrounds — from prototype + derived */
+  --elv-bg-primary-5: #1a1730;
+  --elv-bg-primary-10: #1e1b36;
+  --elv-bg-primary-20: #221f3d;
+  --elv-bg-primary-30: #2a2650;
+  --elv-bg-primary-40: #3d3768;
+  --elv-bg-primary-60: #6b5fa8;
+  --elv-bg-primary-80: #8a7ec8;
+  --elv-bg-primary: #a89ee8;
+  --elv-bg-primary-120: #c3bde5;
+  --elv-bg-neutral-0: #0e0c1a;
+  --elv-bg-neutral-1: #111020;
+  --elv-bg-neutral-5: #16132b;
+  --elv-bg-neutral-10: #1e1b36;
+  --elv-bg-neutral-20: #2a2740;
+  --elv-bg-neutral: #2a2740;
+  --elv-bg-neutral-40: #4a4570;
+  --elv-bg-neutral-100: #f5f4fb;
+  --elv-bg-info-20: #0d1f3d;
+  --elv-bg-info: #5296ff;
+  --elv-bg-critical-20: #2d1b1b;
+  --elv-bg-critical-40: #4a1a1a;
+  --elv-bg-critical: #f87171;
+  --elv-bg-critical-140: #fca5a5;
+  --elv-bg-warning-20: #2d2600;
+  --elv-bg-warning: #ffd747;
+  --elv-bg-success-20: #0d2924;
+  --elv-bg-success-40: #153d35;
+  --elv-bg-success: #27d3bc;
+  --elv-bg-brand: #ff492c;
+  --elv-bg-inverted: #0e0c1a;
+
+  /* Foregrounds — from prototype + derived */
+  --elv-text-default: #f5f4fb;
+  --elv-text-subtle: #c4c2cc;
+  --elv-text-nonessential: #827ea5;
+  --elv-text-disabled: #4a4570;
+  --elv-text-inverted: #0e0c1a;
+  --elv-text-link: #66aeff;
+  --elv-text-link-hover: #9eccff;
+  --elv-text-link-visited: #5296ff;
+  --elv-text-primary: #a89ee8;
+  --elv-text-primary-hover: #c3bde5;
+  --elv-text-neutral: #c4c2cc;
+  --elv-text-info: #dbecff;
+  --elv-text-success: #d0f6f1;
+  --elv-text-success-data: #27d3bc;
+  --elv-text-warning: #fff9e5;
+  --elv-text-critical: #f87171;
+
+  /* Borders — from prototype + derived */
+  --elv-border-whisper: #1e1b36;
+  --elv-border-light: #2a2740;
+  --elv-border-medium: #4a4570;
+  --elv-border-dark: #c4c2cc;
+  --elv-border-inverted: #0e0c1a;
+  --elv-border-neutral: #2a2740;
+  --elv-border-info: #5296ff;
+  --elv-border-success: #27d3bc;
+  --elv-border-critical: #f87171;
+  --elv-border-warning: #ffd747;
+  --elv-border-primary: #a89ee8;
+  --elv-border-focus: #6b5fa8;
+  --elv-border-data-secondary-1: #ff7761;
+}
