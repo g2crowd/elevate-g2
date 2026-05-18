@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   var editorScript = document.createElement('script');
   editorScript.src = './token-editor.js';
+  editorScript.type = 'module';
   document.head.appendChild(editorScript);
 
   var editorStyles = document.createElement('link');
