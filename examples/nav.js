@@ -114,13 +114,4 @@ document.addEventListener('DOMContentLoaded', function() {
     localStorage.setItem(STORAGE_KEY, root.classList.contains('dark') ? 'dark' : 'light');
   });
 
-  var editorScript = document.createElement('script');
-  editorScript.src = './token-editor.js';
-  editorScript.type = 'module';
-  document.head.appendChild(editorScript);
-
-  var editorStyles = document.createElement('link');
-  editorStyles.rel = 'stylesheet';
-  editorStyles.href = './token-editor.css';
-  document.head.appendChild(editorStyles);
 });
