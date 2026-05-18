@@ -17,6 +17,7 @@
     "./theme/*": "./src/theme/*.js",
     "./components": "./src/css/components.css",
     "./components/*": "./src/css/components/*.css",
+    "./dark": "./src/css/dark.css",
     "./vendor/select2": "./src/css/vendor/select2.css",
     "./vendor/choices": "./src/css/vendor/choices.css"
   },

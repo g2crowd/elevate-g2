@@ -3,3 +3,4 @@
 @import 'tailwindcss/utilities';
 @import 'components';
 @import 'typography';
+@import './dark.css';

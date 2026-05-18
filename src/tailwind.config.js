@@ -12,6 +12,7 @@ const responsive_safelist = require('./theme/responsive-safelist');
 
 module.exports = {
   content: [],
+  darkMode: 'class',
   safelist: responsive_safelist,
   prefix: 'elv-',
   theme: {

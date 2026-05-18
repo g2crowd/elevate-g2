@@ -61,6 +61,14 @@ const NAV_HTML = `
   <a class="planned">Toast</a>
   <a class="planned">Tooltip</a>
 
+  <div class="dark-toggle-wrap">
+    <button id="dark-mode-toggle" class="dark-toggle-btn" aria-label="Toggle dark mode">
+      <span class="dark-toggle-icon dark-toggle-icon--light">☀️</span>
+      <span class="dark-toggle-icon dark-toggle-icon--dark">🌙</span>
+      <span class="dark-toggle-label">Dark mode</span>
+    </button>
+  </div>
+
   <div class="legend">
     <span><strong style="color: #5746b2;">Purple</strong> = ported</span>
     <span><strong style="color: #6f6d78;">Gray</strong> = planned</span>
@@ -93,5 +101,18 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
       link.classList.add('ported');
     }
+  });
+
+  var darkToggle = document.getElementById('dark-mode-toggle');
+  var root = document.documentElement;
+  var STORAGE_KEY = 'elevate-dark-mode';
+
+  if (localStorage.getItem(STORAGE_KEY) === 'dark') {
+    root.classList.add('dark');
+  }
+
+  darkToggle.addEventListener('click', function() {
+    root.classList.toggle('dark');
+    localStorage.setItem(STORAGE_KEY, root.classList.contains('dark') ? 'dark' : 'light');
   });
 });
