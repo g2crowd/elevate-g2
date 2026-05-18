@@ -66,250 +66,248 @@ const TOKENS = [
   { name: '--elv-border-data-secondary-1', group: 'Borders', light: '#ffa394', dark: '#ff7761' },
 ];
 
-(function() {
-  const STORAGE_KEY = 'elv-token-overrides';
+const STORAGE_KEY = 'elv-token-overrides';
 
-  function getOverrides() {
-    try {
-      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
-    } catch (e) {
-      return {};
-    }
+function getOverrides() {
+  try {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  } catch (e) {
+    return {};
   }
+}
 
-  function setOverrides(overrides) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(overrides));
-  }
+function setOverrides(overrides) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(overrides));
+}
 
-  function applyStylesToDOM() {
-    const isDark = document.documentElement.classList.contains('dark');
-    const overrides = getOverrides();
-    
-    TOKENS.forEach(token => {
-      if (isDark) {
-        const val = overrides[token.name] || token.dark;
-        document.documentElement.style.setProperty(token.name, val);
-      } else {
-        document.documentElement.style.removeProperty(token.name);
-      }
-    });
-  }
-
-  function updateChangesCount() {
-    const countSpan = document.getElementById('te-changes-count');
-    if (countSpan) {
-      const overrides = getOverrides();
-      const count = Object.keys(overrides).length;
-      countSpan.textContent = \`Changes: \${count}/\${TOKENS.length}\`;
-    }
-  }
-
-  function applyToken(varName, value) {
-    const isDark = document.documentElement.classList.contains('dark');
+function applyStylesToDOM() {
+  const isDark = document.documentElement.classList.contains('dark');
+  const overrides = getOverrides();
+  
+  TOKENS.forEach(token => {
     if (isDark) {
-      document.documentElement.style.setProperty(varName, value);
-    }
-    
-    const overrides = getOverrides();
-    overrides[varName] = value;
-    setOverrides(overrides);
-    updateChangesCount();
-
-    const hexInput = document.getElementById(\`te-hex-\${varName}\`);
-    const colorInput = document.getElementById(\`te-color-\${varName}\`);
-    const swatch = document.getElementById(\`te-swatch-\${varName}\`);
-    const resetBtn = document.getElementById(\`te-reset-\${varName}\`);
-
-    if (hexInput) hexInput.value = value;
-    if (colorInput) colorInput.value = value;
-    if (swatch) swatch.style.backgroundColor = value;
-    if (resetBtn) resetBtn.classList.add('te-active');
-  }
-
-  function resetToken(varName) {
-    const overrides = getOverrides();
-    delete overrides[varName];
-    setOverrides(overrides);
-    
-    const token = TOKENS.find(t => t.name === varName);
-    const isDark = document.documentElement.classList.contains('dark');
-    
-    if (isDark) {
-      document.documentElement.style.setProperty(varName, token.dark);
+      const val = overrides[token.name] || token.dark;
+      document.documentElement.style.setProperty(token.name, val);
     } else {
-      document.documentElement.style.removeProperty(varName);
+      document.documentElement.style.removeProperty(token.name);
     }
-    
-    updateChangesCount();
+  });
+}
 
-    const hexInput = document.getElementById(\`te-hex-\${varName}\`);
-    const colorInput = document.getElementById(\`te-color-\${varName}\`);
-    const swatch = document.getElementById(\`te-swatch-\${varName}\`);
-    const resetBtn = document.getElementById(\`te-reset-\${varName}\`);
-
-    if (hexInput) hexInput.value = token.dark;
-    if (colorInput) colorInput.value = token.dark;
-    if (swatch) swatch.style.backgroundColor = token.dark;
-    if (resetBtn) resetBtn.classList.remove('te-active');
-  }
-
-  function renderEditor() {
+function updateChangesCount() {
+  const countSpan = document.getElementById('te-changes-count');
+  if (countSpan) {
     const overrides = getOverrides();
-    const groups = {};
-    
-    TOKENS.forEach(token => {
-      if (!groups[token.group]) {
-        groups[token.group] = [];
-      }
-      groups[token.group].push(token);
-    });
+    const count = Object.keys(overrides).length;
+    countSpan.textContent = \`Changes: \${count}/\${TOKENS.length}\`;
+  }
+}
 
-    const panel = document.createElement('div');
-    panel.className = 'te-panel';
-    panel.id = 'te-panel';
+function applyToken(varName, value) {
+  const isDark = document.documentElement.classList.contains('dark');
+  if (isDark) {
+    document.documentElement.style.setProperty(varName, value);
+  }
+  
+  const overrides = getOverrides();
+  overrides[varName] = value;
+  setOverrides(overrides);
+  updateChangesCount();
 
-    let contentHTML = '';
-    
-    Object.keys(groups).forEach(groupName => {
-      const groupTokens = groups[groupName];
-      contentHTML += \`
-        <div class="te-group" id="te-group-\${groupName.replace(/\\s+/g, '-')}">
-          <div class="te-group-header" onclick="this.parentElement.classList.toggle('te-collapsed')">
-            \${groupName} (\${groupTokens.length})
-          </div>
-          <div class="te-group-content">
-      \`;
+  const hexInput = document.getElementById(\`te-hex-\${varName}\`);
+  const colorInput = document.getElementById(\`te-color-\${varName}\`);
+  const swatch = document.getElementById(\`te-swatch-\${varName}\`);
+  const resetBtn = document.getElementById(\`te-reset-\${varName}\`);
 
-      groupTokens.forEach(token => {
-        const val = overrides[token.name] || token.dark;
-        const shortName = token.name.replace('--elv-', '');
-        const hasOverride = !!overrides[token.name];
-        
-        contentHTML += \`
-          <div class="te-row">
-            <div class="te-swatch" id="te-swatch-\${token.name}" style="background-color: \${val}"></div>
-            <div class="te-name" title="\${token.name}">\${shortName}</div>
-            <input type="text" class="te-input-hex" id="te-hex-\${token.name}" value="\${val}" maxlength="7" spellcheck="false" />
-            <input type="color" class="te-input-color" id="te-color-\${token.name}" value="\${val}" />
-            <button class="te-reset-btn \${hasOverride ? 'te-active' : ''}" id="te-reset-\${token.name}" title="Reset to default">⟳</button>
-          </div>
-        \`;
-      });
+  if (hexInput) hexInput.value = value;
+  if (colorInput) colorInput.value = value;
+  if (swatch) swatch.style.backgroundColor = value;
+  if (resetBtn) resetBtn.classList.add('te-active');
+}
 
-      contentHTML += \`
-          </div>
+function resetToken(varName) {
+  const overrides = getOverrides();
+  delete overrides[varName];
+  setOverrides(overrides);
+  
+  const token = TOKENS.find(t => t.name === varName);
+  const isDark = document.documentElement.classList.contains('dark');
+  
+  if (isDark) {
+    document.documentElement.style.setProperty(varName, token.dark);
+  } else {
+    document.documentElement.style.removeProperty(varName);
+  }
+  
+  updateChangesCount();
+
+  const hexInput = document.getElementById(\`te-hex-\${varName}\`);
+  const colorInput = document.getElementById(\`te-color-\${varName}\`);
+  const swatch = document.getElementById(\`te-swatch-\${varName}\`);
+  const resetBtn = document.getElementById(\`te-reset-\${varName}\`);
+
+  if (hexInput) hexInput.value = token.dark;
+  if (colorInput) colorInput.value = token.dark;
+  if (swatch) swatch.style.backgroundColor = token.dark;
+  if (resetBtn) resetBtn.classList.remove('te-active');
+}
+
+function renderEditor() {
+  const overrides = getOverrides();
+  const groups = {};
+  
+  TOKENS.forEach(token => {
+    if (!groups[token.group]) {
+      groups[token.group] = [];
+    }
+    groups[token.group].push(token);
+  });
+
+  const panel = document.createElement('div');
+  panel.className = 'te-panel';
+  panel.id = 'te-panel';
+
+  let contentHTML = '';
+  
+  Object.keys(groups).forEach(groupName => {
+    const groupTokens = groups[groupName];
+    contentHTML += \`
+      <div class="te-group" id="te-group-\${groupName.replace(/\\s+/g, '-')}">
+        <div class="te-group-header" onclick="this.parentElement.classList.toggle('te-collapsed')">
+          \${groupName} (\${groupTokens.length})
         </div>
-      \`;
-    });
-
-    panel.innerHTML = \`
-      <div class="te-header">
-        <h2>Token Editor</h2>
-        <div class="te-header-actions">
-          <button class="te-btn te-btn-primary" id="te-export-btn">Export</button>
-          <button class="te-close-btn" id="te-close-btn">×</button>
-        </div>
-      </div>
-      <div class="te-content">
-        \${contentHTML}
-      </div>
-      <div class="te-footer">
-        <button class="te-btn" id="te-reset-all-btn">Reset All</button>
-        <span class="te-footer-text" id="te-changes-count">Changes: 0/\${TOKENS.length}</span>
-      </div>
+        <div class="te-group-content">
     \`;
 
-    document.body.appendChild(panel);
-
-    const toggleBtn = document.createElement('button');
-    toggleBtn.className = 'te-toggle-btn';
-    toggleBtn.innerHTML = '⚙️';
-    toggleBtn.title = 'Toggle Token Editor';
-    document.body.appendChild(toggleBtn);
-
-    toggleBtn.addEventListener('click', () => {
-      panel.classList.toggle('te-open');
+    groupTokens.forEach(token => {
+      const val = overrides[token.name] || token.dark;
+      const shortName = token.name.replace('--elv-', '');
+      const hasOverride = !!overrides[token.name];
+      
+      contentHTML += \`
+        <div class="te-row">
+          <div class="te-swatch" id="te-swatch-\${token.name}" style="background-color: \${val}"></div>
+          <div class="te-name" title="\${token.name}">\${shortName}</div>
+          <input type="text" class="te-input-hex" id="te-hex-\${token.name}" value="\${val}" maxlength="7" spellcheck="false" />
+          <input type="color" class="te-input-color" id="te-color-\${token.name}" value="\${val}" />
+          <button class="te-reset-btn \${hasOverride ? 'te-active' : ''}" id="te-reset-\${token.name}" title="Reset to default">⟳</button>
+        </div>
+      \`;
     });
 
-    document.getElementById('te-close-btn').addEventListener('click', () => {
-      panel.classList.remove('te-open');
-    });
+    contentHTML += \`
+        </div>
+      </div>
+    \`;
+  });
 
-    TOKENS.forEach(token => {
-      const hexInput = document.getElementById(\`te-hex-\${token.name}\`);
-      const colorInput = document.getElementById(\`te-color-\${token.name}\`);
-      const resetBtn = document.getElementById(\`te-reset-\${token.name}\`);
+  panel.innerHTML = \`
+    <div class="te-header">
+      <h2>Token Editor</h2>
+      <div class="te-header-actions">
+        <button class="te-btn te-btn-primary" id="te-export-btn">Export</button>
+        <button class="te-close-btn" id="te-close-btn">×</button>
+      </div>
+    </div>
+    <div class="te-content">
+      \${contentHTML}
+    </div>
+    <div class="te-footer">
+      <button class="te-btn" id="te-reset-all-btn">Reset All</button>
+      <span class="te-footer-text" id="te-changes-count">Changes: 0/\${TOKENS.length}</span>
+    </div>
+  \`;
 
-      hexInput.addEventListener('change', (e) => {
-        let val = e.target.value.trim();
-        if (!val.startsWith('#')) val = '#' + val;
-        if (/^#([0-9A-F]{3}){1,2}$/i.test(val)) {
-          applyToken(token.name, val);
-        } else {
-          const current = getOverrides()[token.name] || token.dark;
-          hexInput.value = current;
-        }
-      });
+  document.body.appendChild(panel);
 
-      colorInput.addEventListener('input', (e) => {
-        applyToken(token.name, e.target.value);
-      });
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = 'te-toggle-btn';
+  toggleBtn.innerHTML = '⚙️';
+  toggleBtn.title = 'Toggle Token Editor';
+  document.body.appendChild(toggleBtn);
 
-      resetBtn.addEventListener('click', () => {
-        resetToken(token.name);
-      });
-    });
+  toggleBtn.addEventListener('click', () => {
+    panel.classList.toggle('te-open');
+  });
 
-    document.getElementById('te-export-btn').addEventListener('click', (e) => {
-      const currentOverrides = getOverrides();
-      let cssString = '.dark {\\n';
-      TOKENS.forEach(token => {
-        const val = currentOverrides[token.name] || token.dark;
-        cssString += \`  \${token.name}: \${val};\\n\`;
-      });
-      cssString += '}\\n';
+  document.getElementById('te-close-btn').addEventListener('click', () => {
+    panel.classList.remove('te-open');
+  });
 
-      navigator.clipboard.writeText(cssString).then(() => {
-        const btn = e.target;
-        const originalText = btn.textContent;
-        btn.textContent = 'Copied!';
-        setTimeout(() => {
-          btn.textContent = originalText;
-        }, 1500);
-      });
-    });
+  TOKENS.forEach(token => {
+    const hexInput = document.getElementById(\`te-hex-\${token.name}\`);
+    const colorInput = document.getElementById(\`te-color-\${token.name}\`);
+    const resetBtn = document.getElementById(\`te-reset-\${token.name}\`);
 
-    document.getElementById('te-reset-all-btn').addEventListener('click', () => {
-      if (confirm('Are you sure you want to reset all token overrides?')) {
-        TOKENS.forEach(token => {
-          if (getOverrides()[token.name]) {
-            resetToken(token.name);
-          }
-        });
+    hexInput.addEventListener('change', (e) => {
+      let val = e.target.value.trim();
+      if (!val.startsWith('#')) val = '#' + val;
+      if (/^#([0-9A-F]{3}){1,2}$/i.test(val)) {
+        applyToken(token.name, val);
+      } else {
+        const current = getOverrides()[token.name] || token.dark;
+        hexInput.value = current;
       }
     });
 
-    updateChangesCount();
-  }
+    colorInput.addEventListener('input', (e) => {
+      applyToken(token.name, e.target.value);
+    });
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+    resetBtn.addEventListener('click', () => {
+      resetToken(token.name);
+    });
+  });
 
-  function init() {
-    applyStylesToDOM();
-    renderEditor();
+  document.getElementById('te-export-btn').addEventListener('click', (e) => {
+    const currentOverrides = getOverrides();
+    let cssString = '.dark {\\n';
+    TOKENS.forEach(token => {
+      const val = currentOverrides[token.name] || token.dark;
+      cssString += \`  \${token.name}: \${val};\\n\`;
+    });
+    cssString += '}\\n';
 
-    const observer = new MutationObserver((mutations) => {
-      mutations.forEach(mutation => {
-        if (mutation.attributeName === 'class') {
-          applyStylesToDOM();
+    navigator.clipboard.writeText(cssString).then(() => {
+      const btn = e.target;
+      const originalText = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => {
+        btn.textContent = originalText;
+      }, 1500);
+    });
+  });
+
+  document.getElementById('te-reset-all-btn').addEventListener('click', () => {
+    if (confirm('Are you sure you want to reset all token overrides?')) {
+      TOKENS.forEach(token => {
+        if (getOverrides()[token.name]) {
+          resetToken(token.name);
         }
       });
+    }
+  });
+
+  updateChangesCount();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}
+
+function init() {
+  applyStylesToDOM();
+  renderEditor();
+
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach(mutation => {
+      if (mutation.attributeName === 'class') {
+        applyStylesToDOM();
+      }
     });
-    
-    observer.observe(document.documentElement, { attributes: true });
-  }
-})();
+  });
+  
+  observer.observe(document.documentElement, { attributes: true });
+}
