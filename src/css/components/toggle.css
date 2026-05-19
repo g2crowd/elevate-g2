@@ -93,8 +93,8 @@
     }
   }
 
-  .dark .toggle::before,
-  .toggle:where(.dark *)::before {
+  .dark .toggle:not(:checked)::before,
+  .toggle:not(:checked):where(.dark *)::before {
     @apply elv-bg-neutral-40;
   }
 }
