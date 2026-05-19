@@ -52,7 +52,7 @@
   /* Borders */
   --elv-border-whisper: #f2f2f3;
   --elv-border-light: #dfdfe2;
-  --elv-border-medium: #9b99a3;
+  --elv-border-medium: #b0afb6;
   --elv-border-dark: #4c4b53;
   --elv-border-inverted: #ffffff;
   --elv-border-neutral: #dfdfe2;
@@ -119,7 +119,7 @@
   /* Borders — grounded in dark-color-palette.js primitives */
   --elv-border-whisper: #221f3d;  /* neutral-dark-120 — barely visible */
   --elv-border-light: #4a4570;    /* neutral-dark-80 */
-  --elv-border-medium: #4a4570;   /* neutral-dark-80 */
+  --elv-border-medium: #827ea5;   /* neutral-dark-50 */
   --elv-border-dark: #c4c2cc;     /* neutral-dark-20 */
   --elv-border-inverted: #0e0c1a; /* neutral-dark-180 */
   --elv-border-neutral: #2a2740;  /* neutral-dark-100 */

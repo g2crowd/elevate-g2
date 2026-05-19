@@ -36,7 +36,7 @@
     }
 
     &:disabled:checked {
-      @apply elv-bg-neutral-40;
+      @apply elv-bg-neutral-20;
     }
 
     &:indeterminate {
@@ -54,5 +54,10 @@
 
   .checkbox--lg {
     @apply elv-w-6 elv-h-6;
+  }
+
+  .dark .checkbox:disabled:checked,
+  .checkbox:disabled:checked:where(.dark *) {
+    @apply elv-bg-neutral-40;
   }
 }
