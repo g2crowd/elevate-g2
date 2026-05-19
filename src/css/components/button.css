@@ -1,18 +1,18 @@
 @layer utilities {
   .elv-btn-shadow-primary {
-    @apply elv-shadow-[0_2px_8px_2px_rgba(32,31,35,0.15),_0_0_0_1px_#5746B2];
+    box-shadow: 0 2px 8px 2px rgba(32,31,35,0.15), 0 0 0 1px var(--elv-bg-primary);
   }
 
   .elv-btn-shadow-brand {
-    @apply elv-shadow-[0_0_0_1px_#FF492C,0_2px_8px_2px_#201F2326];
+    box-shadow: 0 0 0 1px var(--elv-bg-brand), 0 2px 8px 2px rgba(32,31,35,0.15);
   }
 
   .elv-btn-shadow-basic {
-    @apply elv-shadow-[0px_2px_8px_2px_rgba(32,31,35,0.15)];
+    box-shadow: 0 2px 8px 2px rgba(32,31,35,0.15);
   }
 
   .elv-btn-shadow-inset {
-    @apply elv-shadow-[inset_0_0_4px_1px_#201F2333];
+    box-shadow: inset 0 0 4px 1px rgba(32,31,35,0.2);
   }
 
   .elv-btn-lg {
