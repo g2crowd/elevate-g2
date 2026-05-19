@@ -66,6 +66,46 @@ const TOKENS = [
   { name: '--elv-border-data-secondary-1', group: 'Borders', light: '#ffa394', dark: '#ff7761' },
 ];
 
+const DARK_PRIMITIVES = {
+  purple: {
+    5: '#f2f0fc', 10: '#ebe8fa', 20: '#dcd8f5', 30: '#cfcaed',
+    40: '#c3bde5', 60: '#b3ace0', 80: '#a89ee8', 100: '#8a7ec8',
+    120: '#6b5fa8', 140: '#45388f', 160: '#342a6a', 180: '#221f3d'
+  },
+  neutral: {
+    0: '#ffffff', 1: '#fdfdfe', 5: '#f5f4fb', 10: '#e4e3eb',
+    20: '#c4c2cc', 30: '#adabbf', 40: '#9794b2', 50: '#827ea5',
+    70: '#5c5781', 80: '#4a4570', 90: '#3a3657', 100: '#2a2740',
+    120: '#221f3d', 140: '#16132b', 160: '#111020', 180: '#0e0c1a'
+  },
+  rorange: {
+    20: '#fff0ef', 40: '#fca5a5', 60: '#f87171', 80: '#ff7761',
+    100: '#ff492c', 120: '#eb2000', 140: '#b21800', 160: '#610d00', 180: '#2e0600'
+  },
+  blue: {
+    20: '#dbecff', 40: '#9eccff', 60: '#66aeff', 80: '#5296ff',
+    100: '#2e90ff', 120: '#0073f5', 140: '#005bc2', 160: '#002b5c', 180: '#001329'
+  },
+  green: {
+    20: '#d0f6f1', 40: '#a9efe5', 60: '#5be1cf', 80: '#27d3bc',
+    100: '#1fa896', 120: '#177d6f', 140: '#0f5249', 160: '#072723', 180: '#041a18'
+  },
+  yellow: {
+    20: '#fff9e5', 40: '#fff2c2', 60: '#ffe78f', 80: '#ffd747',
+    100: '#ffc800', 120: '#cca400', 140: '#997800', 160: '#665000'
+  }
+};
+
+function getScaleForToken(tokenName) {
+  if (tokenName.includes('primary') || tokenName.includes('focus')) return 'purple';
+  if (tokenName.includes('neutral') || tokenName.includes('default') || tokenName.includes('subtle') || tokenName.includes('nonessential') || tokenName.includes('disabled') || tokenName.includes('inverted') || tokenName.includes('whisper') || tokenName.includes('light') || tokenName.includes('medium') || tokenName.includes('dark')) return 'neutral';
+  if (tokenName.includes('critical') || tokenName.includes('brand') || tokenName.includes('data-secondary')) return 'rorange';
+  if (tokenName.includes('info') || tokenName.includes('link')) return 'blue';
+  if (tokenName.includes('success')) return 'green';
+  if (tokenName.includes('warning')) return 'yellow';
+  return 'neutral';
+}
+
 const STORAGE_KEY = 'elv-token-overrides';
 
 function getOverrides() {
@@ -118,11 +158,23 @@ function applyToken(varName, value) {
   const colorInput = document.getElementById(`te-color-${varName}`);
   const swatch = document.getElementById(`te-swatch-${varName}`);
   const resetBtn = document.getElementById(`te-reset-${varName}`);
+  const ddPanel = document.getElementById(`te-primitives-${varName}`);
 
   if (hexInput) hexInput.value = value;
   if (colorInput) colorInput.value = value;
   if (swatch) swatch.style.backgroundColor = value;
   if (resetBtn) resetBtn.classList.add('te-active');
+
+  if (ddPanel) {
+    const swatches = ddPanel.querySelectorAll('.te-primitive-swatch');
+    swatches.forEach(s => {
+      if (s.dataset.value.toLowerCase() === value.toLowerCase()) {
+        s.classList.add('te-prim-selected');
+      } else {
+        s.classList.remove('te-prim-selected');
+      }
+    });
+  }
 }
 
 function resetToken(varName) {
@@ -145,11 +197,23 @@ function resetToken(varName) {
   const colorInput = document.getElementById(`te-color-${varName}`);
   const swatch = document.getElementById(`te-swatch-${varName}`);
   const resetBtn = document.getElementById(`te-reset-${varName}`);
+  const ddPanel = document.getElementById(`te-primitives-${varName}`);
 
   if (hexInput) hexInput.value = token.dark;
   if (colorInput) colorInput.value = token.dark;
   if (swatch) swatch.style.backgroundColor = token.dark;
   if (resetBtn) resetBtn.classList.remove('te-active');
+
+  if (ddPanel) {
+    const swatches = ddPanel.querySelectorAll('.te-primitive-swatch');
+    swatches.forEach(s => {
+      if (s.dataset.value.toLowerCase() === token.dark.toLowerCase()) {
+        s.classList.add('te-prim-selected');
+      } else {
+        s.classList.remove('te-prim-selected');
+      }
+    });
+  }
 }
 
 function renderEditor() {
@@ -184,13 +248,35 @@ function renderEditor() {
       const shortName = token.name.replace('--elv-', '');
       const hasOverride = !!overrides[token.name];
       
+      const scaleName = getScaleForToken(token.name);
+      const scaleData = DARK_PRIMITIVES[scaleName];
+      let swatchesHtml = '';
+      Object.keys(scaleData).forEach(step => {
+        const hex = scaleData[step];
+        const isSelected = val.toLowerCase() === hex.toLowerCase();
+        swatchesHtml += `
+          <button class="te-primitive-swatch ${isSelected ? 'te-prim-selected' : ''}" style="background: ${hex}" title="${scaleName}.${step} ${hex}" data-value="${hex}" data-token="${token.name}">
+            <span class="te-primitive-label">${step}</span>
+          </button>
+        `;
+      });
+
       contentHTML += `
-        <div class="te-row">
+        <div class="te-row" data-token="${token.name}">
           <div class="te-swatch" id="te-swatch-${token.name}" style="background-color: ${val}"></div>
           <div class="te-name" title="${token.name}">${shortName}</div>
           <input type="text" class="te-input-hex" id="te-hex-${token.name}" value="${val}" maxlength="7" spellcheck="false" />
+          <button class="te-dropdown-btn" id="te-dd-${token.name}" title="Pick from primitives">▾</button>
           <input type="color" class="te-input-color" id="te-color-${token.name}" value="${val}" />
           <button class="te-reset-btn ${hasOverride ? 'te-active' : ''}" id="te-reset-${token.name}" title="Reset to default">⟳</button>
+        </div>
+        <div class="te-primitive-dropdown" id="te-primitives-${token.name}" style="display: none;">
+          <div class="te-primitive-grid">
+            ${swatchesHtml}
+          </div>
+          <div class="te-primitive-custom" data-token="${token.name}">
+            <span>Custom</span>
+          </div>
         </div>
       `;
     });
@@ -234,10 +320,55 @@ function renderEditor() {
     panel.classList.remove('te-open');
   });
 
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.te-dropdown-btn') && !e.target.closest('.te-primitive-dropdown')) {
+      document.querySelectorAll('.te-primitive-dropdown').forEach(dd => {
+        dd.style.display = 'none';
+      });
+      document.querySelectorAll('.te-dropdown-btn.te-dd-open').forEach(btn => {
+        btn.classList.remove('te-dd-open');
+      });
+    }
+  });
+
   TOKENS.forEach(token => {
     const hexInput = document.getElementById(`te-hex-${token.name}`);
     const colorInput = document.getElementById(`te-color-${token.name}`);
     const resetBtn = document.getElementById(`te-reset-${token.name}`);
+    const ddBtn = document.getElementById(`te-dd-${token.name}`);
+    const ddPanel = document.getElementById(`te-primitives-${token.name}`);
+
+    if (ddBtn && ddPanel) {
+      ddBtn.addEventListener('click', (e) => {
+        const isOpen = ddPanel.style.display !== 'none';
+        
+        document.querySelectorAll('.te-primitive-dropdown').forEach(dd => dd.style.display = 'none');
+        document.querySelectorAll('.te-dropdown-btn.te-dd-open').forEach(btn => btn.classList.remove('te-dd-open'));
+        
+        if (!isOpen) {
+          ddPanel.style.display = 'block';
+          ddBtn.classList.add('te-dd-open');
+        }
+      });
+
+      ddPanel.querySelectorAll('.te-primitive-swatch').forEach(swatchBtn => {
+        swatchBtn.addEventListener('click', () => {
+          const hex = swatchBtn.dataset.value;
+          applyToken(token.name, hex);
+          ddPanel.style.display = 'none';
+          ddBtn.classList.remove('te-dd-open');
+        });
+      });
+
+      const customRow = ddPanel.querySelector('.te-primitive-custom');
+      if (customRow) {
+        customRow.addEventListener('click', () => {
+          ddPanel.style.display = 'none';
+          ddBtn.classList.remove('te-dd-open');
+          hexInput.focus();
+        });
+      }
+    }
 
     hexInput.addEventListener('change', (e) => {
       let val = e.target.value.trim();
