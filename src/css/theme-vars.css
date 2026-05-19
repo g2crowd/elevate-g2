@@ -103,7 +103,7 @@
   --elv-text-subtle: #c4c2cc;     /* neutral-dark-20 */
   --elv-text-nonessential: #827ea5; /* neutral-dark-50 — purple-tinted muted */
   --elv-text-disabled: #4a4570;   /* neutral-dark-80 */
-  --elv-text-inverted: #0e0c1a;   /* neutral-dark-180 */
+  --elv-text-inverted: #ffffff;    /* neutral-dark-0 */
   --elv-text-link: #66aeff;       /* blue-dark-60 */
   --elv-text-link-hover: #9eccff; /* blue-dark-40 */
   --elv-text-link-visited: #5296ff; /* blue-dark-80 */
@@ -118,7 +118,7 @@
 
   /* Borders — grounded in dark-color-palette.js primitives */
   --elv-border-whisper: #221f3d;  /* neutral-dark-120 — barely visible */
-  --elv-border-light: #2a2740;    /* neutral-dark-100 — standard border */
+  --elv-border-light: #4a4570;    /* neutral-dark-80 */
   --elv-border-medium: #4a4570;   /* neutral-dark-80 */
   --elv-border-dark: #c4c2cc;     /* neutral-dark-20 */
   --elv-border-inverted: #0e0c1a; /* neutral-dark-180 */

@@ -37,7 +37,7 @@ const TOKENS = [
   { name: '--elv-text-subtle', group: 'Foregrounds', light: '#4c4b53', dark: '#c4c2cc' },
   { name: '--elv-text-nonessential', group: 'Foregrounds', light: '#6f6d78', dark: '#827ea5' },
   { name: '--elv-text-disabled', group: 'Foregrounds', light: '#dfdfe2', dark: '#4a4570' },
-  { name: '--elv-text-inverted', group: 'Foregrounds', light: '#ffffff', dark: '#0e0c1a' },
+  { name: '--elv-text-inverted', group: 'Foregrounds', light: '#ffffff', dark: '#ffffff' },
   { name: '--elv-text-link', group: 'Foregrounds', light: '#0073f5', dark: '#66aeff' },
   { name: '--elv-text-link-hover', group: 'Foregrounds', light: '#005bc2', dark: '#9eccff' },
   { name: '--elv-text-link-visited', group: 'Foregrounds', light: '#2e90ff', dark: '#5296ff' },
@@ -52,7 +52,7 @@ const TOKENS = [
 
   // Borders
   { name: '--elv-border-whisper', group: 'Borders', light: '#f2f2f3', dark: '#221f3d' },
-  { name: '--elv-border-light', group: 'Borders', light: '#dfdfe2', dark: '#2a2740' },
+  { name: '--elv-border-light', group: 'Borders', light: '#dfdfe2', dark: '#4a4570' },
   { name: '--elv-border-medium', group: 'Borders', light: '#b0afb6', dark: '#4a4570' },
   { name: '--elv-border-dark', group: 'Borders', light: '#4c4b53', dark: '#c4c2cc' },
   { name: '--elv-border-inverted', group: 'Borders', light: '#ffffff', dark: '#0e0c1a' },
