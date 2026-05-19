@@ -134,11 +134,21 @@
 
 .te-row {
   display: grid;
-  grid-template-columns: 24px 1fr 70px 28px 24px 24px;
+  grid-template-columns: 24px 1fr auto 64px 28px 24px 24px;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   padding: 6px 16px;
   border-bottom: 1px solid rgba(42, 42, 74, 0.5);
+}
+
+.te-prim-tag {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 9px;
+  color: #a89ee8;
+  background: rgba(87, 70, 178, 0.15);
+  padding: 2px 5px;
+  border-radius: 3px;
+  white-space: nowrap;
 }
 
 .te-row:hover {

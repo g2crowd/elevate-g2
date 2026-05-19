@@ -106,6 +106,17 @@ function getScaleForToken(tokenName) {
   return 'neutral';
 }
 
+function getPrimitiveName(tokenName, hex) {
+  const scaleName = getScaleForToken(tokenName);
+  const scale = DARK_PRIMITIVES[scaleName];
+  if (!scale) return null;
+  const normalized = hex.toLowerCase();
+  for (const [step, value] of Object.entries(scale)) {
+    if (value.toLowerCase() === normalized) return scaleName + '.' + step;
+  }
+  return null;
+}
+
 const STORAGE_KEY = 'elv-token-overrides';
 
 function getOverrides() {
@@ -160,10 +171,13 @@ function applyToken(varName, value) {
   const resetBtn = document.getElementById(`te-reset-${varName}`);
   const ddPanel = document.getElementById(`te-primitives-${varName}`);
 
+  const primTag = document.getElementById(`te-prim-tag-${varName}`);
+
   if (hexInput) hexInput.value = value;
   if (colorInput) colorInput.value = value;
   if (swatch) swatch.style.backgroundColor = value;
   if (resetBtn) resetBtn.classList.add('te-active');
+  if (primTag) primTag.textContent = getPrimitiveName(varName, value) || 'custom';
 
   if (ddPanel) {
     const swatches = ddPanel.querySelectorAll('.te-primitive-swatch');
@@ -199,10 +213,13 @@ function resetToken(varName) {
   const resetBtn = document.getElementById(`te-reset-${varName}`);
   const ddPanel = document.getElementById(`te-primitives-${varName}`);
 
+  const primTag = document.getElementById(`te-prim-tag-${varName}`);
+
   if (hexInput) hexInput.value = token.dark;
   if (colorInput) colorInput.value = token.dark;
   if (swatch) swatch.style.backgroundColor = token.dark;
   if (resetBtn) resetBtn.classList.remove('te-active');
+  if (primTag) primTag.textContent = getPrimitiveName(varName, token.dark) || 'custom';
 
   if (ddPanel) {
     const swatches = ddPanel.querySelectorAll('.te-primitive-swatch');
@@ -250,6 +267,7 @@ function renderEditor() {
       
       const scaleName = getScaleForToken(token.name);
       const scaleData = DARK_PRIMITIVES[scaleName];
+      const primName = getPrimitiveName(token.name, val);
       let swatchesHtml = '';
       Object.keys(scaleData).forEach(step => {
         const hex = scaleData[step];
@@ -265,6 +283,7 @@ function renderEditor() {
         <div class="te-row" data-token="${token.name}">
           <div class="te-swatch" id="te-swatch-${token.name}" style="background-color: ${val}"></div>
           <div class="te-name" title="${token.name}">${shortName}</div>
+          <span class="te-prim-tag" id="te-prim-tag-${token.name}">${primName || 'custom'}</span>
           <input type="text" class="te-input-hex" id="te-hex-${token.name}" value="${val}" maxlength="7" spellcheck="false" />
           <button class="te-dropdown-btn" id="te-dd-${token.name}" title="Pick from primitives">▾</button>
           <input type="color" class="te-input-color" id="te-color-${token.name}" value="${val}" />
