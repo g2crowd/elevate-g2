@@ -308,7 +308,7 @@ function renderEditor() {
 
   panel.innerHTML = `
     <div class="te-header">
-      <h2>Token Editor</h2>
+      <h2>Dark-mode Token Editor</h2>
       <div class="te-header-actions">
         <button class="te-btn te-btn-primary" id="te-export-btn">Export</button>
         <button class="te-close-btn" id="te-close-btn">×</button>
@@ -328,7 +328,7 @@ function renderEditor() {
   const toggleBtn = document.createElement('button');
   toggleBtn.className = 'te-toggle-btn';
   toggleBtn.innerHTML = '⚙️';
-  toggleBtn.title = 'Toggle Token Editor';
+  toggleBtn.title = 'Toggle Dark-mode Token Editor';
   document.body.appendChild(toggleBtn);
 
   toggleBtn.addEventListener('click', () => {
