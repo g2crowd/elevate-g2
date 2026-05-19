@@ -36,7 +36,7 @@
     }
 
     &:disabled:checked {
-      @apply elv-bg-neutral-20;
+      @apply elv-bg-neutral-40;
     }
 
     &:indeterminate {
