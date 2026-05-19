@@ -53,7 +53,7 @@ const TOKENS = [
   // Borders
   { name: '--elv-border-whisper', group: 'Borders', light: '#f2f2f3', dark: '#221f3d' },
   { name: '--elv-border-light', group: 'Borders', light: '#dfdfe2', dark: '#4a4570' },
-  { name: '--elv-border-medium', group: 'Borders', light: '#b0afb6', dark: '#4a4570' },
+  { name: '--elv-border-medium', group: 'Borders', light: '#b0afb6', dark: '#827ea5' },
   { name: '--elv-border-dark', group: 'Borders', light: '#4c4b53', dark: '#c4c2cc' },
   { name: '--elv-border-inverted', group: 'Borders', light: '#ffffff', dark: '#0e0c1a' },
   { name: '--elv-border-neutral', group: 'Borders', light: '#dfdfe2', dark: '#2a2740' },
