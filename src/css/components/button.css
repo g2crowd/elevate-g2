@@ -53,7 +53,7 @@
       elv-w-auto
       elv-gap-1;
 
-    @apply elv-btn-lg;
+    @apply elv-btn-lg elv-btn-primary;
 
     @apply disabled:elv-text-disabled
       disabled:hover:elv-shadow-0
@@ -112,15 +112,13 @@
   }
 
   .elv-btn-text-base {
-    @apply elv-shadow-0
-      hover:elv-shadow-0
+    @apply hover:elv-shadow-0
       elv-text-primary
       hover:elv-text-primary
       elv-bg-transparent
-      hover:elv-bg-transparent
-      active:elv-bg-transparent
       elv-rounded-sm
       elv-border-0
+      hover:elv-bg-transparent
       hover:elv-text-primary-hover
       active:elv-text-primary-hover;
 
@@ -147,7 +145,7 @@
   .btn {
     :where([elv]) &,
     &:where([elv]) {
-      @apply elv-btn-base elv-btn-primary;
+      @apply elv-btn-base;
 
       span + svg {
         @apply -elv-mr-1;
