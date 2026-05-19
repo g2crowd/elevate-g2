@@ -8,6 +8,9 @@ const NAV_HTML = `
     </button>
   </div>
 
+  <h3>Reference</h3>
+  <a href="./colors.html">Colors</a>
+
   <h3>Actions</h3>
   <a href="./buttons.html">Button</a>
   <a href="./button-groups.html">Button Group</a>

@@ -66,68 +66,68 @@
 }
 
 .dark {
-  /* Backgrounds — from prototype + derived */
-  --elv-bg-primary-5: #1a1730;
-  --elv-bg-primary-10: #1e1b36;
-  --elv-bg-primary-20: #221f3d;
-  --elv-bg-primary-30: #2a2650;
-  --elv-bg-primary-40: #3d3768;
-  --elv-bg-primary-60: #6b5fa8;
-  --elv-bg-primary-80: #8a7ec8;
-  --elv-bg-primary: #a89ee8;
-  --elv-bg-primary-120: #c3bde5;
-  --elv-bg-neutral-0: #0e0c1a;
-  --elv-bg-neutral-1: #111020;
-  --elv-bg-neutral-5: #16132b;
-  --elv-bg-neutral-10: #1e1b36;
-  --elv-bg-neutral-20: #2a2740;
-  --elv-bg-neutral: #2a2740;
-  --elv-bg-neutral-40: #4a4570;
-  --elv-bg-neutral-100: #f5f4fb;
-  --elv-bg-info-20: #0d1f3d;
-  --elv-bg-info: #5296ff;
-  --elv-bg-critical-20: #2d1b1b;
-  --elv-bg-critical-40: #4a1a1a;
-  --elv-bg-critical: #f87171;
-  --elv-bg-critical-140: #fca5a5;
-  --elv-bg-warning-20: #2d2600;
-  --elv-bg-warning: #ffd747;
-  --elv-bg-success-20: #0d2924;
-  --elv-bg-success-40: #153d35;
-  --elv-bg-success: #27d3bc;
-  --elv-bg-brand: #ff492c;
-  --elv-bg-inverted: #0e0c1a;
+  /* Backgrounds — grounded in dark-color-palette.js primitives */
+  --elv-bg-primary-5: #221f3d;    /* purple-dark-180 */
+  --elv-bg-primary-10: #342a6a;   /* purple-dark-160 */
+  --elv-bg-primary-20: #45388f;   /* purple-dark-140 */
+  --elv-bg-primary-30: #6b5fa8;   /* purple-dark-120 */
+  --elv-bg-primary-40: #8a7ec8;   /* purple-dark-100 */
+  --elv-bg-primary-60: #a89ee8;   /* purple-dark-80 */
+  --elv-bg-primary-80: #b3ace0;   /* purple-dark-60 */
+  --elv-bg-primary: #a89ee8;      /* purple-dark-80 — primary accent on dark */
+  --elv-bg-primary-120: #c3bde5;  /* purple-dark-40 */
+  --elv-bg-neutral-0: #0e0c1a;    /* neutral-dark-180 — deepest bg */
+  --elv-bg-neutral-1: #111020;    /* neutral-dark-160 */
+  --elv-bg-neutral-5: #16132b;    /* neutral-dark-140 — surface */
+  --elv-bg-neutral-10: #221f3d;   /* neutral-dark-120 */
+  --elv-bg-neutral-20: #2a2740;   /* neutral-dark-100 — border */
+  --elv-bg-neutral: #2a2740;      /* neutral-dark-100 */
+  --elv-bg-neutral-40: #4a4570;   /* neutral-dark-80 */
+  --elv-bg-neutral-100: #f5f4fb;  /* neutral-dark-5 — near-white text */
+  --elv-bg-info-20: #001329;      /* blue-dark-180 — deep info bg */
+  --elv-bg-info: #5296ff;         /* blue-dark-80 */
+  --elv-bg-critical-20: #2e0600;  /* rorange-dark-180 — deep error bg */
+  --elv-bg-critical-40: #610d00;  /* rorange-dark-160 */
+  --elv-bg-critical: #f87171;     /* rorange-dark-60 — error on dark */
+  --elv-bg-critical-140: #fca5a5; /* rorange-dark-40 */
+  --elv-bg-warning-20: #665000;   /* yellow-dark-160 — deep warning bg */
+  --elv-bg-warning: #ffd747;      /* yellow-dark-80 */
+  --elv-bg-success-20: #041a18;   /* green-dark-180 — deep success bg */
+  --elv-bg-success-40: #072723;   /* green-dark-160 */
+  --elv-bg-success: #27d3bc;      /* green-dark-80 */
+  --elv-bg-brand: #ff492c;        /* brand unchanged */
+  --elv-bg-inverted: #0e0c1a;     /* neutral-dark-180 */
 
-  /* Foregrounds — from prototype + derived */
-  --elv-text-default: #f5f4fb;
-  --elv-text-subtle: #c4c2cc;
-  --elv-text-nonessential: #827ea5;
-  --elv-text-disabled: #4a4570;
-  --elv-text-inverted: #0e0c1a;
-  --elv-text-link: #66aeff;
-  --elv-text-link-hover: #9eccff;
-  --elv-text-link-visited: #5296ff;
-  --elv-text-primary: #a89ee8;
-  --elv-text-primary-hover: #c3bde5;
-  --elv-text-neutral: #c4c2cc;
-  --elv-text-info: #dbecff;
-  --elv-text-success: #d0f6f1;
-  --elv-text-success-data: #27d3bc;
-  --elv-text-warning: #fff9e5;
-  --elv-text-critical: #f87171;
+  /* Foregrounds — grounded in dark-color-palette.js primitives */
+  --elv-text-default: #f5f4fb;    /* neutral-dark-5 — brightest text */
+  --elv-text-subtle: #c4c2cc;     /* neutral-dark-20 */
+  --elv-text-nonessential: #827ea5; /* neutral-dark-50 — purple-tinted muted */
+  --elv-text-disabled: #4a4570;   /* neutral-dark-80 */
+  --elv-text-inverted: #0e0c1a;   /* neutral-dark-180 */
+  --elv-text-link: #66aeff;       /* blue-dark-60 */
+  --elv-text-link-hover: #9eccff; /* blue-dark-40 */
+  --elv-text-link-visited: #5296ff; /* blue-dark-80 */
+  --elv-text-primary: #a89ee8;    /* purple-dark-80 */
+  --elv-text-primary-hover: #c3bde5; /* purple-dark-40 */
+  --elv-text-neutral: #c4c2cc;    /* neutral-dark-20 */
+  --elv-text-info: #dbecff;       /* blue-dark-20 */
+  --elv-text-success: #d0f6f1;    /* green-dark-20 */
+  --elv-text-success-data: #27d3bc; /* green-dark-80 */
+  --elv-text-warning: #fff9e5;    /* yellow-dark-20 */
+  --elv-text-critical: #f87171;   /* rorange-dark-60 */
 
-  /* Borders — from prototype + derived */
-  --elv-border-whisper: #1e1b36;
-  --elv-border-light: #2a2740;
-  --elv-border-medium: #4a4570;
-  --elv-border-dark: #c4c2cc;
-  --elv-border-inverted: #0e0c1a;
-  --elv-border-neutral: #2a2740;
-  --elv-border-info: #5296ff;
-  --elv-border-success: #27d3bc;
-  --elv-border-critical: #f87171;
-  --elv-border-warning: #ffd747;
-  --elv-border-primary: #a89ee8;
-  --elv-border-focus: #6b5fa8;
-  --elv-border-data-secondary-1: #ff7761;
+  /* Borders — grounded in dark-color-palette.js primitives */
+  --elv-border-whisper: #221f3d;  /* neutral-dark-120 — barely visible */
+  --elv-border-light: #2a2740;    /* neutral-dark-100 — standard border */
+  --elv-border-medium: #4a4570;   /* neutral-dark-80 */
+  --elv-border-dark: #c4c2cc;     /* neutral-dark-20 */
+  --elv-border-inverted: #0e0c1a; /* neutral-dark-180 */
+  --elv-border-neutral: #2a2740;  /* neutral-dark-100 */
+  --elv-border-info: #5296ff;     /* blue-dark-80 */
+  --elv-border-success: #27d3bc;  /* green-dark-80 */
+  --elv-border-critical: #f87171; /* rorange-dark-60 */
+  --elv-border-warning: #ffd747;  /* yellow-dark-80 */
+  --elv-border-primary: #a89ee8;  /* purple-dark-80 */
+  --elv-border-focus: #6b5fa8;    /* purple-dark-120 */
+  --elv-border-data-secondary-1: #ff7761; /* rorange-dark-80 */
 }
