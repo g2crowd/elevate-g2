@@ -85,16 +85,16 @@
   --elv-bg-neutral-40: #4a4570;   /* neutral-dark-80 */
   --elv-bg-neutral-100: #f5f4fb;  /* neutral-dark-5 — near-white text */
   --elv-bg-info-20: #001329;      /* blue-dark-180 — deep info bg */
-  --elv-bg-info: #5296ff;         /* blue-dark-80 */
+  --elv-bg-info: #2e90ff;         /* blue.80 */
   --elv-bg-critical-20: #2e0600;  /* rorange-dark-180 — deep error bg */
   --elv-bg-critical-40: #610d00;  /* rorange-dark-160 */
-  --elv-bg-critical: #f87171;     /* rorange-dark-60 — error on dark */
-  --elv-bg-critical-140: #fca5a5; /* rorange-dark-40 */
+  --elv-bg-critical: #ffa394;     /* rorange.60 */
+  --elv-bg-critical-140: #FFD7D1; /* rorange.40 */
   --elv-bg-warning-20: #665000;   /* yellow-dark-160 — deep warning bg */
   --elv-bg-warning: #ffd747;      /* yellow-dark-80 */
-  --elv-bg-success-20: #041a18;   /* green-dark-180 — deep success bg */
-  --elv-bg-success-40: #072723;   /* green-dark-160 */
-  --elv-bg-success: #27d3bc;      /* green-dark-80 */
+  --elv-bg-success-20: #072723;   /* green.180 */
+  --elv-bg-success-40: #0f5249;   /* green.160 */
+  --elv-bg-success: #5be1cf;      /* green.80 */
   --elv-bg-brand: #ff492c;        /* brand unchanged */
   --elv-bg-inverted: #0e0c1a;     /* neutral-dark-180 */
 
@@ -106,15 +106,15 @@
   --elv-text-inverted: #ffffff;    /* neutral-dark-0 */
   --elv-text-link: #66aeff;       /* blue-dark-60 */
   --elv-text-link-hover: #9eccff; /* blue-dark-40 */
-  --elv-text-link-visited: #5296ff; /* blue-dark-80 */
+  --elv-text-link-visited: #2e90ff; /* blue.80 */
   --elv-text-primary: #a89ee8;    /* purple-dark-80 */
   --elv-text-primary-hover: #c3bde5; /* purple-dark-40 */
   --elv-text-neutral: #c4c2cc;    /* neutral-dark-20 */
   --elv-text-info: #dbecff;       /* blue-dark-20 */
   --elv-text-success: #d0f6f1;    /* green-dark-20 */
-  --elv-text-success-data: #27d3bc; /* green-dark-80 */
+  --elv-text-success-data: #5be1cf; /* green.80 */
   --elv-text-warning: #fff9e5;    /* yellow-dark-20 */
-  --elv-text-critical: #f87171;   /* rorange-dark-60 */
+  --elv-text-critical: #ffa394;   /* rorange.60 */
 
   /* Borders — grounded in dark-color-palette.js primitives */
   --elv-border-whisper: #221f3d;  /* neutral-dark-120 — barely visible */
@@ -123,9 +123,9 @@
   --elv-border-dark: #c4c2cc;     /* neutral-dark-20 */
   --elv-border-inverted: #0e0c1a; /* neutral-dark-180 */
   --elv-border-neutral: #2a2740;  /* neutral-dark-100 */
-  --elv-border-info: #5296ff;     /* blue-dark-80 */
-  --elv-border-success: #27d3bc;  /* green-dark-80 */
-  --elv-border-critical: #f87171; /* rorange-dark-60 */
+  --elv-border-info: #2e90ff;     /* blue.80 */
+  --elv-border-success: #5be1cf;  /* green.80 */
+  --elv-border-critical: #ffa394; /* rorange.60 */
   --elv-border-warning: #ffd747;  /* yellow-dark-80 */
   --elv-border-primary: #a89ee8;  /* purple-dark-80 */
   --elv-border-focus: #6b5fa8;    /* purple-dark-120 */
