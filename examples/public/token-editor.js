@@ -331,6 +331,8 @@ function renderEditor() {
   toggleBtn.title = 'Toggle Dark-mode Token Editor';
   document.body.appendChild(toggleBtn);
 
+  syncEditorVisibility();
+
   toggleBtn.addEventListener('click', () => {
     panel.classList.toggle('te-open');
   });
@@ -447,14 +449,27 @@ if (document.readyState === 'loading') {
   init();
 }
 
+function syncEditorVisibility() {
+  const isDark = document.documentElement.classList.contains('dark');
+  const toggleBtn = document.querySelector('.te-toggle-btn');
+  const panel = document.getElementById('te-panel');
+  if (toggleBtn) toggleBtn.style.display = isDark ? 'flex' : 'none';
+  if (panel && !isDark) panel.classList.remove('te-open');
+}
+
 function init() {
   applyStylesToDOM();
-  renderEditor();
+
+  const editorEnabled = window.location.search.includes('editor');
+  if (editorEnabled) {
+    renderEditor();
+  }
 
   const observer = new MutationObserver((mutations) => {
     mutations.forEach(mutation => {
       if (mutation.attributeName === 'class') {
         applyStylesToDOM();
+        if (editorEnabled) syncEditorVisibility();
       }
     });
   });
