@@ -1,51 +1,30 @@
 @layer components {
-  .breadcrumbs__list {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-breadcrumbs__list {
       @apply elv-inline-flex elv-items-center elv-gap-0.5 elv-list-none elv-m-0 elv-p-0;
-    }
   }
 
-  .breadcrumbs__item {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-breadcrumbs__item {
       @apply elv-flex elv-items-center elv-gap-0.5;
-    }
   }
 
-  .breadcrumbs__link {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-breadcrumbs__link {
       @apply elv-text-subtle elv-no-underline elv-text-xs elv-leading-xs
         elv-transition-all elv-duration-150;
-    }
   }
 
-  .breadcrumbs__link:hover {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-breadcrumbs__link:hover {
       @apply elv-text-default;
-    }
   }
 
-  .breadcrumbs__link:focus-visible {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-breadcrumbs__link:focus-visible {
       @apply elv-outline elv-outline-3 elv-outline-purple-40 elv-outline-offset-1 elv-rounded-2xs;
-    }
   }
 
-  .breadcrumbs__link--current {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-breadcrumbs__link--current {
       @apply elv-text-default elv-pointer-events-none;
-    }
   }
 
-  .breadcrumbs__separator {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-breadcrumbs__separator {
       @apply elv-w-4 elv-h-4 elv-shrink-0 elv-fill-neutral-70;
-    }
   }
 }

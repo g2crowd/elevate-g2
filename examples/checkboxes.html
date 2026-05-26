@@ -17,23 +17,23 @@
 
 <h2>Sizes — unchecked</h2>
 <div class="component-row" elv>
-  <input class="checkbox checkbox--sm" type="checkbox">
-  <input class="checkbox" type="checkbox">
-  <input class="checkbox checkbox--lg" type="checkbox">
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox">
+  <input class="elv-checkbox" type="checkbox">
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox">
 </div>
 
 <h2>Sizes — checked</h2>
 <div class="component-row" elv>
-  <input class="checkbox checkbox--sm" type="checkbox" checked>
-  <input class="checkbox" type="checkbox" checked>
-  <input class="checkbox checkbox--lg" type="checkbox" checked>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" checked>
+  <input class="elv-checkbox" type="checkbox" checked>
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" checked>
 </div>
 
 <h2>Indeterminate</h2>
 <div class="component-row" elv>
-  <input class="checkbox checkbox--sm" type="checkbox" id="ind-sm">
-  <input class="checkbox" type="checkbox" id="ind-md">
-  <input class="checkbox checkbox--lg" type="checkbox" id="ind-lg">
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" id="ind-sm">
+  <input class="elv-checkbox" type="checkbox" id="ind-md">
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" id="ind-lg">
 </div>
 <script>
   document.getElementById('ind-sm').indeterminate = true;
@@ -43,63 +43,56 @@
 
 <h2>Disabled — unchecked</h2>
 <div class="component-row" elv>
-  <input class="checkbox checkbox--sm" type="checkbox" disabled>
-  <input class="checkbox" type="checkbox" disabled>
-  <input class="checkbox checkbox--lg" type="checkbox" disabled>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" disabled>
+  <input class="elv-checkbox" type="checkbox" disabled>
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" disabled>
 </div>
 
 <h2>Disabled — checked</h2>
 <div class="component-row" elv>
-  <input class="checkbox checkbox--sm" type="checkbox" disabled checked>
-  <input class="checkbox" type="checkbox" disabled checked>
-  <input class="checkbox checkbox--lg" type="checkbox" disabled checked>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" disabled checked>
+  <input class="elv-checkbox" type="checkbox" disabled checked>
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" disabled checked>
 </div>
 
 <h2>With label — large</h2>
 <div class="component-col" elv style="gap: 0.75rem;">
-  <div class="elv-label__wrapper">
-    <input class="checkbox checkbox--lg" type="checkbox" checked id="cb-lg-1">
-    <label class="elv-label" for="cb-lg-1">Large checkbox with default label</label>
-  </div>
-  <div class="elv-label__wrapper">
-    <input class="checkbox checkbox--lg" type="checkbox" id="cb-lg-2">
-    <label class="elv-label" for="cb-lg-2">Another large option</label>
-  </div>
+  <label class="elv-label"><input class="elv-checkbox elv-checkbox--lg" type="checkbox" checked> Large elv-checkbox with default label</label>
+  <label class="elv-label"><input class="elv-checkbox elv-checkbox--lg" type="checkbox"> Another large option</label>
 </div>
 
 <h2>With label — medium</h2>
 <div class="component-col" elv style="gap: 0.75rem;">
-  <div class="elv-label__wrapper">
-    <input class="checkbox" type="checkbox" checked id="cb-md-1">
-    <label class="elv-label elv-label--sm" for="cb-md-1">Medium checkbox with small label</label>
-  </div>
-  <div class="elv-label__wrapper">
-    <input class="checkbox" type="checkbox" id="cb-md-2">
-    <label class="elv-label elv-label--sm" for="cb-md-2">Accept terms and conditions</label>
-  </div>
+  <label class="elv-label elv-label--sm"><input class="elv-checkbox" type="checkbox" checked> Medium elv-checkbox with small label</label>
+  <label class="elv-label elv-label--sm"><input class="elv-checkbox" type="checkbox"> Accept terms and conditions</label>
 </div>
 
 <h2>With label — small</h2>
 <div class="component-col" elv style="gap: 0.5rem;">
-  <div class="elv-label__wrapper elv-label__wrapper--sm">
-    <input class="checkbox checkbox--sm" type="checkbox" checked id="cb-sm-1">
-    <label class="elv-label elv-label--xs" for="cb-sm-1">Small checkbox with xs label</label>
-  </div>
-  <div class="elv-label__wrapper elv-label__wrapper--sm">
-    <input class="checkbox checkbox--sm" type="checkbox" id="cb-sm-2">
-    <label class="elv-label elv-label--xs" for="cb-sm-2">Subscribe to newsletter</label>
-  </div>
+  <label class="elv-label elv-label--xs"><input class="elv-checkbox elv-checkbox--sm" type="checkbox" checked> Small elv-checkbox with xs label</label>
+  <label class="elv-label elv-label--xs"><input class="elv-checkbox elv-checkbox--sm" type="checkbox"> Subscribe to newsletter</label>
 </div>
 
 <h2>Disabled with label</h2>
 <div class="component-col" elv style="gap: 0.75rem;">
+  <label class="elv-label elv-label--disabled"><input class="elv-checkbox elv-checkbox--lg" type="checkbox" disabled checked> Disabled checked</label>
+  <label class="elv-label elv-label--sm elv-label--disabled"><input class="elv-checkbox" type="checkbox" disabled> Feature locked</label>
+</div>
+
+<h2>Wrapper pattern (for Rails form helpers)</h2>
+<p class="subtitle">Use <code>.elv-label__wrapper</code> when input and label are separate elements (e.g. <code>f.check_box</code> + <code>f.label</code>).</p>
+<div class="component-col" elv style="gap: 0.75rem;">
   <div class="elv-label__wrapper">
-    <input class="checkbox checkbox--lg" type="checkbox" disabled checked id="cb-dis-1">
-    <label class="elv-label elv-label--disabled" for="cb-dis-1">Disabled checked</label>
+    <input class="elv-checkbox elv-checkbox--lg" type="checkbox" checked id="wrap-lg">
+    <label class="elv-label" for="wrap-lg">Large with wrapper</label>
   </div>
   <div class="elv-label__wrapper">
-    <input class="checkbox" type="checkbox" disabled id="cb-dis-2">
-    <label class="elv-label elv-label--sm elv-label--disabled" for="cb-dis-2">Feature locked</label>
+    <input class="elv-checkbox" type="checkbox" id="wrap-md">
+    <label class="elv-label elv-label--sm" for="wrap-md">Medium with wrapper</label>
+  </div>
+  <div class="elv-label__wrapper elv-label__wrapper--sm">
+    <input class="elv-checkbox elv-checkbox--sm" type="checkbox" checked id="wrap-sm">
+    <label class="elv-label elv-label--xs" for="wrap-sm">Small with wrapper</label>
   </div>
 </div>
 

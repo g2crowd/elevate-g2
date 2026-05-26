@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tooltip — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Tooltip</h1>
+<p class="subtitle">CSS component: <code>.tooltip</code>. Dark bubble, positioned by JS.</p>
+
+<h2>Top (default)</h2>
+<div class="component-col" elv style="padding: 4rem 0;">
+  <div style="display: flex; justify-content: center;">
+    <button class="tooltip-trigger" type="button" data-tooltip="Helpful information appears here">
+      <svg class="icon icon--sm" viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" fill="none" stroke-width="1.5"/>
+        <path d="M8 11V8M8 5.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<h2>Bottom</h2>
+<div class="component-col" elv style="padding: 4rem 0;">
+  <div style="display: flex; justify-content: center;">
+    <button class="tooltip-trigger" type="button" data-tooltip="This tooltip was flipped to bottom" data-tooltip-class="tooltip bottom">
+      <svg class="icon icon--sm" viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" fill="none" stroke-width="1.5"/>
+        <path d="M8 11V8M8 5.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<h2>On text</h2>
+<div class="component-col" elv style="padding: 2rem 0;">
+  <p class="elv-body">
+    Hover over the
+    <span style="text-decoration: underline dotted; cursor: help;" data-tooltip="G2 scores are calculated from verified user reviews">Trust Score</span>
+    to learn more.
+  </p>
+</div>
+
+<h2>Inline with form label</h2>
+<div class="component-col" elv style="max-width: 400px;">
+  <label class="elv-label elv-label--sm">
+    API Key
+    <button class="tooltip-trigger" type="button" data-tooltip="Find your API key in Account Settings → Integrations" style="vertical-align: middle;">
+      <svg class="icon icon--xs" viewBox="0 0 16 16" fill="currentColor">
+        <circle cx="8" cy="8" r="7" stroke="currentColor" fill="none" stroke-width="1.5"/>
+        <path d="M8 11V8M8 5.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </label>
+  <input class="input" type="text" placeholder="sk_live_..." elv>
+</div>
+
+<script>
+  document.querySelectorAll('[data-tooltip]').forEach((el) => {
+    const text = el.getAttribute('data-tooltip');
+    let tip = null;
+
+    function show() {
+      if (tip) return;
+      tip = document.createElement('div');
+      tip.className = el.getAttribute('data-tooltip-class') || 'tooltip top';
+      tip.setAttribute('role', 'tooltip');
+      tip.textContent = text;
+      document.body.appendChild(tip);
+      position();
+    }
+
+    function hide() {
+      if (!tip) return;
+      tip.remove();
+      tip = null;
+    }
+
+    function position() {
+      if (!tip) return;
+      const isBottom = tip.classList.contains('bottom');
+      const rect = el.getBoundingClientRect();
+      const tipRect = tip.getBoundingClientRect();
+      const scrollY = window.scrollY;
+      const scrollX = window.scrollX;
+
+      const top = isBottom
+        ? rect.bottom + scrollY + 8
+        : rect.top + scrollY - tipRect.height - 8;
+      const left = rect.left + scrollX + rect.width / 2 - tipRect.width / 2;
+
+      tip.style.position = 'absolute';
+      tip.style.top = top + 'px';
+      tip.style.left = left + 'px';
+    }
+
+    el.addEventListener('mouseenter', show);
+    el.addEventListener('mouseleave', hide);
+    el.addEventListener('focus', show);
+    el.addEventListener('blur', hide);
+  });
+</script>
+
+</body>
+</html>

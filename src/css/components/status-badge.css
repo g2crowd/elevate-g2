@@ -1,7 +1,5 @@
 @layer components {
-  .status-badge {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge {
       @apply elv-max-h-6
         elv-rounded-sm
         elv-flex
@@ -15,83 +13,49 @@
         elv-bg-neutral-10
         elv-border-light
         elv-text-neutral;
-    }
   }
 
-  .status-badge--info {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge--info {
       @apply elv-bg-info-20 elv-border-info elv-text-info;
-    }
   }
 
-  .status-badge--success {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge--success {
       @apply elv-bg-success-20 elv-border-success elv-text-success;
-    }
   }
 
-  .status-badge--critical {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge--critical {
       @apply elv-bg-critical-20 elv-border-critical elv-text-critical;
-    }
   }
 
-  .status-badge--warning {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge--warning {
       @apply elv-bg-warning-20 elv-border-warning elv-text-warning;
-    }
   }
 
-  .status-badge--new {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge--new {
       @apply elv-bg-primary-20 elv-border-primary elv-text-primary;
-    }
   }
 
-  .status-badge__label {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge__label {
       @apply elv-px-1 elv-text-inherit;
-    }
   }
 
-  .status-badge__icon--active {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge__icon--active {
       @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-green-120;
-    }
   }
 
-  .status-badge__icon--inactive {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge__icon--inactive {
       @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-rorange-120;
-    }
   }
 
-  .status-badge__icon--pending {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge__icon--pending {
       @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-blue;
-    }
   }
 
-  .status-badge__icon--unassigned {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge__icon--unassigned {
       @apply elv-mx-1 elv-w-2 elv-h-2 elv-fill-yellow;
-    }
   }
 
-  .status-badge__icon--recommended {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-status-badge__icon--recommended {
       @apply elv-fill-rorange;
-    }
   }
 }

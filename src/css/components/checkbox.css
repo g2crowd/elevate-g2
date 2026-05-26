@@ -1,5 +1,5 @@
 @layer components {
-  .checkbox {
+  .elv-checkbox {
     @apply elv-appearance-none
       elv-bg-neutral-0
       elv-border
@@ -48,11 +48,11 @@
     }
   }
 
-  .checkbox--sm {
+  .elv-checkbox--sm {
     @apply elv-w-4 elv-h-4;
   }
 
-  .checkbox--lg {
+  .elv-checkbox--lg {
     @apply elv-w-6 elv-h-6;
   }
 

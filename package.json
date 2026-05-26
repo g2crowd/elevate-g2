@@ -1,6 +1,6 @@
 {
   "name": "@g2crowd/elevate",
-  "version": "0.11.1",
+  "version": "1.2.0",
   "description": "G2 Elevate design system — Tailwind CSS theme, component styles, and design tokens",
   "license": "UNLICENSED",
   "repository": {
@@ -15,7 +15,8 @@
     "./tailwind.config": "./src/tailwind.config.js",
     "./theme": "./src/theme/index.js",
     "./theme/*": "./src/theme/*.js",
-    "./components": "./src/css/components.css",
+    "./components": "./dist/components.css",
+    "./components/src": "./src/css/components.css",
     "./components/*": "./src/css/components/*.css",
     "./dark": "./src/css/dark.css",
     "./vendor/select2": "./src/css/vendor/select2.css",
@@ -27,12 +28,14 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "yarn build:css",
+    "build": "yarn build:css && yarn build:components",
     "build:css": "postcss src/css/application.css -o dist/elevate.css",
+    "build:components": "postcss src/css/components-build.css -o dist/components.css",
     "build:site": "vite build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "clean": "rm -rf dist dist-site"
+    "clean": "rm -rf dist dist-site",
+    "prepack": "yarn build"
   },
   "dependencies": {
     "tailwindcss-scoped-preflight": "^3.0.0"

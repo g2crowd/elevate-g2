@@ -1,64 +1,40 @@
 @layer components {
-  .avatar {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar {
       @apply elv-relative elv-flex elv-items-center elv-justify-center
         elv-border-2 elv-border-inverted;
-    }
   }
 
-  .avatar--xl {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar--xl {
       @apply elv-size-21 elv-rounded-xl;
-    }
   }
 
-  .avatar--lg {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar--lg {
       @apply elv-size-15 elv-rounded-full;
-    }
   }
 
-  .avatar--md {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar--md {
       @apply elv-size-11 elv-rounded-full;
-    }
   }
 
-  .avatar--sm {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar--sm {
       @apply elv-size-9 elv-rounded-full;
-    }
   }
 
-  .avatar--xs {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar--xs {
       @apply elv-size-7 elv-rounded-full;
-    }
   }
 
-  .avatar__image {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar__image {
       @apply elv-w-full elv-h-full elv-overflow-hidden;
       object-fit: cover;
       object-position: center;
       border-radius: inherit;
-    }
   }
 
-  .avatar__initials {
-    :where([elv]) &,
-    &:where([elv]) {
+  .elv-avatar__initials {
       @apply elv-relative elv-flex elv-items-center elv-justify-center
         elv-w-full elv-h-full elv-bg-primary elv-text-inverted elv-font-semibold
         elv-overflow-hidden;
       border-radius: inherit;
-    }
   }
 }

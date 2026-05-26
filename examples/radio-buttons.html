@@ -37,37 +37,33 @@
 
 <h2>Radio group with labels</h2>
 <div class="component-col" elv style="gap: 0.75rem;">
-  <div class="elv-label__wrapper">
-    <input class="radio-btn" type="radio" name="plan" id="plan-free" value="free" checked>
-    <label class="elv-label elv-label--sm" for="plan-free">Free</label>
-  </div>
-  <div class="elv-label__wrapper">
-    <input class="radio-btn" type="radio" name="plan" id="plan-pro" value="pro">
-    <label class="elv-label elv-label--sm" for="plan-pro">Pro</label>
-  </div>
-  <div class="elv-label__wrapper">
-    <input class="radio-btn" type="radio" name="plan" id="plan-enterprise" value="enterprise">
-    <label class="elv-label elv-label--sm" for="plan-enterprise">Enterprise</label>
-  </div>
-  <div class="elv-label__wrapper">
-    <input class="radio-btn" type="radio" name="plan" id="plan-disabled" value="legacy" disabled>
-    <label class="elv-label elv-label--sm elv-label--disabled" for="plan-disabled">Legacy (unavailable)</label>
-  </div>
+  <label class="elv-label elv-label--sm"><input class="radio-btn" type="radio" name="plan" value="free" checked> Free</label>
+  <label class="elv-label elv-label--sm"><input class="radio-btn" type="radio" name="plan" value="pro"> Pro</label>
+  <label class="elv-label elv-label--sm"><input class="radio-btn" type="radio" name="plan" value="enterprise"> Enterprise</label>
+  <label class="elv-label elv-label--sm elv-label--disabled"><input class="radio-btn" type="radio" name="plan" value="legacy" disabled> Legacy (unavailable)</label>
 </div>
 
 <h2>Small radio group</h2>
 <div class="component-col" elv style="gap: 0.5rem;">
-  <div class="elv-label__wrapper elv-label__wrapper--sm">
-    <input class="radio-btn radio-btn--sm" type="radio" name="freq" id="freq-daily" value="daily" checked>
-    <label class="elv-label elv-label--xs" for="freq-daily">Daily</label>
+  <label class="elv-label elv-label--xs"><input class="radio-btn radio-btn--sm" type="radio" name="freq" value="daily" checked> Daily</label>
+  <label class="elv-label elv-label--xs"><input class="radio-btn radio-btn--sm" type="radio" name="freq" value="weekly"> Weekly</label>
+  <label class="elv-label elv-label--xs"><input class="radio-btn radio-btn--sm" type="radio" name="freq" value="monthly"> Monthly</label>
+</div>
+
+<h2>Wrapper pattern (for Rails form helpers)</h2>
+<p class="subtitle">Use <code>.elv-label__wrapper</code> when input and label are separate elements (e.g. <code>f.radio_button</code> + <code>f.label</code>).</p>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <div class="elv-label__wrapper">
+    <input class="radio-btn" type="radio" name="wrap-plan" value="free" id="wrap-free" checked>
+    <label class="elv-label elv-label--sm" for="wrap-free">Free</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="radio-btn" type="radio" name="wrap-plan" value="pro" id="wrap-pro">
+    <label class="elv-label elv-label--sm" for="wrap-pro">Pro</label>
   </div>
   <div class="elv-label__wrapper elv-label__wrapper--sm">
-    <input class="radio-btn radio-btn--sm" type="radio" name="freq" id="freq-weekly" value="weekly">
-    <label class="elv-label elv-label--xs" for="freq-weekly">Weekly</label>
-  </div>
-  <div class="elv-label__wrapper elv-label__wrapper--sm">
-    <input class="radio-btn radio-btn--sm" type="radio" name="freq" id="freq-monthly" value="monthly">
-    <label class="elv-label elv-label--xs" for="freq-monthly">Monthly</label>
+    <input class="radio-btn radio-btn--sm" type="radio" name="wrap-freq" value="daily" id="wrap-daily" checked>
+    <label class="elv-label elv-label--xs" for="wrap-daily">Daily</label>
   </div>
 </div>
 

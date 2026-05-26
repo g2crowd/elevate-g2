@@ -24,7 +24,7 @@ const NAV_HTML = `
   <h3>Containers</h3>
   <a href="./content-cards.html">Content Card</a>
   <a href="./inset-cards.html">Inset Card</a>
-  <a class="planned">Table</a>
+  <a href="./tables.html">Table</a>
 
   <h3>Data Display</h3>
   <a href="./number-changes.html">Number Change</a>
@@ -34,7 +34,7 @@ const NAV_HTML = `
 
   <h3>Forms</h3>
   <a href="./checkboxes.html">Checkbox</a>
-  <a class="planned">File Input</a>
+  <a href="./file-uploads.html">File Upload</a>
   <a href="./helper-text.html">Helper Text</a>
   <a href="./typography.html">Label</a>
   <a href="./number-inputs.html">Number Input</a>
@@ -46,7 +46,7 @@ const NAV_HTML = `
   <a href="./toggles.html">Toggle</a>
 
   <h3>Layout</h3>
-  <a class="planned">Accordion</a>
+  <a href="./accordions.html">Accordion</a>
   <a href="./notification-badges.html">Notification Badge</a>
   <a href="./spin-loaders.html">Spin Loader</a>
   <a href="./typography.html">Typography</a>
@@ -57,23 +57,20 @@ const NAV_HTML = `
 
   <h3>Navigation</h3>
   <a href="./breadcrumbs.html">Breadcrumbs</a>
-  <a class="planned">Index Nav</a>
+  <a href="./index-nav.html">Index Nav</a>
   <a href="./pagination.html">Pagination</a>
   <a href="./tabs.html">Tab</a>
 
   <h3>Overlays</h3>
-  <a class="planned">Dropdown Menu</a>
-  <a class="planned">Filter Dropdown</a>
-  <a class="planned">Modal</a>
+  <a href="./dropdown-menus.html">Dropdown Menu</a>
+  <a href="./filter-dropdowns.html">Filter Dropdown</a>
+  <a href="./modals.html">Modal</a>
+  <a href="./slide-out-panels.html">Slide-Out Panel</a>
   <a href="./notifications.html">Notification</a>
-  <a class="planned">Popover</a>
-  <a class="planned">Toast</a>
-  <a class="planned">Tooltip</a>
+  <a href="./popovers.html">Popover</a>
+  <a href="./toasts.html">Toast</a>
+  <a href="./tooltips.html">Tooltip</a>
 
-  <div class="legend">
-    <span><strong style="color: #5746b2;">Purple</strong> = ported</span>
-    <span><strong style="color: #6f6d78;">Gray</strong> = planned</span>
-  </div>
 </nav>
 `;
 

@@ -1,80 +1,50 @@
 @layer components {
-  .tab-group {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex elv-flex-col;
-    }
+  .elv-tab-group {
+    @apply elv-flex elv-flex-col;
   }
 
-  .tab-list {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex elv-items-center;
-    }
+  .elv-tab-list {
+    @apply elv-flex elv-items-center;
   }
 
-  .tab-list--full-width {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-border-b elv-border-medium;
-    }
+  .elv-tab-list--full-width {
+    @apply elv-border-b elv-border-medium;
   }
 
-  .tab-list--full-width .tab {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex-1;
-      border-bottom: 1px solid transparent;
-    }
+  .elv-tab-list--full-width .elv-tab {
+    @apply elv-flex-1;
+    border-bottom: 1px solid transparent;
   }
 
-  .tab {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-flex elv-items-center elv-justify-center elv-gap-1
-        elv-h-10 elv-px-6 elv-bg-transparent elv-cursor-pointer
-        elv-font-figtree elv-text-sm elv-leading-sm elv-font-semibold
-        elv-text-subtle elv-transition-all elv-duration-150 elv-relative elv-whitespace-nowrap;
-      border-bottom: 2px solid transparent;
-    }
+  .elv-tab {
+    @apply elv-flex elv-items-center elv-justify-center elv-gap-1
+      elv-h-10 elv-px-6 elv-bg-transparent elv-cursor-pointer
+      elv-font-figtree elv-text-sm elv-leading-sm elv-font-semibold
+      elv-text-subtle elv-transition-all elv-duration-150 elv-relative elv-whitespace-nowrap;
+    border-bottom: 2px solid transparent;
   }
 
-  .tab:hover {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-text-primary;
-      border-bottom-color: currentColor;
-    }
+  .elv-tab:hover {
+    @apply elv-text-primary;
+    border-bottom-color: currentColor;
   }
 
-  .tab[aria-selected="true"] {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-text-primary;
-      border-bottom-color: currentColor;
-    }
+  .elv-tab[aria-selected="true"] {
+    @apply elv-text-primary;
+    border-bottom-color: currentColor;
   }
 
-  .tab:focus-visible {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-outline elv-outline-3 elv-outline-purple-40;
-      outline-offset: -2px;
-      z-index: 1;
-    }
+  .elv-tab:focus-visible {
+    @apply elv-outline elv-outline-3 elv-outline-purple-40;
+    outline-offset: -2px;
+    z-index: 1;
   }
 
-  .tab-icon {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-w-4 elv-h-4 elv-shrink-0;
-    }
+  .elv-tab-icon {
+    @apply elv-w-4 elv-h-4 elv-shrink-0;
   }
 
-  .tab-panels {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv-mt-4;
-    }
+  .elv-tab-panels {
+    @apply elv-mt-4;
   }
 }

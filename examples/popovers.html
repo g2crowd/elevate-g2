@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Popover — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Popover</h1>
+<p class="subtitle">CSS component: <code>.elv-popover</code>. Light panel with heading, body, actions. Consumer provides show/hide JS.</p>
+
+<h2>With heading and close</h2>
+<div class="component-col" elv style="padding: 2rem 0; min-height: 240px;">
+  <div style="display: inline-block; position: relative;">
+    <button class="btn btn--secondary btn--sm" data-popover-trigger="popover-1">Show popover</button>
+    <div class="elv-popover bottom" id="popover-1" hidden>
+      <div class="elv-popover__heading">
+        <span class="elv-popover__heading-text">Confirm action</span>
+        <button class="elv-popover__close" type="button" data-popover-close="popover-1" aria-label="Close">
+          <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+        </button>
+      </div>
+      <div class="elv-popover__body elv-popover__body--with-heading">
+        <p>Are you sure you want to remove this item? This action cannot be undone.</p>
+      </div>
+      <div class="elv-popover__actions elv-popover__actions--center">
+        <div style="display: flex; gap: 0.25rem;">
+          <button class="btn btn--tertiary btn--sm" type="button" data-popover-close="popover-1" elv>Cancel</button>
+          <button class="btn btn--primary btn--sm" type="button" data-popover-close="popover-1" elv>Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Body only (no heading)</h2>
+<div class="component-col" elv style="padding: 2rem 0; min-height: 200px;">
+  <div style="display: inline-block; position: relative;">
+    <button class="btn btn--secondary btn--sm" data-popover-trigger="popover-2">Help</button>
+    <div class="elv-popover bottom" id="popover-2" hidden>
+      <div class="elv-popover__body elv-popover__body--no-heading">
+        <p>Trust Score is calculated from review authenticity, recency, and volume. Higher scores indicate more reliable reviews.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Centered heading and body</h2>
+<div class="component-col" elv style="padding: 2rem 0; min-height: 240px;">
+  <div style="display: inline-block; position: relative;">
+    <button class="btn btn--secondary btn--sm" data-popover-trigger="popover-3">Learn more</button>
+    <div class="elv-popover bottom" id="popover-3" hidden>
+      <div class="elv-popover__heading">
+        <span class="elv-popover__heading-text elv-popover__heading-text--center">Welcome!</span>
+        <button class="elv-popover__close" type="button" data-popover-close="popover-3" aria-label="Close">
+          <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+        </button>
+      </div>
+      <div class="elv-popover__body elv-popover__body--with-heading elv-popover__body--center">
+        <p>This is a guided tour step. Click next to continue.</p>
+      </div>
+      <div class="elv-popover__actions elv-popover__actions--center">
+        <button class="btn btn--primary btn--sm" type="button" data-popover-close="popover-3" elv>Got it</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Right-aligned actions</h2>
+<div class="component-col" elv style="padding: 2rem 0; min-height: 240px;">
+  <div style="display: inline-block; position: relative;">
+    <button class="btn btn--secondary btn--sm" data-popover-trigger="popover-4">Delete</button>
+    <div class="elv-popover bottom" id="popover-4" hidden>
+      <div class="elv-popover__heading">
+        <span class="elv-popover__heading-text">Delete item</span>
+        <button class="elv-popover__close" type="button" data-popover-close="popover-4" aria-label="Close">
+          <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+        </button>
+      </div>
+      <div class="elv-popover__body elv-popover__body--with-heading">
+        <p>This will permanently remove the item.</p>
+      </div>
+      <div class="elv-popover__actions elv-popover__actions--right">
+        <div style="display: flex; gap: 0.25rem;">
+          <button class="btn btn--tertiary btn--sm" type="button" data-popover-close="popover-4" elv>Cancel</button>
+          <button class="btn btn--primary btn--sm" type="button" data-popover-close="popover-4" elv>Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-popover-trigger]').forEach((trigger) => {
+    const id = trigger.getAttribute('data-popover-trigger');
+    const popover = document.getElementById(id);
+    if (!popover) return;
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = popover.hasAttribute('hidden');
+      closeAll();
+      if (isHidden) {
+        popover.removeAttribute('hidden');
+        popover.classList.add('is-visible');
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-popover-close]').forEach((btn) => {
+    const id = btn.getAttribute('data-popover-close');
+    const popover = document.getElementById(id);
+    if (!popover) return;
+
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      popover.setAttribute('hidden', '');
+      popover.classList.remove('is-visible');
+    });
+  });
+
+  function closeAll() {
+    document.querySelectorAll('.elv-popover').forEach((p) => {
+      p.setAttribute('hidden', '');
+      p.classList.remove('is-visible');
+    });
+  }
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.elv-popover') && !e.target.closest('[data-popover-trigger]')) closeAll();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+</script>
+
+</body>
+</html>
