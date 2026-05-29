@@ -1,46 +1,44 @@
-const colors = require('./color-palette');
-
 module.exports = {
-  transparent: colors.transparent,
-  current: colors.current,
+  transparent: 'transparent',
+  current: 'currentColor',
   default: {
-    DEFAULT: colors.neutral[100],
+    DEFAULT: 'var(--elv-text-default)',
   },
   subtle: {
-    DEFAULT: colors.neutral[80],
+    DEFAULT: 'var(--elv-text-subtle)',
   },
   nonessential: {
-    DEFAULT: colors.neutral[70],
+    DEFAULT: 'var(--elv-text-nonessential)',
   },
   disabled: {
-    DEFAULT: colors.neutral[20],
+    DEFAULT: 'var(--elv-text-disabled)',
   },
   inverted: {
-    DEFAULT: colors.neutral[0],
+    DEFAULT: 'var(--elv-text-inverted)',
   },
   link: {
-    DEFAULT: colors.blue[100],
-    hover: colors.blue[120],
-    visited: colors.blue[80],
+    DEFAULT: 'var(--elv-text-link)',
+    hover: 'var(--elv-text-link-hover)',
+    visited: 'var(--elv-text-link-visited)',
   },
   primary: {
-    DEFAULT: colors.purple[100],
-    hover: colors.purple[120],
+    DEFAULT: 'var(--elv-text-primary)',
+    hover: 'var(--elv-text-primary-hover)',
   },
   neutral: {
-    DEFAULT: colors.neutral[80],
+    DEFAULT: 'var(--elv-text-neutral)',
   },
   info: {
-    DEFAULT: colors.blue[160],
+    DEFAULT: 'var(--elv-text-info)',
   },
   success: {
-    DEFAULT: colors.green[160],
-    data: colors.green[120],
+    DEFAULT: 'var(--elv-text-success)',
+    data: 'var(--elv-text-success-data)',
   },
   warning: {
-    DEFAULT: colors.yellow[160],
+    DEFAULT: 'var(--elv-text-warning)',
   },
   critical: {
-    DEFAULT: colors.rorange[140],
+    DEFAULT: 'var(--elv-text-critical)',
   },
 };

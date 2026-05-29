@@ -92,4 +92,9 @@
       @apply elv-translate-x-9;
     }
   }
+
+  .dark .toggle:not(:checked)::before,
+  .toggle:not(:checked):where(.dark *)::before {
+    @apply elv-bg-neutral-40;
+  }
 }

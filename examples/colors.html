@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colors — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+  <style>
+    .color-section {
+      margin-bottom: 3rem;
+    }
+    .swatch-group {
+      margin-bottom: 2rem;
+    }
+    .swatch-group h3 {
+      text-transform: capitalize;
+      margin-bottom: 1rem;
+    }
+    .swatch-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .swatch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 48px;
+    }
+    .swatch {
+      width: 48px;
+      height: 48px;
+      border-radius: 4px;
+      border: 1px solid var(--elv-border-light);
+      margin-bottom: 0.25rem;
+    }
+    .swatch-label {
+      font-size: 10px;
+      font-family: monospace;
+      color: var(--elv-text-subtle);
+    }
+    .swatch-value {
+      font-size: 10px;
+      font-family: monospace;
+      color: var(--elv-text-default);
+    }
+    table.token-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    table.token-table th, table.token-table td {
+      border-bottom: 1px solid var(--elv-border-light);
+      padding: 0.75rem 0.5rem;
+      text-align: left;
+      font-size: 14px;
+    }
+    table.token-table th {
+      color: var(--elv-text-subtle);
+      font-weight: 500;
+    }
+    .token-preview {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .token-swatch {
+      width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      border: 1px solid var(--elv-border-medium);
+    }
+    .token-hex {
+      font-family: monospace;
+      color: var(--elv-text-subtle);
+    }
+    .token-name {
+      font-family: monospace;
+      color: var(--elv-text-default);
+    }
+    .prim-source {
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 11px;
+      background: rgba(87, 70, 178, 0.1);
+      color: #5746b2;
+      padding: 2px 6px;
+      border-radius: 3px;
+      white-space: nowrap;
+    }
+    html.dark .prim-source {
+      background: rgba(168, 158, 232, 0.15);
+      color: #a89ee8;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Colors</h1>
+
+<div class="color-section">
+  <h2>Primitive Scales</h2>
+  <p class="subtitle">Light palette (top row) and Dark palette (bottom row) values</p>
+  <div class="swatch-group">
+    <h3>purple</h3>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #f5f4fb"></div>
+        <div class="swatch-label">5</div>
+        <div class="swatch-value">#f5f4fb</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #f2f0f9"></div>
+        <div class="swatch-label">10</div>
+        <div class="swatch-value">#f2f0f9</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ebe9f6"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#ebe9f6</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #dedaf1"></div>
+        <div class="swatch-label">30</div>
+        <div class="swatch-value">#dedaf1</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #c3bde5"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#c3bde5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #988ed2"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#988ed2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #7769c4"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#7769c4</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #5746b2"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#5746b2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #45388f"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#45388f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #342a6a"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#342a6a</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #211b46"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#211b46</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #15112c"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#15112c</div>
+      </div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #f2f0fc"></div>
+        <div class="swatch-label">5</div>
+        <div class="swatch-value">#f2f0fc</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ebe8fa"></div>
+        <div class="swatch-label">10</div>
+        <div class="swatch-value">#ebe8fa</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #dcd8f5"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#dcd8f5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #cfcaed"></div>
+        <div class="swatch-label">30</div>
+        <div class="swatch-value">#cfcaed</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #c3bde5"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#c3bde5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #b3ace0"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#b3ace0</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #a89ee8"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#a89ee8</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #8a7ec8"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#8a7ec8</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #6b5fa8"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#6b5fa8</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #45388f"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#45388f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #342a6a"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#342a6a</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #221f3d"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#221f3d</div>
+      </div>
+    </div>
+  </div>
+  <div class="swatch-group">
+    <h3>neutral</h3>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffffff"></div>
+        <div class="swatch-label">0</div>
+        <div class="swatch-value">#ffffff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fcfcfd"></div>
+        <div class="swatch-label">1</div>
+        <div class="swatch-value">#fcfcfd</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fafafa"></div>
+        <div class="swatch-label">5</div>
+        <div class="swatch-value">#fafafa</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #f2f2f3"></div>
+        <div class="swatch-label">10</div>
+        <div class="swatch-value">#f2f2f3</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #dfdfe2"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#dfdfe2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #cacace"></div>
+        <div class="swatch-label">30</div>
+        <div class="swatch-value">#cacace</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #b0afb6"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#b0afb6</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #9b99a3"></div>
+        <div class="swatch-label">50</div>
+        <div class="swatch-value">#9b99a3</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #6f6d78"></div>
+        <div class="swatch-label">70</div>
+        <div class="swatch-value">#6f6d78</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #4c4b53"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#4c4b53</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #2f2e33"></div>
+        <div class="swatch-label">90</div>
+        <div class="swatch-value">#2f2e33</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #201f23"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#201f23</div>
+      </div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffffff"></div>
+        <div class="swatch-label">0</div>
+        <div class="swatch-value">#ffffff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fdfdfe"></div>
+        <div class="swatch-label">1</div>
+        <div class="swatch-value">#fdfdfe</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #f5f4fb"></div>
+        <div class="swatch-label">5</div>
+        <div class="swatch-value">#f5f4fb</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #e4e3eb"></div>
+        <div class="swatch-label">10</div>
+        <div class="swatch-value">#e4e3eb</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #c4c2cc"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#c4c2cc</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #adabbf"></div>
+        <div class="swatch-label">30</div>
+        <div class="swatch-value">#adabbf</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #9794b2"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#9794b2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #827ea5"></div>
+        <div class="swatch-label">50</div>
+        <div class="swatch-value">#827ea5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #5c5781"></div>
+        <div class="swatch-label">70</div>
+        <div class="swatch-value">#5c5781</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #4a4570"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#4a4570</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #3a3657"></div>
+        <div class="swatch-label">90</div>
+        <div class="swatch-value">#3a3657</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #2a2740"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#2a2740</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #221f3d"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#221f3d</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #16132b"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#16132b</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #111020"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#111020</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #0e0c1a"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#0e0c1a</div>
+      </div>
+    </div>
+  </div>
+  <div class="swatch-group">
+    <h3>rorange</h3>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fff6f5"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#fff6f5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffd7d1"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#ffd7d1</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffa394"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#ffa394</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ff7761"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#ff7761</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ff492c"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#ff492c</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #eb2000"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#eb2000</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #b21800"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#b21800</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #610d00"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#610d00</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #2e0600"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#2e0600</div>
+      </div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fff6f5"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#fff6f5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #FFD7D1"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#FFD7D1</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffa394"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#ffa394</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ff7761"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#ff7761</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ff492c"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#ff492c</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #eb2000"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#eb2000</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #b21800"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#b21800</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #610d00"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#610d00</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #2e0600"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#2e0600</div>
+      </div>
+    </div>
+  </div>
+  <div class="swatch-group">
+    <h3>blue</h3>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #dbecff"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#dbecff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #9eccff"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#9eccff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #66aeff"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#66aeff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #2e90ff"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#2e90ff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #0073f5"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#0073f5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #005bc2"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#005bc2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #00438f"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#00438f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #002b5c"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#002b5c</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #001329"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#001329</div>
+      </div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #dbecff"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#dbecff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #9eccff"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#9eccff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #66aeff"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#66aeff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #2e90ff"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#2e90ff</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #0073f5"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#0073f5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #005bc2"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#005bc2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #00438f"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#00438f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #002b5c"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#002b5c</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #001329"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#001329</div>
+      </div>
+    </div>
+  </div>
+  <div class="swatch-group">
+    <h3>green</h3>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #d0f6f1"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#d0f6f1</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #a9efe5"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#a9efe5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #86e9dc"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#86e9dc</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #5be1cf"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#5be1cf</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #27d3bc"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#27d3bc</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #1fa896"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#1fa896</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #177d6f"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#177d6f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #0f5249"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#0f5249</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #072723"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#072723</div>
+      </div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #d0f6f1"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#d0f6f1</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #a9efe5"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#a9efe5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #86e9dc"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#86e9dc</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #5be1cf"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#5be1cf</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #27d3bc"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#27d3bc</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #1fa896"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#1fa896</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #177d6f"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#177d6f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #0f5249"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#0f5249</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #072723"></div>
+        <div class="swatch-label">180</div>
+        <div class="swatch-value">#072723</div>
+      </div>
+    </div>
+  </div>
+  <div class="swatch-group">
+    <h3>yellow</h3>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fff9e5"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#fff9e5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fff2c2"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#fff2c2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffe78f"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#ffe78f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffd747"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#ffd747</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffc800"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#ffc800</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #cca400"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#cca400</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #997800"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#997800</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #665000"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#665000</div>
+      </div>
+    </div>
+    <div class="swatch-row">
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fff9e5"></div>
+        <div class="swatch-label">20</div>
+        <div class="swatch-value">#fff9e5</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #fff2c2"></div>
+        <div class="swatch-label">40</div>
+        <div class="swatch-value">#fff2c2</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffe78f"></div>
+        <div class="swatch-label">60</div>
+        <div class="swatch-value">#ffe78f</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffd747"></div>
+        <div class="swatch-label">80</div>
+        <div class="swatch-value">#ffd747</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #ffc800"></div>
+        <div class="swatch-label">100</div>
+        <div class="swatch-value">#ffc800</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #cca400"></div>
+        <div class="swatch-label">120</div>
+        <div class="swatch-value">#cca400</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #997800"></div>
+        <div class="swatch-label">140</div>
+        <div class="swatch-value">#997800</div>
+      </div>
+      <div class="swatch-item">
+        <div class="swatch" style="background-color: #665000"></div>
+        <div class="swatch-label">160</div>
+        <div class="swatch-value">#665000</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="color-section">
+  <h2>Semantic Token Mapping</h2>
+  <p class="subtitle">Token mappings to Light and Dark values</p>
+  <h3>Backgrounds</h3>
+  <table class="token-table">
+    <thead>
+      <tr>
+        <th>Token Name</th>
+        <th>Light Value</th>
+        <th>Dark Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-5</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #f5f4fb"></div><span class="token-hex">#f5f4fb</span> <code class="prim-source">purple.5</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #221f3d"></div><span class="token-hex">#221f3d</span> <code class="prim-source">purple.180</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-10</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #f2f0f9"></div><span class="token-hex">#f2f0f9</span> <code class="prim-source">purple.10</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #342a6a"></div><span class="token-hex">#342a6a</span> <code class="prim-source">purple.160</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-20</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ebe9f6"></div><span class="token-hex">#ebe9f6</span> <code class="prim-source">purple.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #45388f"></div><span class="token-hex">#45388f</span> <code class="prim-source">purple.140</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-30</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dedaf1"></div><span class="token-hex">#dedaf1</span> <code class="prim-source">purple.30</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #6b5fa8"></div><span class="token-hex">#6b5fa8</span> <code class="prim-source">purple.120</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-40</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #c3bde5"></div><span class="token-hex">#c3bde5</span> <code class="prim-source">purple.40</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #8a7ec8"></div><span class="token-hex">#8a7ec8</span> <code class="prim-source">purple.100</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-60</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #988ed2"></div><span class="token-hex">#988ed2</span> <code class="prim-source">purple.60</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #a89ee8"></div><span class="token-hex">#a89ee8</span> <code class="prim-source">purple.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-80</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #7769c4"></div><span class="token-hex">#7769c4</span> <code class="prim-source">purple.80</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #b3ace0"></div><span class="token-hex">#b3ace0</span> <code class="prim-source">purple.60</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #5746b2"></div><span class="token-hex">#5746b2</span> <code class="prim-source">purple.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #a89ee8"></div><span class="token-hex">#a89ee8</span> <code class="prim-source">purple.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-primary-120</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #45388f"></div><span class="token-hex">#45388f</span> <code class="prim-source">purple.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #c3bde5"></div><span class="token-hex">#c3bde5</span> <code class="prim-source">purple.40</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral-0</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffffff"></div><span class="token-hex">#ffffff</span> <code class="prim-source">neutral.0</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0e0c1a"></div><span class="token-hex">#0e0c1a</span> <code class="prim-source">neutral.180</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral-1</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #fcfcfd"></div><span class="token-hex">#fcfcfd</span> <code class="prim-source">neutral.1</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #111020"></div><span class="token-hex">#111020</span> <code class="prim-source">neutral.160</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral-5</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #fafafa"></div><span class="token-hex">#fafafa</span> <code class="prim-source">neutral.5</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #16132b"></div><span class="token-hex">#16132b</span> <code class="prim-source">neutral.140</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral-10</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #f2f2f3"></div><span class="token-hex">#f2f2f3</span> <code class="prim-source">neutral.10</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #221f3d"></div><span class="token-hex">#221f3d</span> <code class="prim-source">neutral.120</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral-20</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dfdfe2"></div><span class="token-hex">#dfdfe2</span> <code class="prim-source">neutral.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2a2740"></div><span class="token-hex">#2a2740</span> <code class="prim-source">neutral.100</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dfdfe2"></div><span class="token-hex">#dfdfe2</span> <code class="prim-source">neutral.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2a2740"></div><span class="token-hex">#2a2740</span> <code class="prim-source">neutral.100</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral-40</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #b0afb6"></div><span class="token-hex">#b0afb6</span> <code class="prim-source">neutral.40</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #4a4570"></div><span class="token-hex">#4a4570</span> <code class="prim-source">neutral.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-neutral-100</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #201f23"></div><span class="token-hex">#201f23</span> <code class="prim-source">neutral.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #f5f4fb"></div><span class="token-hex">#f5f4fb</span> <code class="prim-source">neutral.5</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-info-20</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dbecff"></div><span class="token-hex">#dbecff</span> <code class="prim-source">blue.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #001329"></div><span class="token-hex">#001329</span> <code class="prim-source">blue.180</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-info</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0073f5"></div><span class="token-hex">#0073f5</span> <code class="prim-source">blue.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2e90ff"></div><span class="token-hex">#2e90ff</span> <code class="prim-source">blue.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-critical-20</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #fff6f5"></div><span class="token-hex">#fff6f5</span> <code class="prim-source">rorange.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2e0600"></div><span class="token-hex">#2e0600</span> <code class="prim-source">rorange.180</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-critical-40</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #FFD7D1"></div><span class="token-hex">#FFD7D1</span> <code class="prim-source">rorange.40</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #610d00"></div><span class="token-hex">#610d00</span> <code class="prim-source">rorange.160</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-critical</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #eb2000"></div><span class="token-hex">#eb2000</span> <code class="prim-source">rorange.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffa394"></div><span class="token-hex">#ffa394</span> <code class="prim-source">rorange.60</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-critical-140</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #b21800"></div><span class="token-hex">#b21800</span> <code class="prim-source">rorange.140</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #FFD7D1"></div><span class="token-hex">#FFD7D1</span> <code class="prim-source">rorange.40</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-warning-20</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #fff9e5"></div><span class="token-hex">#fff9e5</span> <code class="prim-source">yellow.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #665000"></div><span class="token-hex">#665000</span> <code class="prim-source">yellow.160</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-warning</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffc800"></div><span class="token-hex">#ffc800</span> <code class="prim-source">yellow.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffd747"></div><span class="token-hex">#ffd747</span> <code class="prim-source">yellow.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-success-20</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #d0f6f1"></div><span class="token-hex">#d0f6f1</span> <code class="prim-source">green.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #072723"></div><span class="token-hex">#072723</span> <code class="prim-source">green.180</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-success-40</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #a9efe5"></div><span class="token-hex">#a9efe5</span> <code class="prim-source">green.40</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0f5249"></div><span class="token-hex">#0f5249</span> <code class="prim-source">green.160</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-success</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #1fa896"></div><span class="token-hex">#1fa896</span> <code class="prim-source">green.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #5be1cf"></div><span class="token-hex">#5be1cf</span> <code class="prim-source">green.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-brand</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ff492c"></div><span class="token-hex">#ff492c</span> <code class="prim-source">rorange.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ff492c"></div><span class="token-hex">#ff492c</span> <code class="prim-source">rorange.100</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-bg-inverted</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffffff"></div><span class="token-hex">#ffffff</span> <code class="prim-source">neutral.0</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0e0c1a"></div><span class="token-hex">#0e0c1a</span> <code class="prim-source">neutral.180</code></div></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Foregrounds</h3>
+  <table class="token-table">
+    <thead>
+      <tr>
+        <th>Token Name</th>
+        <th>Light Value</th>
+        <th>Dark Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="token-name">--elv-text-default</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #201f23"></div><span class="token-hex">#201f23</span> <code class="prim-source">neutral.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #f5f4fb"></div><span class="token-hex">#f5f4fb</span> <code class="prim-source">neutral.5</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-subtle</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #4c4b53"></div><span class="token-hex">#4c4b53</span> <code class="prim-source">neutral.80</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #c4c2cc"></div><span class="token-hex">#c4c2cc</span> <code class="prim-source">neutral.20</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-nonessential</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #6f6d78"></div><span class="token-hex">#6f6d78</span> <code class="prim-source">neutral.70</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #827ea5"></div><span class="token-hex">#827ea5</span> <code class="prim-source">neutral.50</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-disabled</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dfdfe2"></div><span class="token-hex">#dfdfe2</span> <code class="prim-source">neutral.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #4a4570"></div><span class="token-hex">#4a4570</span> <code class="prim-source">neutral.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-inverted</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffffff"></div><span class="token-hex">#ffffff</span> <code class="prim-source">neutral.0</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0e0c1a"></div><span class="token-hex">#0e0c1a</span> <code class="prim-source">neutral.180</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-link</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0073f5"></div><span class="token-hex">#0073f5</span> <code class="prim-source">blue.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #66aeff"></div><span class="token-hex">#66aeff</span> <code class="prim-source">blue.60</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-link-hover</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #005bc2"></div><span class="token-hex">#005bc2</span> <code class="prim-source">blue.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #9eccff"></div><span class="token-hex">#9eccff</span> <code class="prim-source">blue.40</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-link-visited</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2e90ff"></div><span class="token-hex">#2e90ff</span> <code class="prim-source">blue.80</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2e90ff"></div><span class="token-hex">#2e90ff</span> <code class="prim-source">blue.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-primary</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #5746b2"></div><span class="token-hex">#5746b2</span> <code class="prim-source">purple.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #a89ee8"></div><span class="token-hex">#a89ee8</span> <code class="prim-source">purple.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-primary-hover</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #45388f"></div><span class="token-hex">#45388f</span> <code class="prim-source">purple.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #c3bde5"></div><span class="token-hex">#c3bde5</span> <code class="prim-source">purple.40</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-neutral</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #4c4b53"></div><span class="token-hex">#4c4b53</span> <code class="prim-source">neutral.80</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #c4c2cc"></div><span class="token-hex">#c4c2cc</span> <code class="prim-source">neutral.20</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-info</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #002b5c"></div><span class="token-hex">#002b5c</span> <code class="prim-source">blue.160</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dbecff"></div><span class="token-hex">#dbecff</span> <code class="prim-source">blue.20</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-success</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0f5249"></div><span class="token-hex">#0f5249</span> <code class="prim-source">green.160</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #d0f6f1"></div><span class="token-hex">#d0f6f1</span> <code class="prim-source">green.20</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-success-data</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #1fa896"></div><span class="token-hex">#1fa896</span> <code class="prim-source">green.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #5be1cf"></div><span class="token-hex">#5be1cf</span> <code class="prim-source">green.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-warning</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #665000"></div><span class="token-hex">#665000</span> <code class="prim-source">yellow.160</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #fff9e5"></div><span class="token-hex">#fff9e5</span> <code class="prim-source">yellow.20</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-text-critical</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #b21800"></div><span class="token-hex">#b21800</span> <code class="prim-source">rorange.140</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffa394"></div><span class="token-hex">#ffa394</span> <code class="prim-source">rorange.60</code></div></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3>Borders</h3>
+  <table class="token-table">
+    <thead>
+      <tr>
+        <th>Token Name</th>
+        <th>Light Value</th>
+        <th>Dark Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="token-name">--elv-border-whisper</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #f2f2f3"></div><span class="token-hex">#f2f2f3</span> <code class="prim-source">neutral.10</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #221f3d"></div><span class="token-hex">#221f3d</span> <code class="prim-source">neutral.120</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-light</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dfdfe2"></div><span class="token-hex">#dfdfe2</span> <code class="prim-source">neutral.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2a2740"></div><span class="token-hex">#2a2740</span> <code class="prim-source">neutral.100</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-medium</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #b0afb6"></div><span class="token-hex">#b0afb6</span> <code class="prim-source">neutral.40</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #4a4570"></div><span class="token-hex">#4a4570</span> <code class="prim-source">neutral.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-dark</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #4c4b53"></div><span class="token-hex">#4c4b53</span> <code class="prim-source">neutral.80</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #c4c2cc"></div><span class="token-hex">#c4c2cc</span> <code class="prim-source">neutral.20</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-inverted</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffffff"></div><span class="token-hex">#ffffff</span> <code class="prim-source">neutral.0</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0e0c1a"></div><span class="token-hex">#0e0c1a</span> <code class="prim-source">neutral.180</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-neutral</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #dfdfe2"></div><span class="token-hex">#dfdfe2</span> <code class="prim-source">neutral.20</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2a2740"></div><span class="token-hex">#2a2740</span> <code class="prim-source">neutral.100</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-info</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #0073f5"></div><span class="token-hex">#0073f5</span> <code class="prim-source">blue.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #2e90ff"></div><span class="token-hex">#2e90ff</span> <code class="prim-source">blue.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-success</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #1fa896"></div><span class="token-hex">#1fa896</span> <code class="prim-source">green.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #5be1cf"></div><span class="token-hex">#5be1cf</span> <code class="prim-source">green.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-critical</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #eb2000"></div><span class="token-hex">#eb2000</span> <code class="prim-source">rorange.120</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffa394"></div><span class="token-hex">#ffa394</span> <code class="prim-source">rorange.60</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-warning</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffc800"></div><span class="token-hex">#ffc800</span> <code class="prim-source">yellow.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffd747"></div><span class="token-hex">#ffd747</span> <code class="prim-source">yellow.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-primary</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #5746b2"></div><span class="token-hex">#5746b2</span> <code class="prim-source">purple.100</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #a89ee8"></div><span class="token-hex">#a89ee8</span> <code class="prim-source">purple.80</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-focus</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #c3bde5"></div><span class="token-hex">#c3bde5</span> <code class="prim-source">purple.40</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #6b5fa8"></div><span class="token-hex">#6b5fa8</span> <code class="prim-source">purple.120</code></div></td>
+      </tr>
+      <tr>
+        <td><span class="token-name">--elv-border-data-secondary-1</span></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ffa394"></div><span class="token-hex">#ffa394</span> <code class="prim-source">rorange.60</code></div></td>
+        <td><div class="token-preview"><div class="token-swatch" style="background-color: #ff7761"></div><span class="token-hex">#ff7761</span> <code class="prim-source">rorange.80</code></div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</body>
+</html>

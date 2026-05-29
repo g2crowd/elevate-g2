@@ -1,45 +1,43 @@
-const palette = require('./color-palette');
-
 module.exports = {
-  transparent: palette.transparent,
-  current: palette.current,
+  transparent: 'transparent',
+  current: 'currentColor',
   whisper: {
-    DEFAULT: palette.neutral[10],
+    DEFAULT: 'var(--elv-border-whisper)',
   },
   light: {
-    DEFAULT: palette.neutral[20],
+    DEFAULT: 'var(--elv-border-light)',
   },
   medium: {
-    DEFAULT: palette.neutral[40],
+    DEFAULT: 'var(--elv-border-medium)',
   },
   dark: {
-    DEFAULT: palette.neutral[80],
+    DEFAULT: 'var(--elv-border-dark)',
   },
   inverted: {
-    DEFAULT: palette.neutral[0],
+    DEFAULT: 'var(--elv-border-inverted)',
   },
   neutral: {
-    DEFAULT: palette.neutral[20],
+    DEFAULT: 'var(--elv-border-neutral)',
   },
   info: {
-    DEFAULT: palette.blue[100],
+    DEFAULT: 'var(--elv-border-info)',
   },
   success: {
-    DEFAULT: palette.green[120],
+    DEFAULT: 'var(--elv-border-success)',
   },
   critical: {
-    DEFAULT: palette.rorange[120],
+    DEFAULT: 'var(--elv-border-critical)',
   },
   warning: {
-    DEFAULT: palette.yellow[100],
+    DEFAULT: 'var(--elv-border-warning)',
   },
   primary: {
-    DEFAULT: palette.purple[100],
+    DEFAULT: 'var(--elv-border-primary)',
   },
   focus: {
-    DEFAULT: palette.purple[40],
+    DEFAULT: 'var(--elv-border-focus)',
   },
   'data-secondary-1': {
-    DEFAULT: palette.rorange[60],
+    DEFAULT: 'var(--elv-border-data-secondary-1)',
   },
 };

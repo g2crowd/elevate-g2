@@ -55,4 +55,9 @@
   .elv-checkbox--lg {
     @apply elv-w-6 elv-h-6;
   }
+
+  .dark .checkbox:disabled:checked,
+  .checkbox:disabled:checked:where(.dark *) {
+    @apply elv-bg-neutral-40;
+  }
 }

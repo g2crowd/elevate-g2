@@ -1,6 +1,15 @@
 const NAV_HTML = `
 <nav class="sidebar">
-  <h1><a href="./index.html" style="color: inherit; text-decoration: none;">Elevate</a></h1>
+  <div class="sidebar-header">
+    <h1><a href="./index.html" style="color: inherit; text-decoration: none;">Elevate</a></h1>
+    <button id="dark-mode-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
+      <span class="theme-toggle-icon theme-toggle-icon--sun">☀️</span>
+      <span class="theme-toggle-icon theme-toggle-icon--moon">🌙</span>
+    </button>
+  </div>
+
+  <h3>Reference</h3>
+  <a href="./colors.html">Colors</a>
 
   <h3>Actions</h3>
   <a href="./buttons.html">Button</a>
@@ -91,4 +100,18 @@ document.addEventListener('DOMContentLoaded', function() {
       link.classList.add('ported');
     }
   });
+
+  var darkToggle = document.getElementById('dark-mode-toggle');
+  var root = document.documentElement;
+  var STORAGE_KEY = 'elevate-dark-mode';
+
+  if (localStorage.getItem(STORAGE_KEY) === 'dark') {
+    root.classList.add('dark');
+  }
+
+  darkToggle.addEventListener('click', function() {
+    root.classList.toggle('dark');
+    localStorage.setItem(STORAGE_KEY, root.classList.contains('dark') ? 'dark' : 'light');
+  });
+
 });
