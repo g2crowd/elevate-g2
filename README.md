@@ -73,3 +73,5 @@ This package is being incrementally extracted from `engines/elevate/` in the UE 
 2. **CSS component classes** — button, link, input, select, pagination, status badge, etc.
 3. **JS behaviors** — loading widget, interactive components (to be ported from UE's widget system)
 4. **ViewComponent Ruby classes** — server-side component definitions (separate gem)
+
+<!-- ruleset enforcement verification, will be reverted -->
