@@ -74,10 +74,10 @@ jobs:
           npm version --no-git-tag-version "$CANARY_VERSION"
 
       - name: Publish canary to NPM
-        # npm trusted publishing is workflow-file scoped; configure publish-canary.yml on npmjs or provide NPM_TOKEN.
+        # Uses the repo npm token secret already configured for package publishing.
         run: npm publish --provenance --tag canary --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Write install summary
         shell: bash
