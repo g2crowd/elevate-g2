@@ -28,84 +28,84 @@
   /* ── Block ─────────────────────────────────────────────── */
 
   .ctrl-btn {
-    @apply elv-inline-flex
-      elv-items-center
-      elv-justify-center
-      elv-border
-      elv-border-solid
-      elv-border-light
-      elv-transition-all
-      elv-duration-150
-      elv-ease-in
-      elv-bg-neutral-5
-      elv-text-default
-      elv-min-w-6
-      elv-gap-1
-      elv-rounded-sm;
+    @apply elv:inline-flex
+      elv:items-center
+      elv:justify-center
+      elv:border
+      elv:border-solid
+      elv:border-light
+      elv:transition-all
+      elv:duration-150
+      elv:ease-in
+      elv:bg-neutral-5
+      elv:text-default
+      elv:min-w-6
+      elv:gap-1
+      elv:rounded-sm;
 
-    @apply hover:elv-bg-primary-20
-      hover:elv-text-primary;
+    @apply elv:hover:bg-primary-20
+      elv:hover:text-primary;
 
-    @apply active:elv-bg-primary-20
-      active:elv-text-primary
-      active:elv-shadow-[inset_0_0_4px_1px_#201f2366];
+    @apply elv:active:bg-primary-20
+      elv:active:text-primary
+      elv:active:shadow-[inset_0_0_4px_1px_#201f2366];
 
-    @apply focus:elv-outline-neutral-40
-      focus:elv-outline
-      focus:elv-shadow-ui-focus
-      focus:elv-border-primary
-      focus:elv-text-primary;
+    @apply elv:focus:outline-neutral-40
+      elv:focus:outline
+      elv:focus:shadow-ui-focus
+      elv:focus:border-primary
+      elv:focus:text-primary;
 
-    @apply disabled:elv-cursor-not-allowed
-      disabled:elv-bg-neutral-10
-      disabled:elv-text-disabled;
+    @apply elv:disabled:cursor-not-allowed
+      elv:disabled:bg-neutral-10
+      elv:disabled:text-disabled;
   }
 
   .ctrl-btn:where(a) {
-    @apply a--reset;
+    @apply elv:a--reset;
   }
 
   /* ── Active state ──────────────────────────────────────── */
 
   .ctrl-btn--active {
-    @apply elv-bg-primary-20
-      elv-text-primary;
+    @apply elv:bg-primary-20
+      elv:text-primary;
   }
 
   /* ── Sizes ─────────────────────────────────────────────── */
 
   .ctrl-btn--xs {
-    @apply elv-h-6 elv-rounded-xs;
+    @apply elv:h-6 elv:rounded-xs;
   }
 
   .ctrl-btn--sm {
-    @apply elv-h-8;
+    @apply elv:h-8;
   }
 
   .ctrl-btn--md {
-    @apply elv-h-10;
+    @apply elv:h-10;
   }
 
   .ctrl-btn--lg {
-    @apply elv-h-12;
+    @apply elv:h-12;
   }
 
   /* ── Icon-only sizing (square) ─────────────────────────── */
 
   .ctrl-btn--icon-only.ctrl-btn--xs {
-    @apply elv-w-6;
+    @apply elv:w-6;
   }
 
   .ctrl-btn--icon-only.ctrl-btn--sm {
-    @apply elv-w-8;
+    @apply elv:w-8;
   }
 
   .ctrl-btn--icon-only.ctrl-btn--md {
-    @apply elv-w-10;
+    @apply elv:w-10;
   }
 
   .ctrl-btn--icon-only.ctrl-btn--lg {
-    @apply elv-w-12;
+    @apply elv:w-12;
   }
 
   /* ── Segments ──────────────────────────────────────────── */
@@ -119,7 +119,7 @@
   }
 
   .ctrl-btn--middle {
-    @apply elv-rounded-0;
+    @apply elv:rounded-0;
   }
 
   .ctrl-btn--right-cap {
@@ -133,63 +133,63 @@
   /* ── Inner wrapper ─────────────────────────────────────── */
 
   .ctrl-btn__inner {
-    @apply elv-flex
-      elv-items-center
-      elv-justify-center
-      elv-gap-0;
+    @apply elv:flex
+      elv:items-center
+      elv:justify-center
+      elv:gap-0;
   }
 
   .ctrl-btn--xs .ctrl-btn__inner {
-    @apply elv-px-1;
+    @apply elv:px-1;
   }
 
   .ctrl-btn--sm .ctrl-btn__inner,
   .ctrl-btn--md .ctrl-btn__inner {
-    @apply elv-px-2;
+    @apply elv:px-2;
   }
 
   .ctrl-btn--lg .ctrl-btn__inner {
-    @apply elv-px-3;
+    @apply elv:px-3;
   }
 
   /* ── Label ─────────────────────────────────────────────── */
 
   .ctrl-btn__label {
-    @apply elv-px-1 elv-font-figtree elv-font-semibold;
+    @apply elv:px-1 elv:font-figtree elv:font-semibold;
   }
 
   .ctrl-btn--xs .ctrl-btn__label,
   .ctrl-btn--sm .ctrl-btn__label {
-    @apply elv-text-sm;
+    @apply elv:text-sm;
   }
 
   .ctrl-btn--md .ctrl-btn__label,
   .ctrl-btn--lg .ctrl-btn__label {
-    @apply elv-text-base;
+    @apply elv:text-base;
   }
 
   /* ── Dropdown menu divider ─────────────────────────────── */
 
   .ctrl-btn__dropdown {
-    @apply elv-border-l
-      elv-border-light
-      elv-flex
-      elv-items-center;
+    @apply elv:border-l
+      elv:border-light
+      elv:flex
+      elv:items-center;
   }
 
   .ctrl-btn--xs .ctrl-btn__dropdown {
-    @apply elv-h-6 elv-px-1;
+    @apply elv:h-6 elv:px-1;
   }
 
   .ctrl-btn--sm .ctrl-btn__dropdown {
-    @apply elv-h-8 elv-px-2;
+    @apply elv:h-8 elv:px-2;
   }
 
   .ctrl-btn--md .ctrl-btn__dropdown {
-    @apply elv-h-10 elv-px-2;
+    @apply elv:h-10 elv:px-2;
   }
 
   .ctrl-btn--lg .ctrl-btn__dropdown {
-    @apply elv-h-12 elv-px-2;
+    @apply elv:h-12 elv:px-2;
   }
 }

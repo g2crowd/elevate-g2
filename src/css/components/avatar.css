@@ -1,40 +1,40 @@
 @layer components {
   .elv-avatar {
-      @apply elv-relative elv-flex elv-items-center elv-justify-center
-        elv-border-2 elv-border-inverted;
+      @apply elv:relative elv:flex elv:items-center elv:justify-center
+        elv:border-2 elv:border-inverted;
   }
 
   .elv-avatar--xl {
-      @apply elv-size-21 elv-rounded-xl;
+      @apply elv:size-21 elv:rounded-xl;
   }
 
   .elv-avatar--lg {
-      @apply elv-size-15 elv-rounded-full;
+      @apply elv:size-15 elv:rounded-full;
   }
 
   .elv-avatar--md {
-      @apply elv-size-11 elv-rounded-full;
+      @apply elv:size-11 elv:rounded-full;
   }
 
   .elv-avatar--sm {
-      @apply elv-size-9 elv-rounded-full;
+      @apply elv:size-9 elv:rounded-full;
   }
 
   .elv-avatar--xs {
-      @apply elv-size-7 elv-rounded-full;
+      @apply elv:size-7 elv:rounded-full;
   }
 
   .elv-avatar__image {
-      @apply elv-w-full elv-h-full elv-overflow-hidden;
+      @apply elv:w-full elv:h-full elv:overflow-hidden;
       object-fit: cover;
       object-position: center;
       border-radius: inherit;
   }
 
   .elv-avatar__initials {
-      @apply elv-relative elv-flex elv-items-center elv-justify-center
-        elv-w-full elv-h-full elv-bg-primary elv-text-inverted elv-font-semibold
-        elv-overflow-hidden;
+      @apply elv:relative elv:flex elv:items-center elv:justify-center
+        elv:w-full elv:h-full elv:bg-primary elv:text-inverted elv:font-semibold
+        elv:overflow-hidden;
       border-radius: inherit;
   }
 }

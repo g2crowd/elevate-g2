@@ -1,18 +1,18 @@
 @layer components {
   .elv-button-group {
-      @apply elv-flex elv-items-center;
+      @apply elv:flex elv:items-center;
   }
 
   .elv-button-group--horizontal {
-      @apply elv-flex-row elv-gap-1;
+      @apply elv:flex-row elv:gap-1;
   }
 
   .elv-button-group--vertical {
-      @apply elv-flex-col elv-gap-1 elv-items-stretch;
+      @apply elv:flex-col elv:gap-1 elv:items-stretch;
   }
 
   .elv-button-group--connected {
-      @apply elv-gap-0;
+      @apply elv:gap-0;
   }
 
   .elv-button-group--connected > .btn:not(:first-child):not(:last-child) {

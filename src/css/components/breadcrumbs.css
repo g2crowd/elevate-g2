@@ -1,30 +1,30 @@
 @layer components {
   .elv-breadcrumbs__list {
-      @apply elv-inline-flex elv-items-center elv-gap-0.5 elv-list-none elv-m-0 elv-p-0;
+      @apply elv:inline-flex elv:items-center elv:gap-0.5 elv:list-none elv:m-0 elv:p-0;
   }
 
   .elv-breadcrumbs__item {
-      @apply elv-flex elv-items-center elv-gap-0.5;
+      @apply elv:flex elv:items-center elv:gap-0.5;
   }
 
   .elv-breadcrumbs__link {
-      @apply elv-text-subtle elv-no-underline elv-text-xs elv-leading-xs
-        elv-transition-all elv-duration-150;
+      @apply elv:text-subtle elv:no-underline elv:text-xs elv:leading-xs
+        elv:transition-all elv:duration-150;
   }
 
   .elv-breadcrumbs__link:hover {
-      @apply elv-text-default;
+      @apply elv:text-default;
   }
 
   .elv-breadcrumbs__link:focus-visible {
-      @apply elv-outline elv-outline-3 elv-outline-purple-40 elv-outline-offset-1 elv-rounded-2xs;
+      @apply elv:outline elv:outline-3 elv:outline-purple-40 elv:outline-offset-1 elv:rounded-2xs;
   }
 
   .elv-breadcrumbs__link--current {
-      @apply elv-text-default elv-pointer-events-none;
+      @apply elv:text-default elv:pointer-events-none;
   }
 
   .elv-breadcrumbs__separator {
-      @apply elv-w-4 elv-h-4 elv-shrink-0 elv-fill-neutral-70;
+      @apply elv:w-4 elv:h-4 elv:shrink-0 elv:fill-neutral-70;
   }
 }

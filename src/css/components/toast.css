@@ -1,53 +1,53 @@
 @layer components {
   .elv-toast {
-    @apply elv-bg-neutral-0
-      elv-border-1 elv-border-l-4 elv-border-neutral
-      elv-flex elv-flex-col
-      elv-p-3 elv-pr-2
-      elv-rounded-xs
-      elv-shadow-3;
+    @apply elv:bg-neutral-0
+      elv:border-1 elv:border-l-4 elv:border-neutral
+      elv:flex elv:flex-col
+      elv:p-3 elv:pr-2
+      elv:rounded-xs
+      elv:shadow-3;
     width: 304px;
     max-width: calc(100vw - 2rem);
   }
 
   .elv-toast--fixed {
-    @apply elv-fixed elv-top-4 elv-right-4 elv-z-[9999]
-      elv-transition-all elv-duration-150 elv-ease-in-out;
+    @apply elv:fixed elv:top-4 elv:right-4 elv:z-[9999]
+      elv:transition-all elv:duration-150 elv:ease-in-out;
   }
 
   .elv-toast--primary {
-    @apply elv-border-l-primary;
+    @apply elv:border-l-primary;
   }
 
   .elv-toast--info {
-    @apply elv-border-l-info elv-text-info;
+    @apply elv:border-l-info elv:text-info;
   }
 
   .elv-toast--success {
-    @apply elv-border-l-success elv-text-success;
+    @apply elv:border-l-success elv:text-success;
   }
 
   .elv-toast__header {
-    @apply elv-flex elv-flex-row elv-justify-between elv-pb-1;
+    @apply elv:flex elv:flex-row elv:justify-between elv:pb-1;
   }
 
   .elv-toast__title {
-    @apply elv-flex elv-items-center elv-gap-1;
+    @apply elv:flex elv:items-center elv:gap-1;
   }
 
   .elv-toast__close {
-    @apply elv-flex elv-justify-end;
+    @apply elv:flex elv:justify-end;
   }
 
   .elv-toast__close .icon {
-    @apply elv-text-nonessential elv-cursor-pointer;
+    @apply elv:text-nonessential elv:cursor-pointer;
   }
 
   .elv-toast__body {
-    @apply elv-mr-5 elv-pb-1;
+    @apply elv:mr-5 elv:pb-1;
   }
 
   .elv-toast__action {
-    @apply elv--ml-1;
+    @apply elv:-ml-1;
   }
 }

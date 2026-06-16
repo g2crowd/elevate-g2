@@ -40,7 +40,7 @@
   }
 
   .tooltip-trigger {
-    @apply elv-rounded-pill-lg elv-cursor-pointer;
+    @apply elv:rounded-pill-lg elv:cursor-pointer;
     background: transparent;
     border: none;
     display: inline-flex;
@@ -56,6 +56,6 @@
   }
 
   .tooltip-trigger .icon {
-    @apply elv-fill-subtle;
+    @apply elv:fill-subtle;
   }
 }

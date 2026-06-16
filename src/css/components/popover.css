@@ -1,7 +1,7 @@
 @layer components {
   .elv-popover {
-    @apply elv-flex elv-flex-col elv-rounded-sm elv-shadow-2
-      elv-absolute elv-bg-neutral-0 elv-z-10 elv-w-80;
+    @apply elv:flex elv:flex-col elv:rounded-sm elv:shadow-2
+      elv:absolute elv:bg-neutral-0 elv:z-10 elv:w-80;
     transition: opacity 150ms ease;
     opacity: 0;
     pointer-events: none;
@@ -64,53 +64,53 @@
   }
 
   .elv-popover__heading {
-    @apply elv-flex elv-items-center elv-justify-between elv-p-3 elv-rounded-t-sm;
+    @apply elv:flex elv:items-center elv:justify-between elv:p-3 elv:rounded-t-sm;
   }
 
   .elv-popover__heading-text {
-    @apply elv-flex-1 elv-text-sm elv-font-semibold elv-text-default;
+    @apply elv:flex-1 elv:text-sm elv:font-semibold elv:text-default;
   }
 
   .elv-popover__heading-text--center {
-    @apply elv-text-center;
+    @apply elv:text-center;
   }
 
   .elv-popover__close {
-    @apply elv-cursor-pointer elv-p-0;
+    @apply elv:cursor-pointer elv:p-0;
     background: transparent;
     border: none;
   }
 
   .elv-popover__close .icon {
-    @apply elv-fill-nonessential;
+    @apply elv:fill-nonessential;
   }
 
   .elv-popover__body {
-    @apply elv-px-4 elv-pb-4 elv-text-sm elv-text-default;
+    @apply elv:px-4 elv:pb-4 elv:text-sm elv:text-default;
   }
 
   .elv-popover__body--with-heading {
-    @apply elv-pt-0;
+    @apply elv:pt-0;
   }
 
   .elv-popover__body--no-heading {
-    @apply elv-pt-4;
+    @apply elv:pt-4;
   }
 
   .elv-popover__body--center {
-    @apply elv-text-center;
+    @apply elv:text-center;
   }
 
   .elv-popover__actions {
-    @apply elv-flex elv-pt-1 elv-px-4 elv-pb-4;
+    @apply elv:flex elv:pt-1 elv:px-4 elv:pb-4;
   }
 
   .elv-popover__actions--center {
-    @apply elv-justify-center;
+    @apply elv:justify-center;
   }
 
   .elv-popover__actions--right {
-    @apply elv-justify-end;
+    @apply elv:justify-end;
   }
 
 }

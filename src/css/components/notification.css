@@ -1,71 +1,71 @@
 @layer components {
   .elv-notification {
-    @apply elv-bg-neutral-0
-      elv-border-1 elv-border-l-4 elv-border-neutral
-      elv-ease-in-out
-      elv-flex elv-flex-col
-      elv-p-3
-      elv-rounded-xs;
+    @apply elv:bg-neutral-0
+      elv:border-1 elv:border-l-4 elv:border-neutral
+      elv:ease-in-out
+      elv:flex elv:flex-col
+      elv:p-3
+      elv:rounded-xs;
     width: 440px;
   }
 
   .elv-notification--primary {
-    @apply elv-bg-neutral-10 elv-border-l-primary;
+    @apply elv:bg-neutral-10 elv:border-l-primary;
   }
 
   .elv-notification--info {
-    @apply elv-bg-info-20 elv-border-l-info;
+    @apply elv:bg-info-20 elv:border-l-info;
   }
 
   .elv-notification--success {
-    @apply elv-bg-success-20 elv-border-l-success;
+    @apply elv:bg-success-20 elv:border-l-success;
   }
 
   .elv-notification--warning {
-    @apply elv-bg-warning-20 elv-border-l-warning;
+    @apply elv:bg-warning-20 elv:border-l-warning;
   }
 
   .elv-notification--critical {
-    @apply elv-bg-critical-20 elv-border-l-critical;
+    @apply elv:bg-critical-20 elv:border-l-critical;
   }
 
   .elv-notification__header {
-    @apply elv-flex elv-flex-row elv-justify-between elv-pb-1;
+    @apply elv:flex elv:flex-row elv:justify-between elv:pb-1;
   }
 
   .elv-notification__title {
-    @apply elv-flex elv-gap-1;
+    @apply elv:flex elv:gap-1;
   }
 
   .elv-notification__close {
-    @apply elv-flex elv-justify-end;
+    @apply elv:flex elv:justify-end;
   }
 
   .elv-notification__close .icon {
-    @apply elv-text-nonessential elv-cursor-pointer;
+    @apply elv:text-nonessential elv:cursor-pointer;
   }
 
   .elv-notification__body {
-    @apply elv-mr-4;
+    @apply elv:mr-4;
   }
 
   .elv-notification--primary .elv-notification__body {
-    @apply elv-ml-0;
+    @apply elv:ml-0;
   }
 
   .elv-notification--info .elv-notification__body,
   .elv-notification--success .elv-notification__body,
   .elv-notification--warning .elv-notification__body,
   .elv-notification--critical .elv-notification__body {
-    @apply elv-ml-5;
+    @apply elv:ml-5;
   }
 
   .elv-notification__action {
-    @apply elv-mt-1;
+    @apply elv:mt-1;
   }
 
-  .elv-notification--info .elv-notification__title { @apply elv-text-info; }
-  .elv-notification--success .elv-notification__title { @apply elv-text-success; }
-  .elv-notification--warning .elv-notification__title { @apply elv-text-warning; }
-  .elv-notification--critical .elv-notification__title { @apply elv-text-critical; }
+  .elv-notification--info .elv-notification__title { @apply elv:text-info; }
+  .elv-notification--success .elv-notification__title { @apply elv:text-success; }
+  .elv-notification--warning .elv-notification__title { @apply elv:text-warning; }
+  .elv-notification--critical .elv-notification__title { @apply elv:text-critical; }
 }

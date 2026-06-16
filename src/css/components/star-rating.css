@@ -1,6 +1,6 @@
 @layer components {
   .elv-stars {
-    @apply elv-inline-block elv-shrink-0;
+    @apply elv:inline-block elv:shrink-0;
     background-repeat: no-repeat;
     background-size: contain;
     width: 120px;
@@ -30,18 +30,18 @@
   .elv-stars-10 { background-image: svg-load('stars-10.svg'); }
 
   .elv-star-wrapper {
-    @apply elv-flex elv-flex-row elv-flex-nowrap elv-items-center;
+    @apply elv:flex elv:flex-row elv:flex-nowrap elv:items-center;
   }
 
   .elv-star-wrapper__desc {
-    @apply elv-pl-1 elv-inline-flex elv-items-center;
+    @apply elv:pl-1 elv:inline-flex elv:items-center;
   }
 
   .elv-star-wrapper__desc__rating {
-    @apply elv-text-subtle;
+    @apply elv:text-subtle;
   }
 
   .elv-star-wrapper__desc__count {
-    @apply elv-text-subtle elv-font-light elv-ml-1;
+    @apply elv:text-subtle elv:font-light elv:ml-1;
   }
 }
