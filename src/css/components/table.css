@@ -1,50 +1,50 @@
 @layer components {
   .elv-table {
-    @apply elv-table-fixed elv-w-full elv-border-collapse;
+    @apply elv:table-fixed elv:w-full elv:border-collapse;
   }
 
   .elv-table tr {
-    @apply elv-border-b;
+    @apply elv:border-b;
   }
 
   .elv-table thead tr {
-    @apply elv-bg-neutral-5 elv-text-default elv-border-b-medium;
+    @apply elv:bg-neutral-5 elv:text-default elv:border-b-medium;
 
     &:hover {
-      @apply elv-bg-neutral-10;
+      @apply elv:bg-neutral-10;
     }
   }
 
   .elv-table tbody tr {
-    @apply elv-text-subtle elv-border-b-light elv-bg-neutral-0;
+    @apply elv:text-subtle elv:border-b-light elv:bg-neutral-0;
 
     &:hover {
-      @apply elv-bg-neutral-5;
+      @apply elv:bg-neutral-5;
     }
   }
 
   .elv-table th,
   .elv-table td {
-    @apply elv-px-6 elv-h-12 elv-w-auto elv-text-left;
+    @apply elv:px-6 elv:h-12 elv:w-auto elv:text-left;
   }
 
   .elv-table th {
-    @apply elv-font-semibold elv-text-sm;
+    @apply elv:font-semibold elv:text-sm;
   }
 
   .elv-table td {
-    @apply elv-text-sm;
+    @apply elv:text-sm;
   }
 
   .elv-table--align-right {
-    @apply elv-text-right;
+    @apply elv:text-right;
   }
 
   .elv-table--align-center {
-    @apply elv-text-center;
+    @apply elv:text-center;
   }
 
   .elv-table--truncate {
-    @apply elv-truncate;
+    @apply elv:truncate;
   }
 }

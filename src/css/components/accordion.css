@@ -1,15 +1,15 @@
 @layer components {
   .elv-accordion {
-    @apply elv-w-full;
+    @apply elv:w-full;
   }
 
   .elv-accordion__item {
-    @apply elv-w-full elv-border-b elv-border-light;
+    @apply elv:w-full elv:border-b elv:border-light;
   }
 
   .elv-accordion__trigger {
-    @apply elv-w-full elv-flex elv-justify-between elv-items-center
-      elv-py-3 elv-cursor-pointer elv-list-none;
+    @apply elv:w-full elv:flex elv:justify-between elv:items-center
+      elv:py-3 elv:cursor-pointer elv:list-none;
 
     &::-webkit-details-marker {
       display: none;
@@ -17,7 +17,7 @@
   }
 
   .elv-accordion__trigger::after {
-    @apply elv-shrink-0 elv-text-default;
+    @apply elv:shrink-0 elv:text-default;
     content: '';
     display: block;
     width: 20px;
@@ -34,23 +34,23 @@
   }
 
   .elv-accordion__body {
-    @apply elv-pb-3;
+    @apply elv:pb-3;
   }
 
   .elv-accordion--lg .elv-accordion__trigger {
-    @apply elv-py-5;
+    @apply elv:py-5;
   }
 
   .elv-accordion--lg .elv-accordion__body {
-    @apply elv-pb-5;
+    @apply elv:pb-5;
   }
 
   .elv-accordion--padded .elv-accordion__trigger,
   .elv-accordion--padded .elv-accordion__body {
-    @apply elv-px-6;
+    @apply elv:px-6;
   }
 
   .elv-accordion--padded .elv-accordion__item {
-    @apply elv-mx-6;
+    @apply elv:mx-6;
   }
 }

@@ -1,37 +1,37 @@
 @layer components {
   .number-input {
-    @apply elv-relative;
+    @apply elv:relative;
   }
 
   .number-input .elv-input {
-    @apply elv-pr-9;
+    @apply elv:pr-9;
   }
 
   .number-input__steppers {
-    @apply elv-absolute elv-top-0 elv-right-0 elv-flex elv-flex-col;
+    @apply elv:absolute elv:top-0 elv:right-0 elv:flex elv:flex-col;
   }
 
   .number-input__btn {
-    @apply elv-w-7
-      elv-border elv-border-solid elv-border-medium
-      elv-flex elv-items-center elv-justify-center
-      elv-transition-all elv-duration-150 elv-ease-in
-      elv-bg-neutral-10 elv-cursor-pointer;
+    @apply elv:w-7
+      elv:border elv:border-solid elv:border-medium
+      elv:flex elv:items-center elv:justify-center
+      elv:transition-all elv:duration-150 elv:ease-in
+      elv:bg-neutral-10 elv:cursor-pointer;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 16px;
 
     &:hover:not(:disabled) {
-      @apply elv-bg-primary-20;
+      @apply elv:bg-primary-20;
     }
 
     &:disabled {
-      @apply elv-bg-neutral-1 elv-border-neutral elv-cursor-default elv-opacity-40;
+      @apply elv:bg-neutral-1 elv:border-neutral elv:cursor-default elv:opacity-40;
     }
   }
 
   .number-input__btn--incr {
-    @apply elv-rounded-tr-sm elv-border-b-0;
+    @apply elv:rounded-tr-sm elv:border-b-0;
     background-image: svg-load('chevron-up.svg');
 
     &:hover:not(:disabled) {
@@ -40,7 +40,7 @@
   }
 
   .number-input__btn--decr {
-    @apply elv-rounded-br-sm elv-border-t-0;
+    @apply elv:rounded-br-sm elv:border-t-0;
     background-image: svg-load('chevron-down.svg');
 
     &:hover:not(:disabled) {
@@ -48,23 +48,23 @@
     }
   }
 
-  .number-input--sm .number-input__btn { @apply elv-h-4; }
-  .number-input--md .number-input__btn { @apply elv-h-5; }
-  .number-input--lg .number-input__btn { @apply elv-h-6; }
+  .number-input--sm .number-input__btn { @apply elv:h-4; }
+  .number-input--md .number-input__btn { @apply elv:h-5; }
+  .number-input--lg .number-input__btn { @apply elv:h-6; }
 
   .number-input--error .number-input__btn--incr {
-    @apply elv-border-t-critical elv-border-r-critical;
+    @apply elv:border-t-critical elv:border-r-critical;
   }
 
   .number-input--error .number-input__btn--decr {
-    @apply elv-border-b-critical elv-border-r-critical;
+    @apply elv:border-b-critical elv:border-r-critical;
   }
 
   .number-input--success .number-input__btn--incr {
-    @apply elv-border-t-success elv-border-r-success;
+    @apply elv:border-t-success elv:border-r-success;
   }
 
   .number-input--success .number-input__btn--decr {
-    @apply elv-border-b-success elv-border-r-success;
+    @apply elv:border-b-success elv:border-r-success;
   }
 }

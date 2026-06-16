@@ -1,19 +1,19 @@
 @layer components {
   .elv-checkbox {
-    @apply elv-appearance-none
-      elv-bg-neutral-0
-      elv-border
-      elv-border-medium
-      elv-rounded-xs
-      elv-ease-in
-      elv-cursor-pointer
-      elv-relative
-      elv-w-5
-      elv-h-5;
+    @apply elv:appearance-none
+      elv:bg-neutral-0
+      elv:border
+      elv:border-medium
+      elv:rounded-xs
+      elv:ease-in
+      elv:cursor-pointer
+      elv:relative
+      elv:w-5
+      elv:h-5;
     transition: background-color 150ms ease-in, border-color 150ms ease-in;
 
     &:checked {
-      @apply elv-bg-primary elv-border-0;
+      @apply elv:bg-primary elv:border-0;
       background-image: svg-load('checkbox-check.svg');
       background-repeat: no-repeat;
       background-position: center;
@@ -21,26 +21,26 @@
     }
 
     &:hover:not(:checked):not(:disabled):not(:indeterminate) {
-      @apply elv-bg-primary-20;
+      @apply elv:bg-primary-20;
     }
 
     &:focus,
     &:focus-visible {
-      @apply elv-outline elv-outline-3 elv-outline-offset-1 elv-outline-purple-40;
+      @apply elv:outline elv:outline-3 elv:outline-offset-1 elv:outline-purple-40;
     }
 
     &:disabled {
-      @apply elv-bg-neutral-10 elv-border-0 elv-cursor-default;
+      @apply elv:bg-neutral-10 elv:border-0 elv:cursor-default;
 
       &:hover { box-shadow: none; }
     }
 
     &:disabled:checked {
-      @apply elv-bg-neutral-20;
+      @apply elv:bg-neutral-20;
     }
 
     &:indeterminate {
-      @apply elv-bg-primary elv-border-0;
+      @apply elv:bg-primary elv:border-0;
       background-image: svg-load('checkbox-indeterminate.svg');
       background-repeat: no-repeat;
       background-position: center;
@@ -49,15 +49,15 @@
   }
 
   .elv-checkbox--sm {
-    @apply elv-w-4 elv-h-4;
+    @apply elv:w-4 elv:h-4;
   }
 
   .elv-checkbox--lg {
-    @apply elv-w-6 elv-h-6;
+    @apply elv:w-6 elv:h-6;
   }
 
   .dark .checkbox:disabled:checked,
   .checkbox:disabled:checked:where(.dark *) {
-    @apply elv-bg-neutral-40;
+    @apply elv:bg-neutral-40;
   }
 }

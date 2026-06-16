@@ -1,25 +1,25 @@
 @layer components {
   .radio-btn {
-    @apply elv-appearance-none
-      elv-border-solid
-      elv-border
-      elv-border-medium
-      elv-rounded-pill-md
-      elv-transition-all
-      elv-duration-150
-      elv-ease-in
-      elv-cursor-pointer
-      elv-relative
-      elv-text-primary
-      elv-w-5
-      elv-h-5;
+    @apply elv:appearance-none
+      elv:border-solid
+      elv:border
+      elv:border-medium
+      elv:rounded-pill-md
+      elv:transition-all
+      elv:duration-150
+      elv:ease-in
+      elv:cursor-pointer
+      elv:relative
+      elv:text-primary
+      elv:w-5
+      elv:h-5;
 
     &:hover:not(:disabled) {
-      @apply elv-bg-primary-20;
+      @apply elv:bg-primary-20;
     }
 
     &:checked {
-      @apply elv-border-2 elv-border-primary;
+      @apply elv:border-2 elv:border-primary;
     }
 
     &:checked::after {
@@ -37,20 +37,20 @@
 
     &:focus,
     &:focus-visible {
-      @apply elv-outline elv-outline-3 elv-outline-offset-1 elv-outline-purple-40;
+      @apply elv:outline elv:outline-3 elv:outline-offset-1 elv:outline-purple-40;
     }
 
     &:disabled {
-      @apply elv-border-neutral elv-text-disabled elv-cursor-default;
+      @apply elv:border-neutral elv:text-disabled elv:cursor-default;
     }
   }
 
   .radio-btn--sm {
-    @apply elv-w-4 elv-h-4 elv-rounded-pill-sm;
+    @apply elv:w-4 elv:h-4 elv:rounded-pill-sm;
   }
 
   .radio-btn--lg {
-    @apply elv-w-6 elv-h-6 elv-rounded-pill-lg;
+    @apply elv:w-6 elv:h-6 elv:rounded-pill-lg;
   }
 
 

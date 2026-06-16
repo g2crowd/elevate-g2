@@ -1,72 +1,72 @@
 @layer components {
   .elv-input {
-    @apply elv-px-2
-      elv-font-figtree
-      elv-text-default
-      elv-rounded-sm;
+    @apply elv:px-2
+      elv:font-figtree
+      elv:text-default
+      elv:rounded-sm;
 
-    @apply elv-bg-neutral-5
-      elv-border-solid
-      elv-border
-      elv-border-medium;
+    @apply elv:bg-neutral-5
+      elv:border-solid
+      elv:border
+      elv:border-medium;
 
-    @apply elv-transition-all
-      elv-duration-150
-      elv-ease-in
-      elv-outline-none;
+    @apply elv:transition-all
+      elv:duration-150
+      elv:ease-in
+      elv:outline-none;
 
-    @apply disabled:elv-resize-none
-      disabled:elv-bg-neutral-1
-      disabled:elv-border-neutral
-      disabled:elv-text-disabled;
+    @apply elv:disabled:resize-none
+      elv:disabled:bg-neutral-1
+      elv:disabled:border-neutral
+      elv:disabled:text-disabled;
 
-    @apply read-only:elv-resize-none
-      read-only:elv-pl-2
-      read-only:elv-pr-4
-      read-only:elv-text-nonessential
-      read-only:[&:not(:disabled)]:elv-border-none;
+    @apply elv:read-only:resize-none
+      elv:read-only:pl-2
+      elv:read-only:pr-4
+      elv:read-only:text-nonessential
+      elv:read-only:[&:not(:disabled)]:border-none;
 
-    @apply data-[status='success']:elv-border-success
-      data-[status='warning']:elv-bg-warning-20
-      data-[status='warning']:elv-border-warning
-      data-[status='error']:elv-bg-critical-20
-      data-[status='error']:elv-border-critical;
+    @apply elv:data-[status='success']:border-success
+      elv:data-[status='warning']:bg-warning-20
+      elv:data-[status='warning']:border-warning
+      elv:data-[status='error']:bg-critical-20
+      elv:data-[status='error']:border-critical;
 
-    @apply enabled:[&:not(:read-only)]:[&:not([data-status])]:hover:elv-bg-neutral-10;
+    @apply elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:hover:bg-neutral-10;
 
-    @apply enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:elv-outline
-      enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:elv-border-medium
-      enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:elv-outline-purple-40
-      enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:elv-outline-3
-      enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:elv-outline-offset-1;
+    @apply elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:outline
+      elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:border-medium
+      elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:outline-purple-40
+      elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:outline-3
+      elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus:outline-offset-1;
 
-    @apply enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:elv-outline
-      enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:elv-outline-purple-40
-      enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:elv-outline-3
-      enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:elv-outline-offset-1;
+    @apply elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:outline
+      elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:outline-purple-40
+      elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:outline-3
+      elv:enabled:[&:not(:read-only)]:[&:not([data-status])]:focus-visible:outline-offset-1;
   }
 
   .elv-input--sm {
-    @apply elv-h-8 elv-min-w-45;
+    @apply elv:h-8 elv:min-w-45;
   }
 
   .elv-input--md {
-    @apply elv-h-10 elv-min-w-61;
+    @apply elv:h-10 elv:min-w-61;
   }
 
   .elv-input--lg {
-    @apply elv-h-12 elv-min-w-71;
+    @apply elv:h-12 elv:min-w-71;
   }
 
   .elv-input--textarea-sm {
-    @apply elv-h-13 elv-py-2 elv-min-w-61;
+    @apply elv:h-13 elv:py-2 elv:min-w-61;
   }
 
   .elv-input--textarea-md {
-    @apply elv-h-16 elv-min-w-71 elv-py-2;
+    @apply elv:h-16 elv:min-w-71 elv:py-2;
   }
 
   .elv-input--textarea-lg {
-    @apply elv-h-16 elv-min-w-71 elv-py-2;
+    @apply elv:h-16 elv:min-w-71 elv:py-2;
   }
 }

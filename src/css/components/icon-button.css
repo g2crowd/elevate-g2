@@ -10,96 +10,94 @@
  * States:   [disabled], .icon-btn--loading
  */
 
-@layer components {
-  .elv-icon-btn-shadow-focus {
-    box-shadow: 0 0 0 4px var(--elv-border-focus), 0 0 0 0.5px var(--elv-bg-neutral-0);
-  }
+@utility icon-btn-shadow-focus {
+  box-shadow: 0 0 0 4px var(--elv-border-focus), 0 0 0 0.5px var(--elv-bg-neutral-0);
+}
 
-  .elv-icon-btn-shadow-inset {
-    box-shadow: inset 0 0 4px 1px rgba(32, 31, 35, 0.4);
-  }
+@utility icon-btn-shadow-inset {
+  box-shadow: inset 0 0 4px 1px rgba(32, 31, 35, 0.4);
 }
 
 @layer components {
   /* ── Block ─────────────────────────────────────────────── */
 
   .icon-btn {
-    @apply elv-inline-flex
-      elv-items-center
-      elv-justify-center
-      elv-gap-1
-      elv-transition-all
-      elv-duration-150
-      elv-ease-in-out
-      elv-border-0;
+    @apply elv:inline-flex
+      elv:items-center
+      elv:justify-center
+      elv:gap-1
+      elv:transition-all
+      elv:duration-150
+      elv:ease-in-out
+      elv:border-0;
 
-    @apply elv-w-12 elv-h-12 elv-p-3 elv-rounded-pill-md;
+    @apply elv:w-12 elv:h-12 elv:p-3 elv:rounded-pill-md;
 
-    @apply elv-bg-primary
-      active:elv-icon-btn-shadow-inset
-      focus:elv-icon-btn-shadow-focus;
+    @apply elv:bg-primary
+      elv:active:icon-btn-shadow-inset
+      elv:focus:icon-btn-shadow-focus;
 
     &:hover {
       box-shadow: 0 2px 8px 2px rgba(32, 31, 35, 0.15), 0 0 0 1px var(--elv-bg-primary);
     }
 
-    @apply disabled:hover:elv-shadow-0
-      disabled:active:elv-shadow-0
-      disabled:focus:elv-shadow-0
-      disabled:elv-bg-neutral-10
-      disabled:elv-border-0;
+    @apply elv:disabled:hover:shadow-0
+      elv:disabled:active:shadow-0
+      elv:disabled:focus:shadow-0
+      elv:disabled:bg-neutral-10
+      elv:disabled:border-0;
   }
 
   .icon-btn:where(a) {
-    @apply a--reset;
+    @apply elv:a--reset;
   }
 
   /* ── Icon sizing per button size ───────────────────────── */
 
   .icon-btn .icon-btn__icon {
-    @apply elv-w-6 elv-h-6;
-    @apply elv-text-inverted;
+    @apply elv:w-6 elv:h-6;
+    @apply elv:text-inverted;
   }
 
   .icon-btn--sm .icon-btn__icon {
-    @apply elv-w-5 elv-h-5;
+    @apply elv:w-5 elv:h-5;
   }
 
   .icon-btn--xs .icon-btn__icon {
-    @apply elv-w-4 elv-h-4;
+    @apply elv:w-4 elv:h-4;
   }
 
   /* Disabled icon fill — shared across all variants */
   .icon-btn[disabled] .icon-btn__icon,
   .icon-btn:disabled .icon-btn__icon {
-    @apply elv-text-disabled;
+    @apply elv:text-disabled;
   }
 
   /* ── Sizes ─────────────────────────────────────────────── */
 
   .icon-btn--lg {
-    @apply elv-w-12 elv-h-12 elv-p-3 elv-rounded-pill-md;
+    @apply elv:w-12 elv:h-12 elv:p-3 elv:rounded-pill-md;
   }
 
   .icon-btn--md {
-    @apply elv-w-10 elv-h-10 elv-px-3 elv-py-2 elv-rounded-pill-md;
+    @apply elv:w-10 elv:h-10 elv:px-3 elv:py-2 elv:rounded-pill-md;
   }
 
   .icon-btn--sm {
-    @apply elv-w-8 elv-h-8 elv-rounded-lg;
+    @apply elv:w-8 elv:h-8 elv:rounded-lg;
   }
 
   .icon-btn--xs {
-    @apply elv-w-6 elv-h-6 elv-rounded-xs;
+    @apply elv:w-6 elv:h-6 elv:rounded-xs;
   }
 
   /* ── Variant: primary ──────────────────────────────────── */
 
   .icon-btn--primary {
-    @apply elv-bg-primary
-      elv-border-0
-      active:elv-icon-btn-shadow-inset
-      focus:elv-icon-btn-shadow-focus;
+    @apply elv:bg-primary
+      elv:border-0
+      elv:active:icon-btn-shadow-inset
+      elv:focus:icon-btn-shadow-focus;
 
     &:hover {
       box-shadow: 0 2px 8px 2px rgba(32, 31, 35, 0.15), 0 0 0 1px var(--elv-bg-primary);
@@ -107,31 +105,31 @@
   }
 
   .icon-btn--primary .icon-btn__icon {
-    @apply elv-text-inverted;
+    @apply elv:text-inverted;
   }
 
   /* Primary xs: subtle bg, purple icon */
   .icon-btn--primary.icon-btn--xs {
-    @apply elv-bg-neutral-0
-      hover:elv-bg-primary-20
-      hover:elv-shadow-0
-      disabled:elv-bg-neutral-0;
+    @apply elv:bg-neutral-0
+      elv:hover:bg-primary-20
+      elv:hover:shadow-0
+      elv:disabled:bg-neutral-0;
   }
 
   .icon-btn--primary.icon-btn--xs .icon-btn__icon {
-    @apply elv-text-primary;
+    @apply elv:text-primary;
   }
 
   /* ── Variant: inverted ─────────────────────────────────── */
 
   .icon-btn--inverted {
-    @apply elv-bg-inverted
-      elv-border-medium
-      elv-border
-      elv-rounded-pill-md
-      hover:elv-border-inverted
-      active:elv-icon-btn-shadow-inset
-      focus:elv-icon-btn-shadow-focus;
+    @apply elv:bg-inverted
+      elv:border-medium
+      elv:border
+      elv:rounded-pill-md
+      elv:hover:border-inverted
+      elv:active:icon-btn-shadow-inset
+      elv:focus:icon-btn-shadow-focus;
 
     &:hover {
       box-shadow: 0 2px 8px 2px rgba(32, 31, 35, 0.15), 0 0 0 1px var(--elv-bg-primary);
@@ -139,66 +137,66 @@
   }
 
   .icon-btn--inverted .icon-btn__icon {
-    @apply elv-text-primary;
+    @apply elv:text-primary;
   }
 
   /* ── Variant: secondary ────────────────────────────────── */
 
   .icon-btn--secondary {
-    @apply elv-bg-neutral-10
-      elv-shadow
-      elv-border
-      elv-border-light
-      hover:elv-bg-primary-20
-      active:elv-icon-btn-shadow-inset
-      focus:elv-icon-btn-shadow-focus;
+    @apply elv:bg-neutral-10
+      elv:shadow
+      elv:border
+      elv:border-light
+      elv:hover:bg-primary-20
+      elv:active:icon-btn-shadow-inset
+      elv:focus:icon-btn-shadow-focus;
   }
 
   .icon-btn--secondary .icon-btn__icon {
-    @apply elv-text-primary;
+    @apply elv:text-primary;
   }
 
   /* Secondary xs: transparent bg, neutral icon */
   .icon-btn--secondary.icon-btn--xs {
-    @apply elv-bg-neutral-0
-      hover:elv-bg-neutral-20
-      elv-border-0
-      disabled:elv-bg-neutral-0;
+    @apply elv:bg-neutral-0
+      elv:hover:bg-neutral-20
+      elv:border-0
+      elv:disabled:bg-neutral-0;
   }
 
   .icon-btn--secondary.icon-btn--xs .icon-btn__icon {
-    @apply elv-text-nonessential
-      hover:elv-text-primary
-      active:elv-text-primary;
+    @apply elv:text-nonessential
+      elv:hover:text-primary
+      elv:active:text-primary;
   }
 
   /* ── Variant: tertiary ─────────────────────────────────── */
 
   .icon-btn--tertiary {
-    @apply elv-bg-transparent
-      hover:elv-bg-primary-20
-      active:elv-icon-btn-shadow-inset
-      focus:elv-icon-btn-shadow-focus
-      disabled:hover:elv-bg-neutral-0
-      disabled:hover:elv-shadow-0
-      disabled:active:elv-shadow-0
-      disabled:focus:elv-shadow-0;
+    @apply elv:bg-transparent
+      elv:hover:bg-primary-20
+      elv:active:icon-btn-shadow-inset
+      elv:focus:icon-btn-shadow-focus
+      elv:disabled:hover:bg-neutral-0
+      elv:disabled:hover:shadow-0
+      elv:disabled:active:shadow-0
+      elv:disabled:focus:shadow-0;
   }
 
   .icon-btn--tertiary .icon-btn__icon {
-    @apply elv-text-primary;
+    @apply elv:text-primary;
   }
 
   /* ── Variant: brand ────────────────────────────────────── */
 
   .icon-btn--brand {
-    @apply elv-bg-brand
-      elv-border-light
-      elv-shadow
-      elv-border-0
-      active:elv-border-critical
-      active:elv-icon-btn-shadow-inset
-      focus:elv-icon-btn-shadow-focus;
+    @apply elv:bg-brand
+      elv:border-light
+      elv:shadow
+      elv:border-0
+      elv:active:border-critical
+      elv:active:icon-btn-shadow-inset
+      elv:focus:icon-btn-shadow-focus;
 
     &:hover {
       box-shadow: 0 0 0 1px var(--elv-bg-brand), 0 2px 8px 2px rgba(32, 31, 35, 0.15);
@@ -206,20 +204,20 @@
   }
 
   .icon-btn--brand .icon-btn__icon {
-    @apply elv-text-inverted;
+    @apply elv:text-inverted;
   }
 
   /* ── Loading state ─────────────────────────────────────── */
 
   .icon-btn__loading-icon {
-    @apply elv-hidden elv-animate-spin elv-w-6 elv-h-6;
+    @apply elv:hidden elv:animate-spin elv:w-6 elv:h-6;
   }
 
   .icon-btn--loading .icon-btn__loading-icon {
-    @apply elv-block;
+    @apply elv:block;
   }
 
   .icon-btn--loading .icon-btn__icon {
-    @apply elv-hidden;
+    @apply elv:hidden;
   }
 }

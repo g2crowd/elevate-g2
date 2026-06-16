@@ -5,7 +5,7 @@
   }
 
   .elv-file-upload__zone {
-    @apply elv-bg-neutral-10 elv-border-2 elv-border-light elv-rounded-md;
+    @apply elv:bg-neutral-10 elv:border-2 elv:border-light elv:rounded-md;
     border-style: dashed;
     min-height: 160px;
     padding: 32px;
@@ -18,7 +18,7 @@
     cursor: pointer;
 
     &:hover {
-      @apply elv-bg-neutral-5 elv-border-medium;
+      @apply elv:bg-neutral-5 elv:border-medium;
     }
   }
 
@@ -28,19 +28,19 @@
   }
 
   .elv-file-upload__zone--dragover {
-    @apply elv-bg-primary-20 elv-border-2;
+    @apply elv:bg-primary-20 elv:border-2;
     border-color: #5746b2;
     border-style: solid;
   }
 
   .elv-file-upload__zone--error {
-    @apply elv-bg-critical-20 elv-border-2;
+    @apply elv:bg-critical-20 elv:border-2;
     border-color: #eb2000;
     border-style: solid;
   }
 
   .elv-file-upload__zone--disabled {
-    @apply elv-bg-neutral-5 elv-border-light;
+    @apply elv:bg-neutral-5 elv:border-light;
     cursor: not-allowed;
     opacity: 0.6;
   }
@@ -58,7 +58,7 @@
   }
 
   .elv-file-upload__icon {
-    @apply elv-text-nonessential;
+    @apply elv:text-nonessential;
     font-size: 48px;
   }
 
@@ -71,26 +71,26 @@
   }
 
   .elv-file-upload__text {
-    @apply elv-text-default;
+    @apply elv:text-default;
     text-align: center;
   }
 
   .elv-file-upload__primary {
-    @apply elv-font-semibold;
+    @apply elv:font-semibold;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 4px;
   }
 
   .elv-file-upload__secondary {
-    @apply elv-text-nonessential;
+    @apply elv:text-nonessential;
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
   }
 
   .elv-file-upload__button {
-    @apply elv-font-semibold elv-rounded-pill-md;
+    @apply elv:font-semibold elv:rounded-pill-md;
     background: #5746b2;
     color: #ffffff;
     font-size: 14px;
@@ -105,18 +105,18 @@
     }
 
     &:disabled {
-      @apply elv-bg-neutral-40;
+      @apply elv:bg-neutral-40;
       cursor: not-allowed;
     }
   }
 
   .elv-file-upload__files {
-    @apply elv-mt-3 elv-flex elv-flex-col elv-gap-y-2;
+    @apply elv:mt-3 elv:flex elv:flex-col elv:gap-y-2;
   }
 
   .elv-file-upload__file {
-    @apply elv-flex elv-items-center elv-gap-x-3 elv-p-3
-      elv-bg-neutral-0 elv-border-1 elv-border-light elv-rounded-sm;
+    @apply elv:flex elv:items-center elv:gap-x-3 elv:p-3
+      elv:bg-neutral-0 elv:border-1 elv:border-light elv:rounded-sm;
   }
 
   .elv-file-upload__file-icon {
@@ -130,7 +130,7 @@
   }
 
   .elv-file-upload__file-name {
-    @apply elv-font-semibold elv-text-default;
+    @apply elv:font-semibold elv:text-default;
     font-size: 14px;
     white-space: nowrap;
     overflow: hidden;
@@ -138,12 +138,12 @@
   }
 
   .elv-file-upload__file-size {
-    @apply elv-text-nonessential;
+    @apply elv:text-nonessential;
     font-size: 12px;
   }
 
   .elv-file-upload__file-remove {
-    @apply elv-text-nonessential elv-rounded-xs;
+    @apply elv:text-nonessential elv:rounded-xs;
     background: transparent;
     border: none;
     cursor: pointer;
@@ -151,12 +151,12 @@
     font-size: 20px;
 
     &:hover {
-      @apply elv-bg-neutral-10 elv-text-default;
+      @apply elv:bg-neutral-10 elv:text-default;
     }
   }
 
   .elv-file-upload__file--error {
-    @apply elv-bg-critical-20;
+    @apply elv:bg-critical-20;
     border-color: #eb2000;
   }
 

@@ -1,3 +1,8 @@
-@import 'tailwindcss/components';
-
+@import './theme-vars.css';
+@import 'tailwindcss/theme';
+@import 'tailwindcss/utilities';
 @import './components.css';
+
+@config '../../tailwind.build.config.js';
+@source '../**/*.css';
+@source '../../examples/**/*.html';

@@ -4,7 +4,7 @@
 
 @layer components {
   .spin-loader {
-      @apply elv-inline-block;
+      @apply elv:inline-block;
   }
 
   .spin-loader__icon {
@@ -12,14 +12,14 @@
   }
 
   .spin-loader__icon--primary {
-      @apply elv-fill-purple;
+      @apply elv:fill-purple;
   }
 
   .spin-loader__icon--neutral {
-      @apply elv-fill-neutral-70;
+      @apply elv:fill-neutral-70;
   }
 
   .spin-loader__icon--inverted {
-      @apply elv-fill-neutral-0;
+      @apply elv:fill-neutral-0;
   }
 }

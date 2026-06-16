@@ -1,76 +1,74 @@
 @layer components {
   .pagination {
-    @apply elv-flex elv-gap-2 elv-font-figtree elv-list-none elv-m-0 elv-p-0;
+    @apply elv:flex elv:gap-2 elv:font-figtree elv:list-none elv:m-0 elv:p-0;
   }
   .pagination__only-nessy {
-    @apply elv-hidden;
+    @apply elv:hidden;
   }
   .pagination__only-elv {
-    @apply elv-flex elv-items-center elv-justify-center elv-gap-1;
+    @apply elv:flex elv:items-center elv:justify-center elv:gap-1;
   }
   .pagination__component {
-    @apply elv-size-8
-      elv-flex
-      elv-items-center
-      elv-justify-center;
+    @apply elv:size-8
+      elv:flex
+      elv:items-center
+      elv:justify-center;
   }
   .pagination__component--disabled {
-    @apply elv-border-none
-      elv-rounded-sm
-      elv-text-disabled
-      elv-bg-neutral-10;
+    @apply elv:border-none
+      elv:rounded-sm
+      elv:text-disabled
+      elv:bg-neutral-10;
   }
   .pagination__component-gap {
-    @apply
-      elv-flex
-      elv-items-center
-      elv-justify-center
-      elv-pointer-events-none
-      elv-rounded-sm
-      elv-text-sm
-      elv-text-subtle;
+    @apply elv:flex
+      elv:items-center
+      elv:justify-center
+      elv:pointer-events-none
+      elv:rounded-sm
+      elv:text-sm
+      elv:text-subtle;
   }
   .pagination__page-number--current {
-    @apply
-      elv-bg-primary-20
-      elv-border
-      elv-border-focus
-      elv-flex
-      elv-items-center
-      elv-justify-center
-      elv-text-sm
-      elv-text-subtle
-      elv-rounded-sm;
+    @apply elv:bg-primary-20
+      elv:border
+      elv:border-focus
+      elv:flex
+      elv:items-center
+      elv:justify-center
+      elv:text-sm
+      elv:text-subtle
+      elv:rounded-sm;
   }
   .pagination__named-link,
   .pagination__page-number-link {
-    @apply a--reset
-      elv-flex
-      elv-items-center
-      elv-justify-center
-      elv-max-w-full
-      elv-size-8
-      elv-font-normal
-      elv-text-sm
-      elv-text-subtle
-      elv-cursor-pointer
-      elv-border-transparent
-      elv-border
-      elv-rounded-sm
-      hover:elv-text-subtle
-      visited:elv-text-subtle
-      hover:elv-border
-      hover:elv-border-focus
-      hover:elv-bg-primary-20
-      elv-ease-in-out
-      elv-duration-150;
+    @apply elv:a--reset
+      elv:flex
+      elv:items-center
+      elv:justify-center
+      elv:max-w-full
+      elv:size-8
+      elv:font-normal
+      elv:text-sm
+      elv:text-subtle
+      elv:cursor-pointer
+      elv:border-transparent
+      elv:border
+      elv:rounded-sm
+      elv:hover:text-subtle
+      elv:visited:text-subtle
+      elv:hover:border
+      elv:hover:border-focus
+      elv:hover:bg-primary-20
+      elv:ease-in-out
+      elv:duration-150;
   }
   .pagination__named-link {
-    @apply elv-border
-      elv-flex
-      elv-items-center
-      elv-justify-center
-      elv-border-neutral
-      elv-bg-neutral-10;
+    @apply elv:border
+      elv:flex
+      elv:items-center
+      elv:justify-center
+      elv:border-neutral
+      elv:bg-neutral-10;
   }
 }

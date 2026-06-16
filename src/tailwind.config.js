@@ -1,8 +1,3 @@
-const {
-  scopedPreflightStyles,
-  isolateInsideOfContainer
-} = require('tailwindcss-scoped-preflight');
-
 const palette = require('./theme/color-palette');
 const data_colors = require('./theme/data-colors');
 const background_colors = require('./theme/background-colors');
@@ -14,7 +9,7 @@ module.exports = {
   content: [],
   darkMode: 'class',
   safelist: responsive_safelist,
-  prefix: 'elv-',
+  prefix: 'elv',
   theme: {
     backgroundColor: {
       ...background_colors,
@@ -191,10 +186,5 @@ module.exports = {
         '18/9': '18 / 9'
       }
     }
-  },
-  plugins: [
-    scopedPreflightStyles({
-      isolationStrategy: isolateInsideOfContainer('[elv]')
-    })
-  ]
+  }
 };

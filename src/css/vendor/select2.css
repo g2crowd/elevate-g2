@@ -27,7 +27,7 @@
    ================================================================ */
 
 .select2-container.elv-select {
-  @apply elv-m-0 elv-p-0 elv-border-0 elv-bg-none elv-h-auto elv-outline-none;
+  @apply elv:m-0 elv:p-0 elv:border-0 elv:bg-none elv:h-auto elv:outline-none;
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -35,7 +35,7 @@
 }
 
 .select2-container.elv-select:focus-visible {
-  @apply elv-outline-none;
+  @apply elv:outline-none;
 }
 
 /* ================================================================
@@ -43,12 +43,12 @@
    ================================================================ */
 
 .elv-select .select2-choice {
-  @apply elv-bg-neutral-5 elv-border elv-border-medium elv-rounded-sm
-    elv-pl-2 elv-py-2 elv-pr-14
-    elv-font-figtree elv-tracking-normal
-    elv-text-nonessential elv-font-normal elv-text-base elv-leading-base
-    elv-cursor-pointer elv-transition-colors elv-duration-150
-    elv-h-auto elv-overflow-hidden elv-no-underline;
+  @apply elv:bg-neutral-5 elv:border elv:border-medium elv:rounded-sm
+    elv:pl-2 elv:py-2 elv:pr-14
+    elv:font-figtree elv:tracking-normal
+    elv:text-nonessential elv:font-normal elv:text-base elv:leading-base
+    elv:cursor-pointer elv:transition-colors elv:duration-150
+    elv:h-auto elv:overflow-hidden elv:no-underline;
 
   display: block;
   position: relative;
@@ -69,17 +69,17 @@ html[dir='rtl'] .elv-select .select2-choice {
 }
 
 .elv-select.select2-drop-above .select2-choice {
-  @apply elv-rounded-sm;
+  @apply elv:rounded-sm;
 }
 
 .elv-select .select2-choice:hover {
-  @apply elv-bg-neutral-10;
+  @apply elv:bg-neutral-10;
 }
 
 /* --- chosen text --- */
 
 .elv-select .select2-choice > .select2-chosen {
-  @apply elv-mr-0 elv-font-figtree elv-tracking-normal;
+  @apply elv:mr-0 elv:font-figtree elv:tracking-normal;
   display: block;
   overflow: hidden;
   white-space: nowrap;
@@ -115,13 +115,13 @@ html[dir='rtl'] .elv-select .select2-choice > .select2-chosen {
 }
 
 .elv-select .select2-choice abbr:hover {
-  @apply elv-opacity-60;
+  @apply elv:opacity-60;
 }
 
 /* --- arrow (hidden — we use the SVG background chevron instead) --- */
 
 .elv-select .select2-choice .select2-arrow {
-  @apply elv-hidden;
+  @apply elv:hidden;
 }
 
 /* ================================================================
@@ -130,21 +130,21 @@ html[dir='rtl'] .elv-select .select2-choice > .select2-chosen {
 
 .elv-select.select2-container-active .select2-choice,
 .elv-select.select2-container-active .select2-choices {
-  @apply elv-outline elv-outline-3 elv-outline-offset-1
-    elv-outline-purple-40 elv-border-medium;
+  @apply elv:outline elv:outline-3 elv:outline-offset-1
+    elv:outline-purple-40 elv:border-medium;
 }
 
 .elv-select.select2-dropdown-open .select2-choice {
-  @apply elv-bg-neutral-10;
+  @apply elv:bg-neutral-10;
 }
 
 .elv-select.select2-dropdown-open.select2-drop-above .select2-choice,
 .elv-select.select2-dropdown-open.select2-drop-above .select2-choices {
-  @apply elv-border elv-border-medium;
+  @apply elv:border elv:border-medium;
 }
 
 .elv-select.select2-dropdown-open .select2-choice .select2-arrow {
-  @apply elv-hidden;
+  @apply elv:hidden;
 }
 
 /* ================================================================
@@ -152,10 +152,10 @@ html[dir='rtl'] .elv-select .select2-choice > .select2-chosen {
    ================================================================ */
 
 .elv-select.select2-container-multi .select2-choices {
-  @apply elv-bg-neutral-5 elv-border elv-border-medium elv-rounded-sm
-    elv-font-figtree elv-tracking-normal
-    elv-cursor-text elv-transition-colors elv-duration-150
-    elv-min-h-10;
+  @apply elv:bg-neutral-5 elv:border elv:border-medium elv:rounded-sm
+    elv:font-figtree elv:tracking-normal
+    elv:cursor-text elv:transition-colors elv:duration-150
+    elv:min-h-10;
 
   height: auto !important;
   margin: 0;
@@ -177,7 +177,7 @@ html[dir='rtl'] .elv-select.select2-container-multi .select2-choices {
 }
 
 .elv-select.select2-container-multi .select2-choices:hover {
-  @apply elv-bg-neutral-10;
+  @apply elv:bg-neutral-10;
 }
 
 .elv-select.select2-container-multi .select2-choices li {
@@ -209,8 +209,8 @@ html[dir='rtl'] .elv-select.select2-container-multi .select2-choices li {
   .select2-choices
   .select2-search-field
   input {
-  @apply elv-font-figtree elv-tracking-normal elv-text-base elv-font-normal
-    elv-text-default !elv-bg-transparent;
+  @apply elv:font-figtree elv:tracking-normal elv:text-base elv:font-normal
+    elv:text-default elv:!bg-transparent;
   padding: 0.25rem 0.5rem;
   margin: 1px 0;
   outline: 0;
@@ -222,7 +222,7 @@ html[dir='rtl'] .elv-select.select2-container-multi .select2-choices li {
   .select2-choices
   .select2-search-field
   input::placeholder {
-  @apply elv-text-nonessential;
+  @apply elv:text-nonessential;
 }
 
 /* select2 3.5.x sets placeholder as input value + .select2-default class,
@@ -232,15 +232,15 @@ html[dir='rtl'] .elv-select.select2-container-multi .select2-choices li {
   .select2-choices
   .select2-search-field
   input.select2-default {
-  @apply !elv-text-nonessential;
+  @apply elv:!text-nonessential;
 }
 
 /* --- search choice pills --- */
 
 .elv-select.select2-container-multi .select2-choices .select2-search-choice {
-  @apply elv-bg-primary-20 elv-text-primary elv-rounded-xs elv-text-xs
-    elv-font-figtree elv-tracking-normal
-    elv-border-0 elv-font-semibold;
+  @apply elv:bg-primary-20 elv:text-primary elv:rounded-xs elv:text-xs
+    elv:font-figtree elv:tracking-normal
+    elv:border-0 elv:font-semibold;
   padding: 0.125rem 1.5rem 0.125rem 0.375rem;
   margin: 0.125rem;
   position: relative;
@@ -268,7 +268,7 @@ html[dir='rtl']
 .elv-select.select2-container-multi
   .select2-choices
   .select2-search-choice-focus {
-  @apply elv-bg-primary-20 elv-opacity-80;
+  @apply elv:bg-primary-20 elv:opacity-80;
 }
 
 /* --- choice close button --- */
@@ -319,7 +319,7 @@ html[dir='rtl']
   .select2-choices
   .select2-search-choice
   .select2-search-choice-close {
-  @apply elv-opacity-60;
+  @apply elv:opacity-60;
   top: 0;
   bottom: 0;
   margin: auto 0;
@@ -330,14 +330,14 @@ html[dir='rtl']
   .select2-choices
   .select2-search-choice
   .select2-search-choice-close:hover {
-  @apply elv-opacity-100;
+  @apply elv:opacity-100;
 }
 
 .elv-select.select2-container-multi
   .select2-choices
   .select2-search-choice-focus
   .select2-search-choice-close {
-  @apply elv-opacity-100;
+  @apply elv:opacity-100;
 }
 
 /* ================================================================
@@ -345,12 +345,12 @@ html[dir='rtl']
    ================================================================ */
 
 .elv-select.select2-container-disabled .select2-choice {
-  @apply elv-cursor-default elv-opacity-50;
+  @apply elv:cursor-default elv:opacity-50;
   background-image: none;
 }
 
 .elv-select.select2-container-disabled .select2-choice .select2-arrow {
-  @apply elv-hidden;
+  @apply elv:hidden;
 }
 
 .elv-select.select2-container-disabled .select2-choice abbr {
@@ -359,14 +359,14 @@ html[dir='rtl']
 
 .elv-select.select2-container-multi.select2-container-disabled
   .select2-choices {
-  @apply elv-cursor-default elv-opacity-50;
+  @apply elv:cursor-default elv:opacity-50;
   background-image: none;
 }
 
 .elv-select.select2-container-multi.select2-container-disabled
   .select2-choices
   .select2-search-choice {
-  @apply elv-border-0 elv-opacity-70;
+  @apply elv:border-0 elv:opacity-70;
   padding: 3px 5px;
   background-image: none;
 }
@@ -389,23 +389,23 @@ html[dir='rtl']
  */
 
 .elv-select-drop.elv-select-drop {
-  @apply elv-bg-neutral-5 elv-border elv-border-light elv-rounded-sm elv-shadow-2
-    elv-mt-2 elv-overflow-hidden;
+  @apply elv:bg-neutral-5 elv:border elv:border-light elv:rounded-sm elv:shadow-2
+    elv:mt-2 elv:overflow-hidden;
 
   width: 100%;
   position: absolute;
   top: 100%;
   z-index: 2147483647;
   border-top: 1px solid;
-  @apply elv-border-light;
+  @apply elv:border-light;
 }
 
 .elv-select-drop.select2-drop-above {
   margin-top: 1px;
-  @apply elv-rounded-sm;
+  @apply elv:rounded-sm;
   border-bottom: 0;
   border-top: 1px solid;
-  @apply elv-border-light;
+  @apply elv:border-light;
   box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -416,7 +416,7 @@ html[dir='rtl']
 /* --- search box inside dropdown --- */
 
 .elv-select-drop .select2-search {
-  @apply elv-p-2;
+  @apply elv:p-2;
   display: inline-block;
   width: 100%;
   min-height: 26px;
@@ -427,9 +427,9 @@ html[dir='rtl']
 }
 
 .elv-select-drop .select2-search input {
-  @apply elv-bg-neutral-5 elv-border-0 elv-rounded-sm
-    elv-font-figtree elv-text-base elv-font-normal elv-tracking-normal
-    elv-w-full elv-h-auto elv-py-1 elv-px-2 elv-outline-none;
+  @apply elv:bg-neutral-5 elv:border-0 elv:rounded-sm
+    elv:font-figtree elv:text-base elv:font-normal elv:tracking-normal
+    elv:w-full elv:h-auto elv:py-1 elv:px-2 elv:outline-none;
   background-image: none !important;
   background-position: initial !important;
   background-repeat: initial !important;
@@ -438,7 +438,7 @@ html[dir='rtl']
 }
 
 .elv-select-drop .select2-search input:focus {
-  @apply elv-outline elv-outline-3 elv-outline-offset-1 elv-outline-purple-40;
+  @apply elv:outline elv:outline-3 elv:outline-offset-1 elv:outline-purple-40;
 }
 
 .elv-select-drop.select2-drop-above .select2-search input {
@@ -452,7 +452,7 @@ html[dir='rtl']
 /* --- results list --- */
 
 .elv-select-drop .select2-results {
-  @apply elv-p-0 elv-m-0;
+  @apply elv:p-0 elv:m-0;
   max-height: 240px;
   position: relative;
   overflow-x: hidden;
@@ -484,8 +484,8 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 }
 
 .elv-select-drop .select2-results .select2-result-label {
-  @apply elv-font-figtree elv-text-base elv-font-normal elv-tracking-normal
-    elv-leading-base elv-cursor-pointer elv-py-2 elv-px-3;
+  @apply elv:font-figtree elv:text-base elv:font-normal elv:tracking-normal
+    elv:leading-base elv:cursor-pointer elv:py-2 elv:px-3;
   margin: 0;
   min-height: 1em;
   user-select: none;
@@ -516,7 +516,7 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 
 /* highlighted / hovered result */
 .elv-select-drop .select2-results .select2-highlighted {
-  @apply elv-bg-primary-20;
+  @apply elv:bg-primary-20;
   color: inherit;
 }
 
@@ -530,21 +530,21 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 }
 
 .elv-select-drop .select2-results .select2-highlighted ul {
-  @apply elv-bg-neutral-5;
+  @apply elv:bg-neutral-5;
   color: inherit;
 }
 
 /* no results / searching / error states */
 .elv-select-drop .select2-results .select2-no-results,
 .elv-select-drop .select2-results .select2-searching {
-  @apply elv-font-figtree elv-text-sm elv-text-nonessential
-    elv-py-2 elv-px-3 elv-bg-transparent;
+  @apply elv:font-figtree elv:text-sm elv:text-nonessential
+    elv:py-2 elv:px-3 elv:bg-transparent;
   display: list-item;
 }
 
 .elv-select-drop .select2-results .select2-ajax-error,
 .elv-select-drop .select2-results .select2-selection-limit {
-  @apply elv-py-2 elv-px-3 elv-bg-transparent;
+  @apply elv:py-2 elv:px-3 elv:bg-transparent;
   display: list-item;
 }
 
@@ -554,12 +554,12 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 
 /* disabled results */
 .elv-select-drop .select2-results .select2-disabled {
-  @apply elv-cursor-default elv-opacity-50 elv-bg-transparent;
+  @apply elv:cursor-default elv:opacity-50 elv:bg-transparent;
   display: list-item;
 }
 
 .elv-select-drop .select2-results .select2-disabled.select2-highlighted {
-  @apply elv-cursor-default elv-opacity-50 elv-bg-transparent;
+  @apply elv:cursor-default elv:opacity-50 elv:bg-transparent;
   color: inherit;
 }
 
@@ -568,7 +568,7 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 }
 
 .elv-select-drop .select2-more-results {
-  @apply elv-bg-transparent elv-py-2 elv-px-3;
+  @apply elv:bg-transparent elv:py-2 elv:px-3;
   display: list-item;
 }
 
@@ -645,7 +645,7 @@ html[dir='rtl'] .elv-select-drop .select2-results {
    ================================================================ */
 
 .elv-select .select2-default {
-  @apply elv-font-figtree elv-tracking-normal elv-text-nonessential;
+  @apply elv:font-figtree elv:tracking-normal elv:text-nonessential;
 }
 
 /* ================================================================
@@ -663,7 +663,7 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 /* --- single-select trigger --- */
 
 .elv-select.elv-select--sm .select2-choice {
-  @apply elv-text-sm elv-leading-sm;
+  @apply elv:text-sm elv:leading-sm;
   height: 2rem;
   padding-top: 0.375rem;
   padding-bottom: 0.125rem;
@@ -674,7 +674,7 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 }
 
 .elv-select.elv-select--lg .select2-choice {
-  @apply elv-h-12;
+  @apply elv:h-12;
 }
 
 /* --- multi-select container --- */
@@ -730,7 +730,7 @@ html[dir='rtl'] .elv-select-drop .select2-results {
   .select2-choices
   .select2-search-field
   input {
-  @apply elv-text-sm;
+  @apply elv:text-sm;
   height: 100%;
   padding: 0.125rem 0.375rem;
   margin: 0;
@@ -755,5 +755,5 @@ html[dir='rtl'] .elv-select-drop .select2-results {
 }
 
 .elv-select.elv-select--lg.select2-container-multi .select2-choices {
-  @apply elv-min-h-12;
+  @apply elv:min-h-12;
 }

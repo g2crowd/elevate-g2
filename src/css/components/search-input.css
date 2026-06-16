@@ -1,30 +1,30 @@
 @layer components {
   .search-input {
-    @apply elv-relative;
+    @apply elv:relative;
   }
 
   .search-input .elv-input {
-    @apply elv-pl-9 elv-text-subtle;
+    @apply elv:pl-9 elv:text-subtle;
     background-image: svg-load('search.svg');
     background-repeat: no-repeat;
     background-position: 0.75rem center;
     background-size: 20px;
 
     &::-webkit-search-cancel-button {
-      @apply elv-hidden;
+      @apply elv:hidden;
     }
   }
 
   .search-input--sm .elv-input {
-    @apply elv-rounded-xl elv-h-8 elv-w-48;
+    @apply elv:rounded-xl elv:h-8 elv:w-48;
     background-size: 16px;
   }
 
   .search-input--md .elv-input {
-    @apply elv-rounded-full elv-h-10 elv-w-60;
+    @apply elv:rounded-full elv:h-10 elv:w-60;
   }
 
   .search-input--lg .elv-input {
-    @apply elv-rounded-full elv-h-12 elv-w-72;
+    @apply elv:rounded-full elv:h-12 elv:w-72;
   }
 }

@@ -1,34 +1,34 @@
 @layer components {
   .elv-notification-badge {
-      @apply elv-flex elv-justify-center elv-items-center elv-p-1
-        elv-rounded-lg elv-border elv-border-inverted elv-text-xs;
+      @apply elv:flex elv:justify-center elv:items-center elv:p-1
+        elv:rounded-lg elv:border elv:border-inverted elv:text-xs;
   }
 
   .elv-notification-badge--top {
-      @apply elv-bg-brand elv-text-inverted;
+      @apply elv:bg-brand elv:text-inverted;
   }
 
   .elv-notification-badge--mid {
-      @apply elv-bg-primary elv-text-inverted;
+      @apply elv:bg-primary elv:text-inverted;
   }
 
   .elv-notification-badge--low {
-      @apply elv-text-subtle;
+      @apply elv:text-subtle;
   }
 
   .elv-notification-badge--with-count {
-      @apply elv-min-w-4 elv-h-4 elv-w-fit elv-p-1;
+      @apply elv:min-w-4 elv:h-4 elv:w-fit elv:p-1;
   }
 
   .elv-notification-badge--dot {
-      @apply elv-w-1 elv-h-1;
+      @apply elv:w-1 elv:h-1;
   }
 
   .elv-notification-badge--low.elv-notification-badge--with-count {
-      @apply elv-bg-primary-20 elv-border elv-border-primary;
+      @apply elv:bg-primary-20 elv:border elv:border-primary;
   }
 
   .elv-notification-badge--low.elv-notification-badge--dot {
-      @apply elv-bg-primary-60;
+      @apply elv:bg-primary-60;
   }
 }

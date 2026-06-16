@@ -1,6 +1,7 @@
 @import './components/accordion';
 @import './components/avatar';
 @import './components/breadcrumbs';
+@import './components/link';
 @import './components/button';
 @import './components/button-group';
 @import './components/checkbox';
@@ -15,7 +16,6 @@
 @import './components/index-nav';
 @import './components/input';
 @import './components/inset-card';
-@import './components/link';
 @import './components/modal';
 @import './components/notification';
 @import './components/notification-badge';
