@@ -18,18 +18,8 @@ export default defineConfig({
       '@elevate': resolve(__dirname, 'src'),
     },
   },
-  css: {
-    postcss: {
-      plugins: [
-        require('postcss-import')(),
-        require('postcss-inline-svg')({ paths: [resolve(__dirname, 'src/assets/svg')] }),
-        require('tailwindcss/nesting')(),
-        require('tailwindcss')(resolve(__dirname, 'tailwind.build.config.js')),
-        require('postcss-svgo')(),
-        require('autoprefixer')(),
-      ],
-    },
-  },
+  // No inline css.postcss: Vite auto-loads postcss.config.js so the plugin
+  // chain (incl. unwrapComponentLayers) stays the single source of truth.
   build: {
     outDir: resolve(__dirname, 'dist-site'),
     cssMinify: false,
