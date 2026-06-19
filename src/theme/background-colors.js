@@ -1,6 +1,13 @@
+const palette = require('./color-palette');
+
 module.exports = {
   transparent: 'transparent',
   current: 'currentColor',
+  rorange: palette.rorange,
+  purple: palette.purple,
+  blue: palette.blue,
+  green: palette.green,
+  yellow: palette.yellow,
   primary: {
     5: 'var(--elv-bg-primary-5)',
     10: 'var(--elv-bg-primary-10)',
@@ -18,8 +25,13 @@ module.exports = {
     5: 'var(--elv-bg-neutral-5)',
     10: 'var(--elv-bg-neutral-10)',
     20: 'var(--elv-bg-neutral-20)',
+    30: palette.neutral[30],
     DEFAULT: 'var(--elv-bg-neutral)',
     40: 'var(--elv-bg-neutral-40)',
+    50: palette.neutral[50],
+    70: palette.neutral[70],
+    80: palette.neutral[80],
+    90: palette.neutral[90],
     100: 'var(--elv-bg-neutral-100)',
   },
   info: {
