@@ -49,6 +49,21 @@ function escapeString(value) {
   return value.replace(/\\/g, '\\\\').replace(/"/g, '\\"');
 }
 
+function hasInvalidCharsOutsideBrackets(token) {
+  let bracketDepth = 0;
+
+  for (const char of token) {
+    if (char === '[') bracketDepth += 1;
+    if (char === ']' && bracketDepth > 0) bracketDepth -= 1;
+
+    if (bracketDepth === 0 && /[()=#]/.test(char)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 function escapeClassName(value) {
   return value.replace(/(^-?[0-9])|[^a-zA-Z0-9_-]/g, (char, leadingDigit) => {
     if (leadingDigit) {
@@ -83,7 +98,7 @@ function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_E
   const candidates = new Map();
   const roots = directories.map((dir) => path.resolve(cwd, dir));
   const files = roots.flatMap((root) => walkFiles(root, extensions));
-  const tokenPattern = /^(?:[!a-zA-Z0-9_[\]=&#%/()~-]+:)*!?-?elv-[!a-zA-Z0-9_[\]=&#%/()~-]+$/;
+  const tokenPattern = /^(?:[!a-zA-Z0-9_[\]=&#%/()~.,'-]+:)*!?-?elv-[!a-zA-Z0-9_[\]=&#%/()~.,'-]+$/;
 
   for (const file of files) {
     const contents = fs.readFileSync(file, 'utf8');
@@ -96,8 +111,8 @@ function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_E
         .filter(Boolean);
 
       for (const legacy of legacyTokens) {
-        if (/[()=#]/.test(legacy)) continue;
-        if (!tokenPattern.test(legacy) || legacy.includes('[')) continue;
+        if (hasInvalidCharsOutsideBrackets(legacy)) continue;
+        if (!tokenPattern.test(legacy)) continue;
 
         const modern = legacyToVariantCandidate(legacy);
         if (modern) candidates.set(modern, legacy);
