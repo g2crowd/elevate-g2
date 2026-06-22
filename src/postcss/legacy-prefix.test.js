@@ -132,6 +132,16 @@ describe('extractLegacyCandidates', () => {
     expect(candidates.get('elv:md:w-[355px]')).toBe('md:elv-w-[355px]');
   });
 
+  test('extracts quoted content value - does not split on quotes inside brackets', () => {
+    const candidates = extractFromContent("<div class=\"before:elv-content-['|']\">");
+    expect(candidates.get("elv:before:content-['|']")).toBe("before:elv-content-['|']");
+  });
+
+  test('extracts content with text inside quotes', () => {
+    const candidates = extractFromContent("<div class=\"elv-content-['hello']\">");
+    expect(candidates.get("elv:content-['hello']")).toBe("elv-content-['hello']");
+  });
+
   test('extracts dot-chained classes from slim files', () => {
     const candidates = extractFromContent('.elv-flex.elv-w-[100px].elv-p-4', '.slim');
     expect(candidates.get('elv:flex')).toBe('elv-flex');

@@ -102,6 +102,28 @@ function splitOutsideBrackets(text, delimiters) {
   return parts;
 }
 
+function tokenizeContent(text) {
+  const tokens = [];
+  let current = '';
+  let bracketDepth = 0;
+  const delimiters = /[\s`"'<>]/;
+
+  for (const char of text) {
+    if (char === '[') bracketDepth += 1;
+    if (char === ']' && bracketDepth > 0) bracketDepth -= 1;
+
+    if (bracketDepth === 0 && delimiters.test(char)) {
+      if (current) tokens.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+
+  if (current) tokens.push(current);
+  return tokens;
+}
+
 function walkFiles(dir, extensions, files = []) {
   if (!fs.existsSync(dir)) return files;
 
@@ -122,11 +144,11 @@ function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_E
   const candidates = new Map();
   const roots = directories.map((dir) => path.resolve(cwd, dir));
   const files = roots.flatMap((root) => walkFiles(root, extensions));
-  const tokenPattern = /^(?:[!a-zA-Z0-9_[\]=&#%/()~.,':+-]+:)*!?-?elv-[!a-zA-Z0-9_[\]=&#%/()~.,':+-]+$/;
+  const tokenPattern = /^(?:[!a-zA-Z0-9_[\]=&#%/()~.,':;|*@^+-]+:)*!?-?elv-[!a-zA-Z0-9_[\]=&#%/()~.,':;|*@^+-]+$/;
 
   for (const file of files) {
     const contents = fs.readFileSync(file, 'utf8');
-    const tokens = contents.split(/[\s`"'<>]+/);
+    const tokens = tokenizeContent(contents);
 
     for (const rawToken of tokens) {
       const cleaned = rawToken.replace(/^[({,]+|[)};,]+$/g, '');
