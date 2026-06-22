@@ -1,0 +1,29 @@
+src/postcss/legacy-prefix.test.js
+  s_f4d3c076f9d901::t_62c60445534680 2-5
+  s_f4d3c076f9d901::t_f590767501c615 60-62,71-134,145-174
+  s_f4d3c076f9d901::t_2d46ca59062092 63-70
+  s_f4d3c076f9d901::t_df93a484596b14 135-144
+src/postcss/legacy-prefix.js
+  s_f4d3c076f9d901::t_240dc7656731a5 81-104
+  s_f4d3c076f9d901::t_6f401706650e10 105-126
+  s_f4d3c076f9d901::t_5810b382cd6111 147
+  s_f4d3c076f9d901::t_8bbc96665e3ed5 151
+  s_f4d3c076f9d901::t_cd0cfa0f8c987d 154-155
+  s_f4d3c076f9d901::t_aec3e829e1234b 235
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.5",
+  "base_commit_sha": "87a56486239c3748718e863fbfdcb01cd3968449",
+  "prompts": {},
+  "sessions": {
+    "s_f4d3c076f9d901": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "65a70a58-25f0-455e-9026-dddbedcdc573",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "narendranathjha <njha@g2.com>"
+    }
+  }
+}
