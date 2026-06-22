@@ -1,0 +1,23 @@
+src/postcss/legacy-prefix.test.js
+  s_f4d3c076f9d901::t_df93a484596b14 135-144
+src/postcss/legacy-prefix.js
+  s_f4d3c076f9d901::t_5810b382cd6111 147
+  s_f4d3c076f9d901::t_8bbc96665e3ed5 151
+  s_f4d3c076f9d901::t_6f401706650e10 105-126
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.9",
+  "base_commit_sha": "d632ef3c900452c1f15b55bcb8978de5ee0c284b",
+  "prompts": {},
+  "sessions": {
+    "s_f4d3c076f9d901": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "65a70a58-25f0-455e-9026-dddbedcdc573",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "narendranathjha <njha@g2.com>"
+    }
+  }
+}
