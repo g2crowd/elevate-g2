@@ -78,6 +78,30 @@ function escapeClassName(value) {
   });
 }
 
+function splitOutsideBrackets(text, delimiters) {
+  const parts = [];
+  let current = '';
+  let bracketDepth = 0;
+  let parenDepth = 0;
+
+  for (const char of text) {
+    if (char === '[') bracketDepth += 1;
+    if (char === ']' && bracketDepth > 0) bracketDepth -= 1;
+    if (char === '(') parenDepth += 1;
+    if (char === ')' && parenDepth > 0) parenDepth -= 1;
+
+    if (bracketDepth === 0 && parenDepth === 0 && delimiters.includes(char)) {
+      if (current) parts.push(current);
+      current = '';
+    } else {
+      current += char;
+    }
+  }
+
+  if (current) parts.push(current);
+  return parts;
+}
+
 function walkFiles(dir, extensions, files = []) {
   if (!fs.existsSync(dir)) return files;
 
@@ -98,17 +122,15 @@ function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_E
   const candidates = new Map();
   const roots = directories.map((dir) => path.resolve(cwd, dir));
   const files = roots.flatMap((root) => walkFiles(root, extensions));
-  const tokenPattern = /^(?:[!a-zA-Z0-9_[\]=&#%/()~.,'-]+:)*!?-?elv-[!a-zA-Z0-9_[\]=&#%/()~.,'-]+$/;
+  const tokenPattern = /^(?:[!a-zA-Z0-9_[\]=&#%/()~.,':+-]+:)*!?-?elv-[!a-zA-Z0-9_[\]=&#%/()~.,':+-]+$/;
 
   for (const file of files) {
     const contents = fs.readFileSync(file, 'utf8');
-    const tokens = contents.split(/[\s`"',<>]+/);
+    const tokens = contents.split(/[\s`"'<>]+/);
 
     for (const rawToken of tokens) {
-      const legacyTokens = rawToken
-        .replace(/^[({]+|[)};]+$/g, '')
-        .split('.')
-        .filter(Boolean);
+      const cleaned = rawToken.replace(/^[({,]+|[)};,]+$/g, '');
+      const legacyTokens = splitOutsideBrackets(cleaned, ['.']);
 
       for (const legacy of legacyTokens) {
         if (hasInvalidCharsOutsideBrackets(legacy)) continue;
@@ -188,6 +210,7 @@ function unwrapComponentLayers() {
 module.exports = {
   addLegacySources,
   aliasLegacySelectors,
+  extractLegacyCandidates,
   legacyToVariantCandidate,
   unwrapComponentLayers
 };
