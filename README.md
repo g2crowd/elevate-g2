@@ -48,6 +48,17 @@ backgroundColors.primary.DEFAULT;  // '#5746b2'
 foregroundColors.link.DEFAULT;     // '#0073f5'
 ```
 
+The compiled CSS also exposes primitive palette tones as custom properties:
+
+```css
+color: var(--elv-color-purple-100);
+background-color: var(--elv-color-rorange-20);
+border-color: var(--elv-color-neutral-40);
+```
+
+Use `--elv-bg-*`, `--elv-text-*`, and `--elv-border-*` for semantic UI roles. Use
+`--elv-color-{palette}-{tone}` when a raw palette tone is needed.
+
 ## Component examples
 
 ```bash
