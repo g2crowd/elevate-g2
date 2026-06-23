@@ -1,7 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const DEFAULT_EXTENSIONS = new Set(['.erb', '.html', '.js', '.rb', '.slim', '.css']);
+const DEFAULT_EXTENSIONS = new Set([
+  '.erb',
+  '.html',
+  '.js',
+  '.jsx',
+  '.rb',
+  '.slim',
+  '.css',
+  '.ts',
+  '.tsx'
+]);
 
 function splitVariants(token) {
   const parts = [];
