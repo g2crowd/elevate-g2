@@ -149,6 +149,16 @@ describe('extractLegacyCandidates', () => {
     expect(candidates.get('elv:p-4')).toBe('elv-p-4');
   });
 
+  test('extracts classes from JSX files by default', () => {
+    const candidates = extractFromContent('<Text className="elv-text-current" />', '.jsx');
+    expect(candidates.get('elv:text-current')).toBe('elv-text-current');
+  });
+
+  test('extracts classes from TSX files by default', () => {
+    const candidates = extractFromContent('<Text className="elv-text-current" />', '.tsx');
+    expect(candidates.get('elv:text-current')).toBe('elv-text-current');
+  });
+
   test('handles complex class with decimal inside brackets when dot-chained', () => {
     const candidates = extractFromContent('.elv-opacity-[0.5].elv-mt-4', '.slim');
     expect(candidates.get('elv:opacity-[0.5]')).toBe('elv-opacity-[0.5]');
