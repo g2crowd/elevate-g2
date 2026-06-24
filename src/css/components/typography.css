@@ -42,6 +42,19 @@
   .elv-label--sm { @apply elv:text-sm elv:leading-sm elv:gap-1; }
   .elv-label--xs { @apply elv:text-xs elv:leading-xs elv:gap-1; }
 
+  /* ── Responsive size modifiers ─────────────────────────── */
+  .sm\:elv-label     { @apply elv:sm:text-base elv:sm:leading-base; }
+  .sm\:elv-label--sm { @apply elv:sm:text-sm elv:sm:leading-sm elv:sm:gap-1; }
+  .sm\:elv-label--xs { @apply elv:sm:text-xs elv:sm:leading-xs elv:sm:gap-1; }
+
+  .md\:elv-label     { @apply elv:md:text-base elv:md:leading-base; }
+  .md\:elv-label--sm { @apply elv:md:text-sm elv:md:leading-sm elv:md:gap-1; }
+  .md\:elv-label--xs { @apply elv:md:text-xs elv:md:leading-xs elv:md:gap-1; }
+
+  .lg\:elv-label     { @apply elv:lg:text-base elv:lg:leading-base; }
+  .lg\:elv-label--sm { @apply elv:lg:text-sm elv:lg:leading-sm elv:lg:gap-1; }
+  .lg\:elv-label--xs { @apply elv:lg:text-xs elv:lg:leading-xs elv:lg:gap-1; }
+
   .elv-label--disabled { @apply elv:text-disabled; }
 
   .elv-label--required::after {

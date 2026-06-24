@@ -17,6 +17,19 @@
     height: 20px;
   }
 
+  /* ── Responsive size modifiers ─────────────────────────── */
+  .sm\:elv-stars     { @apply elv:sm:w-30 elv:sm:h-6; }
+  .sm\:elv-stars--md { @apply elv:sm:w-25 elv:sm:h-5; }
+  .sm\:elv-stars--sm { @apply elv:sm:w-20 elv:sm:h-4; }
+
+  .md\:elv-stars     { @apply elv:md:w-30 elv:md:h-6; }
+  .md\:elv-stars--md { @apply elv:md:w-25 elv:md:h-5; }
+  .md\:elv-stars--sm { @apply elv:md:w-20 elv:md:h-4; }
+
+  .lg\:elv-stars     { @apply elv:lg:w-30 elv:lg:h-6; }
+  .lg\:elv-stars--md { @apply elv:lg:w-25 elv:lg:h-5; }
+  .lg\:elv-stars--sm { @apply elv:lg:w-20 elv:lg:h-4; }
+
   .elv-stars-0  { background-image: svg-load('stars-0.svg'); }
   .elv-stars-1  { background-image: svg-load('stars-1.svg'); }
   .elv-stars-2  { background-image: svg-load('stars-2.svg'); }
