@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import tailwindConfig from './tailwind.config';
-import palette from './theme/color-palette';
+import paletteVars from './theme/color-palette-vars';
 import backgroundColors from './theme/background-colors';
 import foregroundColors from './theme/foreground-colors';
 import borderColors from './theme/border-colors';
@@ -14,7 +14,7 @@ describe('tailwind color tokens', () => {
     const { backgroundColor } = tailwindConfig.theme;
 
     paletteColorGroups.forEach((color) => {
-      expect(backgroundColor[color]).toEqual(palette[color]);
+      expect(backgroundColor[color]).toEqual(paletteVars[color]);
     });
 
     neutralToneKeys.forEach((tone) => {
@@ -30,7 +30,7 @@ describe('tailwind color tokens', () => {
     const { textColor } = tailwindConfig.theme;
 
     paletteColorGroups.forEach((color) => {
-      expect(textColor[color]).toEqual(palette[color]);
+      expect(textColor[color]).toEqual(paletteVars[color]);
     });
 
     neutralToneKeys.forEach((tone) => {
@@ -45,7 +45,7 @@ describe('tailwind color tokens', () => {
     const { borderColor } = tailwindConfig.theme;
 
     paletteColorGroups.forEach((color) => {
-      expect(borderColor[color]).toEqual(palette[color]);
+      expect(borderColor[color]).toEqual(paletteVars[color]);
     });
 
     neutralToneKeys.forEach((tone) => {
