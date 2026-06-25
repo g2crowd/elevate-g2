@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import tailwindConfig from './tailwind.config';
-import paletteVars from './theme/color-palette-vars';
+import palette from './theme/color-palette';
 import backgroundColors from './theme/background-colors';
 import foregroundColors from './theme/foreground-colors';
 import borderColors from './theme/border-colors';
@@ -9,12 +9,20 @@ import dataColors from './theme/data-colors';
 const paletteColorGroups = ['rorange', 'purple', 'blue', 'green', 'yellow'];
 const neutralToneKeys = [0, 1, 5, 10, 20, 30, 40, 50, 70, 80, 90, 100];
 
+function primitiveVar(color, tone) {
+  return `var(--elv-color-${color}-${tone})`;
+}
+
 describe('tailwind color tokens', () => {
   it('exposes all raw palette tones as background utilities while preserving semantic backgrounds', () => {
     const { backgroundColor } = tailwindConfig.theme;
 
     paletteColorGroups.forEach((color) => {
-      expect(backgroundColor[color]).toEqual(paletteVars[color]);
+      Object.keys(palette[color]).forEach((tone) => {
+        if (tone === 'DEFAULT') return;
+
+        expect(backgroundColor[color][tone]).toBe(primitiveVar(color, tone));
+      });
     });
 
     neutralToneKeys.forEach((tone) => {
@@ -30,7 +38,11 @@ describe('tailwind color tokens', () => {
     const { textColor } = tailwindConfig.theme;
 
     paletteColorGroups.forEach((color) => {
-      expect(textColor[color]).toEqual(paletteVars[color]);
+      Object.keys(palette[color]).forEach((tone) => {
+        if (tone === 'DEFAULT') return;
+
+        expect(textColor[color][tone]).toBe(primitiveVar(color, tone));
+      });
     });
 
     neutralToneKeys.forEach((tone) => {
@@ -45,7 +57,11 @@ describe('tailwind color tokens', () => {
     const { borderColor } = tailwindConfig.theme;
 
     paletteColorGroups.forEach((color) => {
-      expect(borderColor[color]).toEqual(paletteVars[color]);
+      Object.keys(palette[color]).forEach((tone) => {
+        if (tone === 'DEFAULT') return;
+
+        expect(borderColor[color][tone]).toBe(primitiveVar(color, tone));
+      });
     });
 
     neutralToneKeys.forEach((tone) => {
