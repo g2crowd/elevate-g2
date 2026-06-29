@@ -85,6 +85,7 @@ module.exports = {
     DEFAULT: 'var(--elv-bg-neutral)',
     40: 'var(--elv-bg-neutral-40)',
     50: 'var(--elv-color-neutral-50)',
+    60: 'var(--elv-color-neutral-60)',
     70: 'var(--elv-color-neutral-70)',
     80: 'var(--elv-color-neutral-80)',
     90: 'var(--elv-color-neutral-90)',
