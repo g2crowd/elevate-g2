@@ -1,0 +1,13 @@
+@import 'tailwindcss/theme';
+@import './theme-vars.css';
+@import 'tailwindcss/utilities';
+@import './components';
+@import './typography';
+
+@config '../../tailwind.build.config.js';
+@source '../**/*.css';
+@source '../../examples/**/*.html';
+@plugin 'tailwindcss-scoped-preflight' {
+  isolation-strategy: inside;
+  selector: [elv];
+}

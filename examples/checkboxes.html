@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkboxes — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Checkboxes</h1>
+<p class="subtitle">CSS classes: <code>.checkbox</code>, <code>.checkbox--sm</code>, <code>.checkbox--lg</code></p>
+
+<h2>Sizes — unchecked</h2>
+<div class="component-row" elv>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox">
+  <input class="elv-checkbox" type="checkbox">
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox">
+</div>
+
+<h2>Sizes — checked</h2>
+<div class="component-row" elv>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" checked>
+  <input class="elv-checkbox" type="checkbox" checked>
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" checked>
+</div>
+
+<h2>Indeterminate</h2>
+<div class="component-row" elv>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" id="ind-sm">
+  <input class="elv-checkbox" type="checkbox" id="ind-md">
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" id="ind-lg">
+</div>
+<script>
+  document.getElementById('ind-sm').indeterminate = true;
+  document.getElementById('ind-md').indeterminate = true;
+  document.getElementById('ind-lg').indeterminate = true;
+</script>
+
+<h2>Disabled — unchecked</h2>
+<div class="component-row" elv>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" disabled>
+  <input class="elv-checkbox" type="checkbox" disabled>
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" disabled>
+</div>
+
+<h2>Disabled — checked</h2>
+<div class="component-row" elv>
+  <input class="elv-checkbox elv-checkbox--sm" type="checkbox" disabled checked>
+  <input class="elv-checkbox" type="checkbox" disabled checked>
+  <input class="elv-checkbox elv-checkbox--lg" type="checkbox" disabled checked>
+</div>
+
+<h2>With label — large</h2>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <label class="elv-label"><input class="elv-checkbox elv-checkbox--lg" type="checkbox" checked> Large elv-checkbox with default label</label>
+  <label class="elv-label"><input class="elv-checkbox elv-checkbox--lg" type="checkbox"> Another large option</label>
+</div>
+
+<h2>With label — medium</h2>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <label class="elv-label elv-label--sm"><input class="elv-checkbox" type="checkbox" checked> Medium elv-checkbox with small label</label>
+  <label class="elv-label elv-label--sm"><input class="elv-checkbox" type="checkbox"> Accept terms and conditions</label>
+</div>
+
+<h2>With label — small</h2>
+<div class="component-col" elv style="gap: 0.5rem;">
+  <label class="elv-label elv-label--xs"><input class="elv-checkbox elv-checkbox--sm" type="checkbox" checked> Small elv-checkbox with xs label</label>
+  <label class="elv-label elv-label--xs"><input class="elv-checkbox elv-checkbox--sm" type="checkbox"> Subscribe to newsletter</label>
+</div>
+
+<h2>Disabled with label</h2>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <label class="elv-label elv-label--disabled"><input class="elv-checkbox elv-checkbox--lg" type="checkbox" disabled checked> Disabled checked</label>
+  <label class="elv-label elv-label--sm elv-label--disabled"><input class="elv-checkbox" type="checkbox" disabled> Feature locked</label>
+</div>
+
+<h2>Wrapper pattern (for Rails form helpers)</h2>
+<p class="subtitle">Use <code>.elv-label__wrapper</code> when input and label are separate elements (e.g. <code>f.check_box</code> + <code>f.label</code>).</p>
+<div class="component-col" elv style="gap: 0.75rem;">
+  <div class="elv-label__wrapper">
+    <input class="elv-checkbox elv-checkbox--lg" type="checkbox" checked id="wrap-lg">
+    <label class="elv-label" for="wrap-lg">Large with wrapper</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="elv-checkbox" type="checkbox" id="wrap-md">
+    <label class="elv-label elv-label--sm" for="wrap-md">Medium with wrapper</label>
+  </div>
+  <div class="elv-label__wrapper elv-label__wrapper--sm">
+    <input class="elv-checkbox elv-checkbox--sm" type="checkbox" checked id="wrap-sm">
+    <label class="elv-label elv-label--xs" for="wrap-sm">Small with wrapper</label>
+  </div>
+</div>
+
+</body>
+</html>

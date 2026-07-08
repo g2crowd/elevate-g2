@@ -1,0 +1,195 @@
+/* Control Button — a neutral button for toolbars and segmented groups.
+ *
+ * DOM (with label + icons):
+ *   <div class="ctrl-btn ctrl-btn--md" elv>
+ *     <div class="ctrl-btn__inner">
+ *       <svg class="icon ctrl-btn__icon">…</svg>
+ *       <span class="ctrl-btn__label">Label</span>
+ *       <svg class="icon ctrl-btn__icon">…</svg>
+ *     </div>
+ *     <div class="ctrl-btn__dropdown">
+ *       <svg class="icon ctrl-btn__icon">▾</svg>
+ *     </div>
+ *   </div>
+ *
+ * DOM (icon-only):
+ *   <button class="ctrl-btn ctrl-btn--md ctrl-btn--icon-only" elv>
+ *     <svg class="icon ctrl-btn__icon">…</svg>
+ *   </button>
+ *
+ * element_type: <button>, <div>, <a>, <input type="checkbox|radio">
+ *
+ * Segments: (none=default), --left-cap, --middle, --right-cap
+ * Sizes:    --lg, --md (default), --sm, --xs
+ * States:   --active, [disabled]
+ */
+
+@layer components {
+  /* ── Block ─────────────────────────────────────────────── */
+
+  .ctrl-btn {
+    @apply elv:inline-flex
+      elv:items-center
+      elv:justify-center
+      elv:border
+      elv:border-solid
+      elv:border-light
+      elv:transition-all
+      elv:duration-150
+      elv:ease-in
+      elv:bg-neutral-5
+      elv:text-default
+      elv:min-w-6
+      elv:gap-1
+      elv:rounded-sm;
+
+    @apply elv:hover:bg-primary-20
+      elv:hover:text-primary;
+
+    @apply elv:active:bg-primary-20
+      elv:active:text-primary
+      elv:active:shadow-[inset_0_0_4px_1px_#201f2366];
+
+    @apply elv:focus:outline-neutral-40
+      elv:focus:outline
+      elv:focus:shadow-ui-focus
+      elv:focus:border-primary
+      elv:focus:text-primary;
+
+    @apply elv:disabled:cursor-not-allowed
+      elv:disabled:bg-neutral-10
+      elv:disabled:text-disabled;
+  }
+
+  .ctrl-btn:where(a) {
+    @apply elv:a--reset;
+  }
+
+  /* ── Active state ──────────────────────────────────────── */
+
+  .ctrl-btn--active {
+    @apply elv:bg-primary-20
+      elv:text-primary;
+  }
+
+  /* ── Sizes ─────────────────────────────────────────────── */
+
+  .ctrl-btn--xs {
+    @apply elv:h-6 elv:rounded-xs;
+  }
+
+  .ctrl-btn--sm {
+    @apply elv:h-8;
+  }
+
+  .ctrl-btn--md {
+    @apply elv:h-10;
+  }
+
+  .ctrl-btn--lg {
+    @apply elv:h-12;
+  }
+
+  /* ── Icon-only sizing (square) ─────────────────────────── */
+
+  .ctrl-btn--icon-only.ctrl-btn--xs {
+    @apply elv:w-6;
+  }
+
+  .ctrl-btn--icon-only.ctrl-btn--sm {
+    @apply elv:w-8;
+  }
+
+  .ctrl-btn--icon-only.ctrl-btn--md {
+    @apply elv:w-10;
+  }
+
+  .ctrl-btn--icon-only.ctrl-btn--lg {
+    @apply elv:w-12;
+  }
+
+  /* ── Segments ──────────────────────────────────────────── */
+
+  .ctrl-btn--left-cap {
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+
+  .ctrl-btn--left-cap.ctrl-btn--xs {
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+
+  .ctrl-btn--middle {
+    @apply elv:rounded-0;
+  }
+
+  .ctrl-btn--right-cap {
+    border-radius: 0 0.5rem 0.5rem 0;
+  }
+
+  .ctrl-btn--right-cap.ctrl-btn--xs {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+
+  /* ── Inner wrapper ─────────────────────────────────────── */
+
+  .ctrl-btn__inner {
+    @apply elv:flex
+      elv:items-center
+      elv:justify-center
+      elv:gap-0;
+  }
+
+  .ctrl-btn--xs .ctrl-btn__inner {
+    @apply elv:px-1;
+  }
+
+  .ctrl-btn--sm .ctrl-btn__inner,
+  .ctrl-btn--md .ctrl-btn__inner {
+    @apply elv:px-2;
+  }
+
+  .ctrl-btn--lg .ctrl-btn__inner {
+    @apply elv:px-3;
+  }
+
+  /* ── Label ─────────────────────────────────────────────── */
+
+  .ctrl-btn__label {
+    @apply elv:px-1 elv:font-figtree elv:font-semibold;
+  }
+
+  .ctrl-btn--xs .ctrl-btn__label,
+  .ctrl-btn--sm .ctrl-btn__label {
+    @apply elv:text-sm;
+  }
+
+  .ctrl-btn--md .ctrl-btn__label,
+  .ctrl-btn--lg .ctrl-btn__label {
+    @apply elv:text-base;
+  }
+
+  /* ── Dropdown menu divider ─────────────────────────────── */
+
+  .ctrl-btn__dropdown {
+    @apply elv:border-l
+      elv:border-light
+      elv:flex
+      elv:items-center;
+  }
+
+  .ctrl-btn--xs .ctrl-btn__dropdown {
+    @apply elv:h-6 elv:px-1;
+  }
+
+  .ctrl-btn--sm .ctrl-btn__dropdown {
+    @apply elv:h-8 elv:px-2;
+  }
+
+  .ctrl-btn--md .ctrl-btn__dropdown {
+    @apply elv:h-10 elv:px-2;
+  }
+
+  .ctrl-btn--lg .ctrl-btn__dropdown {
+    @apply elv:h-12 elv:px-2;
+  }
+}

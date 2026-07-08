@@ -1,0 +1,61 @@
+{
+  "name": "@g2crowd/elevate",
+  "version": "2.0.6",
+  "description": "G2 Elevate design system — Tailwind CSS theme, component styles, and design tokens",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g2crowd/elevate-g2.git"
+  },
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./css": "./dist/elevate.css",
+    "./tailwind": "./src/tailwind.config.js",
+    "./tailwind.config": "./src/tailwind.config.js",
+    "./theme": "./src/theme/index.js",
+    "./theme/*": "./src/theme/*.js",
+    "./postcss/legacy-prefix": "./src/postcss/legacy-prefix.js",
+    "./components": "./dist/components.css",
+    "./components/src": "./src/css/components.css",
+    "./components/*": "./src/css/components/*.css",
+    "./dark": "./src/css/dark.css",
+    "./vendor/select2": "./src/css/vendor/select2.css",
+    "./vendor/choices": "./src/css/vendor/choices.css"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "yarn build:css && yarn build:components",
+    "build:css": "postcss src/css/application.css -o dist/elevate.css",
+    "build:components": "postcss src/css/components-build.css -o dist/components.css",
+    "build:site": "vite build",
+    "test": "vitest run --passWithNoTests",
+    "test:watch": "vitest",
+    "clean": "rm -rf dist dist-site",
+    "prepack": "yarn build"
+  },
+  "dependencies": {
+    "tailwindcss-scoped-preflight": "^4"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "happy-dom": "^20.0.2",
+    "postcss": "^8.5.14",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "postcss-inline-svg": "^6.0.0",
+    "postcss-nesting": "^13.0.2",
+    "postcss-svgo": "^8.0.0",
+    "tailwindcss": "^4",
+    "vite": "^8.0.10",
+    "vitest": "^2.1.0"
+  },
+  "packageManager": "yarn@4.13.0"
+}

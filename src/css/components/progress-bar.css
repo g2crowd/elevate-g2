@@ -1,0 +1,29 @@
+@layer components {
+  .progress-bar {
+      @apply elv:w-full elv:flex elv:flex-col elv:gap-y-1;
+  }
+
+  .progress-bar__track {
+      @apply elv:w-full elv:overflow-hidden elv:rounded-full elv:bg-neutral-10;
+  }
+
+  .progress-bar__track--sm {
+      @apply elv:h-2;
+  }
+
+  .progress-bar__track--lg {
+      @apply elv:h-3;
+  }
+
+  .progress-bar__fill {
+      @apply elv:rounded-full elv:h-full;
+  }
+
+  .progress-bar__fill--brand {
+      @apply elv:bg-brand;
+  }
+
+  .progress-bar__fill--primary {
+      @apply elv:bg-primary;
+  }
+}

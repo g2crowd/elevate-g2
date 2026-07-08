@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Menu — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Dropdown Menu</h1>
+<p class="subtitle">CSS component: <code>.elv-dropdown</code>. Consumer provides toggle/positioning JS.</p>
+
+<h2>Sizes</h2>
+<div class="component-col" elv>
+  <div class="component-row" style="gap: 2rem; align-items: flex-start;">
+
+    <div class="elv-dropdown" data-dropdown>
+      <div class="elv-dropdown__trigger" data-dropdown-trigger>
+        <button class="btn btn--secondary btn--sm">Small menu</button>
+      </div>
+      <div class="elv-dropdown__menu elv-dropdown__menu--items elv-dropdown__menu--sm" hidden data-dropdown-menu>
+        <div class="elv-dropdown__item elv-dropdown__item--sm">
+          <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" style="margin-right: 8px;"><circle cx="10" cy="6" r="3"/><path d="M10 11c-4 0-6 2-6 3v1h12v-1c0-1-2-3-6-3z"/></svg>
+          <span class="elv-body elv-body--sm elv-font-semibold">Account</span>
+        </div>
+        <div class="elv-dropdown__item elv-dropdown__item--sm">
+          <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" style="margin-right: 8px;"><path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.82 4.82L10 13.27l-4.32 2.23.82-4.82L3 7.27l4.91-1.01z"/></svg>
+          <span class="elv-body elv-body--sm elv-font-semibold">Favorites</span>
+        </div>
+        <hr class="elv-dropdown__divider" role="separator">
+        <div class="elv-dropdown__item elv-dropdown__item--sm">
+          <span class="elv-body elv-body--sm">Sign out</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="elv-dropdown" data-dropdown>
+      <div class="elv-dropdown__trigger" data-dropdown-trigger>
+        <button class="btn btn--secondary btn--sm">Medium menu</button>
+      </div>
+      <div class="elv-dropdown__menu elv-dropdown__menu--items elv-dropdown__menu--md" hidden data-dropdown-menu>
+        <div class="elv-dropdown__item elv-dropdown__item--md">
+          <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" style="margin-right: 8px;"><circle cx="10" cy="6" r="3"/><path d="M10 11c-4 0-6 2-6 3v1h12v-1c0-1-2-3-6-3z"/></svg>
+          <span class="elv-body elv-font-semibold">Account</span>
+        </div>
+        <div class="elv-dropdown__item elv-dropdown__item--md">
+          <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" style="margin-right: 8px;"><path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.82 4.82L10 13.27l-4.32 2.23.82-4.82L3 7.27l4.91-1.01z"/></svg>
+          <span class="elv-body elv-font-semibold">Favorites</span>
+        </div>
+        <hr class="elv-dropdown__divider" role="separator">
+        <div class="elv-dropdown__item elv-dropdown__item--md">
+          <span class="elv-body">Settings</span>
+        </div>
+        <div class="elv-dropdown__item elv-dropdown__item--md">
+          <span class="elv-body">Sign out</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="elv-dropdown" data-dropdown>
+      <div class="elv-dropdown__trigger" data-dropdown-trigger>
+        <button class="btn btn--secondary btn--sm">Large menu</button>
+      </div>
+      <div class="elv-dropdown__menu elv-dropdown__menu--items elv-dropdown__menu--lg" hidden data-dropdown-menu>
+        <div class="elv-dropdown__item elv-dropdown__item--lg">
+          <svg class="icon icon--md" viewBox="0 0 20 20" fill="currentColor" style="margin-right: 8px;"><circle cx="10" cy="6" r="3"/><path d="M10 11c-4 0-6 2-6 3v1h12v-1c0-1-2-3-6-3z"/></svg>
+          <span class="elv-body elv-font-semibold">Account</span>
+        </div>
+        <div class="elv-dropdown__item elv-dropdown__item--lg">
+          <svg class="icon icon--md" viewBox="0 0 20 20" fill="currentColor" style="margin-right: 8px;"><path d="M10 2l2.09 4.26L17 7.27l-3.5 3.41.82 4.82L10 13.27l-4.32 2.23.82-4.82L3 7.27l4.91-1.01z"/></svg>
+          <span class="elv-body elv-font-semibold">Favorites</span>
+        </div>
+        <hr class="elv-dropdown__divider" role="separator">
+        <div class="elv-dropdown__item elv-dropdown__item--lg">
+          <span class="elv-body">Settings</span>
+        </div>
+        <div class="elv-dropdown__item elv-dropdown__item--lg">
+          <span class="elv-body">Sign out</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<h2>With section labels</h2>
+<div class="component-col" elv>
+  <div class="elv-dropdown" data-dropdown>
+    <div class="elv-dropdown__trigger" data-dropdown-trigger>
+      <button class="btn btn--secondary btn--sm">Actions</button>
+    </div>
+    <div class="elv-dropdown__menu elv-dropdown__menu--items elv-dropdown__menu--md" hidden data-dropdown-menu>
+      <div class="elv-dropdown__section-label">Navigation</div>
+      <hr class="elv-dropdown__divider" role="separator">
+      <div class="elv-dropdown__item elv-dropdown__item--md">
+        <span class="elv-body">Dashboard</span>
+      </div>
+      <div class="elv-dropdown__item elv-dropdown__item--md">
+        <span class="elv-body">Reports</span>
+      </div>
+      <div class="elv-dropdown__section-label">Account</div>
+      <hr class="elv-dropdown__divider" role="separator">
+      <div class="elv-dropdown__item elv-dropdown__item--md">
+        <span class="elv-body">Profile</span>
+      </div>
+      <div class="elv-dropdown__item elv-dropdown__item--md">
+        <span class="elv-body">Sign out</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>With checkboxes</h2>
+<div class="component-col" elv>
+  <div class="elv-dropdown" data-dropdown>
+    <div class="elv-dropdown__trigger" data-dropdown-trigger>
+      <button class="btn btn--secondary btn--sm">Filter</button>
+    </div>
+    <div class="elv-dropdown__menu elv-dropdown__menu--items elv-dropdown__menu--md" hidden data-dropdown-menu data-keep-open>
+      <label class="elv-dropdown__item elv-dropdown__item--md">
+        <input type="checkbox" class="elv-checkbox" checked>
+        <span class="elv-body" style="margin-left: 8px;">Active</span>
+      </label>
+      <label class="elv-dropdown__item elv-dropdown__item--md">
+        <input type="checkbox" class="elv-checkbox">
+        <span class="elv-body" style="margin-left: 8px;">Inactive</span>
+      </label>
+      <label class="elv-dropdown__item elv-dropdown__item--md">
+        <input type="checkbox" class="elv-checkbox">
+        <span class="elv-body" style="margin-left: 8px;">Archived</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.querySelectorAll('[data-dropdown]').forEach((dropdown) => {
+    const trigger = dropdown.querySelector('[data-dropdown-trigger]');
+    const menu = dropdown.querySelector('[data-dropdown-menu]');
+    const keepOpen = menu.hasAttribute('data-keep-open');
+
+    trigger.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isHidden = menu.hasAttribute('hidden');
+      closeAll();
+      if (isHidden) menu.removeAttribute('hidden');
+    });
+
+    menu.addEventListener('click', (e) => {
+      if (keepOpen) {
+        e.stopPropagation();
+        return;
+      }
+      menu.setAttribute('hidden', '');
+    });
+  });
+
+  function closeAll() {
+    document.querySelectorAll('[data-dropdown-menu]').forEach((m) => {
+      m.setAttribute('hidden', '');
+    });
+  }
+
+  document.addEventListener('click', closeAll);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeAll();
+  });
+</script>
+
+</body>
+</html>

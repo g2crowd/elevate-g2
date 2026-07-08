@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Tabs</h1>
+<p class="subtitle">CSS classes: <code>.tab-group</code>, <code>.tab-list</code>, <code>.tab-list--full-width</code>, <code>.tab</code>, <code>.tab-icon</code>, <code>.tab-panels</code></p>
+
+<h2>Default Tabs</h2>
+<div class="component-row" elv>
+  <div class="tab-group" elv>
+    <div class="tab-list" elv role="tablist" aria-label="Default tabs">
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="false">
+        <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M4.5 17C4.0875 17 3.73437 16.8531 3.44062 16.5594C3.14687 16.2656 3 15.9125 3 15.5V3H4.5V15.5H17V17H4.5ZM5.5 14.5V7.5H8.5V14.5H5.5ZM9.5 14.5V4H12.5V14.5H9.5ZM13.5 14.5V10.5H16.5V14.5H13.5Z"/></svg>
+        <span>Overview</span>
+      </button>
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="true">
+        <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M5.5 16C5.0875 16 4.73437 15.8531 4.44062 15.5594C4.14687 15.2656 4 14.9125 4 14.5V5.5C4 5.0875 4.14687 4.73438 4.44062 4.44063C4.73437 4.14688 5.0875 4 5.5 4H14.5C14.9125 4 15.2656 4.14688 15.5594 4.44063C15.8531 4.73438 16 5.0875 16 5.5V14.5C16 14.9125 15.8531 15.2656 15.5594 15.5594C15.2656 15.8531 14.9125 16 14.5 16H5.5ZM5.5 14.5H14.5V5.5H5.5V14.5ZM7 13H13V11.5H7V13ZM7 10.25H13V8.75H7V10.25ZM7 7.5H13V6H7V7.5Z"/></svg>
+        <span>Details</span>
+      </button>
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="false">
+        <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M10 17C8.06944 17 6.38194 16.3194 4.9375 14.9583L5.97917 13.9167C7.09028 15.0278 8.43056 15.5833 10 15.5833C11.5556 15.5833 12.8889 15.0417 14 13.9583C15.1111 12.875 15.6667 11.5556 15.6667 10C15.6667 8.43056 15.1111 7.09722 14 6C12.8889 4.90278 11.5556 4.35417 10 4.35417C8.43056 4.35417 7.09722 4.89583 6 5.97917C4.90278 7.0625 4.35417 8.38889 4.35417 9.95833H6.5L3.95833 12.5L1.41667 9.95833H3.5C3.5 8.19444 4.11806 6.67361 5.35417 5.39583C6.59028 4.11806 8.09028 3.47917 9.85417 3.47917H10.1458C11.9097 3.47917 13.4097 4.11806 14.6458 5.39583C15.8819 6.67361 16.5 8.19444 16.5 9.95833V10.0417C16.5 11.8056 15.8819 13.3056 14.6458 14.5417C13.4097 15.7778 11.9097 16.3958 10.1458 16.3958L10 17ZM12.3542 13.3125L9.29167 10.25V6H10.7083V9.70833L13.4167 12.2708L12.3542 13.3125Z"/></svg>
+        <span>Activity</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<h2>Tabs without Icons</h2>
+<div class="component-row" elv>
+  <div class="tab-group" elv>
+    <div class="tab-list" elv role="tablist" aria-label="Text-only tabs">
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="true"><span>Products</span></button>
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="false"><span>Reviews</span></button>
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="false"><span>Comparisons</span></button>
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="false"><span>Alternatives</span></button>
+    </div>
+  </div>
+</div>
+
+<h2>Full Width Tabs</h2>
+<div class="component-row" elv>
+  <div class="tab-group" elv>
+    <div class="tab-list tab-list--full-width" elv role="tablist" aria-label="Full width tabs">
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="true">
+        <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M4.47917 17C4.22917 16.7361 3.99306 16.4583 3.77083 16.1667C3.54861 15.875 3.35417 15.5694 3.1875 15.25C3.02083 14.9306 2.88194 14.5972 2.77083 14.25C2.65972 13.9028 2.58333 13.5417 2.54167 13.1667L4 12.9583C4.11111 13.7361 4.36111 14.4444 4.75 15.0833C5.13889 15.7222 5.625 16.2639 6.20833 16.7083L4.47917 17ZM2.54167 6.83333C2.58333 6.45833 2.65972 6.09722 2.77083 5.75C2.88194 5.40278 3.02083 5.06944 3.1875 4.75C3.35417 4.43056 3.54861 4.125 3.77083 3.83333C3.99306 3.54167 4.22917 3.26389 4.47917 3L6.20833 3.29167C5.625 3.73611 5.13889 4.27778 4.75 4.91667C4.36111 5.55556 4.11111 6.26389 4 7.04167L2.54167 6.83333ZM13.7917 17L15.5208 16.7083C16.1042 16.2639 16.5903 15.7222 16.9792 15.0833C17.3681 14.4444 17.6181 13.7361 17.7292 12.9583L19.1875 13.1667C19.0486 14.0139 18.7778 14.7986 18.375 15.5208C17.9722 16.2431 17.4722 16.875 16.875 17.4167L16.6458 17.5833L13.7917 17ZM17.7292 7.04167C17.6181 6.26389 17.3681 5.55556 16.9792 4.91667C16.5903 4.27778 16.1042 3.73611 15.5208 3.29167L13.7917 3L16.6458 2.41667L16.875 2.58333C17.4722 3.125 17.9722 3.75694 18.375 4.47917C18.7778 5.20139 19.0486 5.98611 19.1875 6.83333L17.7292 7.04167ZM10 14C8.90278 14 7.95139 13.6111 7.14583 12.8333C6.34028 12.0556 5.9375 11.1111 5.9375 10C5.9375 8.88889 6.34028 7.94444 7.14583 7.16667C7.95139 6.38889 8.90278 6 10 6C11.0972 6 12.0486 6.38889 12.8542 7.16667C13.6597 7.94444 14.0625 8.88889 14.0625 10C14.0625 11.1111 13.6597 12.0556 12.8542 12.8333C12.0486 13.6111 11.0972 14 10 14Z"/></svg>
+        <span>Accounts</span>
+      </button>
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="false">
+        <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M8.39581 18L7.93748 15.625C7.61804 15.5 7.30901 15.3542 7.0104 15.1875C6.71179 15.0208 6.43054 14.8264 6.16665 14.6042L3.87498 15.375L2.27081 12.6042L4.08331 11.0208C4.05554 10.8542 4.0347 10.6875 4.02081 10.5208C4.00692 10.3542 3.99998 10.1806 3.99998 10C3.99998 9.81944 4.00692 9.64583 4.02081 9.47917C4.0347 9.3125 4.05554 9.14583 4.08331 8.97917L2.27081 7.39583L3.87498 4.625L6.16665 5.39583C6.43054 5.17361 6.71179 4.97917 7.0104 4.8125C7.30901 4.64583 7.61804 4.5 7.93748 4.375L8.39581 2H11.6041L12.0625 4.375C12.3819 4.5 12.691 4.64583 12.9896 4.8125C13.2882 4.97917 13.5694 5.17361 13.8333 5.39583L16.125 4.625L17.7291 7.39583L15.9166 8.97917C15.9444 9.14583 15.9653 9.3125 15.9791 9.47917C15.993 9.64583 16 9.81944 16 10C16 10.1806 15.993 10.3542 15.9791 10.5208C15.9653 10.6875 15.9444 10.8542 15.9166 11.0208L17.7291 12.6042L16.125 15.375L13.8333 14.6042C13.5694 14.8264 13.2882 15.0208 12.9896 15.1875C12.691 15.3542 12.3819 15.5 12.0625 15.625L11.6041 18H8.39581ZM9.99998 13C10.8333 13 11.5416 12.7083 12.125 12.125C12.7083 11.5417 13 10.8333 13 10C13 9.16667 12.7083 8.45833 12.125 7.875C11.5416 7.29167 10.8333 7 9.99998 7C9.16665 7 8.45831 7.29167 7.87498 7.875C7.29165 8.45833 6.99998 9.16667 6.99998 10C6.99998 10.8333 7.29165 11.5417 7.87498 12.125C8.45831 12.7083 9.16665 13 9.99998 13Z"/></svg>
+        <span>Settings</span>
+      </button>
+      <button class="elv-tab" elv type="button" role="elv-tab" aria-selected="false">
+        <svg class="tab-icon" viewBox="0 0 20 20" fill="currentColor"><path d="M4.5 17C4.0875 17 3.73437 16.8531 3.44062 16.5594C3.14687 16.2656 3 15.9125 3 15.5V3H4.5V15.5H17V17H4.5ZM5.5 14.5V7.5H8.5V14.5H5.5ZM9.5 14.5V4H12.5V14.5H9.5ZM13.5 14.5V10.5H16.5V14.5H13.5Z"/></svg>
+        <span>Analytics</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

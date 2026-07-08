@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Control Buttons — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Control Buttons</h1>
+<p class="subtitle">CSS classes: <code>.ctrl-btn</code>, <code>.ctrl-btn--{size}</code>, <code>.ctrl-btn--{segment}</code></p>
+
+<h2>Sizes — with label + icons</h2>
+<div class="component-row" elv>
+  <button class="ctrl-btn ctrl-btn--lg" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Large</span>
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 12.458L5.625 8.083L6.5 7.208L10 10.708L13.5 7.208L14.375 8.083L10 12.458Z"/></svg>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--md" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Medium</span>
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 12.458L5.625 8.083L6.5 7.208L10 10.708L13.5 7.208L14.375 8.083L10 12.458Z"/></svg>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--sm" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+      <span class="ctrl-btn__label">Small</span>
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 9.967L4.5 6.467L5.2 5.767L8 8.567L10.8 5.767L11.5 6.467L8 9.967Z"/></svg>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--xs" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+      <span class="ctrl-btn__label">XS</span>
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 9.967L4.5 6.467L5.2 5.767L8 8.567L10.8 5.767L11.5 6.467L8 9.967Z"/></svg>
+    </div>
+  </button>
+</div>
+
+<h2>Active state</h2>
+<div class="component-row" elv>
+  <button class="ctrl-btn ctrl-btn--lg ctrl-btn--active" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Active</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--md ctrl-btn--active" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Active</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--sm ctrl-btn--active" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+      <span class="ctrl-btn__label">Active</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--xs ctrl-btn--active" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+      <span class="ctrl-btn__label">Active</span>
+    </div>
+  </button>
+</div>
+
+<h2>Disabled</h2>
+<div class="component-row" elv>
+  <button class="ctrl-btn ctrl-btn--lg" elv type="button" disabled>
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Disabled</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--md" elv type="button" disabled>
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Disabled</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--sm" elv type="button" disabled>
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+      <span class="ctrl-btn__label">Disabled</span>
+    </div>
+  </button>
+</div>
+
+<h2>Icon-only</h2>
+<div class="component-row" elv>
+  <button class="ctrl-btn ctrl-btn--lg ctrl-btn--icon-only" elv type="button">
+    <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+  </button>
+  <button class="ctrl-btn ctrl-btn--md ctrl-btn--icon-only" elv type="button">
+    <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+  </button>
+  <button class="ctrl-btn ctrl-btn--sm ctrl-btn--icon-only" elv type="button">
+    <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+  </button>
+  <button class="ctrl-btn ctrl-btn--xs ctrl-btn--icon-only" elv type="button">
+    <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+  </button>
+</div>
+
+<h2>With dropdown menu</h2>
+<div class="component-row" elv>
+  <button class="ctrl-btn ctrl-btn--lg" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Options</span>
+    </div>
+    <div class="ctrl-btn__dropdown">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 12.458L5.625 8.083L6.5 7.208L10 10.708L13.5 7.208L14.375 8.083L10 12.458Z"/></svg>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--md" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Options</span>
+    </div>
+    <div class="ctrl-btn__dropdown">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M10 12.458L5.625 8.083L6.5 7.208L10 10.708L13.5 7.208L14.375 8.083L10 12.458Z"/></svg>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--sm" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4.4 8.4H2.4V7.6H4.4V5.6H5.2V7.6H7.2V8.4H5.2V10.4H4.4V8.4ZM8.8 6H13.6V7H8.8V6ZM8.8 9H13.6V10H8.8V9Z"/></svg>
+      <span class="ctrl-btn__label">Options</span>
+    </div>
+    <div class="ctrl-btn__dropdown">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 9.967L4.5 6.467L5.2 5.767L8 8.567L10.8 5.767L11.5 6.467L8 9.967Z"/></svg>
+    </div>
+  </button>
+</div>
+
+<h2>Segmented group — Medium</h2>
+<div class="component-row" elv style="gap: 0;">
+  <button class="ctrl-btn ctrl-btn--md ctrl-btn--left-cap ctrl-btn--active" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Left</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--md ctrl-btn--middle" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Middle</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--md ctrl-btn--right-cap" elv type="button">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Right</span>
+    </div>
+  </button>
+</div>
+
+<h2>Segmented group — XS</h2>
+<div class="component-row" elv style="gap: 0;">
+  <button class="ctrl-btn ctrl-btn--xs ctrl-btn--left-cap" elv type="button">
+    <div class="ctrl-btn__inner">
+      <span class="ctrl-btn__label">One</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--xs ctrl-btn--middle ctrl-btn--active" elv type="button">
+    <div class="ctrl-btn__inner">
+      <span class="ctrl-btn__label">Two</span>
+    </div>
+  </button>
+  <button class="ctrl-btn ctrl-btn--xs ctrl-btn--right-cap" elv type="button">
+    <div class="ctrl-btn__inner">
+      <span class="ctrl-btn__label">Three</span>
+    </div>
+  </button>
+</div>
+
+<h2>As &lt;a&gt; element</h2>
+<div class="component-row" elv>
+  <a class="ctrl-btn ctrl-btn--md" elv href="#">
+    <div class="ctrl-btn__inner">
+      <svg class="icon ctrl-btn__icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M5.5 10.5H3V9.5H5.5V7H6.5V9.5H9V10.5H6.5V13H5.5V10.5ZM11 7.5H17V8.75H11V7.5ZM11 11.25H17V12.5H11V11.25Z"/></svg>
+      <span class="ctrl-btn__label">Link</span>
+    </div>
+  </a>
+</div>
+
+</body>
+</html>

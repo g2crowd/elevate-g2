@@ -1,0 +1,116 @@
+@layer components {
+  .elv-popover {
+    @apply elv:flex elv:flex-col elv:rounded-sm elv:shadow-2
+      elv:absolute elv:bg-neutral-0 elv:z-10 elv:w-80;
+    transition: opacity 150ms ease;
+    opacity: 0;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &::after {
+      border: inset 0.75rem;
+    }
+
+    &::before {
+      border: inset calc(0.75rem + 1px);
+    }
+
+    &.top::after {
+      top: 100%;
+      border-color: #ffffff transparent transparent;
+      border-top-style: solid;
+      border-bottom-width: 0;
+    }
+
+    &.top::before {
+      top: 100%;
+      border-color: #dfdfe2 transparent transparent;
+      border-top-style: solid;
+      border-bottom-width: 0;
+    }
+
+    &.bottom::after {
+      bottom: 100%;
+      border-color: transparent transparent #ffffff;
+      border-bottom-style: solid;
+      border-top-width: 0;
+    }
+
+    &.bottom::before {
+      bottom: 100%;
+      border-color: transparent transparent #dfdfe2;
+      border-bottom-style: solid;
+      border-top-width: 0;
+    }
+  }
+
+  .elv-popover.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .elv-popover[hidden] {
+    display: none;
+  }
+
+  .elv-popover__heading {
+    @apply elv:flex elv:items-center elv:justify-between elv:p-3 elv:rounded-t-sm;
+  }
+
+  .elv-popover__heading-text {
+    @apply elv:flex-1 elv:text-sm elv:font-semibold elv:text-default;
+  }
+
+  .elv-popover__heading-text--center {
+    @apply elv:text-center;
+  }
+
+  .elv-popover__close {
+    @apply elv:cursor-pointer elv:p-0;
+    background: transparent;
+    border: none;
+  }
+
+  .elv-popover__close .icon {
+    @apply elv:fill-nonessential;
+  }
+
+  .elv-popover__body {
+    @apply elv:px-4 elv:pb-4 elv:text-sm elv:text-default;
+  }
+
+  .elv-popover__body--with-heading {
+    @apply elv:pt-0;
+  }
+
+  .elv-popover__body--no-heading {
+    @apply elv:pt-4;
+  }
+
+  .elv-popover__body--center {
+    @apply elv:text-center;
+  }
+
+  .elv-popover__actions {
+    @apply elv:flex elv:pt-1 elv:px-4 elv:pb-4;
+  }
+
+  .elv-popover__actions--center {
+    @apply elv:justify-center;
+  }
+
+  .elv-popover__actions--right {
+    @apply elv:justify-end;
+  }
+
+}

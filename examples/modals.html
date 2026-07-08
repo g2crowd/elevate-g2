@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Modal</h1>
+<p class="subtitle">CSS component: <code>.modal</code>. Uses native <code>&lt;dialog&gt;</code> element.</p>
+
+<h2>Sizes</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-sm').showModal()">Small (450px)</button>
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-md').showModal()">Medium (564px)</button>
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-lg').showModal()">Large (680px)</button>
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-xl').showModal()">XL (clamp)</button>
+  </div>
+</div>
+
+<dialog id="modal-sm" class="elv-modal elv-modal--sm" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title">
+        <span class="elv-heading elv-heading--sm">Small Modal</span>
+      </div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-sm').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body">
+    <p class="elv-body">Small elv-modal body content.</p>
+  </div>
+  <div class="elv-modal__footer elv-modal__footer--right">
+    <button class="btn btn--tertiary btn--sm" onclick="document.getElementById('modal-sm').close()">Cancel</button>
+    <button class="btn btn--primary btn--sm">Confirm</button>
+  </div>
+</dialog>
+
+<dialog id="modal-md" class="elv-modal elv-modal--md" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title">
+        <span class="elv-heading elv-heading--sm">Medium Modal</span>
+      </div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-md').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body">
+    <p class="elv-body">Medium elv-modal body content. This is the default size used most often.</p>
+  </div>
+  <div class="elv-modal__footer elv-modal__footer--right">
+    <button class="btn btn--tertiary" onclick="document.getElementById('modal-md').close()">Cancel</button>
+    <button class="btn btn--primary">Submit</button>
+  </div>
+</dialog>
+
+<dialog id="modal-lg" class="elv-modal elv-modal--lg" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title">
+        <span class="elv-heading elv-heading--sm">Large Modal</span>
+      </div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-lg').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body">
+    <p class="elv-body">Large elv-modal with more room for complex content like forms or tables.</p>
+  </div>
+  <div class="elv-modal__footer elv-modal__footer--right">
+    <button class="btn btn--tertiary" onclick="document.getElementById('modal-lg').close()">Cancel</button>
+    <button class="btn btn--primary">Save</button>
+  </div>
+</dialog>
+
+<dialog id="modal-xl" class="elv-modal elv-modal--xl" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title">
+        <span class="elv-heading elv-heading--sm">XL Modal</span>
+      </div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-xl').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body">
+    <p class="elv-body">XL elv-modal uses clamp(410px, 80%, 1000px) for responsive width.</p>
+  </div>
+  <div class="elv-modal__footer elv-modal__footer--center">
+    <button class="btn btn--primary" onclick="document.getElementById('modal-xl').close()">Close</button>
+  </div>
+</dialog>
+
+<h2>Footer alignment</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-left').showModal()">Left footer</button>
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-center').showModal()">Center footer</button>
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-right').showModal()">Right footer</button>
+  </div>
+</div>
+
+<dialog id="modal-left" class="elv-modal elv-modal--md" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title"><span class="elv-heading elv-heading--sm">Left Footer</span></div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-left').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body"><p class="elv-body">Footer buttons aligned left.</p></div>
+  <div class="elv-modal__footer elv-modal__footer--left">
+    <button class="btn btn--primary btn--sm" onclick="document.getElementById('modal-left').close()">Done</button>
+  </div>
+</dialog>
+
+<dialog id="modal-center" class="elv-modal elv-modal--md" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title"><span class="elv-heading elv-heading--sm">Center Footer</span></div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-center').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body"><p class="elv-body">Footer buttons centered.</p></div>
+  <div class="elv-modal__footer elv-modal__footer--center">
+    <button class="btn btn--primary btn--sm" onclick="document.getElementById('modal-center').close()">OK</button>
+  </div>
+</dialog>
+
+<dialog id="modal-right" class="elv-modal elv-modal--md" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title"><span class="elv-heading elv-heading--sm">Right Footer</span></div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-right').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body"><p class="elv-body">Footer buttons aligned right (default).</p></div>
+  <div class="elv-modal__footer elv-modal__footer--right">
+    <button class="btn btn--tertiary btn--sm" onclick="document.getElementById('modal-right').close()">Cancel</button>
+    <button class="btn btn--primary btn--sm">Submit</button>
+  </div>
+</dialog>
+
+<h2>No footer</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-nofooter').showModal()">Open elv-modal without footer</button>
+  </div>
+</div>
+
+<dialog id="modal-nofooter" class="elv-modal elv-modal--md" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title"><span class="elv-heading elv-heading--sm">No Footer</span></div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-nofooter').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body">
+    <p class="elv-body">This elv-modal has no footer — just header and body.</p>
+  </div>
+</dialog>
+
+<h2>Glass (chromeless)</h2>
+<p class="subtitle">Transparent shell — content provides its own background and layout. Close button floats over content.</p>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-glass').showModal()">Open glass modal</button>
+  </div>
+</div>
+
+<dialog id="modal-glass" class="elv-modal elv-modal--md elv-modal--glass" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title">
+        <span class="elv-heading elv-heading--sm">Hidden Title</span>
+      </div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-glass').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body">
+    <div style="background: #fff; border-radius: 8px; padding: 2rem;">
+      <h3 class="elv-heading elv-heading--sm" style="margin-bottom: 0.75rem;">Self-contained content</h3>
+      <p class="elv-body">This content provides its own background, padding, and layout. The modal is just a transparent container with a floating close button.</p>
+      <p class="elv-body" style="margin-top: 0.75rem;">This pattern lets you lazy-load arbitrary content without the rendering context needing to know about modal headers or chrome.</p>
+      <div style="margin-top: 1.5rem; display: flex; gap: 0.25rem; justify-content: flex-end;">
+        <button class="btn btn--tertiary btn--sm" onclick="document.getElementById('modal-glass').close()">Cancel</button>
+        <button class="btn btn--primary btn--sm">Save</button>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<h2>Scrollable body</h2>
+<div class="component-col" elv>
+  <div class="component-row">
+    <button class="btn btn--secondary btn--sm" onclick="document.getElementById('modal-scroll').showModal()">Open scrollable modal</button>
+  </div>
+</div>
+
+<dialog id="modal-scroll" class="elv-modal elv-modal--md" elv>
+  <div class="elv-modal__header">
+    <div class="elv-modal__header-row">
+      <div class="elv-modal__header-title"><span class="elv-heading elv-heading--sm">Scrollable Content</span></div>
+      <button class="elv-modal__close" onclick="document.getElementById('modal-scroll').close()">
+        <svg class="icon icon--sm" viewBox="0 0 20 20" fill="currentColor"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="elv-modal__body">
+    <p class="elv-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p class="elv-body">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    <p class="elv-body">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+    <p class="elv-body">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+    <p class="elv-body">Similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
+    <p class="elv-body">Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus.</p>
+  </div>
+  <div class="elv-modal__footer elv-modal__footer--right">
+    <button class="btn btn--tertiary" onclick="document.getElementById('modal-scroll').close()">Cancel</button>
+    <button class="btn btn--primary">Accept</button>
+  </div>
+</dialog>
+
+
+</body>
+</html>

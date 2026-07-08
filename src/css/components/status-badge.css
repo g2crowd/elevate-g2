@@ -1,0 +1,61 @@
+@layer components {
+  .elv-status-badge {
+      @apply elv:max-h-6
+        elv:rounded-sm
+        elv:flex
+        elv:border
+        elv:py-0.5
+        elv:px-1
+        elv:w-fit
+        elv:text-sm
+        elv:leading-sm
+        elv:items-center
+        elv:bg-neutral-10
+        elv:border-light
+        elv:text-neutral;
+  }
+
+  .elv-status-badge--info {
+      @apply elv:bg-info-20 elv:border-info elv:text-info;
+  }
+
+  .elv-status-badge--success {
+      @apply elv:bg-success-20 elv:border-success elv:text-success;
+  }
+
+  .elv-status-badge--critical {
+      @apply elv:bg-critical-20 elv:border-critical elv:text-critical;
+  }
+
+  .elv-status-badge--warning {
+      @apply elv:bg-warning-20 elv:border-warning elv:text-warning;
+  }
+
+  .elv-status-badge--new {
+      @apply elv:bg-primary-20 elv:border-primary elv:text-primary;
+  }
+
+  .elv-status-badge__label {
+      @apply elv:px-1 elv:text-inherit;
+  }
+
+  .elv-status-badge__icon--active {
+      @apply elv:mx-1 elv:w-2 elv:h-2 elv:fill-green-120;
+  }
+
+  .elv-status-badge__icon--inactive {
+      @apply elv:mx-1 elv:w-2 elv:h-2 elv:fill-rorange-120;
+  }
+
+  .elv-status-badge__icon--pending {
+      @apply elv:mx-1 elv:w-2 elv:h-2 elv:fill-blue;
+  }
+
+  .elv-status-badge__icon--unassigned {
+      @apply elv:mx-1 elv:w-2 elv:h-2 elv:fill-yellow;
+  }
+
+  .elv-status-badge__icon--recommended {
+      @apply elv:fill-rorange;
+  }
+}

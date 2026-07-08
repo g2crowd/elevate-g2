@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inset Cards — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Inset Cards</h1>
+<p class="subtitle">CSS classes: <code>.inset-card</code>, <code>.inset-card--{sm|md|lg}</code></p>
+
+<h2>Sizes</h2>
+<div class="component-col" elv>
+  <div class="inset-card inset-card--sm" style="max-width: 500px;">
+    <span>Small (sm) — compact padding for tight layouts</span>
+  </div>
+  <div class="inset-card inset-card--md" style="max-width: 500px;">
+    <span>Medium (md) — balanced padding for most contexts</span>
+  </div>
+  <div class="inset-card inset-card--lg" style="max-width: 500px;">
+    <span>Large (lg, default) — generous padding for standalone sections</span>
+  </div>
+</div>
+
+<h2>Nested in Content Card</h2>
+<div elv>
+  <div class="content-card" style="max-width: 600px;">
+    <div class="content-card__header">
+      <h5 style="margin: 0; font-size: 1rem; font-weight: 600;">Summary</h5>
+    </div>
+    <div class="content-card__content content-card__content--md-no-footer">
+      <div class="inset-card inset-card--md">
+        <span>Inset cards are commonly used inside content cards to highlight secondary information.</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>With Rich Content</h2>
+<div elv>
+  <div class="inset-card inset-card--lg" style="max-width: 500px;">
+    <div>
+      <strong style="display: block; margin-bottom: 0.5rem;">Note</strong>
+      <p style="margin: 0; font-size: 0.875rem; color: #6f6d78;">Inset cards can contain any content — text, icons, lists, or other components. The subtle background and border distinguish them from the surrounding content.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

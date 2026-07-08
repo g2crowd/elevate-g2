@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accordion — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./nav.js"></script>
+</head>
+<body>
+
+<h1>Accordion</h1>
+<p class="subtitle">CSS component: <code>.elv-accordion</code>. Uses native <code>&lt;details&gt;/&lt;summary&gt;</code> for expand/collapse.</p>
+
+<h2>Medium (default)</h2>
+<div class="component-col" elv>
+  <div class="elv-accordion">
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-label">What is G2?</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">G2 is the world's largest and most trusted software marketplace. More than 90 million people annually use G2 to make smarter software decisions.</p>
+      </div>
+    </details>
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-label">How are reviews verified?</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">G2 uses a multi-step verification process including LinkedIn authentication, email verification, and human moderation to ensure review authenticity.</p>
+      </div>
+    </details>
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-label">What are G2 Reports?</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">G2 Reports are quarterly rankings of software products based on user reviews and online presence. They include Grid, Index, and Momentum reports.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<h2>Large</h2>
+<div class="component-col" elv>
+  <div class="elv-accordion accordion--lg">
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-heading elv-heading--sm">Getting started with Buyer Intent</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">Buyer Intent data shows which companies are actively researching your product category on G2, helping you prioritize outreach to in-market buyers.</p>
+      </div>
+    </details>
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-heading elv-heading--sm">Understanding intent signals</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">Intent signals include category page views, competitor comparisons, alternative searches, and product profile visits. Higher signal counts indicate stronger purchase intent.</p>
+      </div>
+    </details>
+    <details class="elv-accordion__item" open>
+      <summary class="elv-accordion__trigger">
+        <span class="elv-heading elv-heading--sm">Integrating with your CRM</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">G2 Buyer Intent integrates with Salesforce, HubSpot, and other CRMs to automatically surface intent data alongside your existing leads and accounts.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<h2>Padded</h2>
+<div class="component-col" elv>
+  <div class="elv-accordion accordion--padded">
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-label">Padded item one</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">Content with horizontal padding applied via the <code>accordion--padded</code> modifier.</p>
+      </div>
+    </details>
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-label">Padded item two</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">The divider border is inset with matching horizontal margin.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+<h2>Open by default</h2>
+<div class="component-col" elv>
+  <div class="elv-accordion">
+    <details class="elv-accordion__item" open>
+      <summary class="elv-accordion__trigger">
+        <span class="elv-label">This item starts open</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">Use the native <code>open</code> attribute on <code>&lt;details&gt;</code> to render an item expanded by default.</p>
+      </div>
+    </details>
+    <details class="elv-accordion__item">
+      <summary class="elv-accordion__trigger">
+        <span class="elv-label">This item starts closed</span>
+      </summary>
+      <div class="elv-accordion__body">
+        <p class="elv-body elv-body--sm">Click to expand.</p>
+      </div>
+    </details>
+  </div>
+</div>
+
+</body>
+</html>

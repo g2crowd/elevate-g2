@@ -1,0 +1,8 @@
+@import 'tailwindcss/theme';
+@import './theme-vars.css';
+@import 'tailwindcss/utilities';
+@import './components.css';
+
+@config '../../tailwind.build.config.js';
+@source '../**/*.css';
+@source '../../examples/**/*.html';

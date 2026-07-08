@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggles — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Toggles</h1>
+<p class="subtitle">CSS classes: <code>.toggle</code>, <code>.toggle--sm</code>, <code>.toggle--lg</code></p>
+
+<h2>Sizes — unchecked</h2>
+<div class="component-row" elv>
+  <input class="elv-toggle elv-toggle--sm" type="checkbox">
+  <input class="elv-toggle" type="checkbox">
+  <input class="elv-toggle elv-toggle--lg" type="checkbox">
+</div>
+
+<h2>Sizes — checked</h2>
+<div class="component-row" elv>
+  <input class="elv-toggle elv-toggle--sm" type="checkbox" checked>
+  <input class="elv-toggle" type="checkbox" checked>
+  <input class="elv-toggle elv-toggle--lg" type="checkbox" checked>
+</div>
+
+<h2>Disabled — unchecked</h2>
+<div class="component-row" elv>
+  <input class="elv-toggle elv-toggle--sm" type="checkbox" disabled>
+  <input class="elv-toggle" type="checkbox" disabled>
+  <input class="elv-toggle elv-toggle--lg" type="checkbox" disabled>
+</div>
+
+<h2>Disabled — checked</h2>
+<div class="component-row" elv>
+  <input class="elv-toggle elv-toggle--sm" type="checkbox" disabled checked>
+  <input class="elv-toggle" type="checkbox" disabled checked>
+  <input class="elv-toggle elv-toggle--lg" type="checkbox" disabled checked>
+</div>
+
+<h2>With wrapping label</h2>
+<div class="component-col" elv style="gap: 1rem;">
+  <label class="elv-label elv-label--sm"><input class="elv-toggle" type="checkbox"> Enable notifications</label>
+  <label class="elv-label elv-label--xs"><input class="elv-toggle elv-toggle--sm" type="checkbox" checked> Dark mode</label>
+  <label class="elv-label elv-label--sm elv-label--disabled"><input class="elv-toggle" type="checkbox" disabled> Feature locked</label>
+</div>
+
+<h2>Wrapper pattern (for Rails form helpers)</h2>
+<p class="subtitle">Use <code>.elv-label__wrapper</code> when input and label are separate elements.</p>
+<div class="component-col" elv style="gap: 1rem;">
+  <div class="elv-label__wrapper">
+    <input class="elv-toggle" type="checkbox" id="tog-notif">
+    <label class="elv-label elv-label--sm" for="tog-notif">Enable notifications</label>
+  </div>
+  <div class="elv-label__wrapper elv-label__wrapper--sm">
+    <input class="elv-toggle elv-toggle--sm" type="checkbox" checked id="tog-dark">
+    <label class="elv-label elv-label--xs" for="tog-dark">Dark mode</label>
+  </div>
+  <div class="elv-label__wrapper">
+    <input class="elv-toggle" type="checkbox" disabled id="tog-locked">
+    <label class="elv-label elv-label--sm elv-label--disabled" for="tog-locked">Feature locked</label>
+  </div>
+</div>
+
+</body>
+</html>

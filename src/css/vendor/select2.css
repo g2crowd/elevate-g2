@@ -1,0 +1,759 @@
+/*
+ * Standalone Elevate select2 styles.
+ *
+ * Provides complete select2 3.5.x styling for containers marked with
+ * .elv-select (container) and .elv-select-drop (dropdown).
+ * Works independently of legacy select2 SCSS — no other select2
+ * stylesheet is required.
+ *
+ * Usage: add class="elv-select" to your <select> element.  The JS
+ * adapter (select/select2/local.js & remote.js) picks up the class
+ * and passes containerCssClass / dropdownCssClass to the select2 plugin.
+ */
+
+/* ================================================================
+   0. Box-model reset (applies to container, drop, and search)
+   ================================================================ */
+
+.elv-select,
+.elv-select-drop,
+.elv-select-drop .select2-search,
+.elv-select-drop .select2-search input {
+  box-sizing: border-box;
+}
+
+/* ================================================================
+   1. Container (.elv-select is added to .select2-container)
+   ================================================================ */
+
+.select2-container.elv-select {
+  @apply elv:m-0 elv:p-0 elv:border-0 elv:bg-none elv:h-auto elv:outline-none;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: none;
+}
+
+.select2-container.elv-select:focus-visible {
+  @apply elv:outline-none;
+}
+
+/* ================================================================
+   2. Single-select trigger (.select2-choice)
+   ================================================================ */
+
+.elv-select .select2-choice {
+  @apply elv:bg-neutral-5 elv:border elv:border-medium elv:rounded-sm
+    elv:pl-2 elv:py-2 elv:pr-14
+    elv:font-figtree elv:tracking-normal
+    elv:text-nonessential elv:font-normal elv:text-base elv:leading-base
+    elv:cursor-pointer elv:transition-colors elv:duration-150
+    elv:h-auto elv:overflow-hidden elv:no-underline;
+
+  display: block;
+  position: relative;
+  white-space: nowrap;
+  border-style: solid;
+  user-select: none;
+  background-clip: padding-box;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z' fill='%23696673' /%3E%3C/svg%3E");
+  background-origin: unset;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+html[dir='rtl'] .elv-select .select2-choice {
+  padding: 0 8px 0 0;
+}
+
+.elv-select.select2-drop-above .select2-choice {
+  @apply elv:rounded-sm;
+}
+
+.elv-select .select2-choice:hover {
+  @apply elv:bg-neutral-10;
+}
+
+/* --- chosen text --- */
+
+.elv-select .select2-choice > .select2-chosen {
+  @apply elv:mr-0 elv:font-figtree elv:tracking-normal;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  float: none;
+  width: auto;
+}
+
+html[dir='rtl'] .elv-select .select2-choice > .select2-chosen {
+  margin-left: 26px;
+  margin-right: 0;
+}
+
+.elv-select.select2-allowclear .select2-choice .select2-chosen {
+  margin-right: 42px;
+}
+
+/* --- clear (abbr) --- */
+
+.elv-select .select2-choice abbr {
+  display: none;
+  width: 16px;
+  height: 16px;
+  right: 1.75rem;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  outline: 0;
+}
+
+.elv-select.select2-allowclear .select2-choice abbr {
+  display: inline-block;
+}
+
+.elv-select .select2-choice abbr:hover {
+  @apply elv:opacity-60;
+}
+
+/* --- arrow (hidden — we use the SVG background chevron instead) --- */
+
+.elv-select .select2-choice .select2-arrow {
+  @apply elv:hidden;
+}
+
+/* ================================================================
+   3. Focus / active / open states
+   ================================================================ */
+
+.elv-select.select2-container-active .select2-choice,
+.elv-select.select2-container-active .select2-choices {
+  @apply elv:outline elv:outline-3 elv:outline-offset-1
+    elv:outline-purple-40 elv:border-medium;
+}
+
+.elv-select.select2-dropdown-open .select2-choice {
+  @apply elv:bg-neutral-10;
+}
+
+.elv-select.select2-dropdown-open.select2-drop-above .select2-choice,
+.elv-select.select2-dropdown-open.select2-drop-above .select2-choices {
+  @apply elv:border elv:border-medium;
+}
+
+.elv-select.select2-dropdown-open .select2-choice .select2-arrow {
+  @apply elv:hidden;
+}
+
+/* ================================================================
+   4. Multi-select (.select2-container-multi)
+   ================================================================ */
+
+.elv-select.select2-container-multi .select2-choices {
+  @apply elv:bg-neutral-5 elv:border elv:border-medium elv:rounded-sm
+    elv:font-figtree elv:tracking-normal
+    elv:cursor-text elv:transition-colors elv:duration-150
+    elv:min-h-10;
+
+  height: auto !important;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-style: solid;
+  padding: 0.25rem 2.5rem 0.25rem 0.25rem;
+  line-height: normal;
+
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z' fill='%23696673' /%3E%3C/svg%3E");
+  background-origin: unset;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+html[dir='rtl'] .elv-select.select2-container-multi .select2-choices {
+  padding: 0 0 0 5px;
+}
+
+.elv-select.select2-container-multi .select2-choices:hover {
+  @apply elv:bg-neutral-10;
+}
+
+.elv-select.select2-container-multi .select2-choices li {
+  float: left;
+  list-style: none;
+}
+
+html[dir='rtl'] .elv-select.select2-container-multi .select2-choices li {
+  float: right;
+}
+
+/* --- search field inside multi --- */
+
+.elv-select.select2-container-multi .select2-choices .select2-search-field {
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  background-image: none;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-field
+  input {
+  margin-left: 0;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-field
+  input {
+  @apply elv:font-figtree elv:tracking-normal elv:text-base elv:font-normal
+    elv:text-default elv:!bg-transparent;
+  padding: 0.25rem 0.5rem;
+  margin: 1px 0;
+  outline: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-field
+  input::placeholder {
+  @apply elv:text-nonessential;
+}
+
+/* select2 3.5.x sets placeholder as input value + .select2-default class,
+   not native ::placeholder. This rule needs higher specificity than the
+   input color rule above to show the lighter placeholder color. */
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-field
+  input.select2-default {
+  @apply elv:!text-nonessential;
+}
+
+/* --- search choice pills --- */
+
+.elv-select.select2-container-multi .select2-choices .select2-search-choice {
+  @apply elv:bg-primary-20 elv:text-primary elv:rounded-xs elv:text-xs
+    elv:font-figtree elv:tracking-normal
+    elv:border-0 elv:font-semibold;
+  padding: 0.125rem 1.5rem 0.125rem 0.375rem;
+  margin: 0.125rem;
+  position: relative;
+  line-height: 12px;
+  cursor: default;
+  background-clip: padding-box;
+  user-select: none;
+}
+
+html[dir='rtl']
+  .elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-choice {
+  margin: 3px 5px 3px 0;
+  padding: 3px 18px 3px 5px;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  .select2-chosen {
+  cursor: default;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-choice-focus {
+  @apply elv:bg-primary-20 elv:opacity-80;
+}
+
+/* --- choice close button --- */
+
+.elv-select .select2-search-choice-close {
+  display: block;
+  width: 12px;
+  height: 13px;
+  position: absolute;
+  font-size: 1px;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.elv-select .select2-search-choice-close:hover,
+.elv-select .select2-search-choice-close:visited,
+.elv-select .select2-search-choice-close:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+.elv-select .select2-search-choice-close::before,
+.elv-select .select2-search-choice-close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 0;
+  border-top: 1px solid currentColor;
+}
+
+.elv-select .select2-search-choice-close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.elv-select .select2-search-choice-close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.elv-select.select2-container-multi .select2-search-choice-close {
+  left: auto;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  .select2-search-choice-close {
+  @apply elv:opacity-60;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  right: 0.375rem;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  .select2-search-choice-close:hover {
+  @apply elv:opacity-100;
+}
+
+.elv-select.select2-container-multi
+  .select2-choices
+  .select2-search-choice-focus
+  .select2-search-choice-close {
+  @apply elv:opacity-100;
+}
+
+/* ================================================================
+   5. Disabled states
+   ================================================================ */
+
+.elv-select.select2-container-disabled .select2-choice {
+  @apply elv:cursor-default elv:opacity-50;
+  background-image: none;
+}
+
+.elv-select.select2-container-disabled .select2-choice .select2-arrow {
+  @apply elv:hidden;
+}
+
+.elv-select.select2-container-disabled .select2-choice abbr {
+  display: none;
+}
+
+.elv-select.select2-container-multi.select2-container-disabled
+  .select2-choices {
+  @apply elv:cursor-default elv:opacity-50;
+  background-image: none;
+}
+
+.elv-select.select2-container-multi.select2-container-disabled
+  .select2-choices
+  .select2-search-choice {
+  @apply elv:border-0 elv:opacity-70;
+  padding: 3px 5px;
+  background-image: none;
+}
+
+.elv-select.select2-container-multi.select2-container-disabled
+  .select2-choices
+  .select2-search-choice
+  .select2-search-choice-close {
+  display: none;
+  background: none;
+}
+
+/* ================================================================
+   6. Dropdown panel (.elv-select-drop on .select2-drop)
+   ================================================================ */
+
+/*
+ * Structural rules for the dropdown. These are NOT inside @layer
+ * so they can beat any unlayered legacy select2 rules.
+ */
+
+.elv-select-drop.elv-select-drop {
+  @apply elv:bg-neutral-5 elv:border elv:border-light elv:rounded-sm elv:shadow-2
+    elv:mt-2 elv:overflow-hidden;
+
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  z-index: 2147483647;
+  border-top: 1px solid;
+  @apply elv:border-light;
+}
+
+.elv-select-drop.select2-drop-above {
+  margin-top: 1px;
+  @apply elv:rounded-sm;
+  border-bottom: 0;
+  border-top: 1px solid;
+  @apply elv:border-light;
+  box-shadow: 0 -4px 5px rgba(0, 0, 0, 0.15);
+}
+
+.elv-select-drop.select2-drop-auto-width {
+  width: auto;
+}
+
+/* --- search box inside dropdown --- */
+
+.elv-select-drop .select2-search {
+  @apply elv:p-2;
+  display: inline-block;
+  width: 100%;
+  min-height: 26px;
+  margin: 0;
+  position: relative;
+  z-index: 2147483647;
+  white-space: nowrap;
+}
+
+.elv-select-drop .select2-search input {
+  @apply elv:bg-neutral-5 elv:border-0 elv:rounded-sm
+    elv:font-figtree elv:text-base elv:font-normal elv:tracking-normal
+    elv:w-full elv:h-auto elv:py-1 elv:px-2 elv:outline-none;
+  background-image: none !important;
+  background-position: initial !important;
+  background-repeat: initial !important;
+  background-size: initial !important;
+  box-shadow: none;
+}
+
+.elv-select-drop .select2-search input:focus {
+  @apply elv:outline elv:outline-3 elv:outline-offset-1 elv:outline-purple-40;
+}
+
+.elv-select-drop.select2-drop-above .select2-search input {
+  margin-top: 4px;
+}
+
+.elv-select-drop .select2-drop-auto-width .select2-search {
+  padding-top: 4px;
+}
+
+/* --- results list --- */
+
+.elv-select-drop .select2-results {
+  @apply elv:p-0 elv:m-0;
+  max-height: 240px;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html[dir='rtl'] .elv-select-drop .select2-results {
+  padding: 0 4px 0 0;
+  margin: 4px 0 4px 4px;
+}
+
+.elv-select-drop .select2-results ul.select2-result-sub {
+  margin: 0;
+  padding-left: 0;
+}
+
+.elv-select-drop .select2-results li {
+  list-style: none;
+  display: list-item;
+  background-image: none;
+}
+
+.elv-select-drop
+  .select2-results
+  li.select2-result-with-children
+  > .select2-result-label {
+  font-weight: bold;
+}
+
+.elv-select-drop .select2-results .select2-result-label {
+  @apply elv:font-figtree elv:text-base elv:font-normal elv:tracking-normal
+    elv:leading-base elv:cursor-pointer elv:py-2 elv:px-3;
+  margin: 0;
+  min-height: 1em;
+  user-select: none;
+}
+
+/* depth indentation for grouped results */
+.elv-select-drop .select2-results-dept-1 .select2-result-label {
+  padding-left: 20px;
+}
+.elv-select-drop .select2-results-dept-2 .select2-result-label {
+  padding-left: 40px;
+}
+.elv-select-drop .select2-results-dept-3 .select2-result-label {
+  padding-left: 60px;
+}
+.elv-select-drop .select2-results-dept-4 .select2-result-label {
+  padding-left: 80px;
+}
+.elv-select-drop .select2-results-dept-5 .select2-result-label {
+  padding-left: 100px;
+}
+.elv-select-drop .select2-results-dept-6 .select2-result-label {
+  padding-left: 110px;
+}
+.elv-select-drop .select2-results-dept-7 .select2-result-label {
+  padding-left: 120px;
+}
+
+/* highlighted / hovered result */
+.elv-select-drop .select2-results .select2-highlighted {
+  @apply elv:bg-primary-20;
+  color: inherit;
+}
+
+.elv-select-drop .select2-results li em {
+  background: #feffde;
+  font-style: normal;
+}
+
+.elv-select-drop .select2-results .select2-highlighted em {
+  background: transparent;
+}
+
+.elv-select-drop .select2-results .select2-highlighted ul {
+  @apply elv:bg-neutral-5;
+  color: inherit;
+}
+
+/* no results / searching / error states */
+.elv-select-drop .select2-results .select2-no-results,
+.elv-select-drop .select2-results .select2-searching {
+  @apply elv:font-figtree elv:text-sm elv:text-nonessential
+    elv:py-2 elv:px-3 elv:bg-transparent;
+  display: list-item;
+}
+
+.elv-select-drop .select2-results .select2-ajax-error,
+.elv-select-drop .select2-results .select2-selection-limit {
+  @apply elv:py-2 elv:px-3 elv:bg-transparent;
+  display: list-item;
+}
+
+.elv-select-drop .select2-results .select2-ajax-error {
+  background: rgba(255, 50, 50, 0.2);
+}
+
+/* disabled results */
+.elv-select-drop .select2-results .select2-disabled {
+  @apply elv:cursor-default elv:opacity-50 elv:bg-transparent;
+  display: list-item;
+}
+
+.elv-select-drop .select2-results .select2-disabled.select2-highlighted {
+  @apply elv:cursor-default elv:opacity-50 elv:bg-transparent;
+  color: inherit;
+}
+
+.elv-select-drop .select2-results .select2-selected {
+  display: none;
+}
+
+.elv-select-drop .select2-more-results {
+  @apply elv:bg-transparent elv:py-2 elv:px-3;
+  display: list-item;
+}
+
+/* match highlighting */
+.elv-select-drop .select2-result-selectable .select2-match,
+.elv-select-drop .select2-result-unselectable .select2-match {
+  text-decoration: underline;
+}
+
+/* ================================================================
+   7. Utility / accessibility classes (global — used by select2 JS)
+   ================================================================ */
+
+.select2-hidden-accessible {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.select2-offscreen,
+.select2-offscreen:focus {
+  clip: rect(0 0 0 0) !important;
+  width: 1px !important;
+  height: 1px !important;
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  outline: 0 !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+.select2-display-none {
+  display: none;
+}
+
+.select2-measure-scrollbar {
+  position: absolute;
+  top: -10000px;
+  left: -10000px;
+  width: 100px;
+  height: 100px;
+  overflow: scroll;
+}
+
+/* --- drop mask (global — positioned behind dropdown) --- */
+
+.select2-drop-mask {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100%;
+  min-width: 100%;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  z-index: 2147483637;
+  background-color: #fff;
+  filter: alpha(opacity=0);
+}
+
+/* ================================================================
+   8. Placeholder text (.select2-default)
+   ================================================================ */
+
+.elv-select .select2-default {
+  @apply elv:font-figtree elv:tracking-normal elv:text-nonessential;
+}
+
+/* ================================================================
+   9. Locked items
+   ================================================================ */
+
+.elv-select .select2-locked {
+  padding: 3px 5px !important;
+}
+
+/* ================================================================
+   10. Size variants (.elv-select--sm / --md / --lg)
+   ================================================================ */
+
+/* --- single-select trigger --- */
+
+.elv-select.elv-select--sm .select2-choice {
+  @apply elv:text-sm elv:leading-sm;
+  height: 2rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.125rem;
+}
+
+.elv-select.elv-select--md .select2-choice {
+  height: 2.5rem;
+}
+
+.elv-select.elv-select--lg .select2-choice {
+  @apply elv:h-12;
+}
+
+/* --- multi-select container --- */
+
+.elv-select.elv-select--sm.select2-container-multi .select2-choices {
+  min-height: 2rem;
+  padding: 0 2.5rem 0 0.125rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: visible;
+}
+
+.elv-select.elv-select--sm.select2-container-multi
+  .select2-choices
+  .select2-search-choice {
+  padding: 0 1.25rem 0 0.25rem;
+  margin: 0 0.0625rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  height: 1.25rem;
+  max-width: calc(100% - 0.25rem);
+  overflow: hidden;
+}
+
+.elv-select.elv-select--sm.select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.elv-select.elv-select--sm.select2-container-multi
+  .select2-choices
+  .select2-search-choice
+  .select2-search-choice-close {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+.elv-select.elv-select--sm.select2-container-multi
+  .select2-choices
+  .select2-search-field {
+  height: 2rem;
+}
+
+.elv-select.elv-select--sm.select2-container-multi
+  .select2-choices
+  .select2-search-field
+  input {
+  @apply elv:text-sm;
+  height: 100%;
+  padding: 0.125rem 0.375rem;
+  margin: 0;
+}
+
+.elv-select.elv-select--md.select2-container-multi .select2-choices {
+  min-height: 2.5rem;
+}
+
+.elv-select.elv-select--md.select2-container-multi
+  .select2-choices
+  .select2-search-field {
+  height: 2.5rem;
+}
+
+.elv-select.elv-select--md.select2-container-multi
+  .select2-choices
+  .select2-search-field
+  input {
+  height: 100%;
+  margin: 0;
+}
+
+.elv-select.elv-select--lg.select2-container-multi .select2-choices {
+  @apply elv:min-h-12;
+}

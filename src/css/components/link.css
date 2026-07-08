@@ -1,0 +1,74 @@
+@layer components {
+  :where([elv]) a,
+  a:where([elv]),
+  .a {
+    &:where(&:not(.a--reset)) {
+      @apply elv:font-figtree
+        elv:tracking-normal
+        elv:font-normal
+        elv:text-inherit
+        elv:text-link;
+
+      @apply elv:focus-visible:outline
+        elv:focus-visible:outline-3
+        elv:focus-visible:outline-offset-0
+        elv:focus-visible:outline-purple-40
+        elv:focus-visible:rounded-sm;
+
+      @apply elv:active:text-link-hover
+        elv:focus:text-link-hover
+        elv:hover:text-link-hover
+        elv:visited:text-link-visited
+        elv:hover:no-underline;
+    }
+  }
+
+  .a--sm {
+    @apply elv:text-sm elv:focus-visible:rounded-sm;
+  }
+
+  .a--md {
+    @apply elv:text-base elv:focus-visible:rounded-sm;
+  }
+
+  .a--xs {
+    @apply elv:text-xs elv:focus-visible:rounded-md;
+  }
+
+  .a--fw-semibold {
+    @apply elv:font-semibold;
+  }
+
+  .a--subtle {
+    @apply elv:text-nonessential
+      elv:active:text-default
+      elv:focus:text-default
+      elv:hover:text-default
+      elv:visited:text-nonessential;
+  }
+
+  .a--underline {
+    @apply elv:underline;
+  }
+
+  .a--subtle.a--underline {
+    text-decoration-color: currentColor;
+  }
+}
+
+@utility a--reset {
+  @apply elv:hover:no-underline
+    elv:active:no-underline
+    elv:focus:no-underline
+    elv:focus-visible:no-underline
+    elv:visited:no-underline
+    elv:focus:outline-none
+    elv:focus-visible:outline-none
+    elv:max-w-fit;
+}
+
+@layer components {
+  .a--reset {
+    @apply elv:a--reset;
+  }
+}

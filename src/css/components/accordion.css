@@ -1,0 +1,56 @@
+@layer components {
+  .elv-accordion {
+    @apply elv:w-full;
+  }
+
+  .elv-accordion__item {
+    @apply elv:w-full elv:border-b elv:border-light;
+  }
+
+  .elv-accordion__trigger {
+    @apply elv:w-full elv:flex elv:justify-between elv:items-center
+      elv:py-3 elv:cursor-pointer elv:list-none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  .elv-accordion__trigger::after {
+    @apply elv:shrink-0 elv:text-default;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: svg-load('chevron-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    transition: transform 150ms ease-in;
+  }
+
+  .elv-accordion__item[open] .elv-accordion__trigger::after {
+    transform: rotate(180deg);
+  }
+
+  .elv-accordion__body {
+    @apply elv:pb-3;
+  }
+
+  .elv-accordion--lg .elv-accordion__trigger {
+    @apply elv:py-5;
+  }
+
+  .elv-accordion--lg .elv-accordion__body {
+    @apply elv:pb-5;
+  }
+
+  .elv-accordion--padded .elv-accordion__trigger,
+  .elv-accordion--padded .elv-accordion__body {
+    @apply elv:px-6;
+  }
+
+  .elv-accordion--padded .elv-accordion__item {
+    @apply elv:mx-6;
+  }
+}

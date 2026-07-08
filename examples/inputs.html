@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inputs — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Inputs</h1>
+<p class="subtitle">CSS classes: <code>.elv-input</code>, <code>.elv-input--{size}</code></p>
+
+<h2>Sizes</h2>
+<div class="component-col" elv>
+  <input type="text" class="elv-input elv-input--sm" placeholder="Small input" elv>
+  <input type="text" class="elv-input elv-input--md" placeholder="Medium input" elv>
+  <input type="text" class="elv-input elv-input--lg" placeholder="Large input" elv>
+</div>
+
+<h2>States</h2>
+<div class="component-col" elv>
+  <input type="text" class="elv-input elv-input--md" placeholder="Default" elv>
+  <input type="text" class="elv-input elv-input--md" placeholder="Disabled" elv disabled>
+  <input type="text" class="elv-input elv-input--md" placeholder="Read-only" elv readonly value="Read-only value">
+  <input type="text" class="elv-input elv-input--md" data-status="success" placeholder="Success" elv>
+  <input type="text" class="elv-input elv-input--md" data-status="warning" placeholder="Warning" elv>
+  <input type="text" class="elv-input elv-input--md" data-status="error" placeholder="Error" elv>
+</div>
+
+<h2>Textarea Sizes</h2>
+<div class="component-col" elv>
+  <textarea class="elv-input elv-input--textarea-sm" placeholder="Small textarea" elv></textarea>
+  <textarea class="elv-input elv-input--textarea-md" placeholder="Medium textarea" elv></textarea>
+  <textarea class="elv-input elv-input--textarea-lg" placeholder="Large textarea" elv></textarea>
+</div>
+
+</body>
+</html>

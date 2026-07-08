@@ -1,0 +1,25 @@
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@layer components {
+  .spin-loader {
+      @apply elv:inline-block;
+  }
+
+  .spin-loader__icon {
+      animation: spin 1s linear infinite;
+  }
+
+  .spin-loader__icon--primary {
+      @apply elv:fill-purple;
+  }
+
+  .spin-loader__icon--neutral {
+      @apply elv:fill-neutral-70;
+  }
+
+  .spin-loader__icon--inverted {
+      @apply elv:fill-neutral-0;
+  }
+}

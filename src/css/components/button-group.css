@@ -1,0 +1,54 @@
+@layer components {
+  .elv-button-group {
+      @apply elv:flex elv:items-center;
+  }
+
+  .elv-button-group--horizontal {
+      @apply elv:flex-row elv:gap-1;
+  }
+
+  .elv-button-group--vertical {
+      @apply elv:flex-col elv:gap-1 elv:items-stretch;
+  }
+
+  .elv-button-group--connected {
+      @apply elv:gap-0;
+  }
+
+  .elv-button-group--connected > .btn:not(:first-child):not(:last-child) {
+    border-radius: 0;
+  }
+
+  .elv-button-group--connected > .btn:first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .elv-button-group--connected > .btn:last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .elv-button-group--connected > .btn:not(:last-child) {
+    border-right-width: 0;
+  }
+
+  .elv-button-group--connected.elv-button-group--vertical > .btn:first-child {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+  }
+
+  .elv-button-group--connected.elv-button-group--vertical > .btn:last-child {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
+
+  .elv-button-group--connected.elv-button-group--vertical > .btn:not(:last-child) {
+    border-right-width: 0.5px;
+    border-bottom-width: 0;
+  }
+}

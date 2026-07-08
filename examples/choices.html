@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choices.js — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@11.0.2/public/assets/styles/choices.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js@11.0.2/public/assets/scripts/choices.min.js"></script>
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Choices.js</h1>
+<p class="subtitle">Vendor theme: <code>@g2crowd/elevate/vendor/choices</code>. Requires choices.js 11.x.</p>
+
+<h2>Single Select</h2>
+<div class="component-col medium" elv>
+  <select id="choices-single" elv>
+    <option value="">Select a department...</option>
+    <option value="eng">Engineering</option>
+    <option value="design">Design</option>
+    <option value="product">Product</option>
+    <option value="marketing">Marketing</option>
+    <option value="sales">Sales</option>
+  </select>
+</div>
+
+<h2>Single Select (small)</h2>
+<div class="component-col small" elv>
+  <select id="choices-single-sm" elv>
+    <option value="">Select quarter...</option>
+    <option>Q1 2025</option>
+    <option>Q2 2025</option>
+    <option>Q3 2025</option>
+    <option>Q4 2025</option>
+  </select>
+</div>
+
+<h2>Single Select (large)</h2>
+<div class="component-col large" elv>
+  <select id="choices-single-lg" elv>
+    <option value="">Select country...</option>
+    <option>United States</option>
+    <option>Canada</option>
+    <option>United Kingdom</option>
+    <option>Germany</option>
+    <option>Australia</option>
+  </select>
+</div>
+
+<h2>Multi Select</h2>
+<div class="component-col medium" elv>
+  <select id="choices-multi" multiple elv>
+    <option value="react">React</option>
+    <option value="vue">Vue</option>
+    <option value="angular">Angular</option>
+    <option value="svelte">Svelte</option>
+    <option value="ember">Ember</option>
+    <option value="next">Next.js</option>
+  </select>
+</div>
+
+<h2>Searchable Select</h2>
+<div class="component-col medium searchable-selectbox" elv>
+  <select id="choices-search" elv>
+    <option value="">Search products...</option>
+    <option>Salesforce CRM</option>
+    <option>HubSpot Marketing Hub</option>
+    <option>Slack</option>
+    <option>Jira Software</option>
+    <option>Zoom Workplace</option>
+    <option>Monday.com</option>
+    <option>Asana</option>
+    <option>Notion</option>
+  </select>
+</div>
+
+<h2>Combobox (Multi with Search)</h2>
+<div class="component-col medium combobox-wrapper" elv>
+  <select id="choices-combobox" multiple elv>
+    <option value="js">JavaScript</option>
+    <option value="ts">TypeScript</option>
+    <option value="py">Python</option>
+    <option value="rb">Ruby</option>
+    <option value="go">Go</option>
+    <option value="rs">Rust</option>
+  </select>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  new Choices('#choices-single', {
+    searchEnabled: false,
+    itemSelectText: '',
+    allowHTML: true
+  });
+
+  new Choices('#choices-single-sm', {
+    searchEnabled: false,
+    itemSelectText: '',
+    allowHTML: true
+  });
+
+  new Choices('#choices-single-lg', {
+    searchEnabled: false,
+    itemSelectText: '',
+    allowHTML: true
+  });
+
+  new Choices('#choices-multi', {
+    removeItemButton: true,
+    itemSelectText: '',
+    allowHTML: true
+  });
+
+  new Choices('#choices-search', {
+    searchEnabled: true,
+    itemSelectText: '',
+    allowHTML: true,
+    searchPlaceholderValue: 'Search...'
+  });
+
+  new Choices('#choices-combobox', {
+    removeItemButton: true,
+    searchEnabled: true,
+    itemSelectText: '',
+    allowHTML: true,
+    searchPlaceholderValue: 'Search...'
+  });
+});
+</script>
+
+</body>
+</html>

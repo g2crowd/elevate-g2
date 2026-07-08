@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elevate Component Library</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<div class="main">
+  <h1>Elevate Component Library</h1>
+  <p class="subtitle">
+    Visual reference for <code>@g2crowd/elevate</code>.
+    Ported components have live examples. Gray items are planned.
+  </p>
+
+  <h2>Getting Started</h2>
+  <div class="component-col">
+    <p><strong>Install:</strong> <code>yarn add @g2crowd/elevate</code></p>
+    <p><strong>Tailwind preset:</strong></p>
+    <pre style="background: #f2f2f3; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem;">const elevateConfig = require('@g2crowd/elevate/tailwind');
+
+module.exports = {
+  presets: [elevateConfig],
+  content: [...]
+};</pre>
+    <p><strong>Import components:</strong></p>
+    <pre style="background: #f2f2f3; padding: 1rem; border-radius: 0.5rem; overflow-x: auto; font-size: 0.875rem;">@import '@g2crowd/elevate/src/css/components.css';
+@import '@g2crowd/elevate/src/css/vendor/select2.css';  /* if using select2 */</pre>
+  </div>
+
+  <h2>Ported Components</h2>
+  <div class="nav-grid">
+    <a class="nav-card" href="./avatars.html">
+      <strong>Avatar</strong>
+      <span>5 sizes, image + initials fallback</span>
+    </a>
+    <a class="nav-card" href="./breadcrumbs.html">
+      <strong>Breadcrumbs</strong>
+      <span>Navigation path with separators</span>
+    </a>
+    <a class="nav-card" href="./buttons.html">
+      <strong>Buttons</strong>
+      <span>7 variants, 3 sizes, disabled, anchor, icons</span>
+    </a>
+    <a class="nav-card" href="./button-groups.html">
+      <strong>Button Group</strong>
+      <span>Horizontal, vertical, connected</span>
+    </a>
+    <a class="nav-card" href="./chips.html">
+      <strong>Chips</strong>
+      <span>Single, multiselect, dismissible, 3 sizes</span>
+    </a>
+    <a class="nav-card" href="./inputs.html">
+      <strong>Inputs</strong>
+      <span>Text, textarea, sizes, validation states</span>
+    </a>
+    <a class="nav-card" href="./links.html">
+      <strong>Links</strong>
+      <span>Default, subtle, underline, sizes</span>
+    </a>
+    <a class="nav-card" href="./notification-badges.html">
+      <strong>Notification Badge</strong>
+      <span>Top/mid/low priority, count + dot</span>
+    </a>
+    <a class="nav-card" href="./pagination.html">
+      <strong>Pagination</strong>
+      <span>Page numbers, nav links, disabled</span>
+    </a>
+    <a class="nav-card" href="./progress-bars.html">
+      <strong>Progress Bars</strong>
+      <span>Brand/primary fill, sm/lg sizes</span>
+    </a>
+    <a class="nav-card" href="./selects.html">
+      <strong>Selects</strong>
+      <span>Native, Select2, Choices.js themes</span>
+    </a>
+    <a class="nav-card" href="./spin-loaders.html">
+      <strong>Spin Loaders</strong>
+      <span>Primary, neutral, inverted</span>
+    </a>
+    <a class="nav-card" href="./status-badges.html">
+      <strong>Status Badges</strong>
+      <span>6 semantic states, icon indicators</span>
+    </a>
+    <a class="nav-card" href="./tabs.html">
+      <strong>Tabs</strong>
+      <span>Default + full-width, active states</span>
+    </a>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+select.elv-select {
+  @apply elv:border-medium elv:rounded-sm
+    elv:border
+    elv:pl-2
+    elv:pr-14
+    elv:py-2
+    elv:text-nonessential elv:appearance-none
+    elv:font-normal
+    elv:h-auto
+    elv:text-base
+    elv:leading-base
+    elv:bg-neutral-5
+    elv:cursor-pointer
+    elv:hover:bg-neutral-10
+    elv:transition-colors
+    elv:duration-150;
+
+  @apply elv:focus-visible:outline
+    elv:focus-visible:border-medium
+    elv:focus-visible:outline-3
+    elv:focus-visible:outline-offset-1
+    elv:focus-visible:outline-purple-40
+    elv:focus-visible:rounded-sm;
+
+  background-image: svg-load('select-chevron.svg');
+  background-origin: unset;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+select.elv-select.elv-select--sm {
+  @apply elv:h-8 elv:text-sm elv:leading-sm elv:py-1;
+}
+
+select.elv-select.elv-select--md {
+  @apply elv:h-10;
+}
+
+select.elv-select.elv-select--lg {
+  @apply elv:h-12;
+}

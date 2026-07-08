@@ -1,0 +1,33 @@
+@layer components {
+  .elv-number-change {
+    @apply elv:flex elv:items-center;
+  }
+
+  .elv-number-change__icon {
+    @apply elv:shrink-0;
+  }
+
+  .elv-number-change--positive .elv-number-change__icon {
+    @apply elv:fill-green-120;
+  }
+
+  .elv-number-change--negative .elv-number-change__icon {
+    @apply elv:text-critical;
+  }
+
+  .elv-number-change__value {
+    @apply elv:text-sm elv:font-bold;
+  }
+
+  .elv-number-change--positive .elv-number-change__value {
+    @apply elv:text-success;
+  }
+
+  .elv-number-change--negative .elv-number-change__value {
+    @apply elv:text-critical;
+  }
+
+  .elv-number-change--neutral .elv-number-change__value {
+    @apply elv:text-neutral;
+  }
+}

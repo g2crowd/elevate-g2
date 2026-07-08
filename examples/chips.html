@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chips — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Chips</h1>
+<p class="subtitle">CSS classes: <code>.chip</code>, <code>.chip--{size}</code>, <code>.chip__label</code>, <code>.chip__icon</code>, <code>.chip__icon--{size}</code>, <code>.chip__icon--hidden</code>, <code>.chip__icon--trailing</code></p>
+
+<h2>Single Select</h2>
+<div class="component-row" elv>
+  <button class="chip chip--xs" elv type="button" data-kind="single_select" data-selected="false"><span class="chip__label">Draft</span></button>
+  <button class="chip chip--sm" elv type="button" data-kind="single_select" data-selected="true"><span class="chip__label">In Review</span></button>
+  <button class="chip chip--md" elv type="button" data-kind="single_select" data-selected="false"><span class="chip__label">Published</span></button>
+</div>
+
+<h2>Multiselect</h2>
+<div class="component-row" elv>
+  <button class="chip chip--sm" elv type="button" data-kind="multiselect" data-selected="false">
+    <svg class="chip__icon chip__icon--sm chip__icon--hidden" viewBox="0 0 20 20" aria-hidden="true"><path d="M8.10417 14.4375L4.0625 10.4167L5.125 9.33333L8.10417 12.3125L14.875 5.5625L15.9375 6.625L8.10417 14.4375Z" fill="currentColor"/></svg>
+    <span class="chip__label">Product</span>
+  </button>
+  <button class="chip chip--sm" elv type="button" data-kind="multiselect" data-selected="true">
+    <svg class="chip__icon chip__icon--sm" viewBox="0 0 20 20" aria-hidden="true"><path d="M8.10417 14.4375L4.0625 10.4167L5.125 9.33333L8.10417 12.3125L14.875 5.5625L15.9375 6.625L8.10417 14.4375Z" fill="currentColor"/></svg>
+    <span class="chip__label">Marketing</span>
+  </button>
+  <button class="chip chip--sm" elv type="button" data-kind="multiselect" data-selected="true">
+    <svg class="chip__icon chip__icon--sm" viewBox="0 0 20 20" aria-hidden="true"><path d="M8.10417 14.4375L4.0625 10.4167L5.125 9.33333L8.10417 12.3125L14.875 5.5625L15.9375 6.625L8.10417 14.4375Z" fill="currentColor"/></svg>
+    <span class="chip__label">Sales</span>
+  </button>
+</div>
+
+<h2>Dismissible</h2>
+<div class="component-row" elv>
+  <button class="chip chip--xs" elv type="button" data-kind="dismissible" data-selected="true">
+    <span class="chip__label">Alpha</span>
+    <svg class="chip__icon chip__icon--xs chip__icon--trailing" viewBox="0 0 20 20" aria-hidden="true"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z" fill="currentColor"/></svg>
+  </button>
+  <button class="chip chip--sm" elv type="button" data-kind="dismissible" data-selected="true">
+    <span class="chip__label">Enterprise</span>
+    <svg class="chip__icon chip__icon--sm chip__icon--trailing" viewBox="0 0 20 20" aria-hidden="true"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z" fill="currentColor"/></svg>
+  </button>
+  <button class="chip chip--md" elv type="button" data-kind="dismissible" data-selected="true">
+    <span class="chip__label">North America</span>
+    <svg class="chip__icon chip__icon--sm chip__icon--trailing" viewBox="0 0 20 20" aria-hidden="true"><path d="M6.0625 15L5 13.9375L8.9375 10L5 6.0625L6.0625 5L10 8.9375L13.9375 5L15 6.0625L11.0625 10L15 13.9375L13.9375 15L10 11.0625L6.0625 15Z" fill="currentColor"/></svg>
+  </button>
+</div>
+
+</body>
+</html>

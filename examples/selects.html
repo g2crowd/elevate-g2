@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selects — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Selects</h1>
+<p class="subtitle">Native <code>&lt;select&gt;</code> styling and vendor themes for enhanced select libraries.</p>
+
+<h2>Native Select</h2>
+<p class="subtitle">CSS classes: <code>.elv-select</code>, <code>.elv-select--{size}</code>. No JS required.</p>
+<div class="component-col" elv>
+  <select class="elv-select elv-select--sm" elv>
+    <option>Small select</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+  <select class="elv-select elv-select--md" elv>
+    <option>Medium select</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+  <select class="elv-select elv-select--lg" elv>
+    <option>Large select</option>
+    <option>Option 2</option>
+    <option>Option 3</option>
+  </select>
+</div>
+
+<h2>Enhanced Select Libraries</h2>
+<p class="subtitle">For search, multi-select, or remote data — pick the vendor theme matching your library.</p>
+<div class="nav-grid" style="margin-top: 1rem;">
+  <a class="nav-card" href="./select2.html">
+    <strong>Select2 Theme</strong>
+    <span>For select2 3.5.x (jQuery). Single, multi, search, all sizes.</span>
+  </a>
+  <a class="nav-card" href="./choices.html">
+    <strong>Choices.js Theme</strong>
+    <span>For choices.js 11.x (no jQuery). Single, multi, combobox, all sizes.</span>
+  </a>
+</div>
+
+</body>
+</html>

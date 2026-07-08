@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script src="./dark-init.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avatars — Elevate</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="/token-editor.css">
+  <script src="./nav.js"></script>
+  <script src="/token-editor.js" defer></script>
+</head>
+<body>
+
+<h1>Avatars</h1>
+<p class="subtitle">CSS classes: <code>.avatar</code>, <code>.avatar--{xl|lg|md|sm|xs}</code>, <code>.avatar__image</code>, <code>.avatar__initials</code></p>
+
+<h2>Image Avatars</h2>
+<div class="component-row" elv>
+  <div class="elv-avatar elv-avatar--xl" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=12" alt="Profile avatar" width="200" height="200"></div>
+  <div class="elv-avatar elv-avatar--lg" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=32" alt="Profile avatar" width="200" height="200"></div>
+  <div class="elv-avatar elv-avatar--md" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=45" alt="Profile avatar" width="200" height="200"></div>
+  <div class="elv-avatar elv-avatar--sm" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=56" alt="Profile avatar" width="200" height="200"></div>
+  <div class="elv-avatar elv-avatar--xs" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=68" alt="Profile avatar" width="200" height="200"></div>
+</div>
+
+<h2>Initials Avatars</h2>
+<div class="component-row" elv>
+  <div class="elv-avatar elv-avatar--xl" elv><span class="elv-avatar__initials">MW</span></div>
+  <div class="elv-avatar elv-avatar--lg" elv><span class="elv-avatar__initials">JS</span></div>
+  <div class="elv-avatar elv-avatar--md" elv><span class="elv-avatar__initials">AB</span></div>
+  <div class="elv-avatar elv-avatar--sm" elv><span class="elv-avatar__initials">MW</span></div>
+  <div class="elv-avatar elv-avatar--xs" elv><span class="elv-avatar__initials">JS</span></div>
+</div>
+
+<h2>Fallback States</h2>
+<div class="component-row" elv>
+  <div class="elv-avatar elv-avatar--md" elv><span class="elv-avatar__initials">MW</span></div>
+  <div class="elv-avatar elv-avatar--sm" elv><span class="elv-avatar__initials">--</span></div>
+  <div class="elv-avatar elv-avatar--xs" elv></div>
+</div>
+
+<h2>With Notification Badge</h2>
+<div class="component-row" elv>
+  <div style="position: relative; display: inline-block;">
+    <div class="elv-avatar elv-avatar--xl" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=12" alt="Profile avatar" width="200" height="200"></div>
+    <span class="notification-badge notification-badge--top notification-badge--dot" elv style="position: absolute; top: 0; right: 0;"></span>
+  </div>
+  <div style="position: relative; display: inline-block;">
+    <div class="elv-avatar elv-avatar--lg" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=32" alt="Profile avatar" width="200" height="200"></div>
+    <span class="notification-badge notification-badge--top notification-badge--dot" elv style="position: absolute; top: 0; right: 0;"></span>
+  </div>
+  <div style="position: relative; display: inline-block;">
+    <div class="elv-avatar elv-avatar--md" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=45" alt="Profile avatar" width="200" height="200"></div>
+    <span class="notification-badge notification-badge--top notification-badge--dot" elv style="position: absolute; top: 0; right: 0;"></span>
+  </div>
+  <div style="position: relative; display: inline-block;">
+    <div class="elv-avatar elv-avatar--sm" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=56" alt="Profile avatar" width="200" height="200"></div>
+    <span class="notification-badge notification-badge--top notification-badge--dot" elv style="position: absolute; top: 0; right: 0;"></span>
+  </div>
+  <div style="position: relative; display: inline-block;">
+    <div class="elv-avatar elv-avatar--xs" elv><img class="elv-avatar__image" src="https://i.pravatar.cc/200?img=68" alt="Profile avatar" width="200" height="200"></div>
+    <span class="notification-badge notification-badge--top notification-badge--dot" elv style="position: absolute; top: 0; right: 0;"></span>
+  </div>
+</div>
+
+</body>
+</html>

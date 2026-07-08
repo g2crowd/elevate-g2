@@ -1,0 +1,153 @@
+.choices__list.choices__list--dropdown.is-active {
+  @apply elv:shadow-2 elv:rounded-sm;
+}
+
+.choices.is-open .choices__list--dropdown,
+.choices.is-open .choices__list[aria-expanded] {
+  @apply elv:border-light elv:border elv:bg-neutral-5 elv:rounded-sm elv:z-20 elv:mt-2;
+}
+
+.is-focused .choices__inner {
+  @apply elv:outline elv:outline-3 elv:outline-offset-1 elv:outline-purple-40 elv:transition-all elv:duration-150 elv:ease-in;
+}
+
+.choices.is-open.is-focused .choices__inner {
+  @apply elv:border-light elv:border-1 elv:rounded-sm;
+}
+
+.choices .choices__list--dropdown .choices__item--selectable.is-highlighted,
+.choices .choices__list[aria-expanded] .choices__item--selectable.is-highlighted {
+  @apply elv:bg-primary-20;
+}
+
+.choices.is-open .choices__input.choices__input--cloned {
+  @apply elv:hidden;
+}
+
+.choices__input.choices__input--cloned {
+  @apply elv:border-0 elv:bg-neutral-5 elv:font-body elv:text-base elv:mb-0;
+}
+
+.choices.is-open .choices__inner {
+  @apply elv:border-light elv:border-1 elv:rounded-sm;
+}
+
+.choices__list {
+  @apply elv:font-figtree elv:bg-neutral-5 elv:border-0 elv:text-base elv:font-normal elv:tracking-normal elv:p-0;
+}
+
+div.choices__inner {
+  @apply elv:box-border elv:rounded-sm elv:flex elv:items-center elv:min-h-0 elv:outline-purple-40;
+}
+
+.choices {
+  @apply elv:!overflow-visible;
+}
+
+.choices__inner:has([data-status='error']) .choices__list {
+  @apply elv:bg-critical-20 elv:border-critical;
+}
+
+.choices__inner:has([data-status='error']) {
+  @apply elv:bg-critical-20 elv:border-critical;
+}
+
+.choices__inner:has([data-status="error"]) .choices__input {
+  @apply elv:bg-critical-20;
+}
+
+.small .choices__list .choices__item {
+  @apply elv:leading-sm elv:text-sm;
+}
+
+.medium .choices__list .choices__item {
+  @apply elv:leading-base;
+}
+
+.large .choices__list .choices__item {
+  @apply elv:leading-base;
+}
+
+.small div.choices__inner {
+  @apply elv:min-h-8 elv:!py-0.5;
+}
+
+.medium div.choices__inner {
+  @apply elv:min-h-10 elv:!py-1;
+}
+
+.large div.choices__inner {
+  @apply elv:min-h-12 elv:!py-2;
+}
+
+.small .choices__input.choices__input--cloned {
+  @apply elv:text-sm;
+}
+
+.searchable-selectbox .choices.is-open .choices__input.choices__input--cloned {
+  @apply elv:block;
+}
+
+.searchable-selectbox {
+  @apply elv:relative;
+}
+
+.searchable-selectbox .choices__inner {
+  @apply elv:pr-14;
+}
+
+.choices[data-type*="select-one"]:after {
+  content: none !important;
+}
+
+.choices[data-type*="select-one"] .choices__inner,
+.choices[data-type*="select-multiple"] .choices__inner {
+  @apply elv:pr-14;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M10 13.0625L5 8.0625L6.0625 7L10 10.9375L13.9375 7L15 8.0625L10 13.0625Z' fill='%23696673' /%3E%3C/svg%3E");
+  background-origin: unset;
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+}
+
+.choices[data-type*="select-multiple"] .choices__list--multiple {
+  @apply elv:flex elv:flex-wrap elv:gap-2;
+}
+
+.choices[data-type*="select-multiple"] .choices__list--multiple .choices__item {
+  @apply elv:border-none elv:bg-primary-20 elv:text-primary elv:rounded-xs
+    elv:text-sm elv:font-semibold elv:m-0 elv:py-0.5 elv:pr-1 elv:pl-[6px];
+}
+
+.choices[data-type*="select-multiple"] .choices__button {
+  @apply elv:border-l-0 elv:opacity-100 elv:bg-auto elv:ml-1 elv:mr-0
+    elv:bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%235746b2%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M6.0625%2015L5%2013.9375L8.9375%2010L5%206.0625L6.0625%205L10%208.9375L13.9375%205L15%206.0625L11.0625%2010L15%2013.9375L13.9375%2015L10%2011.0625L6.0625%2015Z%22%2F%3E%3C%2Fsvg%3E')];
+}
+
+.combobox-wrapper .choices.is-open .choices__input.choices__input--cloned {
+  @apply elv:block;
+}
+
+.combobox-wrapper .choices__inner {
+  @apply elv:pr-14 elv:flex-wrap;
+}
+
+.combobox-wrapper .choices__item.choices__item--selectable.is-highlighted {
+  @apply elv:bg-primary-20 elv:border-0;
+}
+
+.combobox-wrapper .choices__list--dropdown:has(.choices__item.choices__notice.has-no-choices) {
+  @apply elv:hidden;
+}
+
+.combobox-wrapper div.choices__list--multiple {
+  @apply elv:flex elv:flex-wrap elv:gap-2;
+}
+
+.combobox-wrapper div.choices__list--multiple .choices__item {
+  @apply elv:text-base elv:border-none elv:bg-primary-20 elv:text-primary elv:rounded-xs elv:text-sm elv:m-0 elv:py-0.5 elv:pr-1 elv:pl-[6px];
+}
+
+div.choices[data-type*="select-multiple"] .choices__button, .choices[data-type*="text"] .choices__button {
+  @apply elv:border-l-0 elv:opacity-100 elv:bg-auto elv:ml-1 elv:mr-0 elv:bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%234338ca%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M6.0625%2015L5%2013.9375L8.9375%2010L5%206.0625L6.0625%205L10%208.9375L13.9375%205L15%206.0625L11.0625%2010L15%2013.9375L13.9375%2015L10%2011.0625L6.0625%2015Z%22%2F%3E%3C%2Fsvg%3E')];
+}
