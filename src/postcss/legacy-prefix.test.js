@@ -182,6 +182,35 @@ describe('extractLegacyCandidates', () => {
     const candidates = extractFromContent('<div data-foo="elv-bar(baz)">');
     expect(candidates.size).toBe(0);
   });
+
+  test('extracts a single-item %w() array on one line', () => {
+    const candidates = extractFromContent('low { %w(lg:elv-bg-neutral-5) }', '.rb');
+    expect(candidates.get('elv:lg:bg-neutral-5')).toBe('lg:elv-bg-neutral-5');
+  });
+
+  test('extracts the first item of a multi-item %w() array on one line', () => {
+    const candidates = extractFromContent('%w(elv-flex elv-block)', '.rb');
+    expect(candidates.get('elv:flex')).toBe('elv-flex');
+    expect(candidates.get('elv:block')).toBe('elv-block');
+  });
+
+  test('extracts from a single-line %w[] array', () => {
+    const candidates = extractFromContent('%w[elv-flex elv-block]', '.rb');
+    expect(candidates.get('elv:flex')).toBe('elv-flex');
+    expect(candidates.get('elv:block')).toBe('elv-block');
+  });
+
+  test('extracts from a single-line %i{} array', () => {
+    const candidates = extractFromContent('%i{elv-flex elv-block}', '.rb');
+    expect(candidates.get('elv:flex')).toBe('elv-flex');
+    expect(candidates.get('elv:block')).toBe('elv-block');
+  });
+
+  test('still extracts arbitrary values after a %w() array on the same line', () => {
+    const candidates = extractFromContent('%w(elv-w-[355px] elv-h-[200px])', '.rb');
+    expect(candidates.get('elv:w-[355px]')).toBe('elv-w-[355px]');
+    expect(candidates.get('elv:h-[200px]')).toBe('elv-h-[200px]');
+  });
 });
 
 describe('addLegacySources dependency messages', () => {
