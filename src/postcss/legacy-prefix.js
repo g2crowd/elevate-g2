@@ -179,10 +179,12 @@ function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_E
 
 function addLegacySources(options = {}) {
   const cwd = options.cwd || process.cwd();
+  const directories = options.directories || [];
+  const extensions = options.extensions || DEFAULT_EXTENSIONS;
 
   return {
     postcssPlugin: 'elevate-legacy-prefix-sources',
-    Once(root) {
+    Once(root, { result }) {
       const css = root.toString();
       if (!css.includes('tailwindcss') && !css.includes('@config')) return;
 
@@ -195,6 +197,25 @@ function addLegacySources(options = {}) {
           type: 'atrule',
           name: 'source',
           params: `inline("${escapeString(chunk.join(' '))}")`
+        });
+      }
+
+      // The classes above are injected as *inline* @source candidates, which
+      // have no backing file for a bundler's watcher or Tailwind's own
+      // mtime-based rebuild cache to track. Registering each scanned file as
+      // a PostCSS `dependency` message (matching the convention
+      // @tailwindcss/postcss uses for its own @source scanning) fixes dev
+      // rebuilds: without it, editing a scanned file never invalidates this
+      // CSS and new/changed elv- classes only appear after a full restart.
+      const roots = directories.map((dir) => path.resolve(cwd, dir));
+      const files = roots.flatMap((dir) => walkFiles(dir, extensions));
+
+      for (const file of files) {
+        result.messages.push({
+          type: 'dependency',
+          plugin: 'elevate-legacy-prefix-sources',
+          file,
+          parent: result.opts.from
         });
       }
     }

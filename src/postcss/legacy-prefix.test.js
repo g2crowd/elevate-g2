@@ -2,7 +2,8 @@ import { describe, test, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-const { extractLegacyCandidates, legacyToVariantCandidate } = require('./legacy-prefix');
+import postcss from 'postcss';
+const { addLegacySources, extractLegacyCandidates, legacyToVariantCandidate } = require('./legacy-prefix');
 
 describe('legacyToVariantCandidate', () => {
   test('converts basic utility class', () => {
@@ -180,5 +181,66 @@ describe('extractLegacyCandidates', () => {
   test('ignores HTML attributes that look like classes', () => {
     const candidates = extractFromContent('<div data-foo="elv-bar(baz)">');
     expect(candidates.size).toBe(0);
+  });
+});
+
+describe('addLegacySources dependency messages', () => {
+  function runPlugin(directories, cwd) {
+    const input = '@import "tailwindcss";';
+    return postcss([addLegacySources({ cwd, directories })]).process(input, { from: undefined });
+  }
+
+  test('registers every scanned file as a PostCSS dependency', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'legacy-prefix-deps-test-'));
+    try {
+      const filePath = path.join(tempDir, 'component.rb');
+      fs.writeFileSync(filePath, '<div class="elv-w-4">');
+
+      const result = await runPlugin(['.'], tempDir);
+      const dependencyFiles = result.messages
+        .filter((message) => message.type === 'dependency')
+        .map((message) => message.file);
+
+      expect(dependencyFiles).toContain(filePath);
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  // Must be watched before a file has any elv- class, since that's exactly
+  // the edit (adding the first one) that needs to trigger a rebuild.
+  test('registers dependencies even for files with no elv- classes', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'legacy-prefix-deps-test-'));
+    try {
+      const filePath = path.join(tempDir, 'component.rb');
+      fs.writeFileSync(filePath, '<div class="not-an-elv-class">');
+
+      const result = await runPlugin(['.'], tempDir);
+      const dependencyFiles = result.messages
+        .filter((message) => message.type === 'dependency')
+        .map((message) => message.file);
+
+      expect(dependencyFiles).toContain(filePath);
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  test('does not register dependencies when the CSS has no tailwindcss/@config marker', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'legacy-prefix-deps-test-'));
+    try {
+      const filePath = path.join(tempDir, 'component.rb');
+      fs.writeFileSync(filePath, '<div class="elv-w-4">');
+
+      const result = await postcss([addLegacySources({ cwd: tempDir, directories: ['.'] })]).process(
+        '.foo { color: red; }',
+        { from: undefined }
+      );
+      const dependencyFiles = result.messages.filter((message) => message.type === 'dependency');
+
+      expect(dependencyFiles).toHaveLength(0);
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
   });
 });
