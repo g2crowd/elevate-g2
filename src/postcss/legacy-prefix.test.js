@@ -2,7 +2,8 @@ import { describe, test, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import os from 'os';
-const { extractLegacyCandidates, legacyToVariantCandidate } = require('./legacy-prefix');
+import postcss from 'postcss';
+const { addLegacySources, extractLegacyCandidates, legacyToVariantCandidate } = require('./legacy-prefix');
 
 describe('legacyToVariantCandidate', () => {
   test('converts basic utility class', () => {
@@ -180,5 +181,95 @@ describe('extractLegacyCandidates', () => {
   test('ignores HTML attributes that look like classes', () => {
     const candidates = extractFromContent('<div data-foo="elv-bar(baz)">');
     expect(candidates.size).toBe(0);
+  });
+
+  test('extracts a single-item %w() array on one line', () => {
+    const candidates = extractFromContent('low { %w(lg:elv-bg-neutral-5) }', '.rb');
+    expect(candidates.get('elv:lg:bg-neutral-5')).toBe('lg:elv-bg-neutral-5');
+  });
+
+  test('extracts the first item of a multi-item %w() array on one line', () => {
+    const candidates = extractFromContent('%w(elv-flex elv-block)', '.rb');
+    expect(candidates.get('elv:flex')).toBe('elv-flex');
+    expect(candidates.get('elv:block')).toBe('elv-block');
+  });
+
+  test('extracts from a single-line %w[] array', () => {
+    const candidates = extractFromContent('%w[elv-flex elv-block]', '.rb');
+    expect(candidates.get('elv:flex')).toBe('elv-flex');
+    expect(candidates.get('elv:block')).toBe('elv-block');
+  });
+
+  test('extracts from a single-line %i{} array', () => {
+    const candidates = extractFromContent('%i{elv-flex elv-block}', '.rb');
+    expect(candidates.get('elv:flex')).toBe('elv-flex');
+    expect(candidates.get('elv:block')).toBe('elv-block');
+  });
+
+  test('still extracts arbitrary values after a %w() array on the same line', () => {
+    const candidates = extractFromContent('%w(elv-w-[355px] elv-h-[200px])', '.rb');
+    expect(candidates.get('elv:w-[355px]')).toBe('elv-w-[355px]');
+    expect(candidates.get('elv:h-[200px]')).toBe('elv-h-[200px]');
+  });
+});
+
+describe('addLegacySources dependency messages', () => {
+  function runPlugin(directories, cwd) {
+    const input = '@import "tailwindcss";';
+    return postcss([addLegacySources({ cwd, directories })]).process(input, { from: undefined });
+  }
+
+  test('registers every scanned file as a PostCSS dependency', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'legacy-prefix-deps-test-'));
+    try {
+      const filePath = path.join(tempDir, 'component.rb');
+      fs.writeFileSync(filePath, '<div class="elv-w-4">');
+
+      const result = await runPlugin(['.'], tempDir);
+      const dependencyFiles = result.messages
+        .filter((message) => message.type === 'dependency')
+        .map((message) => message.file);
+
+      expect(dependencyFiles).toContain(filePath);
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  // Must be watched before a file has any elv- class, since that's exactly
+  // the edit (adding the first one) that needs to trigger a rebuild.
+  test('registers dependencies even for files with no elv- classes', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'legacy-prefix-deps-test-'));
+    try {
+      const filePath = path.join(tempDir, 'component.rb');
+      fs.writeFileSync(filePath, '<div class="not-an-elv-class">');
+
+      const result = await runPlugin(['.'], tempDir);
+      const dependencyFiles = result.messages
+        .filter((message) => message.type === 'dependency')
+        .map((message) => message.file);
+
+      expect(dependencyFiles).toContain(filePath);
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
+  });
+
+  test('does not register dependencies when the CSS has no tailwindcss/@config marker', async () => {
+    const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'legacy-prefix-deps-test-'));
+    try {
+      const filePath = path.join(tempDir, 'component.rb');
+      fs.writeFileSync(filePath, '<div class="elv-w-4">');
+
+      const result = await postcss([addLegacySources({ cwd: tempDir, directories: ['.'] })]).process(
+        '.foo { color: red; }',
+        { from: undefined }
+      );
+      const dependencyFiles = result.messages.filter((message) => message.type === 'dependency');
+
+      expect(dependencyFiles).toHaveLength(0);
+    } finally {
+      fs.rmSync(tempDir, { recursive: true, force: true });
+    }
   });
 });

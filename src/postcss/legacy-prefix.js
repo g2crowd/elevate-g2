@@ -112,13 +112,30 @@ function splitOutsideBrackets(text, delimiters) {
   return parts;
 }
 
+const PERCENT_LITERAL_SIGIL = /^%[wiWI][([{<]$/;
+
 function tokenizeContent(text) {
   const tokens = [];
   let current = '';
   let bracketDepth = 0;
   const delimiters = /[\s`"'<>]/;
 
-  for (const char of text) {
+  for (let index = 0; index < text.length; index += 1) {
+    const char = text[index];
+
+    // Ruby array literals (%w(...), %i[...], %W{...}, ...) otherwise glue
+    // their sigil onto the first element when the source has no whitespace
+    // right after the opening delimiter, e.g. `%w(elv-flex elv-block)`. Treat
+    // the sigil itself as its own token so the array contents tokenize
+    // normally.
+    if (bracketDepth === 0 && char === '%' && PERCENT_LITERAL_SIGIL.test(text.slice(index, index + 3))) {
+      if (current) tokens.push(current);
+      current = '';
+      tokens.push(text.slice(index, index + 3));
+      index += 2;
+      continue;
+    }
+
     if (char === '[') bracketDepth += 1;
     if (char === ']' && bracketDepth > 0) bracketDepth -= 1;
 
@@ -150,6 +167,37 @@ function walkFiles(dir, extensions, files = []) {
   return files;
 }
 
+function stripStrayDelimiters(token) {
+  let start = 0;
+  while (start < token.length && '({,'.includes(token[start])) start += 1;
+
+  let end = token.length;
+  while (end > start) {
+    const char = token[end - 1];
+
+    if (char === ']') {
+      // Only strip a trailing ] when it isn't the real closer for an earlier
+      // [ in this token (e.g. a Tailwind arbitrary value like elv-w-[355px]
+      // must keep its ]; a stray one from a %w[...] sigil must not).
+      const remaining = token.slice(start, end - 1);
+      const opens = (remaining.match(/\[/g) || []).length;
+      const closes = (remaining.match(/\]/g) || []).length;
+      if (opens > closes) break;
+      end -= 1;
+      continue;
+    }
+
+    if (')};,>'.includes(char)) {
+      end -= 1;
+      continue;
+    }
+
+    break;
+  }
+
+  return token.slice(start, end);
+}
+
 function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_EXTENSIONS }) {
   const candidates = new Map();
   const roots = directories.map((dir) => path.resolve(cwd, dir));
@@ -161,7 +209,7 @@ function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_E
     const tokens = tokenizeContent(contents);
 
     for (const rawToken of tokens) {
-      const cleaned = rawToken.replace(/^[({,]+|[)};,]+$/g, '');
+      const cleaned = stripStrayDelimiters(rawToken);
       const legacyTokens = splitOutsideBrackets(cleaned, ['.']);
 
       for (const legacy of legacyTokens) {
@@ -179,10 +227,12 @@ function extractLegacyCandidates({ cwd, directories = [], extensions = DEFAULT_E
 
 function addLegacySources(options = {}) {
   const cwd = options.cwd || process.cwd();
+  const directories = options.directories || [];
+  const extensions = options.extensions || DEFAULT_EXTENSIONS;
 
   return {
     postcssPlugin: 'elevate-legacy-prefix-sources',
-    Once(root) {
+    Once(root, { result }) {
       const css = root.toString();
       if (!css.includes('tailwindcss') && !css.includes('@config')) return;
 
@@ -195,6 +245,25 @@ function addLegacySources(options = {}) {
           type: 'atrule',
           name: 'source',
           params: `inline("${escapeString(chunk.join(' '))}")`
+        });
+      }
+
+      // The classes above are injected as *inline* @source candidates, which
+      // have no backing file for a bundler's watcher or Tailwind's own
+      // mtime-based rebuild cache to track. Registering each scanned file as
+      // a PostCSS `dependency` message (matching the convention
+      // @tailwindcss/postcss uses for its own @source scanning) fixes dev
+      // rebuilds: without it, editing a scanned file never invalidates this
+      // CSS and new/changed elv- classes only appear after a full restart.
+      const roots = directories.map((dir) => path.resolve(cwd, dir));
+      const files = roots.flatMap((dir) => walkFiles(dir, extensions));
+
+      for (const file of files) {
+        result.messages.push({
+          type: 'dependency',
+          plugin: 'elevate-legacy-prefix-sources',
+          file,
+          parent: result.opts.from
         });
       }
     }
