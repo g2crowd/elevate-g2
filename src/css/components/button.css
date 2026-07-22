@@ -42,6 +42,8 @@
     elv:font-figtree
     elv:border
     elv:font-semibold
+    elv:text-inverted
+    elv:visited:text-inverted
     elv:flex
     elv:flex-row
     elv:items-center
@@ -77,6 +79,7 @@
   @apply elv:hover:shadow-0
     elv:text-primary
     elv:hover:text-primary
+    elv:visited:text-primary
     elv:bg-neutral-5
     elv:border
     elv:border-light
