@@ -138,110 +138,74 @@
 }
 
 @layer components {
-  :where([elv]) .btn:where(a),
-  .btn:where(a):where([elv]) {
-    @apply elv:a--reset;
+  /* elv:no-underline is required because preflight is scoped to [elv]; without
+     it, ungated anchor buttons keep the browser's default underline. */
+  .btn:where(a) {
+    @apply elv:a--reset elv:no-underline;
   }
 
   .btn {
-    :where([elv]) &,
-    &:where([elv]) {
-      @apply elv:btn-base;
+    @apply elv:btn-base;
 
-      span + svg {
-        @apply elv:-mr-1;
-      }
+    span + svg {
+      @apply elv:-mr-1;
+    }
 
-      svg:has(+ span) {
-        @apply elv:-ml-1;
-      }
+    svg:has(+ span) {
+      @apply elv:-ml-1;
     }
   }
 
   .btn--primary {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-primary;
-    }
+    @apply elv:btn-primary;
   }
 
   .btn--inverted {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-inverted;
-    }
+    @apply elv:btn-inverted;
   }
 
-  .btn--secondary {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-secondary;
-    }
+  .btn--secondary,
+  .btn--hollow {
+    @apply elv:btn-secondary;
   }
 
-  .btn--tertiary {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-tertiary;
-    }
+  .btn--tertiary,
+  .btn--simple {
+    @apply elv:btn-tertiary;
   }
 
   .btn--brand {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-brand;
-    }
+    @apply elv:btn-brand;
   }
 
   .btn--text {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-text-base;
-    }
+    @apply elv:btn-text-base;
   }
 
   .btn--text-neutral {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-text-base;
-      @apply elv:btn-text-neutral;
-    }
+    @apply elv:btn-text-base;
+    @apply elv:btn-text-neutral;
   }
 
   .btn--lg {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-lg;
-    }
+    @apply elv:btn-lg;
   }
 
   .btn--md {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-md;
-    }
+    @apply elv:btn-md;
   }
 
   .btn--sm {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:btn-sm;
-    }
+    @apply elv:btn-sm;
   }
 
   .btn--md.btn--text,
   .btn--md.btn--text-neutral {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:py-0 elv:px-0;
-    }
+    @apply elv:py-0 elv:px-0;
   }
 
   .btn--sm.btn--text,
   .btn--sm.btn--text-neutral {
-    &:where([elv]),
-    :where([elv]) & {
-      @apply elv:py-0 elv:px-0;
-    }
+    @apply elv:py-0 elv:px-0;
   }
 }
