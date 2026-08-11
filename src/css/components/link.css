@@ -1,13 +1,16 @@
 @layer components {
-  :where([elv]) a,
-  a:where([elv]),
+  /* elv:no-underline (base, not just hover) is required because preflight is
+     scoped to [elv]; without it, ungated anchor tags keep the browser's
+     default underline. See button.css for the same fix applied to .btn:where(a). */
+  a,
   .a {
     &:where(&:not(.a--reset)) {
       @apply elv:font-figtree
         elv:tracking-normal
         elv:font-normal
         elv:text-inherit
-        elv:text-link;
+        elv:text-link
+        elv:no-underline;
 
       @apply elv:focus-visible:outline
         elv:focus-visible:outline-3
