@@ -1,29 +1,75 @@
 @layer components {
   /* elv:no-underline (base, not just hover) is required because preflight is
      scoped to [elv]; without it, ungated anchor tags keep the browser's
-     default underline. See button.css for the same fix applied to .btn:where(a). */
-  a,
-  .a {
-    &:where(&:not(.a--reset)) {
-      @apply elv:font-figtree
-        elv:tracking-normal
-        elv:font-normal
-        elv:text-inherit
-        elv:text-link
-        elv:no-underline;
+     default underline. See button.css for the same fix applied to .btn:where(a).
 
-      @apply elv:focus-visible:outline
-        elv:focus-visible:outline-3
-        elv:focus-visible:outline-offset-0
-        elv:focus-visible:outline-purple-40
-        elv:focus-visible:rounded-sm;
+     IMPORTANT: `a` and `.a` are intentionally two FULLY SEPARATE rule blocks
+     here, not a shared "a, .a { ... }" selector list (whether via `&`-nesting
+     or a plain top-level comma group). Tailwind's @apply compiles each
+     pseudo-class variant (:hover, :focus-visible, :visited, ...) by
+     re-wrapping the rule's *entire* selector in :is(...) -- so even a plain
+     comma list here would still end up as :is(a:where(...),.a:where(...)) on
+     every variant rule, unifying specificity back to .a's class-level
+     (0,1,0) for bare <a> tags. Only fully duplicating the block per selector
+     keeps <a>'s variant rules at element-level (0,0,1), matching a plain
+     `a { }`/`a:hover { }` rule and never out-ranking real component classes
+     like `.top-nav__link` elsewhere in the cascade. Keep both blocks in
+     sync when editing. */
+  a:where(:not(.a--reset)) {
+    @apply elv:font-figtree
+      elv:tracking-normal
+      elv:text-inherit
+      elv:text-link
+      elv:no-underline;
 
-      @apply elv:active:text-link-hover
-        elv:focus:text-link-hover
-        elv:hover:text-link-hover
-        elv:visited:text-link-visited
-        elv:hover:no-underline;
-    }
+    @apply elv:focus-visible:outline
+      elv:focus-visible:outline-3
+      elv:focus-visible:outline-offset-0
+      elv:focus-visible:outline-purple-40
+      elv:focus-visible:rounded-sm;
+
+    @apply elv:active:text-link-hover
+      elv:focus:text-link-hover
+      elv:hover:text-link-hover
+      elv:hover:no-underline;
+  }
+
+  .a:where(:not(.a--reset)) {
+    @apply elv:font-figtree
+      elv:tracking-normal
+      elv:text-inherit
+      elv:text-link
+      elv:no-underline;
+
+    @apply elv:focus-visible:outline
+      elv:focus-visible:outline-3
+      elv:focus-visible:outline-offset-0
+      elv:focus-visible:outline-purple-40
+      elv:focus-visible:rounded-sm;
+
+    @apply elv:active:text-link-hover
+      elv:focus:text-link-hover
+      elv:hover:text-link-hover
+      elv:hover:no-underline;
+  }
+
+  /* Default :visited color. Written as plain CSS with :where(:visited)
+     instead of `@apply elv:visited:text-link-visited` -- Tailwind's
+     `visited:` variant appends a bare `:visited` to the compiled selector,
+     which (like a class) contributes (0,1,0) on its own. That would put
+     bare <a>:visited at (0,1,1), a full specificity tier above every other
+     rule on this same element (all (0,0,1)), for no reason -- :visited
+     doesn't need to WIN, it only needs to apply. :where(:visited) matches
+     identically but contributes 0, so this rule keeps <a> at (0,0,1) and
+     .a at (0,1,0), same as every other rule in this file. That means it
+     never beats any real component's own :visited rule at (0,1,0) or
+     higher, e.g. .btn:visited, regardless of import order. */
+  a:where(:not(.a--reset)):where(:visited) {
+    color: var(--elv-text-link-visited);
+  }
+
+  .a:where(:not(.a--reset)):where(:visited) {
+    color: var(--elv-text-link-visited);
   }
 
   .a--sm {
