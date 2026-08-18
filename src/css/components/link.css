@@ -72,6 +72,33 @@
     color: var(--elv-text-link-visited);
   }
 
+  /* .link aliased onto .a for UE (LABS-995) -- separate block, not a shared
+     selector list, for the same specificity reason as a/.a above. No
+     :not(.a--reset) guard: that reset utility only applies to anchor/.a
+     usage, not .link. */
+  .link {
+    @apply elv:font-figtree
+      elv:tracking-normal
+      elv:text-inherit
+      elv:text-link
+      elv:no-underline;
+
+    @apply elv:focus-visible:outline
+      elv:focus-visible:outline-3
+      elv:focus-visible:outline-offset-0
+      elv:focus-visible:outline-purple-40
+      elv:focus-visible:rounded-sm;
+
+    @apply elv:active:text-link-hover
+      elv:focus:text-link-hover
+      elv:hover:text-link-hover
+      elv:hover:no-underline;
+  }
+
+  .link:where(:visited) {
+    color: var(--elv-text-link-visited);
+  }
+
   .a--sm {
     @apply elv:text-sm elv:focus-visible:rounded-sm;
   }
