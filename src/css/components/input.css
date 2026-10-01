@@ -17,13 +17,13 @@
 
     @apply elv:disabled:resize-none
       elv:disabled:bg-neutral-1
-      elv:disabled:border-neutral
+      elv:disabled:border-light
       elv:disabled:text-disabled;
 
     @apply elv:read-only:resize-none
       elv:read-only:pl-2
       elv:read-only:pr-4
-      elv:read-only:text-nonessential
+      elv:read-only:[&:not(:disabled)]:text-nonessential
       elv:read-only:[&:not(:disabled)]:border-none;
 
     @apply elv:data-[status='success']:border-success
