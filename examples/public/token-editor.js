@@ -36,7 +36,7 @@ const TOKENS = [
   { name: '--elv-text-default', group: 'Foregrounds', light: '#201f23', dark: '#f5f4fb' },
   { name: '--elv-text-subtle', group: 'Foregrounds', light: '#4c4b53', dark: '#c4c2cc' },
   { name: '--elv-text-nonessential', group: 'Foregrounds', light: '#6f6d78', dark: '#827ea5' },
-  { name: '--elv-text-disabled', group: 'Foregrounds', light: '#dfdfe2', dark: '#4a4570' },
+  { name: '--elv-text-disabled', group: 'Foregrounds', light: '#898792', dark: '#4a4570' },
   { name: '--elv-text-inverted', group: 'Foregrounds', light: '#ffffff', dark: '#ffffff' },
   { name: '--elv-text-link', group: 'Foregrounds', light: '#0073f5', dark: '#66aeff' },
   { name: '--elv-text-link-hover', group: 'Foregrounds', light: '#005bc2', dark: '#9eccff' },

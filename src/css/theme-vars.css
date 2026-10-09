@@ -98,7 +98,7 @@
   --elv-text-default: #201f23;
   --elv-text-subtle: #4c4b53;
   --elv-text-nonessential: #6f6d78;
-  --elv-text-disabled: #dfdfe2;
+  --elv-text-disabled: #898792; /* neutral-60 */
   --elv-text-inverted: #ffffff;
   --elv-text-link: #0073f5;
   --elv-text-link-hover: #005bc2;
