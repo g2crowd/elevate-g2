@@ -57,11 +57,14 @@
   @apply elv:btn-lg elv:btn-primary;
 
   @apply elv:disabled:text-disabled
+    elv:disabled:hover:text-disabled
     elv:disabled:hover:shadow-0
     elv:disabled:active:shadow-0
     elv:disabled:focus:shadow-0
     elv:disabled:bg-neutral-10
-    elv:disabled:border-0;
+    elv:disabled:hover:bg-neutral-10
+    elv:disabled:border-0
+    elv:disabled:hover:border-0;
 }
 
 @utility btn-inverted {
@@ -103,7 +106,8 @@
     elv:focus:bg-transparent
     elv:focus:text-primary
     elv:active:text-primary
-    elv:disabled:bg-transparent;
+    elv:disabled:bg-transparent
+    elv:disabled:hover:bg-transparent;
 }
 
 @utility btn-brand {
@@ -129,6 +133,7 @@
     elv:disabled:active:shadow-0
     elv:disabled:focus:shadow-0
     elv:disabled:bg-neutral-0
+    elv:disabled:hover:bg-neutral-0
     elv:disabled:border-0;
 }
 
