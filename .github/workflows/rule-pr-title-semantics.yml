@@ -23,9 +23,9 @@ permissions:
 jobs:
   conventional-pr-title:
     name: Rule PR Title semantics
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     steps:
-      - uses: amannn/action-semantic-pull-request@v5
+      - uses: amannn/action-semantic-pull-request@v6
         id: lint_pr_title
         with:
           ignoreLabels: |
